@@ -20,21 +20,21 @@
   text-decoration:none;
   box-shadow:0 6px 18px rgba(122,162,255,.35);
 }   /* ← THIS WAS MISSING */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: url("t-logo.png") no-repeat center;
-  background-size: 320px;
-  opacity: 0.15;
-  pointer-events: none;
-  z-index: 0;
-}
 .wrap {
   position: relative;
   z-index: 1;
 }
 
+.wrap::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("t-logo.png") no-repeat center;
+  background-size: 260px;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+}
 
 nav .apply-btn {
   white-space: nowrap;
