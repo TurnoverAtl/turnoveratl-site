@@ -10,16 +10,46 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
   <style>
-.apply-btn{
-  margin-left:14px;
-  padding:9px 16px;
-  background:linear-gradient(135deg, #7aa2ff, #5f86ff);
-  color:#0b1020;
-  border-radius:999px;
-  font-weight:800;
-  text-decoration:none;
-  box-shadow:0 6px 18px rgba(122,162,255,.35);
-}   /* ← THIS WAS MISSING */
+.apply-btn {
+  margin-left: 14px;
+  padding: 9px 16px;
+  background: linear-gradient(135deg, #7aa2ff, #5f86ff);
+  color: #0b1020;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(122,162,255,.35);
+  display: inline-block;
+}
+  .nav-item {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown {
+  position: absolute;
+  top: 140%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 260px;
+  padding: 10px 12px;
+  background: rgba(15, 20, 35, 0.95);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 1.3;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  backdrop-filter: blur(10px);
+  z-index: 999;
+}
+
+.nav-item:hover .dropdown {
+  opacity: 1;
+  pointer-events: auto;
+}
+  
 .wrap {
   position: relative;
   z-index: 1;
@@ -173,9 +203,43 @@
           <div class="small">Airbnb turnover cleaning • Atlanta</div>
         </div>
       </a>
+.nav-item {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown {
+  position: absolute;
+  top: 140%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 260px;
+  padding: 10px 12px;
+  background: rgba(15, 20, 35, 0.95);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 1.3;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  backdrop-filter: blur(10px);
+  z-index: 999;
+}
+
+.nav-item:hover .dropdown {
+  opacity: 1;
+  pointer-events: auto;
+}
 
      <nav>
+  <div class="nav-item">
   <a href="#services">Services</a>
+  <div class="dropdown">
+    Standard turnovers • Restock checks • Deep clean add-ons
+  </div>
+</div>
+
   <a href="#pricing">Pricing</a>
   <a href="#about">About</a>
   <a href="/apply.html">Apply to Clean</a>
