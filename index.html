@@ -10,6 +10,66 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
   <style>
+    /* Header polish */
+.site-header {
+  padding: 18px 22px;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(7, 12, 25, 0.65);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  z-index: 50;
+}
+
+.nav a {
+  opacity: 0.85;
+}
+
+.nav a:hover {
+  opacity: 1;
+}
+
+/* Hero polish */
+.hero h1 {
+  font-size: clamp(36px, 4vw, 56px);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin-bottom: 14px;
+}
+
+.hero p {
+  font-size: 16px;
+  opacity: 0.82;
+  max-width: 56ch;
+  line-height: 1.6;
+}
+
+/* Button polish */
+.btn {
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.btnPrimary {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.95), rgba(59, 130, 246, 0.95));
+  box-shadow: 0 14px 40px rgba(59, 130, 246, 0.25);
+  border: none;
+}
+
+.btnGhost {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* Offer card polish */
+.offer-card {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: radial-gradient(1200px 600px at 20% 0%, rgba(99, 102, 241, 0.16), rgba(0, 0, 0, 0));
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.35);
+  border-radius: 18px;
+}
+  </style>  
 .apply-btn {
   ...
 }
