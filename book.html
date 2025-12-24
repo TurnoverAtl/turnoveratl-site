@@ -1,1 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book a Turnover | Turnover ATL</title>
+  <meta name="description" content="Submit a booking request for STR turnover cleaning across Atlanta and surrounding communities." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="index.html">
+      <img src="assets/t-logo.png" alt="Turnover ATL logo">
+      <span>Turnover ATL</span>
+    </a>
+    <div class="navlinks">
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+      <a href="apply.html">Apply to Clean</a>
+      <a class="cta" href="book.html">Book a Turnover</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <h1 style="margin:10px 0 6px;font-size:clamp(28px,4.2vw,42px);">Book a turnover</h1>
+  <p>Submit your request below. We’ll confirm availability, schedule a cleaner, and follow up with next steps.</p>
+
+  <div class="card">
+    <p><b>Submitting a booking request does not require payment.</b><br>
+      <b>Payment is collected only after availability is confirmed and a cleaner is scheduled.</b>
+    </p>
+
+    <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
+      <!-- FormSubmit settings -->
+      <input type="hidden" name="_subject" value="New Turnover Request — Turnover ATL">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+
+      <div class="grid2">
+        <div>
+          <label>Full name</label>
+          <input name="Full name" required />
+        </div>
+        <div>
+          <label>Phone number</label>
+          <input name="Phone" required />
+        </div>
+
+        <div class="full">
+          <label>Unit address (or community)</label>
+          <input name="Unit location" required />
+        </div>
+
+        <div>
+          <label>Unit size</label>
+          <select name="Unit size" required>
+            <option value="">Select</option>
+            <option>Studio / 1BR</option>
+            <option>2BR</option>
+            <option>3BR</option>
+            <option>4BR+</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Turnover date</label>
+          <input type="date" name="Turnover date" required />
+        </div>
+
+        <div>
+          <label>Checkout time</label>
+          <input name="Checkout time" placeholder="e.g., 11:00 AM" />
+        </div>
+
+        <div>
+          <label>Next check-in time</label>
+          <input name="Next check-in time" placeholder="e.g., 4:00 PM" />
+        </div>
+
+        <div class="full">
+          <label>Access instructions (smart lock / lockbox / concierge)</label>
+          <input name="Access instructions" required />
+        </div>
+
+        <div class="full">
+          <label>Laundry (on-site)</label>
+          <select name="Laundry">
+            <option value="">Select</option>
+            <option>No</option>
+            <option>Yes — standard linens</option>
+            <option>Yes — multiple loads (may affect time)</option>
+          </select>
+        </div>
+
+        <div class="full">
+          <label>Notes (parking, special instructions, etc.)</label>
+          <textarea name="Notes"></textarea>
+        </div>
+      </div>
+
+      <div class="note">
+        A <b>$75 booking deposit</b> is required to secure your turnover after availability is confirmed. Deposits are collected via secure Square invoice and applied toward your total service cost.
+      </div>
+
+      <div class="btnrow" style="margin-top:12px;">
+        <button class="btn primary" type="submit" style="border:none;cursor:pointer;">Submit request</button>
+        <a class="btn ghost" href="pricing.html">View pricing</a>
+      </div>
+    </form>
+
+    <p class="small" style="margin-top:12px;">
+      Prefer to reach out directly? Email ayinde@turnoveratl.com or text (470) 290-2837.
+    </p>
+  </div>
+
+  <footer>
+    <div>© 2025 Turnover ATL</div>
+    <div>Email: ayinde@turnoveratl.com · Text: (470) 290-2837</div>
+  </footer>
+</main>
+
+</body>
+</html>
 
