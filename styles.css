@@ -62,7 +62,7 @@ header{
 .navlinks a.cta{
   opacity:1;font-weight:800;
   padding:10px 14px;border-radius:999px;
-  background:linear-gradient(135deg, rgba(91,124,255,.95), rgba(91,124,255,.78));
+  background:linear-gradient(135deg, rgba(47,107,255, rgba(47,107,255));
   color:#0B1020;
 }
 main{max-width:var(--max);margin:0 auto;padding:30px 18px 80px}
@@ -85,7 +85,7 @@ main{max-width:var(--max);margin:0 auto;padding:30px 18px 80px}
 .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
 .btn{display:inline-block;padding:12px 14px;border-radius:14px;font-weight:900}
 .btn.primary{
-  background:linear-gradient(135deg, rgba(91,124,255,.95), rgba(91,124,255,.78));
+  background:linear-gradient(135deg, rgba(47,107,255,.95), rgba(47,107,255,.78));
   color:#0B1020;
 }
 .btn.ghost{
