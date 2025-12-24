@@ -4,140 +4,105 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Book a Turnover | Turnover ATL</title>
-  <meta name="description" content="Submit a booking request for STR turnover cleaning in Atlanta and surrounding communities." />
+
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- MUST match your repo file name -->
-  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <!-- Header / Nav -->
-  <header>
-    <div class="nav">
-      <a class="brand" href="index.html" aria-label="Turnover ATL Home">
-        <img src="assets/t-logo.png" alt="Turnover ATL logo">
-        <span>Turnover ATL</span>
-      </a>
 
-      <div class="navlinks">
-        <a href="services.html">Services</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="about.html">About</a>
-        <a href="apply.html">Apply to Clean</a>
-        <a class="cta" href="book.html">Book a Turnover</a>
-      </div>
+<header>
+  <div class="nav">
+    <a class="brand" href="index.html">
+      <img src="assets/t-logo.png" alt="Turnover ATL logo">
+      <span>Turnover ATL</span>
+    </a>
+
+    <div class="navlinks">
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+      <a href="apply.html">Apply to Clean</a>
+      <a class="cta" href="book.html">Book a Turnover</a>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <h1 style="margin:10px 0 6px;font-size:clamp(28px,4.2vw,42px);">Book a Turnover</h1>
-    <p>Submit your request below. We’ll confirm availability, schedule a cleaner, and follow up with next steps.</p>
+<main>
+  <h1>Book a Turnover</h1>
+  <p>Submit your request below. No payment is required until availability is confirmed.</p>
 
-    <div class="card" style="margin-top:12px;">
-      <p><b>Submitting a booking request does not require payment.</b><br>
-      <b>Payment is collected only after availability is confirmed and a cleaner is scheduled.</b></p>
+  <div class="card">
+    <form action="https://formsubmit.co/ayinde@turnoveratl.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New Turnover Request">
 
-      <div class="note">
-        After we confirm availability, we’ll send a secure Square invoice for the <b>$75 deposit</b> to secure your slot.
-      </div>
-
-      <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
-        <!-- FormSubmit settings -->
-        <input type="hidden" name="_subject" value="New Turnover Request — Turnover ATL">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-
-        <div class="grid2">
-          <div>
-            <label for="full_name">Full name</label>
-            <input id="full_name" name="Full name" required autocomplete="name" />
-          </div>
-
-          <div>
-            <label for="phone">Phone number</label>
-            <input id="phone" name="Phone" required autocomplete="tel" />
-          </div>
-
-          <div class="full">
-            <label for="unit_location">Unit address (or community)</label>
-            <input id="unit_location" name="Unit location" required />
-          </div>
-
-          <div>
-            <label for="unit_size">Unit size</label>
-            <select id="unit_size" name="Unit size" required>
-              <option value="">Select</option>
-              <option>1BR / 1BA</option>
-              <option>2BR / 2BA</option>
-              <option>3BR / 2BA</option>
-              <option>4BR+</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="turnover_date">Turnover date</label>
-            <input id="turnover_date" type="date" name="Turnover date" required />
-          </div>
-
-          <div>
-            <label for="checkout_time">Check-out time</label>
-            <input id="checkout_time" name="Check-out time" placeholder="e.g., 11:00 AM" />
-          </div>
-
-          <div>
-            <label for="checkin_time">Next check-in time</label>
-            <input id="checkin_time" name="Next check-in time" placeholder="e.g., 4:00 PM" />
-          </div>
-
-          <div class="full">
-            <label for="access">Access instructions (smart lock / lockbox / concierge)</label>
-            <input id="access" name="Access instructions" placeholder="Code, lockbox location, concierge notes, etc." />
-          </div>
-
-          <div>
-            <label for="laundry">Laundry (on-site)</label>
-            <select id="laundry" name="Laundry (on-site)">
-              <option value="">Select</option>
-              <option>Yes — washer/dryer available</option>
-              <option>No — no washer/dryer</option>
-              <option>Not sure</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="rush">Same-day / rush</label>
-            <select id="rush" name="Same-day / rush">
-              <option value="">Select</option>
-              <option>No</option>
-              <option>Yes (+$25)</option>
-            </select>
-          </div>
-
-          <div class="full">
-            <label for="notes">Notes (parking, special instructions, etc.)</label>
-            <textarea id="notes" name="Notes" placeholder="Anything we should know to make this smooth?"></textarea>
-          </div>
+      <div class="grid2">
+        <div>
+          <label>Full name</label>
+          <input name="Full name" required>
         </div>
 
-        <div class="btnrow">
-          <button class="btn primary" type="submit">Submit request</button>
-          <a class="btn ghost" href="pricing.html">View pricing</a>
+        <div>
+          <label>Phone number</label>
+          <input name="Phone" required>
         </div>
 
-        <p class="small" style="margin-top:10px;">
-          Prefer to reach out directly? Email <b>ayinde@turnoveratl.com</b> or text <b>(470) 290-2837</b>.
-        </p>
-      </form>
-    </div>
+        <div class="full">
+          <label>Unit address / community</label>
+          <input name="Unit location" required>
+        </div>
 
-    <footer>
-      <div>© 2025 Turnover ATL</div>
-      <div>Email: ayinde@turnoveratl.com · Text: (470) 290-2837</div>
-    </footer>
-  </main>
+        <div>
+          <label>Unit size</label>
+          <select name="Unit size" required>
+            <option value="">Select</option>
+            <option>1BR / 1BA</option>
+            <option>2BR / 2BA</option>
+            <option>3BR / 2BA</option>
+            <option>4BR+</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Turnover date</label>
+          <input type="date" name="Turnover date" required>
+        </div>
+
+        <div>
+          <label>Check-out time</label>
+          <input name="Checkout time">
+        </div>
+
+        <div>
+          <label>Next check-in time</label>
+          <input name="Checkin time">
+        </div>
+
+        <div class="full">
+          <label>Access instructions</label>
+          <input name="Access">
+        </div>
+
+        <div class="full">
+          <label>Notes</label>
+          <textarea name="Notes"></textarea>
+        </div>
+      </div>
+
+      <div class="btnrow">
+        <button class="btn primary" type="submit">Submit request</button>
+        <a class="btn ghost" href="pricing.html">View pricing</a>
+      </div>
+    </form>
+  </div>
+
+  <footer>
+    <div>© 2025 Turnover ATL</div>
+    <div>ayinde@turnoveratl.com · (470) 290-2837</div>
+  </footer>
+</main>
+
 </body>
 </html>
