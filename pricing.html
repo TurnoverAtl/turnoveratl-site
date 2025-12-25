@@ -2,156 +2,173 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Turnover ATL – Pricing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Turnover ATL — Pricing</title>
+  <meta name="description" content="Simple, flat-rate STR turnover pricing for Atlanta and surrounding communities. Photo confirmation included." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg0:#070A12;
-      --bg1:#0B1020;
+      --bg0:#070a12;
+      --bg1:#0b1020;
       --card:rgba(255,255,255,.05);
       --stroke:rgba(255,255,255,.10);
-      --text:#EAF0FF;
+      --text:#f0f4ff;
       --muted:rgba(234,240,255,.72);
-      --accent:#2F6BFF;
+      --accent:#2F6BFF;           /* BLUE */
+      --accent2:#41C7FF;          /* LIGHT BLUE */
       --radius:18px;
       --max:1100px;
     }
 
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
       color:var(--text);
       background:
         radial-gradient(1000px 520px at 20% 0%, rgba(47,107,255,.14), transparent 60%),
         linear-gradient(180deg, var(--bg1), var(--bg0));
     }
 
-    /* IMPORTANT: links do NOT look like links unless we style them */
+    /* IMPORTANT: prevent "everything looks like a link" */
     a{color:inherit;text-decoration:none}
 
-    /* Top header (logo -> home) */
+    p{margin:0 0 12px;color:var(--muted);line-height:1.7}
+    ul{margin:12px 0 0 18px;color:rgba(234,240,255,.80);line-height:1.85}
+    li{margin:0 0 8px}
+    h1,h2,h3{margin:0 0 10px;color:var(--text)}
+    .kicker{
+      text-transform:uppercase;
+      letter-spacing:.10em;
+      font-size:12px;
+      color:rgba(234,240,255,.72);
+      margin-bottom:10px;
+    }
+
+    /* Header / nav (same vibe as the rest of your site) */
     header{
-      position:sticky; top:0; z-index:50;
+      position:sticky;top:0;z-index:50;
       backdrop-filter: blur(10px);
       background: rgba(7,12,25,.65);
       border-bottom: 1px solid rgba(255,255,255,.08);
       padding: 14px 18px;
     }
     .nav{
-      max-width:var(--max); margin:0 auto;
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      max-width:var(--max);margin:0 auto;
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
     }
     .brand{
-      display:flex; align-items:center; gap:10px;
-      font-weight:900;
-      letter-spacing:.2px;
+      display:flex;align-items:center;gap:10px;
+      font-weight:900;letter-spacing:.2px;
     }
     .brand img{width:28px;height:28px;opacity:.95}
-    .navlinks a{margin-left:14px;opacity:.85;font-size:14px}
+    .navlinks{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+    .navlinks a{opacity:.88;font-size:14px}
     .navlinks a:hover{opacity:1}
     .navlinks a.cta{
       opacity:1;font-weight:900;
       padding:10px 14px;border-radius:999px;
-      background:linear-gradient(135deg, rgba(47,107,255,.95), rgba(65,199,255,.85));
-      color:#081022;
+      background:linear-gradient(135deg, rgba(47,107,255,.98), rgba(65,199,255,.86));
+      color:#071026;
     }
 
-    main{max-width:var(--max); margin:0 auto; padding:34px 18px 80px}
-
-    .ta-header{margin-bottom:26px}
-    .ta-kicker{
-      text-transform: uppercase;
-      letter-spacing: 0.10em;
-      font-size: 12px;
-      color: rgba(234,240,255,.70);
-      margin-bottom: 10px;
+    main{max-width:var(--max);margin:0 auto;padding:32px 18px 80px}
+    .card{
+      background:var(--card);
+      border:1px solid var(--stroke);
+      border-radius:var(--radius);
+      padding:22px;
     }
-    h1{margin:0 0 10px; font-size: clamp(28px, 4.2vw, 44px); letter-spacing:-.02em}
-    p{margin:0 0 12px; color:var(--muted); line-height:1.7}
 
-    .ta-grid{
+    .grid{
       display:grid;
       grid-template-columns: 2fr 1fr;
-      gap: 18px;
-    }
-    @media (max-width: 900px){
-      .ta-grid{grid-template-columns:1fr}
-    }
-
-    .ta-card{
-      background:var(--card);
-      border: 1px solid var(--stroke);
-      border-radius: var(--radius);
-      padding: 22px;
-      box-shadow: 0 10px 40px rgba(0,0,0,.25);
+      gap:16px;
+      margin-top:16px;
+      align-items:start;
     }
 
-    .ta-card h3{margin:0 0 10px; font-size:16px}
-    ul{padding-left:18px; margin:14px 0; color:rgba(234,240,255,.82); line-height:1.85}
-    li{margin-bottom:8px}
-
-    .ta-badge{
+    .badge{
       display:inline-block;
       margin-left:10px;
       padding:6px 10px;
       border-radius:999px;
       font-size:12px;
       font-weight:900;
-      color: rgba(234,240,255,.90);
-      border: 1px solid rgba(47,107,255,.35);
-      background: rgba(47,107,255,.14);
+      color:rgba(234,240,255,.92);
+      border:1px solid rgba(47,107,255,.45);
+      background:rgba(47,107,255,.16);
+      vertical-align:middle;
     }
 
-    table{
+    .table{
       width:100%;
       border-collapse:collapse;
       margin-top:14px;
-      font-size:14px;
+      overflow:hidden;
+      border-radius:14px;
     }
-    th,td{
+    .table th,.table td{
       padding:14px 12px;
-      border-bottom: 1px solid rgba(255,255,255,.10);
+      border-bottom:1px solid rgba(255,255,255,.10);
       text-align:left;
     }
-    th{font-weight:900; color: rgba(234,240,255,.90)}
-    .price{font-weight:900}
+    .table th{font-weight:900;color:rgba(234,240,255,.92)}
+    .price{font-weight:900;color:var(--text)}
 
-    .addon{margin-bottom:14px}
-    .addon strong{display:block; font-weight:900; margin-bottom:4px}
-    .addon p{margin:0}
+    .addon{margin:0 0 16px}
+    .addon strong{display:block;font-weight:900;margin-bottom:6px;color:rgba(234,240,255,.92)}
 
-    .guarantee{
+    .note{
       margin-top:16px;
-      padding:12px;
+      padding:14px;
       border-radius:14px;
-      border: 1px solid rgba(47,107,255,.20);
-      background: rgba(47,107,255,.08);
-      color: rgba(234,240,255,.78);
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.02);
+      color:rgba(234,240,255,.75);
       font-size:14px;
+      line-height:1.6;
     }
 
-    .cta{
-      margin-top:18px;
+    .btn{
       display:inline-block;
-      padding: 14px 18px;
-      border-radius: 14px;
-      font-weight: 1000;
-      background: linear-gradient(135deg, rgba(47,107,255,.95), rgba(65,199,255,.85));
-      color:#081022;
+      margin-top:14px;
+      padding:14px 18px;
+      border-radius:14px;
+      font-weight:900;
+      background:linear-gradient(135deg, rgba(47,107,255,.98), rgba(65,199,255,.86));
+      color:#071026;
     }
 
     .fineprint{
-      margin-top:16px;
+      margin-top:14px;
       font-size:12px;
-      color: rgba(234,240,255,.55);
+      color:rgba(234,240,255,.55);
+      line-height:1.6;
+    }
+
+    footer{
+      margin-top:40px;
+      padding-top:18px;
+      border-top:1px solid rgba(255,255,255,.10);
+      display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
+      font-size:13px;
+      color:rgba(234,240,255,.62);
+    }
+
+    @media (max-width: 920px){
+      .grid{grid-template-columns:1fr}
+      .navlinks{gap:10px}
     }
   </style>
 </head>
 
 <body>
-
   <header>
     <div class="nav">
       <a class="brand" href="index.html" aria-label="Turnover ATL Home">
@@ -170,18 +187,18 @@
   </header>
 
   <main>
-    <div class="ta-header">
-      <div class="ta-kicker">Transparent Pricing</div>
-      <h1>Simple, Flat-Rate STR Turnover Pricing</h1>
-      <p>No hourly guessing. No surprise fees. Every clean follows a consistent checklist and includes photo confirmation.</p>
-    </div>
+    <div class="kicker">Transparent pricing</div>
+    <h1 style="font-size:clamp(28px,4.2vw,44px);line-height:1.1;letter-spacing:-.02em;margin-bottom:8px;">
+      Simple, Flat-Rate STR Turnover Pricing
+    </h1>
+    <p>No hourly guessing. No surprise fees. Every clean follows a consistent checklist and includes photo confirmation.</p>
 
-    <div class="ta-grid">
-
-      <div class="ta-card">
-        <h3>
+    <div class="grid">
+      <!-- MAIN -->
+      <section class="card">
+        <h3 style="font-size:18px;">
           Standard STR Turnover
-          <span class="ta-badge">Most Popular</span>
+          <span class="badge">Most Popular</span>
         </h3>
 
         <p>Everything needed to reset your unit between guests.</p>
@@ -194,7 +211,7 @@
           <li>Reliable scheduling + local support</li>
         </ul>
 
-        <table>
+        <table class="table" aria-label="Pricing table">
           <thead>
             <tr>
               <th>Unit Size</th>
@@ -202,24 +219,37 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td>1BR / 1BA</td><td class="price">$105</td></tr>
-            <tr><td>2BR / 2BA</td><td class="price">$140</td></tr>
-            <tr><td>3BR / 2BA</td><td class="price">$185</td></tr>
-            <tr><td>4BR+</td><td class="price">$230+ (custom quote)</td></tr>
+            <tr>
+              <td>1BR / 1BA</td>
+              <td class="price">$105</td>
+            </tr>
+            <tr>
+              <td>2BR / 2BA</td>
+              <td class="price">$140</td>
+            </tr>
+            <tr>
+              <td>3BR / 2BA</td>
+              <td class="price">$185</td>
+            </tr>
+            <tr>
+              <td>4BR+</td>
+              <td class="price">$230+ (custom quote)</td>
+            </tr>
           </tbody>
         </table>
 
         <p style="margin-top:12px;">
           Flat pricing avoids rushed work and surprise invoices. For unusual layouts or extra bathrooms, scope is confirmed up front.
         </p>
-      </div>
+      </section>
 
-      <div class="ta-card">
-        <h3>Optional Services</h3>
+      <!-- SIDE -->
+      <aside class="card">
+        <h3 style="font-size:18px;">Optional Services</h3>
 
         <div class="addon">
-          <strong>Same-Day / Rush Turnover — +$25</strong>
-          <p>For tight check-out / check-in windows.</p>
+          <strong>Same-Day / Rush Turnover — +$40</strong>
+          <p>For tight check-out / check-in windows or bookings confirmed within 24 hours.</p>
         </div>
 
         <div class="addon">
@@ -229,29 +259,31 @@
 
         <div class="addon">
           <strong>Restocks (By Request)</strong>
-          <p>If you want help with restocking, let us know ahead of time so scope and pricing can be approved.</p>
+          <p>If you want help with restocking, just let us know ahead of time so scope and pricing can be approved.</p>
         </div>
 
-        <h3 style="margin-top:18px;">Why we’re not the cheapest</h3>
+        <h3 style="font-size:18px;margin-top:18px;">Why we’re not the cheapest</h3>
         <p>
           Ultra-cheap services often mean rushed cleans, missed details, inconsistent crews, and no photo proof.
-          <br><br>
-          <strong>Turnover ATL is built for hosts who value consistency, communication, and peace of mind.</strong>
         </p>
+        <p><strong>Turnover ATL is built for hosts who value consistency, communication, and peace of mind.</strong></p>
 
-        <div class="guarantee">
+        <div class="note">
           <strong>Our commitment:</strong> If something is missed, notify us within 24 hours and we’ll make it right.
         </div>
 
-        <a class="cta" href="book.html">Book a Turnover</a>
+        <a class="btn" href="book.html">Book a Turnover</a>
 
         <div class="fineprint">
           Service area: Atlanta and select surrounding communities based on availability.
         </div>
-      </div>
-
+      </aside>
     </div>
-  </main>
 
+    <footer>
+      <div>© 2025 Turnover ATL</div>
+      <div>Email: ayinde@turnoveratl.com · Text: (470) 290-2837</div>
+    </footer>
+  </main>
 </body>
 </html>
