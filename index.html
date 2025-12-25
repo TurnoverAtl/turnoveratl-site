@@ -3,21 +3,266 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Turnover ATL | STR Turnover Cleaning in Atlanta</title>
-  <meta name="description" content="Reliable STR turnover cleaning across Atlanta and surrounding communities. Consistent cleaners, photo documentation, and clear communication." />
+  <title>Turnover ATL | STR Turnover Cleaning</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
+  <style>
+    :root{
+      --bg:#070b18;
+      --bg2:#0b1022;
+      --card:rgba(255,255,255,.06);
+      --stroke:rgba(255,255,255,.12);
+      --text:#eaf0ff;
+      --muted:rgba(234,240,255,.68);
+      --accent:#6aa8ff;
+      --accent2:#6ecbff;
+      --radius:18px;
+      --max:1100px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1100px 520px at 20% 0%, rgba(106,168,255,.18), transparent 60%),
+        linear-gradient(180deg,var(--bg2),var(--bg));
+    }
+
+    a{color:inherit;text-decoration:none}
+    a:hover{opacity:.96}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:blur(10px);
+      background:rgba(7,11,24,.72);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .nav{
+      max-width:var(--max);
+      margin:auto;
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:900;
+      letter-spacing:.2px;
+      white-space:nowrap;
+    }
+    .brand img{width:28px;height:28px;opacity:.95}
+
+    .navlinks{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      font-size:14px;
+      color:rgba(234,240,255,.82);
+    }
+    .navlinks a{opacity:.9}
+    .navlinks a:hover{opacity:1}
+
+    .navlinks .cta{
+      opacity:1;
+      font-weight:900;
+      padding:10px 14px;
+      border-radius:999px;
+      background:linear-gradient(135deg, rgba(106,168,255,.95), rgba(110,203,255,.85));
+      color:#081225;
+    }
+
+    main{
+      max-width:var(--max);
+      margin:auto;
+      padding:36px 18px 80px;
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:22px;
+      align-items:start;
+    }
+    @media (max-width: 920px){
+      .hero{grid-template-columns:1fr}
+    }
+
+    .kicker{
+      text-transform:uppercase;
+      letter-spacing:.10em;
+      font-size:12px;
+      color:rgba(106,168,255,.95);
+      margin-bottom:10px;
+    }
+    h1{
+      margin:0 0 12px;
+      font-size:clamp(34px,5vw,58px);
+      line-height:1.05;
+      letter-spacing:-.02em;
+    }
+    .sub{
+      margin:0 0 16px;
+      color:var(--muted);
+      line-height:1.65;
+      font-size:15.5px;
+      max-width:60ch;
+    }
+
+    .pillRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:14px 0 18px;
+    }
+    .pill{
+      font-size:12.5px;
+      padding:8px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+      color:rgba(234,240,255,.86);
+    }
+
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:14px;
+      align-items:center;
+    }
+    .btn{
+      display:inline-block;
+      padding:14px 16px;
+      border-radius:14px;
+      font-weight:900;
+      background:linear-gradient(135deg, rgba(106,168,255,.95), rgba(110,203,255,.85));
+      color:#081225;
+    }
+    .btn.secondary{
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.12);
+      color:rgba(234,240,255,.92);
+      font-weight:800;
+    }
+
+    .contactLine{
+      margin-top:12px;
+      color:rgba(234,240,255,.70);
+      font-size:13px;
+      line-height:1.6;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--stroke);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:0 30px 90px rgba(0,0,0,.35);
+    }
+
+    .card h3{
+      margin:0 0 10px;
+      font-size:16px;
+    }
+    .card p{margin:0 0 12px;color:var(--muted);line-height:1.6}
+
+    .check{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:grid;
+      gap:10px;
+    }
+    .check li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      color:rgba(234,240,255,.86);
+      line-height:1.5;
+      font-size:14px;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:50%;
+      margin-top:6px;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      flex:0 0 10px;
+    }
+
+    .section{
+      margin-top:26px;
+      display:grid;
+      gap:16px;
+    }
+
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:16px;
+    }
+    @media (max-width: 920px){
+      .grid3{grid-template-columns:1fr}
+    }
+
+    .serviceTitle{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:6px;
+    }
+    .tag{
+      font-size:12px;
+      font-weight:800;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(106,168,255,.16);
+      border:1px solid rgba(106,168,255,.32);
+      color:rgba(234,240,255,.9);
+      white-space:nowrap;
+    }
+
+    .fine{
+      margin-top:14px;
+      font-size:12px;
+      color:rgba(234,240,255,.55);
+      line-height:1.6;
+    }
+
+    footer{
+      margin-top:34px;
+      font-size:13px;
+      color:rgba(234,240,255,.6);
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap:10px;
+      padding:18px 2px 0;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+  </style>
+</head>
+
+<body>
 <header>
   <div class="nav">
-    <div class="brand">
+    <a class="brand" href="index.html">
       <img src="assets/t-logo.png" alt="Turnover ATL logo">
       <span>Turnover ATL</span>
-    </div>
+    </a>
+
     <div class="navlinks">
       <a href="services.html">Services</a>
       <a href="pricing.html">Pricing</a>
@@ -29,110 +274,81 @@
 </header>
 
 <main>
-  <!-- Block 1: Hero -->
   <section class="hero">
-    <div class="card">
-      <h1 style="margin:0 0 12px;font-size:clamp(34px,4.8vw,56px);line-height:1.05;letter-spacing:-.02em;">
-        STR turnover cleaning you can trust.
-      </h1>
-
-      <p>
-        Reliable turnovers for short-term rental hosts across Atlanta and surrounding communities, with consistent cleaners, photo confirmation, and clear communication. Built for recurring operations that value consistency and trust.
+    <!-- LEFT: HERO -->
+    <div>
+      <div class="kicker">Atlanta STR Turnovers</div>
+      <h1>STR turnover cleaning you can trust.</h1>
+      <p class="sub">
+        Reliable turnovers for short-term rental hosts across Atlanta and select surrounding communities —
+        with consistent cleaners, photo confirmation, and clear communication.
       </p>
 
-      <div class="pills">
-        <span>Consistent cleaner–unit pairing</span>
-        <span>Checklist + photo documentation</span>
-        <span>Fast responsiveness</span>
-        <span>Transparent expectations</span>
+      <div class="pillRow">
+        <div class="pill">Consistent cleaner–unit pairing</div>
+        <div class="pill">Checklist + photo documentation</div>
+        <div class="pill">Fast responsiveness</div>
+        <div class="pill">Transparent expectations</div>
       </div>
 
-      <div class="btnrow">
-        <a class="btn primary" href="book.html">Book a Turnover</a>
-        <a class="btn ghost" href="pricing.html">View pricing</a>
+      <div class="actions">
+        <a class="btn" href="book.html">Book a Turnover</a>
+        <a class="btn secondary" href="pricing.html">View Pricing</a>
       </div>
 
-      <p class="small" style="margin-top:12px;">
-        Email: ayinde@turnoveratl.com · Text: (470) 290-2837
-      </p>
+      <div class="contactLine">
+        Email: <strong>ayinde@turnoveratl.com</strong> · Text: <strong>(470) 290-2837</strong>
+      </div>
     </div>
 
+    <!-- RIGHT: WHAT WE OFFER -->
     <div class="card">
-      <h2 style="margin:0 0 10px;font-size:18px;">What we offer every time</h2>
-      <ul>
-        <li>Kitchen and bathroom reset</li>
-        <li>Floors and high-touch surfaces</li>
-        <li>Trash removal</li>
-        <li>Linen reset using host-supplied inventory</li>
-        <li>Photo confirmation emailed after completion</li>
+      <h3>What we offer every time</h3>
+      <p>Every turnover follows a consistent checklist and includes photo confirmation.</p>
+      <ul class="check">
+        <li><span class="dot"></span><span>Kitchen + bathroom reset</span></li>
+        <li><span class="dot"></span><span>Floors + high-touch surfaces</span></li>
+        <li><span class="dot"></span><span>Trash removal + tidy staging</span></li>
+        <li><span class="dot"></span><span>Linen reset using host-supplied inventory</span></li>
+        <li><span class="dot"></span><span>Photo confirmation emailed after completion</span></li>
       </ul>
-      <div class="note">
-        Submitting a booking request does not require payment.<br>
-        Payment is collected only after availability is confirmed and a cleaner is scheduled.
+      <div class="fine">
+        Submitting a booking request does not require payment. Payment is collected only after availability is confirmed and a cleaner is scheduled.
       </div>
     </div>
   </section>
 
-  <!-- Block 2: Why -->
-  <h2 class="section-title">Why hosts choose Turnover ATL</h2>
-  <div class="grid3">
-    <div class="card">
-      <h3 style="margin:0 0 6px;font-size:16px;">Consistency over randomness</h3>
-      <p class="small">We prioritize assigning the same cleaners to the same units whenever possible to reduce mistakes and improve consistency over time.</p>
-    </div>
-    <div class="card">
-      <h3 style="margin:0 0 6px;font-size:16px;">Checklist + photo documentation</h3>
-      <p class="small">You receive a completion email with photo confirmation so you can verify the unit is guest-ready before check-in.</p>
-    </div>
-    <div class="card">
-      <h3 style="margin:0 0 6px;font-size:16px;">Built for STR operations</h3>
-      <p class="small">Our process is designed for short-term rentals with clear communication, scheduling discipline, and repeatable standards.</p>
-    </div>
-  </div>
+  <!-- SERVICES SNAPSHOT -->
+  <section class="section">
+    <div class="grid3">
+      <div class="card">
+        <div class="serviceTitle">
+          <h3 style="margin:0;">Standard Turnover</h3>
+          <span class="tag">Most common</span>
+        </div>
+        <p>Full reset between guests with checklist + photo confirmation.</p>
+        <div class="fine">Best for routine turnovers and consistent quality.</div>
+      </div>
 
-  <!-- Block 3: Services -->
-  <h2 class="section-title">STR turnover services</h2>
-  <div class="grid3">
-    <div class="card">
-      <h3 style="margin:0 0 6px;font-size:16px;">Standard turnover cleaning</h3>
-      <p class="small">Guest-to-guest reset designed for STRs, including kitchens, bathrooms, floors, high-touch surfaces, trash removal, linen reset, and photo confirmation on completion.</p>
-    </div>
-    <div class="card">
-      <h3 style="margin:0 0 6px;font-size:16px;">Restock check (optional)</h3>
-      <p class="small">We note low or missing consumables during the clean so you can restock without guessing.</p>
-    </div>
-    <div class="card">
-      <h3 style="margin:0 0 6px;font-size:16px;">Deep clean add-on</h3>
-      <p class="small">Additional detail work beyond a standard turnover. Deep clean pricing is confirmed based on size and condition before work begins.</p>
-    </div>
-  </div>
+      <div class="card">
+        <div class="serviceTitle">
+          <h3 style="margin:0;">Restock Check</h3>
+          <span class="tag">By request</span>
+        </div>
+        <p>We note low or missing consumables during the clean so you can restock without guessing.</p>
+        <div class="fine">Scope confirmed ahead of time.</div>
+      </div>
 
-  <!-- Block 4: How it works -->
-  <h2 class="section-title">How it works</h2>
-  <div class="grid3">
-    <div class="card"><b>1) Submit</b><p class="small">Share unit details, preferred date, timing window, and access instructions.</p></div>
-    <div class="card"><b>2) Confirm</b><p class="small">We confirm availability and schedule a cleaner.</p></div>
-    <div class="card"><b>3) Secure & complete</b><p class="small">We send a secure Square invoice for the deposit, then complete the turnover and email photo confirmation.</p></div>
-  </div>
-
-  <!-- Block 5: Service area -->
-  <h2 class="section-title">Service area</h2>
-  <div class="card">
-    <p>We serve Atlanta and select surrounding communities, including Sandy Springs, Brookhaven, Decatur, and nearby areas based on availability.</p>
-  </div>
-
-  <!-- Block 6: Final CTA -->
-  <div class="card" style="margin-top:14px;">
-    <h2 style="margin:0 0 6px;">Ready to book your next turnover?</h2>
-    <p>Submit a request to get started. We’ll confirm availability, schedule a cleaner, and handle the rest with clear communication.</p>
-    <div class="btnrow">
-      <a class="btn primary" href="book.html">Book a Turnover</a>
-      <a class="btn ghost" href="pricing.html">View pricing</a>
+      <div class="card">
+        <div class="serviceTitle">
+          <h3 style="margin:0;">Deep Clean Add-On</h3>
+          <span class="tag">As needed</span>
+        </div>
+        <p>Extra detail work beyond a standard turnover (buildup, refreshes, special requests).</p>
+        <div class="fine">Pricing confirmed after review.</div>
+      </div>
     </div>
-    <p class="small" style="margin-top:10px;">
-      Submitting a booking request does not require payment. Payment is collected only after availability is confirmed and a cleaner is scheduled.
-    </p>
-  </div>
+  </section>
 
   <footer>
     <div>© 2025 Turnover ATL</div>
