@@ -19,7 +19,7 @@
       --muted:rgba(234,240,255,.65);
       --accent:#6aa8ff;
       --radius:16px;
-      --max:720px;
+      --max:760px;
     }
 
     *{box-sizing:border-box}
@@ -47,7 +47,6 @@
       padding:14px 18px;
       display:flex;
       align-items:center;
-      justify-content:space-between;
     }
 
     .brand{
@@ -55,14 +54,9 @@
       align-items:center;
       gap:10px;
       font-weight:800;
-      letter-spacing:.3px;
     }
 
-    .brand img{
-      width:28px;
-      height:28px;
-      opacity:.95;
-    }
+    .brand img{width:28px;height:28px}
 
     main{
       max-width:var(--max);
@@ -74,57 +68,20 @@
       background:var(--card);
       border:1px solid var(--stroke);
       border-radius:var(--radius);
-      padding:22px;
+      padding:24px;
     }
 
     h1{
       margin:0 0 10px;
       font-size:clamp(28px,6vw,40px);
-      line-height:1.05;
-      letter-spacing:-.02em;
     }
 
-    p{
-      margin:0 0 14px;
-      color:var(--muted);
-      line-height:1.6;
-    }
+    p{color:var(--muted);line-height:1.6}
 
-    .steps{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:10px;
-      margin:18px 0 24px;
-    }
+    .steps{margin:18px 0 24px}
+    .steps div{font-size:14px;color:var(--muted);margin-bottom:6px}
 
-    .step{
-      font-size:14px;
-      color:var(--muted);
-    }
-
-    form{
-      display:grid;
-      gap:14px;
-      margin-top:10px;
-    }
-
-    label{
-      font-size:13px;
-      color:var(--muted);
-    }
-
-    input, select, textarea{
-      width:100%;
-      padding:14px;
-      border-radius:12px;
-      border:1px solid var(--stroke);
-      background:rgba(255,255,255,.04);
-      color:var(--text);
-      font-family:inherit;
-      font-size:15px;
-    }
-
-    textarea{min-height:90px;resize:vertical}
+    form{display:grid;gap:16px}
 
     .row{
       display:grid;
@@ -136,30 +93,34 @@
       .row{grid-template-columns:1fr 1fr}
     }
 
+    label{font-size:13px;color:var(--muted)}
+    input,select,textarea{
+      width:100%;
+      padding:14px;
+      border-radius:12px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      font-size:15px;
+    }
+
+    textarea{min-height:90px}
+
     .btn{
-      margin-top:8px;
+      margin-top:6px;
       padding:16px;
       border-radius:14px;
       border:none;
       font-weight:800;
       font-size:16px;
-      cursor:pointer;
       background:linear-gradient(135deg,#4f8dff,#6ecbff);
       color:#081225;
+      cursor:pointer;
     }
 
-    .note{
-      margin-top:14px;
-      font-size:13px;
-      color:var(--muted);
-    }
+    .note{font-size:13px;color:var(--muted);margin-top:8px}
 
-    footer{
-      margin-top:28px;
-      font-size:13px;
-      color:var(--muted);
-      text-align:center;
-    }
+    footer{text-align:center;margin-top:28px;font-size:13px;color:var(--muted)}
   </style>
 </head>
 
@@ -168,47 +129,48 @@
 <header>
   <div class="nav">
     <a class="brand" href="index.html">
-      <img src="assets/t-logo.png" alt="Turnover ATL logo">
+      <img src="assets/t-logo.png" alt="Turnover ATL">
       <span>Turnover ATL</span>
     </a>
   </div>
 </header>
 
 <main>
-
   <div class="card">
     <h1>Book a Turnover</h1>
-    <p>
-      Submit a booking request and we’ll confirm availability, schedule a cleaner,
-      and send a secure invoice once everything is locked in.
-    </p>
+    <p>Submit a request. We confirm availability, schedule a cleaner, and send a secure invoice.</p>
 
     <div class="steps">
-      <div class="step">1) Submit unit details + preferred date</div>
-      <div class="step">2) We confirm availability</div>
-      <div class="step">3) Cleaner scheduled + photo confirmation after completion</div>
+      <div>1) Submit details</div>
+      <div>2) Availability confirmed</div>
+      <div>3) Cleaner scheduled + photo confirmation</div>
     </div>
 
-    <form>
+    <form action="https://formsubmit.co/amizzle1@hotmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_subject" value="New Turnover Request — Turnover ATL">
+
       <div class="row">
         <div>
           <label>Name</label>
-          <input placeholder="Your name" required>
+          <input name="Name" required>
         </div>
         <div>
           <label>Email</label>
-          <input type="email" placeholder="you@email.com" required>
+          <input type="email" name="Email" required>
         </div>
       </div>
 
       <div class="row">
         <div>
           <label>Phone</label>
-          <input placeholder="Best number to text">
+          <input name="Phone">
         </div>
         <div>
           <label>Unit Size</label>
-          <select>
+          <select name="Unit Size" required>
+            <option value="">Select</option>
             <option>1BR / 1BA</option>
             <option>2BR / 2BA</option>
             <option>3BR / 2BA</option>
@@ -219,35 +181,60 @@
 
       <div class="row">
         <div>
-          <label>Preferred Date</label>
-          <input type="date">
+          <label>Turnover Date</label>
+          <input type="date" name="Turnover Date" required>
         </div>
         <div>
-          <label>Time Window</label>
-          <input placeholder="Example: 11am–3pm">
+          <label>Check-out Time</label>
+          <input name="Checkout Time" placeholder="e.g. 11:00 AM">
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label>Next Check-in Time</label>
+          <input name="Next Check-in Time" placeholder="e.g. 4:00 PM">
+        </div>
+        <div>
+          <label>Laundry On-Site</label>
+          <select name="Laundry">
+            <option>Yes</option>
+            <option>No</option>
+            <option>Not sure</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label>Same-Day / Rush</label>
+          <select name="Rush">
+            <option>No</option>
+            <option>Yes (+$40)</option>
+          </select>
+        </div>
+        <div>
+          <label>Access Type</label>
+          <input name="Access" placeholder="Smart lock / lockbox / concierge">
         </div>
       </div>
 
       <div>
-        <label>Address + Access Notes</label>
-        <textarea placeholder="Unit address, parking, lockbox, smart lock, etc."></textarea>
+        <label>Address + Notes</label>
+        <textarea name="Notes" placeholder="Address, parking, codes, special instructions"></textarea>
       </div>
 
-      <button class="btn" type="submit">
-        Submit Booking Request
-      </button>
+      <button class="btn" type="submit">Submit Booking Request</button>
 
       <div class="note">
-        No payment required to submit. Payment is collected only after availability
-        is confirmed and a cleaner is scheduled.
+        No payment required to submit. Deposit is collected only after availability is confirmed.
       </div>
     </form>
   </div>
 
   <footer>
-    Questions? Text (470) 290-2837 · ayinde@turnoveratl.com
+    Questions? Text (470) 290-2837 · amizzle1@hotmail.com
   </footer>
-
 </main>
 
 </body>
