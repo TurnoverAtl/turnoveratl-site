@@ -4,12 +4,147 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Apply to Clean | Turnover ATL</title>
-  <meta name="description" content="Apply to clean with Turnover ATL." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    :root{
+      --bg:#070b18;
+      --bg2:#0b1022;
+      --card:rgba(255,255,255,.06);
+      --stroke:rgba(255,255,255,.12);
+      --text:#eaf0ff;
+      --muted:rgba(234,240,255,.65);
+      --accent:#6aa8ff;
+      --radius:16px;
+      --max:760px;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:linear-gradient(180deg,var(--bg2),var(--bg));
+      color:var(--text);
+    }
+
+    a{color:inherit;text-decoration:none}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:blur(10px);
+      background:rgba(7,11,24,.7);
+      border-bottom:1px solid var(--stroke);
+    }
+
+    .nav{
+      max-width:1100px;
+      margin:auto;
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:900;
+    }
+
+    .brand img{width:28px;height:28px}
+
+    main{
+      max-width:var(--max);
+      margin:auto;
+      padding:34px 18px 80px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--stroke);
+      border-radius:var(--radius);
+      padding:24px;
+    }
+
+    h1{
+      margin:0 0 12px;
+      font-size:clamp(28px,5.5vw,40px);
+      line-height:1.05;
+    }
+
+    p{
+      margin:0 0 14px;
+      color:var(--muted);
+      line-height:1.6;
+    }
+
+    form{
+      display:grid;
+      gap:14px;
+      margin-top:18px;
+    }
+
+    label{
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    input, select, textarea{
+      width:100%;
+      padding:14px;
+      border-radius:12px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      font-family:inherit;
+      font-size:15px;
+    }
+
+    textarea{min-height:90px;resize:vertical}
+
+    .row{
+      display:grid;
+      gap:14px;
+    }
+
+    @media(min-width:640px){
+      .row{grid-template-columns:1fr 1fr}
+    }
+
+    .btn{
+      margin-top:8px;
+      padding:16px;
+      border-radius:14px;
+      border:none;
+      font-weight:900;
+      font-size:16px;
+      cursor:pointer;
+      background:linear-gradient(135deg,#4f8dff,#6ecbff);
+      color:#081225;
+    }
+
+    .note{
+      margin-top:14px;
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    footer{
+      margin-top:28px;
+      font-size:13px;
+      color:var(--muted);
+      text-align:center;
+    }
+  </style>
 </head>
+
 <body>
 
 <header>
@@ -18,96 +153,98 @@
       <img src="assets/t-logo.png" alt="Turnover ATL logo">
       <span>Turnover ATL</span>
     </a>
-    <div class="navlinks">
-      <a href="services.html">Services</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="about.html">About</a>
-      <a href="apply.html">Apply to Clean</a>
-      <a class="cta" href="book.html">Book a Turnover</a>
-    </div>
   </div>
 </header>
 
 <main>
-  <h1 style="margin:10px 0 6px;font-size:clamp(28px,4.2vw,42px);">Apply to clean with Turnover ATL</h1>
-  <p>We work with reliable cleaners for short-term rental turnovers across Atlanta and surrounding communities.</p>
-
   <div class="card">
-    <p>Submitting an application does not guarantee work. This helps us understand your experience and availability.</p>
+    <h1>Apply to Clean</h1>
+    <p>
+      Turnover ATL partners with reliable, detail-oriented cleaners for recurring short-term rental turnovers.
+      If you value consistency, communication, and fair pay, apply below.
+    </p>
 
     <form action="https://formsubmit.co/ayinde@turnoveratl.com" method="POST">
-      <input type="hidden" name="_subject" value="Cleaner Application — Turnover ATL">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_subject" value="New Cleaner Application — Turnover ATL">
 
-      <div class="grid2">
+      <div class="row">
         <div>
-          <label>Full name</label>
-          <input name="Full name" required />
+          <label>Full Name</label>
+          <input name="Name" required>
         </div>
         <div>
-          <label>Phone number</label>
-          <input name="Phone" required />
+          <label>Email</label>
+          <input type="email" name="Email" required>
         </div>
+      </div>
 
-        <div class="full">
-          <label>Communities you can cover (ex: Atlanta, Sandy Springs, Decatur)</label>
-          <input name="Service area" required />
+      <div class="row">
+        <div>
+          <label>Phone Number</label>
+          <input name="Phone" required>
         </div>
+        <div>
+          <label>City / Area You Can Serve</label>
+          <input name="Service Area" placeholder="Atlanta, Decatur, Sandy Springs, etc.">
+        </div>
+      </div>
 
+      <div class="row">
+        <div>
+          <label>Do you have STR / Airbnb cleaning experience?</label>
+          <select name="STR Experience" required>
+            <option value="">Select</option>
+            <option>Yes — 1+ year</option>
+            <option>Some experience</option>
+            <option>No, but experienced cleaner</option>
+          </select>
+        </div>
         <div>
           <label>Transportation</label>
           <select name="Transportation" required>
             <option value="">Select</option>
             <option>Reliable car</option>
-            <option>Limited transportation</option>
+            <option>Public transit only</option>
           </select>
-        </div>
-
-        <div>
-          <label>Availability</label>
-          <input name="Availability" placeholder="Weekdays/weekends + times" required />
-        </div>
-
-        <div class="full">
-          <label>Experience</label>
-          <select name="Experience" required>
-            <option value="">Select</option>
-            <option>STR / turnover experience</option>
-            <option>Residential cleaning only</option>
-            <option>No professional experience</option>
-          </select>
-        </div>
-
-        <div class="full">
-          <label>Background check</label>
-          <select name="Background check" required>
-            <option value="">Select</option>
-            <option>Yes — I can pass a background check</option>
-            <option>No / unsure</option>
-          </select>
-        </div>
-
-        <div class="full">
-          <label>Notes (supplies, prior work, anything relevant)</label>
-          <textarea name="Notes"></textarea>
         </div>
       </div>
 
-      <p class="small">
-        By submitting this application, you confirm the information provided is accurate. Background checks may be requested prior to assignment.
-      </p>
+      <div class="row">
+        <div>
+          <label>Availability</label>
+          <select name="Availability">
+            <option>Weekdays</option>
+            <option>Weekends</option>
+            <option>Both</option>
+          </select>
+        </div>
+        <div>
+          <label>Preferred Work Type</label>
+          <select name="Work Preference">
+            <option>Recurring units</option>
+            <option>On-demand jobs</option>
+            <option>Both</option>
+          </select>
+        </div>
+      </div>
 
-      <div class="btnrow" style="margin-top:12px;">
-        <button class="btn primary" type="submit" style="border:none;cursor:pointer;">Submit application</button>
-        <a class="btn ghost" href="index.html">Back to home</a>
+      <div>
+        <label>Tell us about your cleaning experience</label>
+        <textarea name="Experience Notes" placeholder="Brief background, strengths, anything we should know"></textarea>
+      </div>
+
+      <button class="btn" type="submit">Submit Application</button>
+
+      <div class="note">
+        Applications are reviewed manually. Qualified applicants will be contacted by text or email.
       </div>
     </form>
   </div>
 
   <footer>
-    <div>© 2025 Turnover ATL</div>
-    <div>Email: Ayinde@turnoveratl.com · Text: (470) 290-2837</div>
+    © 2025 Turnover ATL · ayinde@turnoveratl.com
   </footer>
 </main>
 
