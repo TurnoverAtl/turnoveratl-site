@@ -11,142 +11,64 @@
 
   <style>
     :root{
-      --bg:#070b18;
-      --bg2:#0b1022;
+      --bg:#070b18; --bg2:#0b1022;
       --card:rgba(255,255,255,.06);
       --stroke:rgba(255,255,255,.12);
-      --text:#eaf0ff;
-      --muted:rgba(234,240,255,.65);
-      --accent:#6aa8ff;
-      --radius:16px;
-      --max:760px;
+      --text:#eaf0ff; --muted:rgba(234,240,255,.65);
+      --accent:#6aa8ff; --radius:16px; --max:760px;
     }
-
     *{box-sizing:border-box}
-
     body{
       margin:0;
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       background:linear-gradient(180deg,var(--bg2),var(--bg));
       color:var(--text);
     }
-
     a{color:inherit;text-decoration:none}
-
     header{
-      position:sticky;
-      top:0;
-      z-index:50;
+      position:sticky;top:0;z-index:50;
       backdrop-filter:blur(10px);
       background:rgba(7,11,24,.7);
       border-bottom:1px solid var(--stroke);
     }
-
     .nav{
-      max-width:1100px;
-      margin:auto;
-      padding:14px 18px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
+      max-width:1100px;margin:auto;padding:14px 18px;
+      display:flex;align-items:center;justify-content:space-between;
     }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-weight:900;
-    }
-
+    .brand{display:flex;align-items:center;gap:10px;font-weight:900}
     .brand img{width:28px;height:28px}
-
-    main{
-      max-width:var(--max);
-      margin:auto;
-      padding:34px 18px 80px;
-    }
-
+    main{max-width:var(--max);margin:auto;padding:34px 18px 80px}
     .card{
       background:var(--card);
       border:1px solid var(--stroke);
       border-radius:var(--radius);
       padding:24px;
     }
-
-    h1{
-      margin:0 0 12px;
-      font-size:clamp(28px,5.5vw,40px);
-      line-height:1.05;
-    }
-
-    p{
-      margin:0 0 14px;
-      color:var(--muted);
-      line-height:1.6;
-    }
-
-    form{
-      display:grid;
-      gap:14px;
-      margin-top:18px;
-    }
-
-    label{
-      font-size:13px;
-      color:var(--muted);
-    }
-
-    input, select, textarea{
-      width:100%;
-      padding:14px;
-      border-radius:12px;
+    h1{margin:0 0 12px;font-size:clamp(28px,5.5vw,40px);line-height:1.05}
+    p{margin:0 0 14px;color:var(--muted);line-height:1.6}
+    form{display:grid;gap:14px;margin-top:18px}
+    label{font-size:13px;color:var(--muted)}
+    input,select,textarea{
+      width:100%;padding:14px;border-radius:12px;
       border:1px solid var(--stroke);
       background:rgba(255,255,255,.04);
-      color:var(--text);
-      font-family:inherit;
-      font-size:15px;
+      color:var(--text);font-family:inherit;font-size:15px;
     }
-
     textarea{min-height:90px;resize:vertical}
-
-    .row{
-      display:grid;
-      gap:14px;
-    }
-
-    @media(min-width:640px){
-      .row{grid-template-columns:1fr 1fr}
-    }
-
+    .row{display:grid;gap:14px}
+    @media(min-width:640px){.row{grid-template-columns:1fr 1fr}}
     .btn{
-      margin-top:8px;
-      padding:16px;
-      border-radius:14px;
-      border:none;
-      font-weight:900;
-      font-size:16px;
-      cursor:pointer;
+      margin-top:8px;padding:16px;border-radius:14px;border:none;
+      font-weight:900;font-size:16px;cursor:pointer;
       background:linear-gradient(135deg,#4f8dff,#6ecbff);
       color:#081225;
     }
-
-    .note{
-      margin-top:14px;
-      font-size:13px;
-      color:var(--muted);
-    }
-
-    footer{
-      margin-top:28px;
-      font-size:13px;
-      color:var(--muted);
-      text-align:center;
-    }
+    .note{margin-top:14px;font-size:13px;color:var(--muted)}
+    footer{margin-top:28px;font-size:13px;color:var(--muted);text-align:center}
   </style>
 </head>
 
 <body>
-
 <header>
   <div class="nav">
     <a class="brand" href="index.html">
@@ -165,6 +87,7 @@
     </p>
 
     <form action="https://formsubmit.co/ayinde@turnoveratl.com" method="POST">
+      <!-- FormSubmit settings -->
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_subject" value="New Cleaner Application — Turnover ATL">
@@ -172,18 +95,19 @@
       <div class="row">
         <div>
           <label>Full Name</label>
-          <input name="Name" required>
+          <input name="Name" required autocomplete="name">
         </div>
         <div>
           <label>Email</label>
-          <input type="email" name="Email" required>
+          <!-- THIS is the cleaner email, and it’s used as reply-to -->
+          <input type="email" name="_replyto" required autocomplete="email" placeholder="cleaner@email.com">
         </div>
       </div>
 
       <div class="row">
         <div>
           <label>Phone Number</label>
-          <input name="Phone" required>
+          <input name="Phone" required autocomplete="tel">
         </div>
         <div>
           <label>City / Area You Can Serve</label>
@@ -243,10 +167,7 @@
     </form>
   </div>
 
-  <footer>
-    © 2025 Turnover ATL · ayinde@turnoveratl.com
-  </footer>
+  <footer>© 2025 Turnover ATL · ayinde@turnoveratl.com</footer>
 </main>
-
 </body>
 </html>
