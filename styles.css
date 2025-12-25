@@ -12,12 +12,10 @@
   --max:720px;
 }
 
-/* RESET */
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 a{text-decoration:none;color:inherit}
 
-/* BODY */
 body{
   font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   background:
@@ -26,7 +24,6 @@ body{
   color:var(--text);
 }
 
-/* HEADER */
 header{
   position:sticky;
   top:0;
@@ -52,19 +49,14 @@ header{
   font-weight:900;
 }
 
-.brand img{
-  width:28px;
-  height:28px;
-}
+.brand img{width:28px;height:28px}
 
-/* MAIN */
 main{
   max-width:var(--max);
   margin:auto;
   padding:32px 18px 80px;
 }
 
-/* CARD */
 .card{
   background:var(--card);
   border:1px solid var(--stroke);
@@ -73,7 +65,6 @@ main{
   box-shadow:0 30px 90px rgba(0,0,0,.35);
 }
 
-/* HEADINGS */
 h1{
   margin:0 0 10px;
   font-size:clamp(28px,6vw,40px);
@@ -86,34 +77,20 @@ p{
   line-height:1.6;
 }
 
-/* STEPS */
 .steps{
   display:grid;
   gap:8px;
   margin:18px 0 22px;
 }
 
-.step{
-  font-size:14px;
-  color:var(--muted);
-}
+.step{font-size:14px;color:var(--muted)}
 
-/* FORM */
-form{
-  display:grid;
-  gap:14px;
-}
+form{display:grid;gap:14px}
 
-/* LABELS */
-label{
-  font-size:13px;
-  color:var(--muted);
-}
+label{font-size:13px;color:var(--muted)}
 
-/* INPUTS */
-input,
-select,
-textarea{
+/* Inputs */
+input, select, textarea{
   width:100%;
   padding:14px;
   border-radius:12px;
@@ -122,37 +99,39 @@ textarea{
   color:var(--text);
   font-family:inherit;
   font-size:15px;
+  outline:none;
 }
 
-/* FIX DROPDOWNS */
+/* Force dropdown + options to be dark (fixes white dropdown list) */
 select{
   appearance:none;
-  background:
-    linear считаlinear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  background-color:#0b1022; /* IMPORTANT */
+  color:var(--text);
 }
 
 select option{
-  background:#0b1022;
-  color:#eaf0ff;
+  background:#0b1022 !important;
+  color:var(--text) !important;
 }
 
-/* TEXTAREA */
-textarea{
-  min-height:90px;
-  resize:vertical;
+/* Some browsers use optgroup too */
+select optgroup{
+  background:#0b1022 !important;
+  color:var(--text) !important;
 }
 
-/* GRID ROWS */
+textarea{min-height:90px;resize:vertical}
+
 .row{
   display:grid;
   gap:14px;
 }
-
 @media(min-width:640px){
   .row{grid-template-columns:1fr 1fr}
 }
 
-/* BUTTON */
 .btn{
   margin-top:8px;
   padding:16px;
@@ -164,20 +143,14 @@ textarea{
   background:linear-gradient(135deg,var(--accent),var(--accent2));
   color:#081225;
 }
+.btn:hover{filter:brightness(1.05)}
 
-/* BUTTON HOVER */
-.btn:hover{
-  filter:brightness(1.05);
-}
-
-/* NOTES */
 .note{
   margin-top:14px;
   font-size:13px;
   color:var(--muted);
 }
 
-/* FOOTER */
 footer{
   margin-top:28px;
   font-size:13px;
