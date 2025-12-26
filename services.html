@@ -4,12 +4,156 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Services | Turnover ATL</title>
-  <meta name="description" content="STR turnover services across Atlanta and surrounding communities." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    :root{
+      --bg:#070b18;
+      --bg2:#0b1022;
+      --card:rgba(255,255,255,.06);
+      --stroke:rgba(255,255,255,.12);
+      --text:#eaf0ff;
+      --muted:rgba(234,240,255,.65);
+      --accent:#6aa8ff;
+      --accent2:#6ecbff;
+      --radius:16px;
+      --max:1100px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1000px 520px at 20% 0%, rgba(106,168,255,.18), transparent 60%),
+        linear-gradient(180deg,var(--bg2),var(--bg));
+    }
+
+    a{color:inherit;text-decoration:none}
+
+    /* HEADER */
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:blur(10px);
+      background:rgba(7,11,24,.75);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    .nav{
+      max-width:var(--max);
+      margin:auto;
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:900;
+      white-space:nowrap;
+    }
+
+    .brand img{width:28px;height:28px}
+
+    .navlinks{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      font-size:14px;
+      color:rgba(234,240,255,.85);
+      flex-wrap:wrap;
+    }
+
+    .navlinks a{opacity:.9}
+    .navlinks a:hover{opacity:1}
+
+    .cta{
+      padding:10px 14px;
+      border-radius:999px;
+      font-weight:900;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      color:#081225;
+    }
+
+    /* MAIN */
+    main{
+      max-width:var(--max);
+      margin:auto;
+      padding:40px 18px 80px;
+    }
+
+    .kicker{
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-size:12px;
+      color:var(--accent);
+      margin-bottom:10px;
+    }
+
+    h1{
+      margin:0 0 14px;
+      font-size:clamp(30px,4.5vw,52px);
+      line-height:1.05;
+    }
+
+    p{
+      margin:0 0 18px;
+      color:var(--muted);
+      line-height:1.6;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:22px;
+      margin-top:30px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--stroke);
+      border-radius:18px;
+      padding:22px;
+      box-shadow:0 30px 90px rgba(0,0,0,.35);
+    }
+
+    h3{
+      margin:0 0 8px;
+      font-size:18px;
+    }
+
+    ul{
+      padding-left:18px;
+      margin:12px 0 0;
+    }
+
+    li{
+      margin-bottom:10px;
+      color:rgba(234,240,255,.85);
+    }
+
+    footer{
+      margin-top:40px;
+      font-size:13px;
+      color:rgba(234,240,255,.6);
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+  </style>
 </head>
+
 <body>
 
 <header>
@@ -18,6 +162,7 @@
       <img src="assets/t-logo.png" alt="Turnover ATL logo">
       <span>Turnover ATL</span>
     </a>
+
     <div class="navlinks">
       <a href="services.html">Services</a>
       <a href="pricing.html">Pricing</a>
@@ -29,41 +174,61 @@
 </header>
 
 <main>
-  <h1 style="margin:10px 0 6px;font-size:clamp(28px,4.2vw,42px);">Services</h1>
-  <p>STR turnover services designed for consistent, repeatable resets across Atlanta and surrounding communities.</p>
+  <div class="kicker">Services</div>
+  <h1>STR turnover services designed for consistency</h1>
+  <p>
+    Reliable, repeatable guest-to-guest resets for short-term rental hosts across
+    Atlanta and surrounding communities.
+  </p>
 
-  <h2 class="section-title">STR turnover services</h2>
-  <div class="grid3">
+  <div class="grid">
     <div class="card">
-      <h3 style="margin:0 0 6px;font-size:16px;">Standard turnover cleaning</h3>
-      <p class="small">Guest-to-guest reset for STRs, including kitchens, bathrooms, floors, high-touch surfaces, trash removal, linen reset using host-supplied inventory, and photo confirmation emailed after completion.</p>
+      <h3>Standard Turnover Cleaning</h3>
+      <p>
+        Complete guest-to-guest reset designed specifically for STRs.
+      </p>
+      <ul>
+        <li>Kitchen & bathroom reset</li>
+        <li>Floors + high-touch surfaces</li>
+        <li>Trash removal</li>
+        <li>Linen reset (host-supplied)</li>
+        <li><strong>Photo confirmation after completion</strong></li>
+      </ul>
     </div>
+
     <div class="card">
-      <h3 style="margin:0 0 6px;font-size:16px;">Restock check (optional)</h3>
-      <p class="small">We note low or missing consumables during the clean so you can restock without guessing.</p>
+      <h3>Same-Day / Rush Turnovers</h3>
+      <p>
+        Tight check-out / check-in windows handled with priority scheduling.
+      </p>
+      <ul>
+        <li>Available based on cleaner availability</li>
+        <li>+$40 rush fee</li>
+      </ul>
     </div>
+
     <div class="card">
-      <h3 style="margin:0 0 6px;font-size:16px;">Deep clean add-on</h3>
-      <p class="small">Additional detail work beyond a standard turnover. Deep clean pricing is determined based on size and condition and will be confirmed before work begins.</p>
+      <h3>Restock Check (Optional)</h3>
+      <p>
+        We note low or missing consumables during the clean so you can restock
+        without guessing.
+      </p>
+      <ul>
+        <li>Paper goods</li>
+        <li>Soaps & essentials</li>
+        <li>No surprise restocking charges</li>
+      </ul>
     </div>
-  </div>
 
-  <h2 class="section-title">Laundry & linens</h2>
-  <div class="card">
-    <p><b>Linens are reset using host-supplied inventory.</b> Laundry is completed on-site when available and within the scheduled clean time. Additional loads may require additional time.</p>
-  </div>
-
-  <h2 class="section-title">Service area</h2>
-  <div class="card">
-    <p>We serve Atlanta and select surrounding communities, including Sandy Springs, Brookhaven, Decatur, and nearby areas based on availability.</p>
-  </div>
-
-  <div class="card" style="margin-top:14px;">
-    <h2 style="margin:0 0 6px;">Ready to request a turnover?</h2>
-    <p>Submit a request and we’ll confirm availability and next steps.</p>
-    <div class="btnrow">
-      <a class="btn primary" href="book.html">Book a Turnover</a>
-      <a class="btn ghost" href="pricing.html">View pricing</a>
+    <div class="card">
+      <h3>Deep Clean Add-Ons</h3>
+      <p>
+        Additional detail work beyond a standard turnover.
+      </p>
+      <ul>
+        <li>Priced after review</li>
+        <li>Scope confirmed before work begins</li>
+      </ul>
     </div>
   </div>
 
