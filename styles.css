@@ -49,7 +49,13 @@ header{
   font-weight:900;
 }
 
-.brand img{width:40px;height:40px}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  font-weight:900;
+  font-size:20px;
+}
 
 main{
   max-width:var(--max);
