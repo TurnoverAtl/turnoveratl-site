@@ -1,4 +1,7 @@
 <style>
+/* =====================
+   THEME VARIABLES
+   ===================== */
 :root{
   --bg:#070b18;
   --bg2:#0b1022;
@@ -12,10 +15,16 @@
   --max:720px;
 }
 
+/* =====================
+   GLOBAL RESET
+   ===================== */
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 a{text-decoration:none;color:inherit}
 
+/* =====================
+   BODY / BACKGROUND
+   ===================== */
 body{
   font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   background:
@@ -24,6 +33,9 @@ body{
   color:var(--text);
 }
 
+/* =====================
+   HEADER / NAV
+   ===================== */
 header{
   position:sticky;
   top:0;
@@ -54,6 +66,9 @@ header{
   height:44px;
 }
 
+/* =====================
+   MAIN CONTENT
+   ===================== */
 main{
   max-width:var(--max);
   margin:auto;
@@ -68,6 +83,9 @@ main{
   box-shadow:0 30px 90px rgba(0,0,0,.35);
 }
 
+/* =====================
+   TYPOGRAPHY
+   ===================== */
 h1{
   margin:0 0 10px;
   font-size:clamp(28px,6vw,40px);
@@ -80,61 +98,73 @@ p{
   line-height:1.6;
 }
 
-.steps{
-  display:grid;
-  gap:8px;
-  margin:18px 0 22px;
+label{
+  font-size:13px;
+  color:var(--muted);
 }
 
-.step{font-size:14px;color:var(--muted)}
-
+/* =====================
+   FORM ELEMENTS
+   ===================== */
 form{display:grid;gap:14px}
 
-label{font-size:13px;color:var(--muted)}
-
-/* Inputs */
-input, select, textarea{
+/* 
+IMPORTANT:
+- We DO NOT force dark dropdown lists
+- Browsers control the opened dropdown
+- We make it readable instead of fighting the OS
+*/
+input,
+select,
+textarea{
   width:100%;
   padding:14px;
   border-radius:12px;
   border:1px solid var(--stroke);
   background:rgba(255,255,255,.04);
-  color:var(--text);
+  color:var(--text);            /* visible text when closed */
   font-family:inherit;
   font-size:15px;
   outline:none;
 }
 
-/* Force dropdown + options to be dark (fixes white dropdown list) */
-select{
-  appearance:none;
-  -webkit-appearance:none;
-  -moz-appearance:none;
-  background-color:#0b1022; /* IMPORTANT */
-  color:var(--text);
-}
-
+/* 
+Dropdown options (the opened list):
+- White background
+- Dark text
+- ALWAYS readable on Windows / Mac / Mobile
+*/
 select option{
-  background:#0b1022 !important;
-  color:var(--text) !important;
+  background:#ffffff;
+  color:#0b1022;
 }
 
-/* Some browsers use optgroup too */
+/* Some browsers use optgroup */
 select optgroup{
-  background:#0b1022 !important;
-  color:var(--text) !important;
+  background:#ffffff;
+  color:#0b1022;
 }
 
-textarea{min-height:90px;resize:vertical}
+textarea{
+  min-height:90px;
+  resize:vertical;
+}
 
+/* =====================
+   GRID ROWS
+   ===================== */
 .row{
   display:grid;
   gap:14px;
 }
+
 @media(min-width:640px){
   .row{grid-template-columns:1fr 1fr}
 }
 
+/* =====================
+   BUTTONS
+   ===================== */
 .btn{
   margin-top:8px;
   padding:16px;
@@ -146,8 +176,14 @@ textarea{min-height:90px;resize:vertical}
   background:linear-gradient(135deg,var(--accent),var(--accent2));
   color:#081225;
 }
-.btn:hover{filter:brightness(1.05)}
 
+.btn:hover{
+  filter:brightness(1.05);
+}
+
+/* =====================
+   FOOTER / NOTES
+   ===================== */
 .note{
   margin-top:14px;
   font-size:13px;
