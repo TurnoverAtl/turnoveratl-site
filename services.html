@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Services | Turnover ATL</title>
+  <meta name="description" content="Turnover ATL specializes in short-term rental turnover cleaning in Atlanta with checklist-driven standards and photo confirmation. Residential and move-out cleaning available on a limited basis." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,8 +25,8 @@
     }
 
     *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
     body{
-      margin:0;
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--text);
       background:
@@ -78,12 +79,19 @@
     .navlinks a:hover{opacity:1}
 
     .cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
       padding:10px 14px;
       border-radius:999px;
       font-weight:900;
       background:linear-gradient(135deg,var(--accent),var(--accent2));
       color:#081225;
+      border:0;
+      cursor:pointer;
+      white-space:nowrap;
     }
+    .cta:hover{filter:brightness(1.03)}
 
     /* MAIN */
     main{
@@ -106,6 +114,12 @@
       line-height:1.05;
     }
 
+    h2{
+      margin:0 0 10px;
+      font-size:22px;
+      letter-spacing:-0.01em;
+    }
+
     p{
       margin:0 0 18px;
       color:var(--muted);
@@ -116,7 +130,7 @@
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
       gap:22px;
-      margin-top:30px;
+      margin-top:22px;
     }
 
     .card{
@@ -142,8 +156,20 @@
       color:rgba(234,240,255,.85);
     }
 
+    .divider{
+      margin:40px 0;
+      border:0;
+      border-top:1px solid rgba(255,255,255,.10);
+    }
+
+    .secondary .card{opacity:.95}
+
+    .card .actions{
+      margin-top:16px;
+    }
+
     footer{
-      margin-top:40px;
+      margin-top:46px;
       font-size:13px;
       color:rgba(234,240,255,.6);
       display:flex;
@@ -175,18 +201,29 @@
 
 <main>
   <div class="kicker">Services</div>
-  <h1>STR turnover services designed for consistency</h1>
+
+  <h1>Cleaning services built around reliable turnovers</h1>
+
   <p>
-    Reliable, repeatable guest-to-guest resets for short-term rental hosts across
-    Atlanta and surrounding communities.
+    Turnover ATL specializes in <strong>short-term rental turnover cleaning</strong> for hosts who need consistency,
+    speed, and trust between every guest stay. Our systems are checklist-driven with clear communication and
+    <strong>photo confirmation</strong> after every clean.
+  </p>
+
+  <p>
+    In addition to STR turnovers, we also take on a limited number of <strong>residential</strong> and
+    <strong>move-out / move-in</strong> cleanings that align with the same standards.
+  </p>
+
+  <h2 style="margin-top:26px;">Short-Term Rental Turnover Cleaning (Our Specialty)</h2>
+  <p style="margin-bottom:0;">
+    Built for Airbnb, VRBO, and STR hosts in Atlanta. Every turnover follows a structured checklist for repeatable results.
   </p>
 
   <div class="grid">
     <div class="card">
       <h3>Standard Turnover Cleaning</h3>
-      <p>
-        Complete guest-to-guest reset designed specifically for STRs.
-      </p>
+      <p>Complete guest-to-guest reset designed specifically for STRs.</p>
       <ul>
         <li>Kitchen & bathroom reset</li>
         <li>Floors + high-touch surfaces</li>
@@ -194,47 +231,95 @@
         <li>Linen reset (host-supplied)</li>
         <li><strong>Photo confirmation after completion</strong></li>
       </ul>
+      <div class="actions">
+        <a class="cta" href="book.html">Book a Turnover</a>
+      </div>
     </div>
 
     <div class="card">
-      <h3>Same-Day / Rush Turnovers</h3>
-      <p>
-        Tight check-out / check-in windows handled with priority scheduling.
-      </p>
+      <h3>Same-Day Turnovers</h3>
+      <p>Tight check-out / check-in windows handled with priority scheduling.</p>
       <ul>
         <li>Available based on cleaner availability</li>
-        <li>+$40 rush fee</li>
+        <li>+$25 same-day surcharge</li>
       </ul>
+      <div class="actions">
+        <a class="cta" href="book.html">Check Availability</a>
+      </div>
     </div>
 
     <div class="card">
       <h3>Restock Check (Optional)</h3>
-      <p>
-        We note low or missing consumables during the clean so you can restock
-        without guessing.
-      </p>
+      <p>We note low or missing consumables during the clean so you can restock without guessing.</p>
       <ul>
         <li>Paper goods</li>
         <li>Soaps & essentials</li>
         <li>No surprise restocking charges</li>
       </ul>
+      <div class="actions">
+        <a class="cta" href="book.html">Book + Add Notes</a>
+      </div>
     </div>
 
     <div class="card">
       <h3>Deep Clean Add-Ons</h3>
-      <p>
-        Additional detail work beyond a standard turnover.
-      </p>
+      <p>Additional detail work beyond a standard turnover.</p>
       <ul>
         <li>Priced after review</li>
         <li>Scope confirmed before work begins</li>
       </ul>
+      <div class="actions">
+        <a class="cta" href="book.html">Request Add-On</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <div class="secondary">
+    <h2>Select Non-STR Cleaning Services</h2>
+    <p style="margin-bottom:0;">
+      While short-term rental turnovers are our core focus, we also provide the following services on a limited basis.
+      These are typically quoted after a quick review of size, condition, and scope.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Residential Cleaning</h3>
+        <p>
+          One-time or occasional cleanings for apartments, condos, and homes — handled with the same
+          checklist-driven process we use for turnovers.
+        </p>
+        <ul>
+          <li>Ideal for one-time refreshes and detail-focused cleanups</li>
+          <li>Quoted after scope review</li>
+          <li>Clear communication + photo confirmation available</li>
+        </ul>
+        <div class="actions">
+          <a class="cta" href="book.html">Request a Quote</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Move-Out / Move-In Cleaning</h3>
+        <p>
+          Thorough reset cleanings for tenants, landlords, and property managers preparing a unit for its next occupant.
+        </p>
+        <ul>
+          <li>Move-out resets and move-in prep</li>
+          <li>Scope confirmed before work begins</li>
+          <li>Quoted after review</li>
+        </ul>
+        <div class="actions">
+          <a class="cta" href="book.html">Request Move-Out Clean</a>
+        </div>
+      </div>
     </div>
   </div>
 
   <footer>
     <div>© 2025 Turnover ATL</div>
-    <div>Email: Ayinde@turnoveratl.com · Text: (470) 290-2837</div>
+    <div>Email: ayinde@turnoveratl.com · Text: (470) 290-2837</div>
   </footer>
 </main>
 
