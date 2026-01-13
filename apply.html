@@ -462,4 +462,184 @@
 
         <div>
           <label for="notes">Tell us about your cleaning experience (short)</label>
-          <textarea id="notes" name="ex
+          <textarea id="notes" name="experience_notes" placeholder="Years of experience, types of cleans (STR/residential/move-out), strengths, anything important."></textarea>
+        </div>
+      </div>
+
+      <!-- SECTION: Supplies & Equipment -->
+      <div class="section">
+        <h2>Supplies & Equipment</h2>
+
+        <label>What supplies/equipment do you currently own? (check all that apply)</label>
+        <div class="checkgrid">
+          <label class="check"><input type="checkbox" name="supplies_owned[]" value="Vacuum"><span>Vacuum</span></label>
+          <label class="check"><input type="checkbox" name="supplies_owned[]" value="Mop & bucket"><span>Mop &amp; bucket</span></label>
+          <label class="check"><input type="checkbox" name="supplies_owned[]" value="Broom & dustpan"><span>Broom &amp; dustpan</span></label>
+          <label class="check"><input type="checkbox" name="supplies_owned[]" value="All-purpose cleaner"><span>All-purpose cleaner</span></label>
+          <label class="check"><input type="checkbox" name="supplies_owned[]" value="Bathroom cleaner"><span>Bathroom cleaner</span></label>
+          <label class="check"><input type="checkbox" name="supplies_owned[]" value="Glass/mirror cleaner"><span>Glass / mirror cleaner</span></label>
+          <label class="check"><input type="checkbox" name="supplies_owned[]" value="Microfiber cloths"><span>Microfiber cloths</span></label>
+          <label class="check"><input type="checkbox" name="supplies_owned[]" value="Trash bags"><span>Trash bags</span></label>
+          <label class="check"><input type="checkbox" name="supplies_owned[]" value="None / rely on host supplies"><span>None / rely on host supplies</span></label>
+        </div>
+
+        <div class="row" style="margin-top:14px;">
+          <div>
+            <label for="bringBasics">Willing to bring basic supplies if needed?</label>
+            <select id="bringBasics" name="bring_basic_supplies" required>
+              <option value="">Select</option>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="hostSupplies">Comfortable using host-provided supplies when required?</label>
+            <select id="hostSupplies" name="use_host_supplies" required>
+              <option value="">Select</option>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="hint">
+          Some units have supplies on-site, some require the cleaner to bring basics. Flexibility matters.
+        </div>
+      </div>
+
+      <!-- SECTION: Standards & Boundaries -->
+      <div class="section">
+        <h2>Standards & Boundaries</h2>
+
+        <div class="row">
+          <div>
+            <label for="onTime">Can you reliably arrive on time and communicate immediately if delayed?</label>
+            <select id="onTime" name="on_time_and_communication" required>
+              <option value="">Select</option>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="photoPay">Okay with photo confirmation being required for payment?</label>
+            <select id="photoPay" name="photo_required_for_pay" required>
+              <option value="">Select</option>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label for="phoneTextOk">Can you respond to texts within 15–30 minutes during active jobs?</label>
+            <select id="phoneTextOk" name="fast_text_response" required>
+              <option value="">Select</option>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="weekendOk">Willing to work weekends? (Many turnovers are Fri–Sun)</label>
+            <select id="weekendOk" name="weekends_ok" required>
+              <option value="">Select</option>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label for="extraPeople">Will you ever bring additional people without permission?</label>
+            <select id="extraPeople" name="extra_people" required>
+              <option value="">Select</option>
+              <option>No</option>
+              <option>Yes</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="smoke">Do you smoke or vape during jobs?</label>
+            <select id="smoke" name="smoking_on_job" required>
+              <option value="">Select</option>
+              <option>No</option>
+              <option>Yes</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label for="solo">Comfortable working alone in guest properties?</label>
+            <select id="solo" name="comfortable_solo" required>
+              <option value="">Select</option>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="backgroundOk">Willing to provide ID + consent to a basic background check if selected?</label>
+            <select id="backgroundOk" name="background_check_ok" required>
+              <option value="">Select</option>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="handleIssue">If a host complains about a missed detail, how do you usually handle it?</label>
+          <textarea id="handleIssue" name="complaint_handling" placeholder="Short answer. We care about accountability and communication."></textarea>
+        </div>
+      </div>
+
+      <button class="btn" type="submit">Submit Application</button>
+
+      <div class="note">
+        Applications are reviewed manually. Qualified applicants will be contacted by text or email.
+        By applying, you confirm the information is accurate and you can follow checklist-driven standards.
+      </div>
+    </form>
+  </div>
+
+  <footer>© 2026 Turnover ATL · ayinde@turnoveratl.com</footer>
+</main>
+
+<script>
+  // Show success banner if redirected back with ?sent=1
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('sent') === '1') {
+      const el = document.getElementById('successMsg');
+      if (el) el.style.display = 'block';
+    }
+  })();
+
+  // Keep Reply-To synced no matter how the browser fills the email
+  (function () {
+    const emailInput = document.getElementById('cleanerEmail');
+    const replyToInput = document.getElementById('replyTo');
+
+    function syncReplyTo() {
+      if (replyToInput) replyToInput.value = (emailInput.value || '').trim();
+    }
+
+    if (emailInput) {
+      emailInput.addEventListener('input', syncReplyTo);
+      emailInput.addEventListener('change', syncReplyTo);
+      window.addEventListener('load', syncReplyTo);
+      setTimeout(syncReplyTo, 300);
+    }
+
+    // Final safeguard right before the request is sent
+    document.addEventListener('submit', syncReplyTo, true);
+  })();
+</script>
+
+</body>
+</html>
