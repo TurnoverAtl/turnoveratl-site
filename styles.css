@@ -1,65 +1,55 @@
-/* =====================================================
-   TURNOVER ATL — GLOBAL LIGHT THEME (AUTHORITATIVE)
-   This file intentionally REPLACES all prior styling
-   ===================================================== */
 
-/* ---------- RESET ---------- */
+<style>
+/* =========================
+   THEME VARIABLES
+   ========================= */
+:root{
+  --bg:#070b18;
+  --bg2:#0b1022;
+  --card:rgba(255,255,255,.06);
+  --stroke:rgba(255,255,255,.12);
+  --text:#eaf0ff;
+  --muted:rgba(234,240,255,.65);
+  --accent:#6aa8ff;
+  --accent2:#6ecbff;
+  --radius:16px;
+  --max:720px;
+}
+
+/* =========================
+   RESET / BASE
+   ========================= */
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 a{text-decoration:none;color:inherit}
-img{display:block;max-width:100%}
 
-/* ---------- ROOT ---------- */
-:root{
-  --bg:#ffffff;
-  --bg-soft:#f8fbff;
-
-  --ink:#0b1220;
-  --muted:rgba(11,18,32,.65);
-
-  --blue:#2f7cff;
-  --blue-soft:#5aa3ff;
-  --teal:#10b4c7;
-
-  --navy:#070b18;
-  --navy2:#0b1022;
-
-  --line:rgba(11,18,32,.10);
-  --card:#ffffff;
-
-  --radius:18px;
-  --shadow:0 20px 55px rgba(11,18,32,.10);
-  --max:1120px;
-}
-
-/* ---------- BODY ---------- */
+/* =========================
+   BODY
+   ========================= */
 body{
   font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   background:
-    radial-gradient(900px 420px at 50% 0%, rgba(47,124,255,.16), transparent 65%),
-    linear-gradient(180deg,var(--bg-soft),var(--bg));
-  color:var(--ink);
+    radial-gradient(1000px 520px at 20% 0%, rgba(106,168,255,.18), transparent 60%),
+    linear-gradient(180deg,var(--bg2),var(--bg));
+  color:var(--text);
 }
 
-/* ---------- LAYOUT ---------- */
-main,section,header,footer{
-  width:100%;
-}
-
-/* ---------- HEADER / NAV ---------- */
+/* =========================
+   HEADER / NAV
+   ========================= */
 header{
   position:sticky;
   top:0;
-  z-index:100;
-  background:rgba(255,255,255,.88);
+  z-index:50;
   backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--line);
+  background:rgba(7,11,24,.72);
+  border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .nav{
-  max-width:var(--max);
+  max-width:1100px;
   margin:auto;
-  padding:16px 20px;
+  padding:14px 18px;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -73,167 +63,323 @@ header{
 }
 
 .brand img{
-  width:36px;
-  height:36px;
+  width:44px;
+  height:44px;
 }
 
-.nav a{
-  font-weight:600;
-  color:rgba(11,18,32,.75);
-}
-.nav a:hover,
-.nav a.active{
-  color:var(--ink);
+/* =========================
+   MAIN CONTENT
+   ========================= */
+main{
+  max-width:var(--max);
+  margin:auto;
+  padding:32px 18px 80px;
 }
 
-/* ---------- TYPOGRAPHY ---------- */
+.card{
+  background:var(--card);
+  border:1px solid var(--stroke);
+  border-radius:var(--radius);
+  padding:22px;
+  box-shadow:0 30px 90px rgba(0,0,0,.35);
+}
+
+/* =========================
+   TEXT
+   ========================= */
 h1{
-  font-size:clamp(44px,6vw,64px);
-  letter-spacing:-0.02em;
-  margin:0;
-}
-h2{
-  font-size:clamp(26px,3vw,40px);
-  letter-spacing:-0.02em;
-  margin:0;
-}
-h3{
-  font-size:18px;
-  margin:0;
+  margin:0 0 10px;
+  font-size:clamp(28px,6vw,40px);
+  line-height:1.05;
 }
 
 p{
+  margin:0 0 14px;
   color:var(--muted);
-  line-height:1.7;
+  line-height:1.6;
 }
 
-/* ---------- HERO ---------- */
-.hero{
-  text-align:center;
-  padding:96px 20px 64px;
-}
-
-/* ---------- BUTTONS ---------- */
-.btn,
-button,
-input[type="submit"]{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:12px 18px;
-  border-radius:999px;
-  font-weight:800;
-  font-size:14px;
-  border:none;
-  cursor:pointer;
-  background:linear-gradient(135deg,var(--blue),var(--blue-soft));
-  color:#fff;
-  box-shadow:0 12px 28px rgba(47,124,255,.22);
-}
-
-.btn--outline{
-  background:#fff;
-  color:var(--ink);
-  border:1px solid var(--line);
-  box-shadow:none;
-}
-
-/* ---------- CARDS ---------- */
-.card,
-.service-card,
-article{
-  background:var(--card);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  border:1px solid var(--line);
-  overflow:hidden;
-}
-
-/* decorative card top */
-.service-card::before,
-.card::before{
-  content:"";
-  display:block;
-  height:140px;
-  background:
-    radial-gradient(420px 240px at 30% 20%, rgba(47,124,255,.18), transparent 60%),
-    linear-gradient(135deg, rgba(47,124,255,.12), rgba(16,180,199,.10));
-}
-
-/* ---------- SERVICES GRID ---------- */
-.services-grid{
-  max-width:var(--max);
-  margin:auto;
-  padding:40px 20px 80px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-}
-
-/* ---------- CTA BAND ---------- */
-.cta-band{
-  background:linear-gradient(180deg,var(--navy2),var(--navy));
-  padding:48px 20px;
-}
-
-.cta-band h2{
-  color:#fff;
-}
-
-/* ---------- FOOTER ---------- */
-footer{
-  background:var(--navy);
-  color:rgba(255,255,255,.85);
-}
-
-footer a{
-  color:rgba(255,255,255,.75);
-}
-
-footer a:hover{
-  color:#fff;
-}
-
-.footer-inner{
-  max-width:var(--max);
-  margin:auto;
-  padding:48px 20px;
-  display:flex;
-  justify-content:space-between;
-}
-
-.footer-bottom{
-  text-align:center;
-  padding:16px;
+label{
   font-size:13px;
-  color:rgba(255,255,255,.6);
+  color:var(--muted);
 }
 
-/* ---------- FORMS ---------- */
+/* =========================
+   FORMS
+   ========================= */
+form{display:grid;gap:14px}
+
+/* Inputs (closed state) */
 input,
 select,
 textarea{
   width:100%;
   padding:14px;
   border-radius:12px;
-  border:1px solid var(--line);
-  background:#fff;
-  color:var(--ink);
+  border:1px solid var(--stroke);
+  background:rgba(255,255,255,.04);
+  color:var(--text);          /* text when NOT opened */
+  font-family:inherit;
   font-size:15px;
+  outline:none;
 }
 
+/* 🔑 THE FIX:
+   When dropdown OPENS, browsers control the background.
+   We FORCE the TEXT to be black so it’s always readable.
+*/
 select option{
-  color:#000;
+  color:#000 !important;
   background:#fff;
 }
 
-/* ---------- RESPONSIVE ---------- */
-@media(max-width:900px){
-  .services-grid{grid-template-columns:repeat(2,1fr)}
-  .footer-inner{flex-direction:column;gap:24px}
+/* Some browsers use optgroup */
+select optgroup{
+  color:#000 !important;
+  background:#fff;
 }
 
-@media(max-width:520px){
-  .services-grid{grid-template-columns:1fr}
-  .nav{flex-wrap:wrap;gap:12px}
+textarea{
+  min-height:90px;
+  resize:vertical;
 }
+
+/* =========================
+   GRID ROWS
+   ========================= */
+.row{
+  display:grid;
+  gap:14px;
+}
+
+@media(min-width:640px){
+  .row{grid-template-columns:1fr 1fr}
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+.btn{
+  margin-top:8px;
+  padding:16px;
+  border-radius:14px;
+  border:none;
+  font-weight:900;
+  font-size:16px;
+  cursor:pointer;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#081225;
+}
+
+.btn:hover{
+  filter:brightness(1.05);
+}
+
+/* =========================
+   FOOTER / NOTES
+   ========================= */
+.note{
+  margin-top:14px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+footer{
+  margin-top:28px;
+  font-size:13px;
+  color:rgba(234,240,255,.6);
+  text-align:center;
+}
+</style>
+<style>
+/* =========================
+   THEME VARIABLES
+   ========================= */
+:root{
+  --bg:#070b18;
+  --bg2:#0b1022;
+  --card:rgba(255,255,255,.06);
+  --stroke:rgba(255,255,255,.12);
+  --text:#eaf0ff;
+  --muted:rgba(234,240,255,.65);
+  --accent:#6aa8ff;
+  --accent2:#6ecbff;
+  --radius:16px;
+  --max:720px;
+}
+
+/* =========================
+   RESET / BASE
+   ========================= */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+a{text-decoration:none;color:inherit}
+
+/* =========================
+   BODY
+   ========================= */
+body{
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:
+    radial-gradient(1000px 520px at 20% 0%, rgba(106,168,255,.18), transparent 60%),
+    linear-gradient(180deg,var(--bg2),var(--bg));
+  color:var(--text);
+}
+
+/* =========================
+   HEADER / NAV
+   ========================= */
+header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  backdrop-filter:blur(10px);
+  background:rgba(7,11,24,.72);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav{
+  max-width:1100px;
+  margin:auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:900;
+}
+
+.brand img{
+  width:44px;
+  height:44px;
+}
+
+/* =========================
+   MAIN CONTENT
+   ========================= */
+main{
+  max-width:var(--max);
+  margin:auto;
+  padding:32px 18px 80px;
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--stroke);
+  border-radius:var(--radius);
+  padding:22px;
+  box-shadow:0 30px 90px rgba(0,0,0,.35);
+}
+
+/* =========================
+   TEXT
+   ========================= */
+h1{
+  margin:0 0 10px;
+  font-size:clamp(28px,6vw,40px);
+  line-height:1.05;
+}
+
+p{
+  margin:0 0 14px;
+  color:var(--muted);
+  line-height:1.6;
+}
+
+label{
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* =========================
+   FORMS
+   ========================= */
+form{display:grid;gap:14px}
+
+/* Inputs (closed state) */
+input,
+select,
+textarea{
+  width:100%;
+  padding:14px;
+  border-radius:12px;
+  border:1px solid var(--stroke);
+  background:rgba(255,255,255,.04);
+  color:var(--text);          /* text when NOT opened */
+  font-family:inherit;
+  font-size:15px;
+  outline:none;
+}
+
+/* 🔑 THE FIX:
+   When dropdown OPENS, browsers control the background.
+   We FORCE the TEXT to be black so it’s always readable.
+*/
+select option{
+  color:#000 !important;
+  background:#fff;
+}
+
+/* Some browsers use optgroup */
+select optgroup{
+  color:#000 !important;
+  background:#fff;
+}
+
+textarea{
+  min-height:90px;
+  resize:vertical;
+}
+
+/* =========================
+   GRID ROWS
+   ========================= */
+.row{
+  display:grid;
+  gap:14px;
+}
+
+@media(min-width:640px){
+  .row{grid-template-columns:1fr 1fr}
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+.btn{
+  margin-top:8px;
+  padding:16px;
+  border-radius:14px;
+  border:none;
+  font-weight:900;
+  font-size:16px;
+  cursor:pointer;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#081225;
+}
+
+.btn:hover{
+  filter:brightness(1.05);
+}
+
+/* =========================
+   FOOTER / NOTES
+   ========================= */
+.note{
+  margin-top:14px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+footer{
+  margin-top:28px;
+  font-size:13px;
+  color:rgba(234,240,255,.6);
+  text-align:center;
+}
+</style>
