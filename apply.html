@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>APPLY TEST V3 | Turnover ATL</title>
+  <title>Careers | Turnover ATL Cleaning</title>
+  <meta name="description" content="Apply to join Turnover ATL’s cleaning team. Clear standards, fast communication, and opportunities for consistent work across Metro Atlanta." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -18,6 +19,7 @@
       --text:#eaf0ff;
       --muted:rgba(234,240,255,.65);
       --accent:#6aa8ff;
+      --accent2:#6ecbff;
       --radius:16px;
       --max:860px;
     }
@@ -80,6 +82,14 @@
       color:var(--text);
       border-color:rgba(255,255,255,.10);
       background:rgba(255,255,255,.03);
+    }
+
+    /* Optional: make "Book a Cleaning" stand out a bit if you add it later */
+    .nav-links a.cta{
+      color:#081225;
+      font-weight:900;
+      background:linear-gradient(135deg, rgba(106,168,255,.95), rgba(110,203,255,.85));
+      border-color:transparent;
     }
 
     main{
@@ -223,7 +233,7 @@
       width:18px;
       height:18px;
       margin-top:2px;
-      accent-color:#6ecbff;
+      accent-color: var(--accent2);
     }
 
     .check span{
@@ -291,7 +301,9 @@
     <nav class="nav-links" aria-label="Primary">
       <a href="services.html">Services</a>
       <a href="pricing.html">Pricing</a>
-      <a href="book.html">Book</a>
+      <a href="about.html">About</a>
+      <a href="apply.html">Careers</a>
+      <a href="book.html" class="cta">Book a Cleaning</a>
     </nav>
   </div>
 </header>
@@ -299,16 +311,16 @@
 <main>
   <div class="card">
     <div class="top">
-      <h1>Apply to Clean</h1>
+      <h1>Careers at Turnover ATL</h1>
       <p>
-        Turnover ATL partners with reliable, detail-oriented cleaners for recurring short-term rental turnovers.
-        We run checklist-driven cleans with photo confirmation and clear communication.
+        We partner with reliable, detail-oriented cleaners for short-term rental and residential jobs across Metro Atlanta.
+        If selected, you’ll be expected to follow a checklist, send completion photos, and communicate clearly.
       </p>
       <div class="pill-row">
-        <span class="pill"><b>Recurring units</b> for strong performers</span>
-        <span class="pill"><b>Photo confirmation</b> required</span>
-        <span class="pill"><b>Fast communication</b> expected</span>
-        <span class="pill"><b>Atlanta metro</b> service area</span>
+        <span class="pill"><b>Clear standards</b> and expectations</span>
+        <span class="pill"><b>Completion photos</b> required</span>
+        <span class="pill"><b>Fast communication</b> during active jobs</span>
+        <span class="pill"><b>Metro Atlanta</b> service area</span>
       </div>
     </div>
 
@@ -325,7 +337,7 @@
       <input type="hidden" name="_subject" value="New Cleaner Application — Turnover ATL">
       <input type="hidden" name="_next" value="https://turnoveratl.com/apply.html?sent=1">
 
-      <!-- Reply-To handling (must be exact) -->
+      <!-- Reply-To handling -->
       <input type="hidden" name="_replyto" id="replyTo">
 
       <!-- SECTION: Contact -->
@@ -334,30 +346,30 @@
 
         <div class="row">
           <div>
-            <label for="fullName">Full Name</label>
+            <label for="fullName">Full name</label>
             <input id="fullName" type="text" name="name" required autocomplete="name" placeholder="Your name">
           </div>
 
           <div>
             <label for="cleanerEmail">Email</label>
-            <input id="cleanerEmail" type="email" name="email" required autocomplete="email" placeholder="cleaner@email.com">
+            <input id="cleanerEmail" type="email" name="email" required autocomplete="email" placeholder="you@email.com">
           </div>
         </div>
 
         <div class="row">
           <div>
-            <label for="phone">Phone Number</label>
+            <label for="phone">Phone number</label>
             <input id="phone" type="tel" name="phone" required autocomplete="tel" placeholder="404-555-1234">
           </div>
 
           <div>
-            <label for="serviceArea">City / Areas You Can Serve</label>
+            <label for="serviceArea">Areas you can serve</label>
             <input id="serviceArea" type="text" name="service_area" placeholder="Atlanta, Decatur, Sandy Springs, etc.">
           </div>
         </div>
       </div>
 
-      <!-- SECTION: Availability (checkboxes for better data) -->
+      <!-- SECTION: Availability -->
       <div class="section">
         <h2>Availability</h2>
 
@@ -395,10 +407,10 @@
           </div>
 
           <div>
-            <label for="workPref">Preferred Work Type</label>
+            <label for="workPref">Preferred work type</label>
             <select id="workPref" name="work_preference" required>
               <option value="">Select</option>
-              <option>Recurring units</option>
+              <option>Consistent work</option>
               <option>On-demand jobs</option>
               <option>Both</option>
             </select>
@@ -406,7 +418,7 @@
         </div>
 
         <div class="hint">
-          Many turnovers happen Fri–Sun. Strong performers get recurring units.
+          Many short-term rental jobs happen Fri–Sun. Strong performers may be offered consistent work over time.
         </div>
       </div>
 
@@ -421,14 +433,14 @@
               <option value="">Select</option>
               <option>Yes — 1+ year</option>
               <option>Yes — some experience</option>
-              <option>No STR, but experienced cleaner</option>
-              <option>New to cleaning (not a fit)</option>
+              <option>No short-term rental, but experienced cleaner</option>
+              <option>New to cleaning</option>
             </select>
           </div>
 
           <div>
-            <label for="turnovers">Approximately how many turnovers have you done?</label>
-            <select id="turnovers" name="turnover_count" required>
+            <label for="turnovers">Approximately how many short-term rental jobs have you done?</label>
+            <select id="turnovers" name="short_term_rental_job_count" required>
               <option value="">Select</option>
               <option>0</option>
               <option>1–10</option>
@@ -441,7 +453,7 @@
 
         <div class="row">
           <div>
-            <label for="checklistOk">Comfortable following a checklist + taking required photos?</label>
+            <label for="checklistOk">Comfortable following a checklist and taking required photos?</label>
             <select id="checklistOk" name="checklist_and_photos" required>
               <option value="">Select</option>
               <option>Yes</option>
@@ -462,13 +474,13 @@
 
         <div>
           <label for="notes">Tell us about your cleaning experience (short)</label>
-          <textarea id="notes" name="experience_notes" placeholder="Years of experience, types of cleans (STR/residential/move-out), strengths, anything important."></textarea>
+          <textarea id="notes" name="experience_notes" placeholder="Years of experience, types of cleans, strengths, anything important."></textarea>
         </div>
       </div>
 
       <!-- SECTION: Supplies & Equipment -->
       <div class="section">
-        <h2>Supplies & Equipment</h2>
+        <h2>Supplies & equipment</h2>
 
         <label>What supplies/equipment do you currently own? (check all that apply)</label>
         <div class="checkgrid">
@@ -480,7 +492,7 @@
           <label class="check"><input type="checkbox" name="supplies_owned[]" value="Glass/mirror cleaner"><span>Glass / mirror cleaner</span></label>
           <label class="check"><input type="checkbox" name="supplies_owned[]" value="Microfiber cloths"><span>Microfiber cloths</span></label>
           <label class="check"><input type="checkbox" name="supplies_owned[]" value="Trash bags"><span>Trash bags</span></label>
-          <label class="check"><input type="checkbox" name="supplies_owned[]" value="None / rely on host supplies"><span>None / rely on host supplies</span></label>
+          <label class="check"><input type="checkbox" name="supplies_owned[]" value="None / rely on on-site supplies"><span>None / rely on on-site supplies</span></label>
         </div>
 
         <div class="row" style="margin-top:14px;">
@@ -494,8 +506,8 @@
           </div>
 
           <div>
-            <label for="hostSupplies">Comfortable using host-provided supplies when required?</label>
-            <select id="hostSupplies" name="use_host_supplies" required>
+            <label for="hostSupplies">Comfortable using on-site supplies when required?</label>
+            <select id="hostSupplies" name="use_onsite_supplies" required>
               <option value="">Select</option>
               <option>Yes</option>
               <option>No</option>
@@ -504,17 +516,17 @@
         </div>
 
         <div class="hint">
-          Some units have supplies on-site, some require the cleaner to bring basics. Flexibility matters.
+          Some homes have supplies on-site, and some require the cleaner to bring basics. Flexibility matters.
         </div>
       </div>
 
-      <!-- SECTION: Standards & Boundaries -->
+      <!-- SECTION: Standards -->
       <div class="section">
-        <h2>Standards & Boundaries</h2>
+        <h2>Standards</h2>
 
         <div class="row">
           <div>
-            <label for="onTime">Can you reliably arrive on time and communicate immediately if delayed?</label>
+            <label for="onTime">Can you reliably arrive on time and communicate quickly if delayed?</label>
             <select id="onTime" name="on_time_and_communication" required>
               <option value="">Select</option>
               <option>Yes</option>
@@ -523,8 +535,8 @@
           </div>
 
           <div>
-            <label for="photoPay">Okay with photo confirmation being required for payment?</label>
-            <select id="photoPay" name="photo_required_for_pay" required>
+            <label for="photoPay">Okay with completion photos being required for payment?</label>
+            <select id="photoPay" name="photos_required_for_pay" required>
               <option value="">Select</option>
               <option>Yes</option>
               <option>No</option>
@@ -543,7 +555,7 @@
           </div>
 
           <div>
-            <label for="weekendOk">Willing to work weekends? (Many turnovers are Fri–Sun)</label>
+            <label for="weekendOk">Willing to work weekends?</label>
             <select id="weekendOk" name="weekends_ok" required>
               <option value="">Select</option>
               <option>Yes</option>
@@ -583,7 +595,7 @@
           </div>
 
           <div>
-            <label for="backgroundOk">Willing to provide ID + consent to a basic background check if selected?</label>
+            <label for="backgroundOk">Willing to provide ID and consent to a basic background check if selected?</label>
             <select id="backgroundOk" name="background_check_ok" required>
               <option value="">Select</option>
               <option>Yes</option>
@@ -593,16 +605,16 @@
         </div>
 
         <div>
-          <label for="handleIssue">If a host complains about a missed detail, how do you usually handle it?</label>
+          <label for="handleIssue">If a client points out a missed detail, how do you usually handle it?</label>
           <textarea id="handleIssue" name="complaint_handling" placeholder="Short answer. We care about accountability and communication."></textarea>
         </div>
       </div>
 
-      <button class="btn" type="submit">Submit Application</button>
+      <button class="btn" type="submit">Submit application</button>
 
       <div class="note">
         Applications are reviewed manually. Qualified applicants will be contacted by text or email.
-        By applying, you confirm the information is accurate and you can follow checklist-driven standards.
+        By applying, you confirm the information is accurate and you can follow the standards listed above.
       </div>
     </form>
   </div>
