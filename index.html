@@ -1,354 +1,384 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Turnover ATL | Short-Term Rental Cleaning in Atlanta</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Turnover ATL | Short-Term Rental Cleaning in Atlanta</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
-<style>
-:root{
-  --bg:#070b18;
-  --bg2:#0b1022;
-  --stroke:rgba(255,255,255,.12);
-  --text:#eaf0ff;
-  --muted:rgba(234,240,255,.68);
-  --accent:#6aa8ff;
-  --accent2:#6ecbff;
-  --radius:18px;
-  --max:1100px;
-}
+  <style>
+    :root{
+      --bg:#070b18;
+      --bg2:#0b1022;
+      --stroke:rgba(255,255,255,.12);
+      --text:#eaf0ff;
+      --muted:rgba(234,240,255,.70);
+      --accent:#6aa8ff;
+      --accent2:#6ecbff;
+      --radius:18px;
+      --max:1100px;
+    }
 
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
 
-body{
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  color:var(--text);
-  background:
-    radial-gradient(1100px 520px at 20% 0%, rgba(106,168,255,.18), transparent 60%),
-    linear-gradient(180deg,var(--bg2),var(--bg));
-}
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1100px 520px at 20% 0%, rgba(106,168,255,.18), transparent 60%),
+        linear-gradient(180deg,var(--bg2),var(--bg));
+    }
 
-a{color:inherit;text-decoration:none}
-a:hover{opacity:.96}
+    a{color:inherit;text-decoration:none}
+    a:hover{opacity:.96}
 
-header{
-  position:sticky;
-  top:0;
-  z-index:50;
-  backdrop-filter:blur(10px);
-  background:rgba(7,11,24,.72);
-  border-bottom:1px solid rgba(255,255,255,.08);
-}
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:blur(10px);
+      background:rgba(7,11,24,.72);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
 
-.nav{
-  max-width:var(--max);
-  margin:auto;
-  padding:14px 18px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-}
+    .nav{
+      max-width:var(--max);
+      margin:auto;
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
 
-.brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-weight:900;
-  letter-spacing:.2px;
-  white-space:nowrap;
-}
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:900;
+      letter-spacing:.2px;
+      white-space:nowrap;
+    }
 
-.brand img{width:28px;height:28px;opacity:.95}
+    .brand img{width:28px;height:28px;opacity:.95}
 
-.navlinks{
-  display:flex;
-  gap:14px;
-  align-items:center;
-  flex-wrap:wrap;
-  justify-content:flex-end;
-  font-size:14px;
-  color:rgba(234,240,255,.82);
-}
+    .navlinks{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      font-size:14px;
+      color:rgba(234,240,255,.82);
+    }
 
-.navlinks a{opacity:.9}
-.navlinks a:hover{opacity:1}
+    .navlinks a{opacity:.9}
+    .navlinks a:hover{opacity:1}
 
-.navlinks .cta{
-  opacity:1;
-  font-weight:900;
-  padding:10px 14px;
-  border-radius:999px;
-  background:linear-gradient(135deg, rgba(106,168,255,.95), rgba(110,203,255,.85));
-  color:#081225;
-}
+    .navlinks .cta{
+      opacity:1;
+      font-weight:900;
+      padding:10px 14px;
+      border-radius:999px;
+      background:linear-gradient(135deg, rgba(106,168,255,.95), rgba(110,203,255,.85));
+      color:#081225;
+    }
 
-main{
-  max-width:var(--max);
-  margin:auto;
-  padding:36px 18px 80px;
-}
+    main{
+      max-width:var(--max);
+      margin:auto;
+      padding:36px 18px 80px;
+    }
 
-/* ---------------- HERO WITH BACKGROUND PHOTOS ---------------- */
+    /* ---------------- HERO (PHOTO LAYERS FIXED) ---------------- */
 
-.hero{
-  display:grid;
-  grid-template-columns:1.25fr .75fr;
-  gap:22px;
-  align-items:start;
+    .hero{
+      position:relative;
+      overflow:hidden;
+      border-radius:22px;
+      padding:28px;
 
-  position:relative;
-  overflow:hidden;
-  border-radius:22px;
+      display:grid;
+      grid-template-columns:1.25fr .75fr;
+      gap:22px;
+      align-items:start;
 
-  /* ✅ overlay updated (photos pop more) + ✅ filenames safe for web */
-  background:
-    linear-gradient(rgba(7,11,24,.28), rgba(7,11,24,.55)),
-    url("assets/clean%20kitchen.jpg"),
-    url("assets/made%20bed.jpg");
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:0 30px 90px rgba(0,0,0,.35);
+      isolation:isolate; /* keeps layers contained */
+    }
 
-  background-size:
-    cover,
-    50% 100%,
-    50% 100%;
+    /* photo layer (crisp, not blurred) */
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:0;
 
-  background-position:
-    center,
-    left center,
-    right center;
+      background-image:
+        url("assets/clean%20kitchen.jpg"),
+        url("assets/made%20bed.jpg");
+      background-size:50% 100%, 50% 100%;
+      background-position:left center, right center;
+      background-repeat:no-repeat;
 
-  background-repeat:no-repeat;
+      filter:none; /* IMPORTANT: no blur */
+      transform:scale(1.01); /* prevents thin seams */
+    }
 
-  padding:28px;
-  border:1px solid rgba(255,255,255,.10);
-  box-shadow:0 30px 90px rgba(0,0,0,.35);
-}
+    /* overlay layer (your requested lighter gradient) */
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:1;
 
-@media (max-width:920px){
-  .hero{
-    grid-template-columns:1fr;
-    background:
-      linear-gradient(rgba(7,11,24,.28), rgba(7,11,24,.55)),
-      url("assets/clean%20kitchen.jpg");
-    background-size:cover,cover;
-    background-position:center,center;
-  }
-}
+      background:
+        linear-gradient(rgba(7,11,24,.28), rgba(7,11,24,.55));
+      pointer-events:none;
+    }
 
-.kicker{
-  text-transform:uppercase;
-  letter-spacing:.10em;
-  font-size:12px;
-  color:rgba(106,168,255,.95);
-  margin-bottom:10px;
-}
+    /* make content sit ABOVE the layers */
+    .hero > *{
+      position:relative;
+      z-index:2;
+    }
 
-h1{
-  margin:0 0 12px;
-  font-size:clamp(34px,5vw,58px);
-  line-height:1.05;
-  letter-spacing:-.02em;
-  text-shadow:0 10px 40px rgba(0,0,0,.55);
-}
+    @media (max-width:920px){
+      .hero{
+        grid-template-columns:1fr;
+      }
+      .hero::before{
+        background-image:url("assets/clean%20kitchen.jpg");
+        background-size:cover;
+        background-position:center;
+      }
+    }
 
-.sub{
-  margin:0 0 16px;
-  color:rgba(234,240,255,.80);
-  line-height:1.65;
-  font-size:15.5px;
-  max-width:60ch;
-  text-shadow:0 10px 34px rgba(0,0,0,.55);
-}
+    .kicker{
+      text-transform:uppercase;
+      letter-spacing:.10em;
+      font-size:12px;
+      color:rgba(106,168,255,.95);
+      margin-bottom:10px;
+    }
 
-.pillRow{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin:14px 0 18px;
-}
+    h1{
+      margin:0 0 12px;
+      font-size:clamp(34px,5vw,58px);
+      line-height:1.05;
+      letter-spacing:-.02em;
+      text-shadow:0 10px 40px rgba(0,0,0,.55);
+    }
 
-.pill{
-  font-size:12.5px;
-  padding:8px 10px;
-  border-radius:999px;
-  background:rgba(0,0,0,.22);
-  border:1px solid rgba(255,255,255,.16);
-  color:rgba(234,240,255,.92);
-  backdrop-filter:blur(8px);
-}
+    .sub{
+      margin:0 0 16px;
+      color:rgba(234,240,255,.84);
+      line-height:1.65;
+      font-size:15.5px;
+      max-width:60ch;
+      text-shadow:0 10px 34px rgba(0,0,0,.55);
+    }
 
-.actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:14px;
-  align-items:center;
-}
+    .pillRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:14px 0 18px;
+    }
 
-.btn{
-  display:inline-block;
-  padding:14px 16px;
-  border-radius:14px;
-  font-weight:900;
-  background:linear-gradient(135deg, rgba(106,168,255,.95), rgba(110,203,255,.85));
-  color:#081225;
-}
+    .pill{
+      font-size:12.5px;
+      padding:8px 10px;
+      border-radius:999px;
+      background:rgba(0,0,0,.28);
+      border:1px solid rgba(255,255,255,.16);
+      color:rgba(234,240,255,.94);
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+    }
 
-.btn.secondary{
-  background:rgba(0,0,0,.22);
-  border:1px solid rgba(255,255,255,.18);
-  color:rgba(234,240,255,.95);
-  font-weight:800;
-  backdrop-filter:blur(8px);
-}
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:14px;
+      align-items:center;
+    }
 
-.contactLine{
-  margin-top:12px;
-  color:rgba(234,240,255,.78);
-  font-size:13px;
-  line-height:1.6;
-  text-shadow:0 10px 34px rgba(0,0,0,.55);
-}
+    .btn{
+      display:inline-block;
+      padding:14px 16px;
+      border-radius:14px;
+      font-weight:900;
+      background:linear-gradient(135deg, rgba(106,168,255,.95), rgba(110,203,255,.85));
+      color:#081225;
+    }
 
-.contactLine a{
-  color:rgba(234,240,255,.96);
-  border-bottom:1px solid rgba(255,255,255,.25);
-  padding-bottom:1px;
-}
+    .btn.secondary{
+      background:rgba(0,0,0,.28);
+      border:1px solid rgba(255,255,255,.18);
+      color:rgba(234,240,255,.95);
+      font-weight:800;
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+    }
 
-.contactLine a:hover{
-  border-bottom-color:rgba(255,255,255,.55);
-}
+    .contactLine{
+      margin-top:12px;
+      color:rgba(234,240,255,.82);
+      font-size:13px;
+      line-height:1.6;
+      text-shadow:0 10px 34px rgba(0,0,0,.55);
+    }
 
-/* ✅ clearer card: stronger contrast + less haze */
-.card{
-  background:rgba(12,18,38,.72);
-  border:1px solid rgba(255,255,255,.20);
-  border-radius:var(--radius);
-  padding:22px;
-  box-shadow:0 40px 110px rgba(0,0,0,.55);
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
-}
+    .contactLine a{
+      color:rgba(234,240,255,.96);
+      border-bottom:1px solid rgba(255,255,255,.25);
+      padding-bottom:1px;
+    }
 
-.card h3{
-  margin:0 0 10px;
-  font-size:16px;
-  color:rgba(234,240,255,.98);
-}
+    .contactLine a:hover{
+      border-bottom-color:rgba(255,255,255,.55);
+    }
 
-.card p{
-  margin:0 0 12px;
-  color:rgba(234,240,255,.82);
-  line-height:1.6;
-}
+    /* ✅ RIGHT CARD: clearer (less haze, more contrast) */
+    .card{
+      background:rgba(10,16,34,.86);
+      border:1px solid rgba(255,255,255,.22);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:0 40px 110px rgba(0,0,0,.55);
 
-.check{
-  list-style:none;
-  padding:0;
-  margin:0;
-  display:grid;
-  gap:10px;
-}
+      /* small blur only (keeps text crisp) */
+      backdrop-filter:blur(4px);
+      -webkit-backdrop-filter:blur(4px);
+    }
 
-.check li{
-  display:flex;
-  gap:10px;
-  align-items:flex-start;
-  color:rgba(234,240,255,.94);
-  line-height:1.5;
-  font-size:14px;
-}
+    .card h3{
+      margin:0 0 10px;
+      font-size:16px;
+      color:rgba(234,240,255,.98);
+    }
 
-.dot{
-  width:10px;height:10px;border-radius:50%;
-  margin-top:6px;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  flex:0 0 10px;
-}
+    .card p{
+      margin:0 0 12px;
+      color:rgba(234,240,255,.82);
+      line-height:1.6;
+    }
 
-.section{
-  margin-top:30px;
-  display:grid;
-  gap:16px;
-}
+    .check{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:grid;
+      gap:10px;
+    }
 
-.grid3{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
-}
+    .check li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      color:rgba(234,240,255,.94);
+      line-height:1.5;
+      font-size:14px;
+    }
 
-@media (max-width:920px){
-  .grid3{grid-template-columns:1fr}
-}
+    .dot{
+      width:10px;height:10px;border-radius:50%;
+      margin-top:6px;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      flex:0 0 10px;
+    }
 
-.serviceTitle{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  margin-bottom:6px;
-}
+    .section{
+      margin-top:30px;
+      display:grid;
+      gap:16px;
+    }
 
-.tag{
-  font-size:12px;
-  font-weight:800;
-  padding:6px 10px;
-  border-radius:999px;
-  background:rgba(106,168,255,.16);
-  border:1px solid rgba(106,168,255,.32);
-  color:rgba(234,240,255,.95);
-  white-space:nowrap;
-}
+    .grid3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
 
-.fine{
-  margin-top:14px;
-  font-size:12px;
-  color:rgba(234,240,255,.62);
-  line-height:1.6;
-}
+    @media (max-width:920px){
+      .grid3{grid-template-columns:1fr}
+    }
 
-.site-footer{
-  margin-top:34px;
-  font-size:13px;
-  color:rgba(234,240,255,.6);
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:space-between;
-  gap:10px;
-  padding:18px 2px 0;
-  border-top:1px solid rgba(255,255,255,.08);
-}
+    .serviceCard{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:18px;
+      padding:22px;
+      box-shadow:0 30px 90px rgba(0,0,0,.35);
+    }
 
-.footer-contact{
-  display:flex;
-  gap:10px;
-  align-items:center;
-  flex-wrap:wrap;
-}
+    .serviceTitle{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:6px;
+    }
 
-.footer-link{
-  color:rgba(234,240,255,.95);
-  border-bottom:1px solid rgba(255,255,255,.18);
-  padding-bottom:2px;
-}
+    .tag{
+      font-size:12px;
+      font-weight:800;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(106,168,255,.16);
+      border:1px solid rgba(106,168,255,.32);
+      color:rgba(234,240,255,.95);
+      white-space:nowrap;
+    }
 
-.footer-link:hover{
-  border-bottom-color:rgba(255,255,255,.45);
-}
+    .fine{
+      margin-top:14px;
+      font-size:12px;
+      color:rgba(234,240,255,.62);
+      line-height:1.6;
+    }
 
-.footer-dot{color:rgba(234,240,255,.45)}
-</style>
+    .site-footer{
+      margin-top:34px;
+      font-size:13px;
+      color:rgba(234,240,255,.6);
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap:10px;
+      padding:18px 2px 0;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+
+    .footer-contact{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .footer-link{
+      color:rgba(234,240,255,.95);
+      border-bottom:1px solid rgba(255,255,255,.18);
+      padding-bottom:2px;
+    }
+
+    .footer-link:hover{
+      border-bottom-color:rgba(255,255,255,.45);
+    }
+
+    .footer-dot{color:rgba(234,240,255,.45)}
+  </style>
 </head>
 
 <body>
-
 <header>
   <div class="nav">
     <a class="brand" href="index.html">
@@ -368,102 +398,106 @@ h1{
 
 <main>
 
-<section class="hero">
+  <section class="hero">
 
-  <div>
-    <div class="kicker">Short-term rental cleaning · Metro Atlanta</div>
+    <div>
+      <div class="kicker">Short-term rental cleaning · Metro Atlanta</div>
 
-    <h1>Reliable cleaning for homes that need to be guest-ready.</h1>
+      <h1>Reliable cleaning for homes that need to be guest-ready.</h1>
 
-    <p class="sub">
-      Turnover ATL helps short-term rental hosts stay consistent without the chaos.
-      We confirm quickly, follow a clear checklist, and send completion photos after each clean.
-    </p>
+      <p class="sub">
+        Turnover ATL helps short-term rental hosts stay consistent without the chaos.
+        We confirm quickly, follow a clear checklist, and send completion photos after each clean.
+      </p>
 
-    <div class="pillRow">
-      <div class="pill">Clear checklist every visit</div>
-      <div class="pill">Completion photos</div>
-      <div class="pill">Fast confirmation</div>
-      <div class="pill">Straightforward communication</div>
-    </div>
-
-    <div class="actions">
-      <a class="btn" href="book.html">Book a Cleaning</a>
-      <a class="btn secondary" href="pricing.html">View Pricing</a>
-    </div>
-
-    <div class="contactLine">
-      Email:
-      <a href="mailto:ayinde@turnoveratl.com"><strong>ayinde@turnoveratl.com</strong></a>
-      ·
-      Text:
-      <a href="tel:+14702902837"><strong>(470) 290-2837</strong></a>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>What’s included</h3>
-    <p>Every cleaning follows a consistent checklist, with photos sent once the job is complete.</p>
-
-    <ul class="check">
-      <li><span class="dot"></span><span>Kitchen and bathrooms reset</span></li>
-      <li><span class="dot"></span><span>Floors and high-touch surfaces</span></li>
-      <li><span class="dot"></span><span>Trash removed and light staging</span></li>
-      <li><span class="dot"></span><span>Linens reset using host-provided items</span></li>
-      <li><span class="dot"></span><span>Completion photos sent after finishing</span></li>
-    </ul>
-
-    <div class="fine">
-      Submitting a request doesn’t require payment. We confirm availability first, then send next steps.
-    </div>
-  </div>
-
-</section>
-
-<section class="section">
-
-  <div class="grid3">
-
-    <div class="card">
-      <div class="serviceTitle">
-        <h3 style="margin:0;">Standard Cleaning</h3>
-        <span class="tag">Most common</span>
+      <div class="pillRow">
+        <div class="pill">Clear checklist every visit</div>
+        <div class="pill">Completion photos</div>
+        <div class="pill">Fast confirmation</div>
+        <div class="pill">Straightforward communication</div>
       </div>
-      <p>A reliable reset that keeps the home clean, presentable, and ready for the next guest.</p>
-      <div class="fine">Best for routine visits and consistent upkeep.</div>
+
+      <div class="actions">
+        <a class="btn" href="book.html">Book a Cleaning</a>
+        <a class="btn secondary" href="pricing.html">View Pricing</a>
+      </div>
+
+      <div class="contactLine">
+        Email:
+        <a href="mailto:ayinde@turnoveratl.com"><strong>ayinde@turnoveratl.com</strong></a>
+        ·
+        Text:
+        <a href="tel:+14702902837"><strong>(470) 290-2837</strong></a>
+      </div>
     </div>
 
     <div class="card">
-      <div class="serviceTitle">
-        <h3 style="margin:0;">Deep Cleaning</h3>
-        <span class="tag">As needed</span>
+      <h3>What’s included</h3>
+      <p>Every cleaning follows a consistent checklist, with photos sent once the job is complete.</p>
+
+      <ul class="check">
+        <li><span class="dot"></span><span>Kitchen and bathrooms reset</span></li>
+        <li><span class="dot"></span><span>Floors and high-touch surfaces</span></li>
+        <li><span class="dot"></span><span>Trash removed and light staging</span></li>
+        <li><span class="dot"></span><span>Linens reset using host-provided items</span></li>
+        <li><span class="dot"></span><span>Completion photos sent after finishing</span></li>
+      </ul>
+
+      <div class="fine">
+        Submitting a request doesn’t require payment. We confirm availability first, then send next steps.
       </div>
-      <p>Extra detail work to refresh the home when it needs more than a standard clean.</p>
-      <div class="fine">Great for buildup, seasonal resets, or first-time service.</div>
     </div>
 
-    <div class="card">
-      <div class="serviceTitle">
-        <h3 style="margin:0;">Move-In / Move-Out</h3>
-        <span class="tag">By request</span>
+  </section>
+
+  <section class="section">
+    <div class="grid3">
+
+      <div class="serviceCard">
+        <div class="serviceTitle">
+          <h3 style="margin:0;">Standard Cleaning</h3>
+          <span class="tag">Most common</span>
+        </div>
+        <p style="margin:0 0 12px;color:rgba(234,240,255,.72);line-height:1.6;">
+          A reliable reset that keeps the home clean, presentable, and ready for the next guest.
+        </p>
+        <div class="fine">Best for routine visits and consistent upkeep.</div>
       </div>
-      <p>A more thorough clean for empty homes, transitions, and start-fresh situations.</p>
-      <div class="fine">Scope confirmed based on home condition and size.</div>
+
+      <div class="serviceCard">
+        <div class="serviceTitle">
+          <h3 style="margin:0;">Deep Cleaning</h3>
+          <span class="tag">As needed</span>
+        </div>
+        <p style="margin:0 0 12px;color:rgba(234,240,255,.72);line-height:1.6;">
+          Extra detail work to refresh the home when it needs more than a standard clean.
+        </p>
+        <div class="fine">Great for buildup, seasonal resets, or first-time service.</div>
+      </div>
+
+      <div class="serviceCard">
+        <div class="serviceTitle">
+          <h3 style="margin:0;">Move-In / Move-Out</h3>
+          <span class="tag">By request</span>
+        </div>
+        <p style="margin:0 0 12px;color:rgba(234,240,255,.72);line-height:1.6;">
+          A more thorough clean for empty homes, transitions, and start-fresh situations.
+        </p>
+        <div class="fine">Scope confirmed based on home condition and size.</div>
+      </div>
+
     </div>
+  </section>
 
-  </div>
+  <footer class="site-footer">
+    <div>© 2026 Turnover ATL</div>
 
-</section>
-
-<footer class="site-footer">
-  <div>© 2026 Turnover ATL</div>
-
-  <div class="footer-contact">
-    <a class="footer-link" href="mailto:ayinde@turnoveratl.com">ayinde@turnoveratl.com</a>
-    <span class="footer-dot">•</span>
-    <a class="footer-link" href="tel:+14702902837">(470) 290-2837</a>
-  </div>
-</footer>
+    <div class="footer-contact">
+      <a class="footer-link" href="mailto:ayinde@turnoveratl.com">ayinde@turnoveratl.com</a>
+      <span class="footer-dot">•</span>
+      <a class="footer-link" href="tel:+14702902837">(470) 290-2837</a>
+    </div>
+  </footer>
 
 </main>
 </body>
