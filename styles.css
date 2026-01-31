@@ -1,8 +1,9 @@
-
-<style>
 /* =========================
-   THEME VARIABLES
-   ========================= */
+   TURNOVER ATL — styles.css (FAIL-PROOF)
+   Paste this whole file into styles.css
+========================= */
+
+/* ---------- Theme Vars ---------- */
 :root{
   --bg:#070b18;
   --bg2:#0b1022;
@@ -13,19 +14,17 @@
   --accent:#6aa8ff;
   --accent2:#6ecbff;
   --radius:16px;
-  --max:720px;
+  --max:1100px;
 }
 
-/* =========================
-   RESET / BASE
-   ========================= */
+/* ---------- Reset ---------- */
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
+img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
+button,input,select,textarea{font:inherit}
 
-/* =========================
-   BODY
-   ========================= */
+/* ---------- Body ---------- */
 body{
   font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   background:
@@ -34,9 +33,18 @@ body{
   color:var(--text);
 }
 
-/* =========================
-   HEADER / NAV
-   ========================= */
+/* ---------- Layout Helpers ---------- */
+.wrap{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:0 18px;
+}
+
+.section{
+  padding:32px 0;
+}
+
+/* ---------- Header / Nav ---------- */
 header{
   position:sticky;
   top:0;
@@ -47,12 +55,13 @@ header{
 }
 
 .nav{
-  max-width:1100px;
-  margin:auto;
+  max-width:var(--max);
+  margin:0 auto;
   padding:14px 18px;
   display:flex;
   align-items:center;
   justify-content:space-between;
+  gap:14px;
 }
 
 .brand{
@@ -60,22 +69,35 @@ header{
   align-items:center;
   gap:10px;
   font-weight:900;
+  letter-spacing:.2px;
 }
 
 .brand img{
   width:44px;
   height:44px;
+  border-radius:12px;
 }
 
-/* =========================
-   MAIN CONTENT
-   ========================= */
+/* Optional nav link styling */
+.nav a{
+  color:rgba(234,240,255,.9);
+  padding:8px 10px;
+  border-radius:12px;
+  border:1px solid transparent;
+}
+.nav a:hover{
+  border-color:rgba(255,255,255,.12);
+  background:rgba(255,255,255,.04);
+}
+
+/* ---------- Main Content ---------- */
 main{
   max-width:var(--max);
-  margin:auto;
+  margin:0 auto;
   padding:32px 18px 80px;
 }
 
+/* ---------- Cards ---------- */
 .card{
   background:var(--card);
   border:1px solid var(--stroke);
@@ -84,14 +106,15 @@ main{
   box-shadow:0 30px 90px rgba(0,0,0,.35);
 }
 
-/* =========================
-   TEXT
-   ========================= */
-h1{
+/* ---------- Typography ---------- */
+h1,h2,h3{
   margin:0 0 10px;
-  font-size:clamp(28px,6vw,40px);
-  line-height:1.05;
+  color:var(--text);
+  line-height:1.15;
 }
+
+h1{ font-size:clamp(28px,6vw,44px); }
+h2{ font-size:clamp(22px,3.5vw,30px); }
 
 p{
   margin:0 0 14px;
@@ -104,12 +127,11 @@ label{
   color:var(--muted);
 }
 
-/* =========================
-   FORMS
-   ========================= */
+.muted{ color:var(--muted); }
+
+/* ---------- Forms ---------- */
 form{display:grid;gap:14px}
 
-/* Inputs (closed state) */
 input,
 select,
 textarea{
@@ -118,214 +140,21 @@ textarea{
   border-radius:12px;
   border:1px solid var(--stroke);
   background:rgba(255,255,255,.04);
-  color:var(--text);          /* text when NOT opened */
-  font-family:inherit;
-  font-size:15px;
-  outline:none;
-}
-
-/* 🔑 THE FIX:
-   When dropdown OPENS, browsers control the background.
-   We FORCE the TEXT to be black so it’s always readable.
-*/
-select option{
-  color:#000 !important;
-  background:#fff;
-}
-
-/* Some browsers use optgroup */
-select optgroup{
-  color:#000 !important;
-  background:#fff;
-}
-
-textarea{
-  min-height:90px;
-  resize:vertical;
-}
-
-/* =========================
-   GRID ROWS
-   ========================= */
-.row{
-  display:grid;
-  gap:14px;
-}
-
-@media(min-width:640px){
-  .row{grid-template-columns:1fr 1fr}
-}
-
-/* =========================
-   BUTTONS
-   ========================= */
-.btn{
-  margin-top:8px;
-  padding:16px;
-  border-radius:14px;
-  border:none;
-  font-weight:900;
-  font-size:16px;
-  cursor:pointer;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  color:#081225;
-}
-
-.btn:hover{
-  filter:brightness(1.05);
-}
-
-/* =========================
-   FOOTER / NOTES
-   ========================= */
-.note{
-  margin-top:14px;
-  font-size:13px;
-  color:var(--muted);
-}
-
-footer{
-  margin-top:28px;
-  font-size:13px;
-  color:rgba(234,240,255,.6);
-  text-align:center;
-}
-</style>
-<style>
-/* =========================
-   THEME VARIABLES
-   ========================= */
-:root{
-  --bg:#070b18;
-  --bg2:#0b1022;
-  --card:rgba(255,255,255,.06);
-  --stroke:rgba(255,255,255,.12);
-  --text:#eaf0ff;
-  --muted:rgba(234,240,255,.65);
-  --accent:#6aa8ff;
-  --accent2:#6ecbff;
-  --radius:16px;
-  --max:720px;
-}
-
-/* =========================
-   RESET / BASE
-   ========================= */
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-a{text-decoration:none;color:inherit}
-
-/* =========================
-   BODY
-   ========================= */
-body{
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  background:
-    radial-gradient(1000px 520px at 20% 0%, rgba(106,168,255,.18), transparent 60%),
-    linear-gradient(180deg,var(--bg2),var(--bg));
   color:var(--text);
-}
-
-/* =========================
-   HEADER / NAV
-   ========================= */
-header{
-  position:sticky;
-  top:0;
-  z-index:50;
-  backdrop-filter:blur(10px);
-  background:rgba(7,11,24,.72);
-  border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.nav{
-  max-width:1100px;
-  margin:auto;
-  padding:14px 18px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-weight:900;
-}
-
-.brand img{
-  width:44px;
-  height:44px;
-}
-
-/* =========================
-   MAIN CONTENT
-   ========================= */
-main{
-  max-width:var(--max);
-  margin:auto;
-  padding:32px 18px 80px;
-}
-
-.card{
-  background:var(--card);
-  border:1px solid var(--stroke);
-  border-radius:var(--radius);
-  padding:22px;
-  box-shadow:0 30px 90px rgba(0,0,0,.35);
-}
-
-/* =========================
-   TEXT
-   ========================= */
-h1{
-  margin:0 0 10px;
-  font-size:clamp(28px,6vw,40px);
-  line-height:1.05;
-}
-
-p{
-  margin:0 0 14px;
-  color:var(--muted);
-  line-height:1.6;
-}
-
-label{
-  font-size:13px;
-  color:var(--muted);
-}
-
-/* =========================
-   FORMS
-   ========================= */
-form{display:grid;gap:14px}
-
-/* Inputs (closed state) */
-input,
-select,
-textarea{
-  width:100%;
-  padding:14px;
-  border-radius:12px;
-  border:1px solid var(--stroke);
-  background:rgba(255,255,255,.04);
-  color:var(--text);          /* text when NOT opened */
-  font-family:inherit;
   font-size:15px;
   outline:none;
 }
 
-/* 🔑 THE FIX:
-   When dropdown OPENS, browsers control the background.
-   We FORCE the TEXT to be black so it’s always readable.
-*/
+input::placeholder,
+textarea::placeholder{
+  color:rgba(234,240,255,.45);
+}
+
+/* Dropdown open-state readability */
 select option{
   color:#000 !important;
   background:#fff;
 }
-
-/* Some browsers use optgroup */
 select optgroup{
   color:#000 !important;
   background:#fff;
@@ -336,21 +165,16 @@ textarea{
   resize:vertical;
 }
 
-/* =========================
-   GRID ROWS
-   ========================= */
+/* ---------- Grid Rows ---------- */
 .row{
   display:grid;
   gap:14px;
 }
-
 @media(min-width:640px){
   .row{grid-template-columns:1fr 1fr}
 }
 
-/* =========================
-   BUTTONS
-   ========================= */
+/* ---------- Buttons ---------- */
 .btn{
   margin-top:8px;
   padding:16px;
@@ -363,23 +187,92 @@ textarea{
   color:#081225;
 }
 
-.btn:hover{
-  filter:brightness(1.05);
-}
+.btn:hover{ filter:brightness(1.05); }
 
-/* =========================
-   FOOTER / NOTES
-   ========================= */
+/* ---------- Notes ---------- */
 .note{
   margin-top:14px;
   font-size:13px;
   color:var(--muted);
 }
 
-footer{
-  margin-top:28px;
+/* =========================
+   FOOTER — FAIL-PROOF
+   Works even if you do:
+   <footer> ... </footer>
+   OR
+   <footer class="site-footer"> ... </footer>
+========================= */
+footer,
+.site-footer{
+  margin-top:40px;
+  padding:22px 16px;
+  text-align:center;
+  border-top:1px solid var(--stroke);
+  background:rgba(255,255,255,.03);
   font-size:13px;
   color:rgba(234,240,255,.6);
-  text-align:center;
 }
-</style>
+
+/* Nice layout if you use footer-contact */
+.footer-contact{
+  margin-top:8px;
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+/* Make email + phone look clickable even if you forget classes */
+.footer-link,
+footer a{
+  color:var(--text);
+  text-decoration:none;
+  border-bottom:1px solid rgba(255,255,255,.18);
+  padding-bottom:2px;
+}
+
+.footer-link:hover,
+footer a:hover{
+  border-bottom-color:rgba(255,255,255,.45);
+}
+
+.footer-dot{
+  color:rgba(234,240,255,.45);
+}
+
+/* =========================
+   OPTIONAL: PHOTO GRID
+========================= */
+.photo-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:14px;
+  margin-top:16px;
+}
+
+.photo{
+  margin:0;
+  border-radius:var(--radius);
+  overflow:hidden;
+  border:1px solid var(--stroke);
+  background:var(--card);
+  box-shadow:0 12px 30px rgba(0,0,0,.28);
+}
+
+.photo img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  display:block;
+}
+
+@media (max-width: 980px){
+  .photo-grid{ grid-template-columns:repeat(2, 1fr); }
+}
+
+@media (max-width: 560px){
+  .photo-grid{ grid-template-columns:1fr; }
+  .photo img{ height:240px; }
+}
