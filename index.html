@@ -75,6 +75,8 @@ header{
   font-size:14px;
   color:rgba(234,240,255,.82);
 }
+.navlinks a{opacity:.9}
+.navlinks a:hover{opacity:1}
 
 .navlinks .cta{
   font-weight:900;
@@ -82,12 +84,13 @@ header{
   border-radius:999px;
   background:linear-gradient(135deg, rgba(106,168,255,.95), rgba(110,203,255,.85));
   color:#081225;
+  opacity:1;
 }
 
 main{
   max-width:var(--max);
   margin:auto;
-  padding:36px 18px 80px;
+  padding:28px 18px 80px;
 }
 
 /* ---------------- HERO WITH BACKGROUND PHOTOS ---------------- */
@@ -102,8 +105,9 @@ main{
   overflow:hidden;
   border-radius:22px;
 
+  /* ✅ FIX: overlay is lighter so photos actually show */
   background:
-    linear-gradient(rgba(7,11,24,.85), rgba(7,11,24,.95)),
+    linear-gradient(rgba(7,11,24,.38), rgba(7,11,24,.62)),
     url("assets/clean kitchen.jpg"),
     url("assets/made bed.jpg");
 
@@ -120,13 +124,14 @@ main{
   background-repeat:no-repeat;
 
   padding:28px;
+  border:1px solid rgba(255,255,255,.10);
 }
 
 @media (max-width:920px){
   .hero{
     grid-template-columns:1fr;
     background:
-      linear-gradient(rgba(7,11,24,.85), rgba(7,11,24,.95)),
+      linear-gradient(rgba(7,11,24,.40), rgba(7,11,24,.70)),
       url("assets/clean kitchen.jpg");
     background-size:cover,cover;
     background-position:center,center;
@@ -146,6 +151,7 @@ h1{
   font-size:clamp(34px,5vw,58px);
   line-height:1.05;
   letter-spacing:-.02em;
+  text-shadow: 0 10px 30px rgba(0,0,0,.45);
 }
 
 .sub{
@@ -167,8 +173,8 @@ h1{
   font-size:12.5px;
   padding:8px 10px;
   border-radius:999px;
-  background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.10);
+  background:rgba(0,0,0,.18);
+  border:1px solid rgba(255,255,255,.14);
 }
 
 .actions{
@@ -187,14 +193,14 @@ h1{
 }
 
 .btn.secondary{
-  background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.12);
+  background:rgba(0,0,0,.20);
+  border:1px solid rgba(255,255,255,.14);
   color:rgba(234,240,255,.92);
 }
 
 .contactLine{
   margin-top:12px;
-  color:rgba(234,240,255,.70);
+  color:rgba(234,240,255,.78);
   font-size:13px;
 }
 
@@ -204,24 +210,16 @@ h1{
 }
 
 .card{
-  background:rgba(12,18,38,.65);
+  background:rgba(8,12,24,.58);
   backdrop-filter:blur(10px);
-  border:1px solid var(--stroke);
+  border:1px solid rgba(255,255,255,.14);
   border-radius:var(--radius);
   padding:22px;
   box-shadow:0 30px 90px rgba(0,0,0,.35);
 }
 
-.card h3{
-  margin:0 0 10px;
-  font-size:16px;
-}
-
-.card p{
-  margin:0 0 12px;
-  color:var(--muted);
-  line-height:1.6;
-}
+.card h3{margin:0 0 10px;font-size:16px}
+.card p{margin:0 0 12px;color:var(--muted);line-height:1.6}
 
 .check{
   list-style:none;
@@ -244,21 +242,14 @@ h1{
   background:linear-gradient(135deg,var(--accent),var(--accent2));
 }
 
-.section{
-  margin-top:30px;
-  display:grid;
-  gap:16px;
-}
+.section{margin-top:30px;display:grid;gap:16px}
 
 .grid3{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:16px;
 }
-
-@media (max-width:920px){
-  .grid3{grid-template-columns:1fr}
-}
+@media (max-width:920px){ .grid3{grid-template-columns:1fr} }
 
 .serviceTitle{
   display:flex;
@@ -277,11 +268,7 @@ h1{
   border:1px solid rgba(106,168,255,.32);
 }
 
-.fine{
-  margin-top:14px;
-  font-size:12px;
-  color:rgba(234,240,255,.55);
-}
+.fine{margin-top:14px;font-size:12px;color:rgba(234,240,255,.55)}
 
 .site-footer{
   margin-top:34px;
@@ -295,19 +282,8 @@ h1{
   border-top:1px solid rgba(255,255,255,.08);
 }
 
-.footer-contact{
-  display:flex;
-  gap:10px;
-  align-items:center;
-  flex-wrap:wrap;
-}
-
-.footer-link{
-  color:rgba(234,240,255,.95);
-  border-bottom:1px solid rgba(255,255,255,.18);
-  padding-bottom:2px;
-}
-
+.footer-contact{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.footer-link{color:rgba(234,240,255,.95);border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:2px}
 .footer-dot{color:rgba(234,240,255,.45)}
 </style>
 </head>
@@ -386,9 +362,7 @@ h1{
 </section>
 
 <section class="section">
-
   <div class="grid3">
-
     <div class="card">
       <div class="serviceTitle">
         <h3 style="margin:0;">Standard Cleaning</h3>
@@ -415,14 +389,11 @@ h1{
       <p>A more thorough clean for empty homes, transitions, and start-fresh situations.</p>
       <div class="fine">Scope confirmed based on home condition and size.</div>
     </div>
-
   </div>
-
 </section>
 
 <footer class="site-footer">
   <div>© 2026 Turnover ATL</div>
-
   <div class="footer-contact">
     <a class="footer-link" href="mailto:ayinde@turnoveratl.com">ayinde@turnoveratl.com</a>
     <span class="footer-dot">•</span>
