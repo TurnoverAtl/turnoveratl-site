@@ -35,6 +35,7 @@ body{
 }
 
 a{color:inherit;text-decoration:none}
+a:hover{opacity:.96}
 
 header{
   position:sticky;
@@ -64,7 +65,7 @@ header{
   white-space:nowrap;
 }
 
-.brand img{width:28px;height:28px}
+.brand img{width:28px;height:28px;opacity:.95}
 
 .navlinks{
   display:flex;
@@ -75,22 +76,23 @@ header{
   font-size:14px;
   color:rgba(234,240,255,.82);
 }
+
 .navlinks a{opacity:.9}
 .navlinks a:hover{opacity:1}
 
 .navlinks .cta{
+  opacity:1;
   font-weight:900;
   padding:10px 14px;
   border-radius:999px;
   background:linear-gradient(135deg, rgba(106,168,255,.95), rgba(110,203,255,.85));
   color:#081225;
-  opacity:1;
 }
 
 main{
   max-width:var(--max);
   margin:auto;
-  padding:28px 18px 80px;
+  padding:36px 18px 80px;
 }
 
 /* ---------------- HERO WITH BACKGROUND PHOTOS ---------------- */
@@ -105,9 +107,9 @@ main{
   overflow:hidden;
   border-radius:22px;
 
-  /* ✅ FIX: overlay is lighter so photos actually show */
+  /* ✅ Updated overlay to make photos pop more */
   background:
-    linear-gradient(rgba(7,11,24,.38), rgba(7,11,24,.62)),
+    linear-gradient(rgba(7,11,24,.28), rgba(7,11,24,.55)),
     url("assets/clean kitchen.jpg"),
     url("assets/made bed.jpg");
 
@@ -125,13 +127,14 @@ main{
 
   padding:28px;
   border:1px solid rgba(255,255,255,.10);
+  box-shadow:0 30px 90px rgba(0,0,0,.35);
 }
 
 @media (max-width:920px){
   .hero{
     grid-template-columns:1fr;
     background:
-      linear-gradient(rgba(7,11,24,.40), rgba(7,11,24,.70)),
+      linear-gradient(rgba(7,11,24,.28), rgba(7,11,24,.55)),
       url("assets/clean kitchen.jpg");
     background-size:cover,cover;
     background-position:center,center;
@@ -151,15 +154,16 @@ h1{
   font-size:clamp(34px,5vw,58px);
   line-height:1.05;
   letter-spacing:-.02em;
-  text-shadow: 0 10px 30px rgba(0,0,0,.45);
+  text-shadow:0 10px 40px rgba(0,0,0,.55);
 }
 
 .sub{
   margin:0 0 16px;
-  color:var(--muted);
+  color:rgba(234,240,255,.80);
   line-height:1.65;
   font-size:15.5px;
   max-width:60ch;
+  text-shadow:0 10px 34px rgba(0,0,0,.55);
 }
 
 .pillRow{
@@ -173,8 +177,10 @@ h1{
   font-size:12.5px;
   padding:8px 10px;
   border-radius:999px;
-  background:rgba(0,0,0,.18);
-  border:1px solid rgba(255,255,255,.14);
+  background:rgba(0,0,0,.22);
+  border:1px solid rgba(255,255,255,.16);
+  color:rgba(234,240,255,.92);
+  backdrop-filter:blur(8px);
 }
 
 .actions{
@@ -182,9 +188,11 @@ h1{
   flex-wrap:wrap;
   gap:12px;
   margin-top:14px;
+  align-items:center;
 }
 
 .btn{
+  display:inline-block;
   padding:14px 16px;
   border-radius:14px;
   font-weight:900;
@@ -193,33 +201,50 @@ h1{
 }
 
 .btn.secondary{
-  background:rgba(0,0,0,.20);
-  border:1px solid rgba(255,255,255,.14);
-  color:rgba(234,240,255,.92);
+  background:rgba(0,0,0,.22);
+  border:1px solid rgba(255,255,255,.18);
+  color:rgba(234,240,255,.95);
+  font-weight:800;
+  backdrop-filter:blur(8px);
 }
 
 .contactLine{
   margin-top:12px;
   color:rgba(234,240,255,.78);
   font-size:13px;
+  line-height:1.6;
+  text-shadow:0 10px 34px rgba(0,0,0,.55);
 }
 
 .contactLine a{
-  color:rgba(234,240,255,.95);
-  border-bottom:1px solid rgba(255,255,255,.18);
+  color:rgba(234,240,255,.96);
+  border-bottom:1px solid rgba(255,255,255,.25);
+  padding-bottom:1px;
+}
+
+.contactLine a:hover{
+  border-bottom-color:rgba(255,255,255,.55);
 }
 
 .card{
-  background:rgba(8,12,24,.58);
-  backdrop-filter:blur(10px);
+  background:rgba(12,18,38,.60);
+  backdrop-filter:blur(12px);
   border:1px solid rgba(255,255,255,.14);
   border-radius:var(--radius);
   padding:22px;
   box-shadow:0 30px 90px rgba(0,0,0,.35);
 }
 
-.card h3{margin:0 0 10px;font-size:16px}
-.card p{margin:0 0 12px;color:var(--muted);line-height:1.6}
+.card h3{
+  margin:0 0 10px;
+  font-size:16px;
+}
+
+.card p{
+  margin:0 0 12px;
+  color:rgba(234,240,255,.72);
+  line-height:1.6;
+}
 
 .check{
   list-style:none;
@@ -233,6 +258,8 @@ h1{
   display:flex;
   gap:10px;
   align-items:flex-start;
+  color:rgba(234,240,255,.92);
+  line-height:1.5;
   font-size:14px;
 }
 
@@ -240,16 +267,24 @@ h1{
   width:10px;height:10px;border-radius:50%;
   margin-top:6px;
   background:linear-gradient(135deg,var(--accent),var(--accent2));
+  flex:0 0 10px;
 }
 
-.section{margin-top:30px;display:grid;gap:16px}
+.section{
+  margin-top:30px;
+  display:grid;
+  gap:16px;
+}
 
 .grid3{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:16px;
 }
-@media (max-width:920px){ .grid3{grid-template-columns:1fr} }
+
+@media (max-width:920px){
+  .grid3{grid-template-columns:1fr}
+}
 
 .serviceTitle{
   display:flex;
@@ -266,9 +301,16 @@ h1{
   border-radius:999px;
   background:rgba(106,168,255,.16);
   border:1px solid rgba(106,168,255,.32);
+  color:rgba(234,240,255,.95);
+  white-space:nowrap;
 }
 
-.fine{margin-top:14px;font-size:12px;color:rgba(234,240,255,.55)}
+.fine{
+  margin-top:14px;
+  font-size:12px;
+  color:rgba(234,240,255,.60);
+  line-height:1.6;
+}
 
 .site-footer{
   margin-top:34px;
@@ -282,8 +324,23 @@ h1{
   border-top:1px solid rgba(255,255,255,.08);
 }
 
-.footer-contact{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-.footer-link{color:rgba(234,240,255,.95);border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:2px}
+.footer-contact{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.footer-link{
+  color:rgba(234,240,255,.95);
+  border-bottom:1px solid rgba(255,255,255,.18);
+  padding-bottom:2px;
+}
+
+.footer-link:hover{
+  border-bottom-color:rgba(255,255,255,.45);
+}
+
 .footer-dot{color:rgba(234,240,255,.45)}
 </style>
 </head>
@@ -362,7 +419,9 @@ h1{
 </section>
 
 <section class="section">
+
   <div class="grid3">
+
     <div class="card">
       <div class="serviceTitle">
         <h3 style="margin:0;">Standard Cleaning</h3>
@@ -389,11 +448,14 @@ h1{
       <p>A more thorough clean for empty homes, transitions, and start-fresh situations.</p>
       <div class="fine">Scope confirmed based on home condition and size.</div>
     </div>
+
   </div>
+
 </section>
 
 <footer class="site-footer">
   <div>© 2026 Turnover ATL</div>
+
   <div class="footer-contact">
     <a class="footer-link" href="mailto:ayinde@turnoveratl.com">ayinde@turnoveratl.com</a>
     <span class="footer-dot">•</span>
