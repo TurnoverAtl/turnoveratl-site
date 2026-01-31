@@ -105,77 +105,39 @@ main{
   position:relative;
   overflow:hidden;
   border-radius:22px;
-  padding:28px;
 
-  border:1px solid rgba(255,255,255,.10);
-  box-shadow:0 30px 90px rgba(0,0,0,.35);
-
-  /* background photos (NO heavy overlay here anymore) */
+  /* ✅ overlay updated (photos pop more) + ✅ filenames safe for web */
   background:
+    linear-gradient(rgba(7,11,24,.28), rgba(7,11,24,.55)),
     url("assets/clean%20kitchen.jpg"),
     url("assets/made%20bed.jpg");
-  background-size:50% 100%, 50% 100%;
-  background-position:left center, right center;
+
+  background-size:
+    cover,
+    50% 100%,
+    50% 100%;
+
+  background-position:
+    center,
+    left center,
+    right center;
+
   background-repeat:no-repeat;
-}
 
-/* light global “vignette” only (barely darkens edges) */
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  background:
-    radial-gradient(900px 520px at 15% 30%, rgba(0,0,0,.10), transparent 60%),
-    radial-gradient(900px 520px at 85% 30%, rgba(0,0,0,.10), transparent 60%),
-    linear-gradient(180deg, rgba(7,11,24,.12), rgba(7,11,24,.22));
-}
-
-/* faint center divider */
-.hero::after{
-  content:"";
-  position:absolute;
-  top:0; bottom:0;
-  left:50%;
-  width:1px;
-  background:rgba(255,255,255,.12);
-  opacity:.55;
-  transform:translateX(-.5px);
+  padding:28px;
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:0 30px 90px rgba(0,0,0,.35);
 }
 
 @media (max-width:920px){
   .hero{
     grid-template-columns:1fr;
-    background:url("assets/clean%20kitchen.jpg");
-    background-size:cover;
-    background-position:center;
-  }
-  .hero::after{display:none;}
-  .hero::before{
     background:
-      radial-gradient(900px 520px at 50% 20%, rgba(0,0,0,.10), transparent 60%),
-      linear-gradient(180deg, rgba(7,11,24,.10), rgba(7,11,24,.28));
+      linear-gradient(rgba(7,11,24,.28), rgba(7,11,24,.55)),
+      url("assets/clean%20kitchen.jpg");
+    background-size:cover,cover;
+    background-position:center,center;
   }
-}
-
-/* content needs to sit above overlays */
-.hero > *{position:relative; z-index:2;}
-
-/* LEFT SIDE TEXT SCRIM (this is the real fix) */
-.hero-left{
-  display:flex;
-  flex-direction:column;
-  gap:0;
-  max-width:720px;
-
-  padding:18px 18px 16px;
-  border-radius:20px;
-
-  /* stronger only behind text, not over the whole photos */
-  background:linear-gradient(180deg, rgba(7,11,24,.58), rgba(7,11,24,.34));
-  border:1px solid rgba(255,255,255,.12);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
 }
 
 .kicker{
@@ -191,16 +153,16 @@ h1{
   font-size:clamp(34px,5vw,58px);
   line-height:1.05;
   letter-spacing:-.02em;
-  text-shadow:0 10px 40px rgba(0,0,0,.65);
+  text-shadow:0 10px 40px rgba(0,0,0,.55);
 }
 
 .sub{
   margin:0 0 16px;
-  color:rgba(234,240,255,.86);
+  color:rgba(234,240,255,.80);
   line-height:1.65;
   font-size:15.5px;
   max-width:60ch;
-  text-shadow:0 10px 34px rgba(0,0,0,.65);
+  text-shadow:0 10px 34px rgba(0,0,0,.55);
 }
 
 .pillRow{
@@ -214,11 +176,10 @@ h1{
   font-size:12.5px;
   padding:8px 10px;
   border-radius:999px;
-  background:rgba(0,0,0,.26);
-  border:1px solid rgba(255,255,255,.18);
+  background:rgba(0,0,0,.22);
+  border:1px solid rgba(255,255,255,.16);
   color:rgba(234,240,255,.92);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
+  backdrop-filter:blur(8px);
 }
 
 .actions{
@@ -239,20 +200,19 @@ h1{
 }
 
 .btn.secondary{
-  background:rgba(0,0,0,.26);
-  border:1px solid rgba(255,255,255,.20);
+  background:rgba(0,0,0,.22);
+  border:1px solid rgba(255,255,255,.18);
   color:rgba(234,240,255,.95);
   font-weight:800;
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
+  backdrop-filter:blur(8px);
 }
 
 .contactLine{
   margin-top:12px;
-  color:rgba(234,240,255,.82);
+  color:rgba(234,240,255,.78);
   font-size:13px;
   line-height:1.6;
-  text-shadow:0 10px 34px rgba(0,0,0,.65);
+  text-shadow:0 10px 34px rgba(0,0,0,.55);
 }
 
 .contactLine a{
@@ -265,17 +225,15 @@ h1{
   border-bottom-color:rgba(255,255,255,.55);
 }
 
-/* RIGHT CARD: make clearer by increasing opacity + reducing blur haze */
+/* ✅ clearer card: stronger contrast + less haze */
 .card{
-  background:rgba(12,18,38,.78);
-  border:1px solid rgba(255,255,255,.22);
+  background:rgba(12,18,38,.72);
+  border:1px solid rgba(255,255,255,.20);
   border-radius:var(--radius);
   padding:22px;
   box-shadow:0 40px 110px rgba(0,0,0,.55);
-
-  /* less blur = crisper text */
-  backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
 }
 
 .card h3{
@@ -286,7 +244,7 @@ h1{
 
 .card p{
   margin:0 0 12px;
-  color:rgba(234,240,255,.84);
+  color:rgba(234,240,255,.82);
   line-height:1.6;
 }
 
@@ -412,7 +370,7 @@ h1{
 
 <section class="hero">
 
-  <div class="hero-left">
+  <div>
     <div class="kicker">Short-term rental cleaning · Metro Atlanta</div>
 
     <h1>Reliable cleaning for homes that need to be guest-ready.</h1>
@@ -463,6 +421,7 @@ h1{
 </section>
 
 <section class="section">
+
   <div class="grid3">
 
     <div class="card">
@@ -493,6 +452,7 @@ h1{
     </div>
 
   </div>
+
 </section>
 
 <footer class="site-footer">
