@@ -44,6 +44,7 @@
       background:rgba(7,11,24,.72);
       border-bottom:1px solid rgba(255,255,255,.08);
     }
+
     .nav{
       max-width:var(--max);
       margin:auto;
@@ -53,6 +54,7 @@
       justify-content:space-between;
       gap:12px;
     }
+
     .brand{
       display:flex;
       align-items:center;
@@ -61,6 +63,7 @@
       letter-spacing:.2px;
       white-space:nowrap;
     }
+
     .brand img{width:28px;height:28px;opacity:.95}
 
     .navlinks{
@@ -72,6 +75,7 @@
       font-size:14px;
       color:rgba(234,240,255,.82);
     }
+
     .navlinks a{opacity:.9}
     .navlinks a:hover{opacity:1}
 
@@ -96,6 +100,7 @@
       gap:22px;
       align-items:start;
     }
+
     @media (max-width: 920px){
       .hero{grid-template-columns:1fr}
     }
@@ -107,12 +112,14 @@
       color:rgba(106,168,255,.95);
       margin-bottom:10px;
     }
+
     h1{
       margin:0 0 12px;
       font-size:clamp(34px,5vw,58px);
       line-height:1.05;
       letter-spacing:-.02em;
     }
+
     .sub{
       margin:0 0 16px;
       color:var(--muted);
@@ -127,6 +134,7 @@
       gap:10px;
       margin:14px 0 18px;
     }
+
     .pill{
       font-size:12.5px;
       padding:8px 10px;
@@ -143,6 +151,7 @@
       margin-top:14px;
       align-items:center;
     }
+
     .btn{
       display:inline-block;
       padding:14px 16px;
@@ -151,6 +160,7 @@
       background:linear-gradient(135deg, rgba(106,168,255,.95), rgba(110,203,255,.85));
       color:#081225;
     }
+
     .btn.secondary{
       background:rgba(255,255,255,.05);
       border:1px solid rgba(255,255,255,.12);
@@ -165,6 +175,16 @@
       line-height:1.6;
     }
 
+    .contactLine a{
+      color:rgba(234,240,255,.95);
+      border-bottom:1px solid rgba(255,255,255,.18);
+      padding-bottom:1px;
+    }
+
+    .contactLine a:hover{
+      border-bottom-color:rgba(255,255,255,.45);
+    }
+
     .card{
       background:var(--card);
       border:1px solid var(--stroke);
@@ -177,7 +197,12 @@
       margin:0 0 10px;
       font-size:16px;
     }
-    .card p{margin:0 0 12px;color:var(--muted);line-height:1.6}
+
+    .card p{
+      margin:0 0 12px;
+      color:var(--muted);
+      line-height:1.6
+    }
 
     .check{
       list-style:none;
@@ -186,6 +211,7 @@
       display:grid;
       gap:10px;
     }
+
     .check li{
       display:flex;
       gap:10px;
@@ -194,6 +220,7 @@
       line-height:1.5;
       font-size:14px;
     }
+
     .dot{
       width:10px;height:10px;border-radius:50%;
       margin-top:6px;
@@ -212,6 +239,7 @@
       grid-template-columns: repeat(3, 1fr);
       gap:16px;
     }
+
     @media (max-width: 920px){
       .grid3{grid-template-columns:1fr}
     }
@@ -223,6 +251,7 @@
       gap:12px;
       margin-bottom:6px;
     }
+
     .tag{
       font-size:12px;
       font-weight:800;
@@ -241,7 +270,9 @@
       line-height:1.6;
     }
 
-    footer{
+    /* ---------- footer (new clickable footer) ---------- */
+
+    .site-footer{
       margin-top:34px;
       font-size:13px;
       color:rgba(234,240,255,.6);
@@ -252,10 +283,33 @@
       padding:18px 2px 0;
       border-top:1px solid rgba(255,255,255,.08);
     }
+
+    .footer-contact{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .footer-link{
+      color:rgba(234,240,255,.95);
+      border-bottom:1px solid rgba(255,255,255,.18);
+      padding-bottom:2px;
+    }
+
+    .footer-link:hover{
+      border-bottom-color:rgba(255,255,255,.45);
+    }
+
+    .footer-dot{
+      color:rgba(234,240,255,.45);
+    }
+
   </style>
 </head>
 
 <body>
+
 <header>
   <div class="nav">
     <a class="brand" href="index.html">
@@ -274,10 +328,10 @@
 </header>
 
 <main>
+
   <section class="hero">
-    <!-- LEFT: HERO -->
+
     <div>
-      <!-- Keep one SEO-friendly line, but keep the rest normal -->
       <div class="kicker">Short-term rental cleaning · Metro Atlanta</div>
 
       <h1>Reliable cleaning for homes that need to be guest-ready.</h1>
@@ -300,14 +354,18 @@
       </div>
 
       <div class="contactLine">
-        Email: <strong>ayinde@turnoveratl.com</strong> · Text: <strong>(470) 290-2837</strong>
+        Email:
+        <a href="mailto:ayinde@turnoveratl.com"><strong>ayinde@turnoveratl.com</strong></a>
+        ·
+        Text:
+        <a href="tel:+14702902837"><strong>(470) 290-2837</strong></a>
       </div>
     </div>
 
-    <!-- RIGHT: WHAT WE DO -->
     <div class="card">
       <h3>What’s included</h3>
       <p>Every cleaning follows a consistent checklist, with photos sent once the job is complete.</p>
+
       <ul class="check">
         <li><span class="dot"></span><span>Kitchen and bathrooms reset</span></li>
         <li><span class="dot"></span><span>Floors and high-touch surfaces</span></li>
@@ -315,15 +373,18 @@
         <li><span class="dot"></span><span>Linens reset using host-provided items</span></li>
         <li><span class="dot"></span><span>Completion photos sent after finishing</span></li>
       </ul>
+
       <div class="fine">
         Submitting a request doesn’t require payment. We confirm availability first, then send next steps.
       </div>
     </div>
+
   </section>
 
-  <!-- SERVICES SNAPSHOT (keep it focused + normal language) -->
   <section class="section">
+
     <div class="grid3">
+
       <div class="card">
         <div class="serviceTitle">
           <h3 style="margin:0;">Standard Cleaning</h3>
@@ -350,13 +411,21 @@
         <p>A more thorough clean for empty homes, transitions, and “start fresh” situations.</p>
         <div class="fine">Scope confirmed based on home condition and size.</div>
       </div>
+
     </div>
+
   </section>
 
-  <footer>
+  <footer class="site-footer">
     <div>© 2026 Turnover ATL</div>
-    <div>Email: ayinde@turnoveratl.com · Text: (470) 290-2837</div>
+
+    <div class="footer-contact">
+      <a class="footer-link" href="mailto:ayinde@turnoveratl.com">ayinde@turnoveratl.com</a>
+      <span class="footer-dot">•</span>
+      <a class="footer-link" href="tel:+14702902837">(470) 290-2837</a>
+    </div>
   </footer>
+
 </main>
 
 </body>
