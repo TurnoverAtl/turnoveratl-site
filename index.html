@@ -25,6 +25,7 @@
 
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
+
     body{
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--text);
@@ -86,6 +87,8 @@
       border-radius:999px;
       background:linear-gradient(135deg, rgba(106,168,255,.95), rgba(110,203,255,.85));
       color:#081225;
+      border:0;
+      white-space:nowrap;
     }
 
     main{
@@ -201,7 +204,7 @@
     .card p{
       margin:0 0 12px;
       color:var(--muted);
-      line-height:1.6
+      line-height:1.6;
     }
 
     .check{
@@ -249,7 +252,7 @@
       align-items:center;
       justify-content:space-between;
       gap:12px;
-      margin-bottom:6px;
+      margin-bottom:10px;
     }
 
     .tag{
@@ -263,14 +266,36 @@
       white-space:nowrap;
     }
 
+    /* ---- PHOTOS ---- */
+    .service-photos{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin:10px 0 12px;
+    }
+
+    .service-photos img{
+      width:100%;
+      height:140px;
+      object-fit:cover;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.12);
+      background:#000;
+    }
+
+    @media (max-width: 520px){
+      .service-photos{
+        grid-template-columns:1fr;
+      }
+      .service-photos img{height:170px;}
+    }
+
     .fine{
       margin-top:14px;
       font-size:12px;
       color:rgba(234,240,255,.55);
       line-height:1.6;
     }
-
-    /* ---------- footer (new clickable footer) ---------- */
 
     .site-footer{
       margin-top:34px;
@@ -304,7 +329,6 @@
     .footer-dot{
       color:rgba(234,240,255,.45);
     }
-
   </style>
 </head>
 
@@ -382,7 +406,6 @@
   </section>
 
   <section class="section">
-
     <div class="grid3">
 
       <div class="card">
@@ -390,6 +413,13 @@
           <h3 style="margin:0;">Standard Cleaning</h3>
           <span class="tag">Most common</span>
         </div>
+
+        <!-- PHOTOS SHOW HERE -->
+        <div class="service-photos">
+          <img src="assets/clean kitchen.jpg" alt="Clean kitchen after turnover">
+          <img src="assets/made bed.jpg" alt="Freshly made bed after cleaning">
+        </div>
+
         <p>A reliable reset that keeps the home clean, presentable, and ready for the next guest.</p>
         <div class="fine">Best for routine visits and consistent upkeep.</div>
       </div>
@@ -413,14 +443,13 @@
       </div>
 
     </div>
-
   </section>
 
   <footer class="site-footer">
     <div>© 2026 Turnover ATL</div>
 
     <div class="footer-contact">
-      <a class="footer-link" href="mailto:Ayinde@TurnoverATL.com">Ayinde@TurnoverATL.com</a>
+      <a class="footer-link" href="mailto:ayinde@turnoveratl.com">ayinde@turnoveratl.com</a>
       <span class="footer-dot">•</span>
       <a class="footer-link" href="tel:+14702902837">(470) 290-2837</a>
     </div>
