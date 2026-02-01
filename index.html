@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Turnover ATL | Short-Term Rental Cleaning in Atlanta</title>
+  <title>Turnover ATL Cleaning | Short-Term Rental Cleaning in Atlanta</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -110,10 +110,10 @@
 
       border:1px solid rgba(255,255,255,.10);
       box-shadow:0 30px 90px rgba(0,0,0,.35);
-      isolation:isolate; /* keeps layers contained */
+      isolation:isolate;
     }
 
-    /* photo layer (crisp, not blurred) */
+    /* photo layer */
     .hero::before{
       content:"";
       position:absolute;
@@ -127,23 +127,21 @@
       background-position:left center, right center;
       background-repeat:no-repeat;
 
-      filter:none;               /* IMPORTANT: no blur */
-      transform:scale(1.01);     /* prevents thin seams */
+      filter:none;
+      transform:scale(1.01);
     }
 
-    /* overlay layer (lighter gradient so photos pop) */
+    /* overlay */
     .hero::after{
       content:"";
       position:absolute;
       inset:0;
       z-index:1;
 
-      background:
-        linear-gradient(rgba(7,11,24,.28), rgba(7,11,24,.55));
+      background:linear-gradient(rgba(7,11,24,.28), rgba(7,11,24,.55));
       pointer-events:none;
     }
 
-    /* make content sit ABOVE the layers */
     .hero > *{
       position:relative;
       z-index:2;
@@ -188,19 +186,21 @@
     .pillRow{
       display:flex;
       flex-wrap:wrap;
-      gap:10px;
+      gap:14px;
       margin:14px 0 18px;
     }
 
+    /* ✅ FLOATING TEXT (no pill) */
     .pill{
-      font-size:12.5px;
-      padding:8px 10px;
-      border-radius:999px;
-      background:rgba(0,0,0,.28);
-      border:1px solid rgba(255,255,255,.16);
-      color:rgba(234,240,255,.94);
-      backdrop-filter:blur(6px);
-      -webkit-backdrop-filter:blur(6px);
+      font-size:13px;
+      padding:0;
+      border-radius:0;
+      background:transparent;
+      border:none;
+      color:rgba(234,240,255,.95);
+      text-shadow:
+        0 2px 8px rgba(0,0,0,.65),
+        0 0 18px rgba(0,0,0,.35);
     }
 
     .actions{
@@ -247,29 +247,29 @@
       border-bottom-color:rgba(255,255,255,.55);
     }
 
-    /* ✅ ONLY the hero "What's included" box gets transparency */
+    /* ✅ "What's included" card - MORE SEE-THROUGH */
     .hero > .card{
-      background:rgba(10,16,34,.35); /* more transparent */
+      background:transparent; /* completely see-through */
       border:1px solid rgba(255,255,255,.22);
       border-radius:var(--radius);
       padding:22px;
       box-shadow:0 40px 110px rgba(0,0,0,.55);
-
-      /* small blur only; keeps text crisp */
-      backdrop-filter:blur(3px);
-      -webkit-backdrop-filter:blur(3px);
+      backdrop-filter:blur(4px);
+      -webkit-backdrop-filter:blur(4px);
     }
 
     .card h3{
       margin:0 0 10px;
       font-size:16px;
       color:rgba(234,240,255,.98);
+      text-shadow:0 2px 10px rgba(0,0,0,.55);
     }
 
     .card p{
       margin:0 0 12px;
-      color:rgba(234,240,255,.88);
+      color:rgba(234,240,255,.90);
       line-height:1.6;
+      text-shadow:0 2px 10px rgba(0,0,0,.55);
     }
 
     .check{
@@ -287,6 +287,7 @@
       color:rgba(234,240,255,.96);
       line-height:1.5;
       font-size:14px;
+      text-shadow:0 2px 10px rgba(0,0,0,.55);
     }
 
     .dot{
@@ -294,6 +295,7 @@
       margin-top:6px;
       background:linear-gradient(135deg,var(--accent),var(--accent2));
       flex:0 0 10px;
+      box-shadow:0 0 12px rgba(106,168,255,.35);
     }
 
     .section{
@@ -398,9 +400,7 @@
 </header>
 
 <main>
-
   <section class="hero">
-
     <div>
       <div class="kicker">Short-term rental cleaning · Metro Atlanta and Surrounding Areas</div>
 
@@ -448,12 +448,10 @@
         Submitting a request doesn’t require payment. We confirm availability first, then send next steps.
       </div>
     </div>
-
   </section>
 
   <section class="section">
     <div class="grid3">
-
       <div class="serviceCard">
         <div class="serviceTitle">
           <h3 style="margin:0;">Standard Cleaning</h3>
@@ -486,7 +484,6 @@
         </p>
         <div class="fine">Scope confirmed based on home condition and size.</div>
       </div>
-
     </div>
   </section>
 
@@ -499,7 +496,6 @@
       <a class="footer-link" href="tel:+14702902837">(470) 290-2837</a>
     </div>
   </footer>
-
 </main>
 </body>
 </html>
