@@ -95,7 +95,7 @@
       padding:36px 18px 80px;
     }
 
-    /* ---------------- HERO (PHOTO LAYERS FIXED) ---------------- */
+    /* ---------------- HERO ---------------- */
 
     .hero{
       position:relative;
@@ -113,7 +113,6 @@
       isolation:isolate;
     }
 
-    /* photo layer */
     .hero::before{
       content:"";
       position:absolute;
@@ -131,13 +130,11 @@
       transform:scale(1.01);
     }
 
-    /* overlay */
     .hero::after{
       content:"";
       position:absolute;
       inset:0;
       z-index:1;
-
       background:linear-gradient(rgba(7,11,24,.28), rgba(7,11,24,.55));
       pointer-events:none;
     }
@@ -148,9 +145,7 @@
     }
 
     @media (max-width:920px){
-      .hero{
-        grid-template-columns:1fr;
-      }
+      .hero{grid-template-columns:1fr}
       .hero::before{
         background-image:url("assets/clean%20kitchen.jpg");
         background-size:cover;
@@ -190,7 +185,7 @@
       margin:14px 0 18px;
     }
 
-    /* ✅ FLOATING TEXT (no pill) */
+    /* FLOATING TEXT (no pill background) */
     .pill{
       font-size:13px;
       padding:0;
@@ -247,9 +242,9 @@
       border-bottom-color:rgba(255,255,255,.55);
     }
 
-    /* ✅ "What's included" card - MORE SEE-THROUGH */
+    /* "What's included" - completely see-through */
     .hero > .card{
-      background:transparent; /* completely see-through */
+      background:transparent;
       border:1px solid rgba(255,255,255,.22);
       border-radius:var(--radius);
       padding:22px;
@@ -304,14 +299,23 @@
       gap:16px;
     }
 
+    /* ✅ 2 cards on top, 3rd drops under with more space */
     .grid3{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+    }
+    .grid3 > .serviceCard:nth-child(3){
+      grid-column:1 / -1;
+      margin-top:18px;
     }
 
     @media (max-width:920px){
       .grid3{grid-template-columns:1fr}
+      .grid3 > .serviceCard:nth-child(3){
+        grid-column:auto;
+        margin-top:0;
+      }
     }
 
     .serviceCard{
