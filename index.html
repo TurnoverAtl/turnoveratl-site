@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Turnover ATL Cleaning | Short-Term Rental Cleaning in Atlanta</title>
+  <title>Turnover ATL | Short-Term Rental Cleaning in Atlanta</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -110,7 +110,7 @@
 
       border:1px solid rgba(255,255,255,.10);
       box-shadow:0 30px 90px rgba(0,0,0,.35);
-      isolation:isolate;
+      isolation:isolate; /* keeps layers contained */
     }
 
     /* photo layer (crisp, not blurred) */
@@ -127,8 +127,8 @@
       background-position:left center, right center;
       background-repeat:no-repeat;
 
-      filter:none;
-      transform:scale(1.01);
+      filter:none;               /* IMPORTANT: no blur */
+      transform:scale(1.01);     /* prevents thin seams */
     }
 
     /* overlay layer (lighter gradient so photos pop) */
@@ -137,11 +137,13 @@
       position:absolute;
       inset:0;
       z-index:1;
-      background:linear-gradient(rgba(7,11,24,.28), rgba(7,11,24,.55));
+
+      background:
+        linear-gradient(rgba(7,11,24,.28), rgba(7,11,24,.55));
       pointer-events:none;
     }
 
-    /* content above layers */
+    /* make content sit ABOVE the layers */
     .hero > *{
       position:relative;
       z-index:2;
@@ -245,22 +247,17 @@
       border-bottom-color:rgba(255,255,255,.55);
     }
 
-    /* ✅ ONLY the hero "What's included" box */
+    /* ✅ ONLY the hero "What's included" box gets transparency */
     .hero > .card{
-      background:transparent;                 /* fully see-through */
-      border:1px solid rgba(255,255,255,.18); /* subtle edge */
+      background:rgba(10,16,34,.35); /* more transparent */
+      border:1px solid rgba(255,255,255,.22);
       border-radius:var(--radius);
       padding:22px;
-      box-shadow:none;                         /* cleaner glass look */
+      box-shadow:0 40px 110px rgba(0,0,0,.55);
 
-      backdrop-filter:blur(14px);              /* glass effect */
-      -webkit-backdrop-filter:blur(14px);
-    }
-
-    /* optional: add a tiny inner highlight so it feels premium */
-    .hero > .card{
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.08);
+      /* small blur only; keeps text crisp */
+      backdrop-filter:blur(3px);
+      -webkit-backdrop-filter:blur(3px);
     }
 
     .card h3{
@@ -271,7 +268,7 @@
 
     .card p{
       margin:0 0 12px;
-      color:rgba(234,240,255,.90);
+      color:rgba(234,240,255,.88);
       line-height:1.6;
     }
 
@@ -345,7 +342,7 @@
     .fine{
       margin-top:14px;
       font-size:12px;
-      color:rgba(234,240,255,.72);
+      color:rgba(234,240,255,.62);
       line-height:1.6;
     }
 
@@ -405,7 +402,7 @@
   <section class="hero">
 
     <div>
-      <div class="kicker">Short-term rental cleaning · Metro Atlanta and surrounding areas</div>
+      <div class="kicker">Short-term rental cleaning · Metro Atlanta and Surrounding Areas</div>
 
       <h1>Reliable cleaning for homes.</h1>
 
@@ -428,7 +425,7 @@
 
       <div class="contactLine">
         Email:
-        <a href="mailto:ayinde@turnoveratl.com"><strong>ayinde@turnoveratl.com</strong></a>
+        <a href="mailto:Ayinde@TurnoverATL.com"><strong>Ayinde@TurnoverATL.com</strong></a>
         ·
         Text:
         <a href="tel:+14702902837"><strong>(470) 290-2837</strong></a>
@@ -497,7 +494,7 @@
     <div>© 2026 Turnover ATL</div>
 
     <div class="footer-contact">
-      <a class="footer-link" href="mailto:ayinde@turnoveratl.com">ayinde@turnoveratl.com</a>
+      <a class="footer-link" href="mailto:Ayinde@TurnoverATL.com">Ayinde@TurnoverATL.com</a>
       <span class="footer-dot">•</span>
       <a class="footer-link" href="tel:+14702902837">(470) 290-2837</a>
     </div>
