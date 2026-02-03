@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Turnover ATL Cleaning | Managed Cleaning Operations in Atlanta</title>
+  <title>Turnover ATL Cleaning | Short-Term Rental Cleaning in Atlanta</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -166,7 +166,7 @@
       color:rgba(234,240,255,.84);
       line-height:1.65;
       font-size:15.5px;
-      max-width:62ch;
+      max-width:60ch;
       text-shadow:0 10px 34px rgba(0,0,0,.55);
     }
 
@@ -236,4 +236,240 @@
       backdrop-filter:blur(4px);
     }
 
-    .card h3{margin:0 0 10px;font-
+    .card h3{margin:0 0 10px;font-size:16px;}
+    .card p{margin:0 0 12px;line-height:1.6;}
+
+    .check{list-style:none;padding:0;margin:0;display:grid;gap:10px;}
+    .check li{display:flex;gap:10px;align-items:flex-start;font-size:14px;}
+
+    .dot{
+      width:10px;height:10px;border-radius:50%;
+      margin-top:6px;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      box-shadow:0 0 12px rgba(106,168,255,.35);
+    }
+
+    .section{margin-top:30px;display:grid;gap:16px;}
+
+    .grid3{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+    }
+
+    @media (max-width:920px){
+      .grid3{grid-template-columns:1fr}
+    }
+
+    .serviceCard{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:18px;
+      padding:22px;
+      box-shadow:0 30px 90px rgba(0,0,0,.35);
+    }
+
+    .serviceTitle{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:6px;
+    }
+
+    .tag{
+      font-size:12px;
+      font-weight:800;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(106,168,255,.16);
+      border:1px solid rgba(106,168,255,.32);
+      color:rgba(234,240,255,.95);
+    }
+
+    .serviceCtaRow{
+      display:flex;
+      gap:10px;
+      margin-top:12px;
+      align-items:center;
+    }
+
+    .fine{
+      margin-top:14px;
+      font-size:12px;
+      color:rgba(234,240,255,.62);
+      line-height:1.6;
+    }
+
+    .site-footer{
+      margin-top:34px;
+      font-size:13px;
+      color:rgba(234,240,255,.6);
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap:10px;
+      padding:18px 2px 0;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+
+    .footer-contact{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .footer-link{
+      color:rgba(234,240,255,.95);
+      border-bottom:1px solid rgba(255,255,255,.18);
+    }
+
+    .footer-dot{color:rgba(234,240,255,.45)}
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="nav">
+    <a class="brand" href="index.html">
+      <img src="assets/t-logo.png" alt="Turnover ATL logo">
+      <span>Turnover ATL Cleaning</span>
+    </a>
+
+    <div class="navlinks">
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+      <a href="apply.html">Careers</a>
+      <a class="cta" href="book.html">Book a Cleaning</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <div class="kicker">Short-term rental cleaning · Metro Atlanta and Surrounding Areas</div>
+      <h1>Reliable cleaning for homes.</h1>
+
+      <p class="sub">
+        Turnover ATL helps short-term rental hosts stay consistent without the chaos.
+        We confirm quickly, follow a clear checklist, and send completion photos after each clean.
+      </p>
+
+      <div class="pillRow">
+        <div class="pill">Clear checklist every visit</div>
+        <div class="pill">Completion photos</div>
+        <div class="pill">Fast confirmation</div>
+        <div class="pill">Straightforward communication</div>
+      </div>
+
+      <div class="actions">
+        <a class="btn" href="book.html">Book a Cleaning</a>
+        <a class="btn secondary" href="pricing.html">View Pricing</a>
+      </div>
+
+      <div class="contactLine">
+        Email:
+        <a href="mailto:Ayinde@TurnoverATL.com"><strong>Ayinde@TurnoverATL.com</strong></a>
+        ·
+        Text:
+        <a href="tel:+14702902837"><strong>(470) 290-2837</strong></a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>What’s included</h3>
+      <p>Every cleaning follows a consistent checklist, with photos sent once the job is complete.</p>
+
+      <ul class="check">
+        <li><span class="dot"></span><span>Kitchen and bathrooms reset</span></li>
+        <li><span class="dot"></span><span>Floors and high-touch surfaces</span></li>
+        <li><span class="dot"></span><span>Trash removed and light staging</span></li>
+        <li><span class="dot"></span><span>Linens reset using host-provided items</span></li>
+        <li><span class="dot"></span><span>Completion photos sent after finishing</span></li>
+      </ul>
+
+      <div class="fine">
+        Submitting a request doesn’t require payment. We confirm availability first, then send next steps.
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section">
+    <div class="grid3">
+
+      <div class="serviceCard">
+        <div class="serviceTitle">
+          <h3 style="margin:0;">Standard Cleaning</h3>
+          <span class="tag">Most common</span>
+        </div>
+        <p style="margin:0 0 12px;color:rgba(234,240,255,.72);line-height:1.6;">
+          A reliable reset that keeps the home clean, presentable, and ready for the next guest.
+        </p>
+        <div class="fine">Best for routine visits and consistent upkeep.</div>
+      </div>
+
+      <div class="serviceCard">
+        <div class="serviceTitle">
+          <h3 style="margin:0;">Deep Cleaning</h3>
+          <span class="tag">As needed</span>
+        </div>
+        <p style="margin:0 0 12px;color:rgba(234,240,255,.72);line-height:1.6;">
+          Extra detail work to refresh the home when it needs more than a standard clean.
+        </p>
+        <div class="fine">Great for buildup, seasonal resets, or first-time service.</div>
+      </div>
+
+      <!-- Residential -->
+      <div class="serviceCard">
+        <div class="serviceTitle">
+          <h3 style="margin:0;">Residential Cleaning</h3>
+          <span class="tag">Also available</span>
+        </div>
+
+        <p style="margin:0 0 12px;color:rgba(234,240,255,.72);line-height:1.6;">
+          Ongoing home cleaning for people who live in the home — not a short-term rental turnover.
+        </p>
+
+        <div class="serviceCtaRow">
+          <a class="btn small" href="residential-quote.html">Book Residential</a>
+          <a class="btn secondary small" href="pricing.html">See Pricing</a>
+        </div>
+
+        <div class="fine">
+          Weekly, bi-weekly, or monthly. We confirm details and send next steps.
+        </div>
+      </div>
+
+      <div class="serviceCard">
+        <div class="serviceTitle">
+          <h3 style="margin:0;">Move-In / Move-Out</h3>
+          <span class="tag">By request</span>
+        </div>
+        <p style="margin:0 0 12px;color:rgba(234,240,255,.72);line-height:1.6;">
+          A more thorough clean for empty homes, transitions, and start-fresh situations.
+        </p>
+        <div class="fine">Scope confirmed based on home condition and size.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div>© 2026 Turnover ATL Cleaning</div>
+
+    <div class="footer-contact">
+      <a class="footer-link" href="mailto:Ayinde@TurnoverATL.com">Ayinde@TurnoverATL.com</a>
+      <span class="footer-dot">•</span>
+      <a class="footer-link" href="tel:+14702902837">(470) 290-2837</a>
+    </div>
+  </footer>
+
+</main>
+</body>
+</html>
