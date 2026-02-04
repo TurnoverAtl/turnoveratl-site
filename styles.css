@@ -1,278 +1,226 @@
-/* =========================
-   TURNOVER ATL — styles.css (FAIL-PROOF)
-   Paste this whole file into styles.css
-========================= */
+/* =========================================================
+   TURNOVER ATL — COMPATIBILITY PACK
+   Supports your existing HTML pages (index/services/about/etc)
+   Paste below your current styles.
+========================================================= */
 
-/* ---------- Theme Vars ---------- */
-:root{
-  --bg:#070b18;
-  --bg2:#0b1022;
-  --card:rgba(255,255,255,.06);
-  --stroke:rgba(255,255,255,.12);
-  --text:#eaf0ff;
-  --muted:rgba(234,240,255,.65);
-  --accent:#6aa8ff;
-  --accent2:#6ecbff;
-  --radius:16px;
-  --max:1100px;
-}
-
-/* ---------- Reset ---------- */
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-img{max-width:100%;display:block}
-a{text-decoration:none;color:inherit}
-button,input,select,textarea{font:inherit}
-
-/* ---------- Body ---------- */
-body{
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  background:
-    radial-gradient(1000px 520px at 20% 0%, rgba(106,168,255,.18), transparent 60%),
-    linear-gradient(180deg,var(--bg2),var(--bg));
-  color:var(--text);
-}
-
-/* ---------- Layout Helpers ---------- */
-.wrap{
-  max-width:var(--max);
-  margin:0 auto;
-  padding:0 18px;
-}
-
-.section{
-  padding:32px 0;
-}
-
-/* ---------- Header / Nav ---------- */
-header{
-  position:sticky;
-  top:0;
-  z-index:50;
-  backdrop-filter:blur(10px);
-  background:rgba(7,11,24,.72);
-  border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.nav{
-  max-width:var(--max);
-  margin:0 auto;
-  padding:14px 18px;
+/* Navlinks group (matches your existing header HTML) */
+.navlinks{
   display:flex;
-  align-items:center;
-  justify-content:space-between;
   gap:14px;
-}
-
-.brand{
-  display:flex;
   align-items:center;
-  gap:10px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+  font-size:14px;
+  color:rgba(234,240,255,.82);
+}
+.navlinks a{opacity:.9; padding:8px 10px; border-radius:12px; border:1px solid transparent;}
+.navlinks a:hover{opacity:1; border-color:rgba(255,255,255,.12); background:rgba(255,255,255,.04);}
+
+/* CTA in nav (your existing <a class="cta"> ) */
+.navlinks .cta,
+a.cta{
+  opacity:1;
   font-weight:900;
-  letter-spacing:.2px;
+  padding:10px 14px;
+  border-radius:999px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#081225 !important;
+  border:0 !important;
+  white-space:nowrap;
 }
 
-.brand img{
-  width:44px;
-  height:44px;
-  border-radius:12px;
+/* Kicker (services/about pages) */
+.kicker{
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-size:12px;
+  color:var(--accent);
+  margin-bottom:10px;
 }
 
-/* Optional nav link styling */
-.nav a{
-  color:rgba(234,240,255,.9);
-  padding:8px 10px;
-  border-radius:12px;
-  border:1px solid transparent;
-}
-.nav a:hover{
-  border-color:rgba(255,255,255,.12);
-  background:rgba(255,255,255,.04);
-}
-
-/* ---------- Main Content ---------- */
-main{
-  max-width:var(--max);
-  margin:0 auto;
-  padding:32px 18px 80px;
+/* Hero (index.html layout + photos) */
+.hero{
+  position:relative;
+  overflow:hidden;
+  border-radius:22px;
+  padding:28px;
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  gap:22px;
+  align-items:start;
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:0 30px 90px rgba(0,0,0,.35);
+  isolation:isolate;
 }
 
-/* ---------- Cards ---------- */
-.card{
+/* Hero split background photos */
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  background-image:
+    url("assets/clean%20kitchen.jpg"),
+    url("assets/made%20bed.jpg");
+  background-size:50% 100%, 50% 100%;
+  background-position:left center, right center;
+  background-repeat:no-repeat;
+  transform:scale(1.01);
+}
+
+/* Dark overlay */
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:linear-gradient(rgba(7,11,24,.28), rgba(7,11,24,.55));
+  pointer-events:none;
+}
+
+.hero > *{position:relative; z-index:2;}
+
+@media (max-width:920px){
+  .hero{grid-template-columns:1fr}
+  .hero::before{
+    background-image:url("assets/clean%20kitchen.jpg");
+    background-size:cover;
+    background-position:center;
+  }
+}
+
+/* Hero text helpers */
+.sub{
+  margin:0 0 16px;
+  color:rgba(234,240,255,.84);
+  line-height:1.65;
+  font-size:15.5px;
+  max-width:60ch;
+  text-shadow:0 10px 34px rgba(0,0,0,.55);
+}
+
+.pillRow{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin:14px 0 18px;
+}
+.pill{
+  font-size:13px;
+  color:rgba(234,240,255,.95);
+  text-shadow:0 2px 8px rgba(0,0,0,.65),0 0 18px rgba(0,0,0,.35);
+}
+
+.actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:14px;
+}
+
+.contactLine{
+  margin-top:12px;
+  color:rgba(234,240,255,.82);
+  font-size:13px;
+  line-height:1.6;
+  text-shadow:0 10px 34px rgba(0,0,0,.55);
+}
+.contactLine a{
+  color:rgba(234,240,255,.96);
+  border-bottom:1px solid rgba(255,255,255,.25);
+}
+
+/* Card variations used on index */
+.hero > .card{
+  background:transparent;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:var(--radius);
+  padding:22px;
+  box-shadow:0 40px 110px rgba(0,0,0,.55);
+  backdrop-filter:blur(4px);
+}
+
+/* Checklist bullets in hero */
+.check{list-style:none;padding:0;margin:0;display:grid;gap:10px;}
+.check li{display:flex;gap:10px;align-items:flex-start;font-size:14px; padding-left:0;}
+.check li::before{display:none;}
+
+.dot{
+  width:10px;height:10px;border-radius:50%;
+  margin-top:6px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  box-shadow:0 0 12px rgba(106,168,255,.35);
+}
+
+/* Service cards + grid used on index/services */
+.grid3{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+}
+@media (max-width:920px){
+  .grid3{grid-template-columns:1fr}
+}
+
+.serviceCard{
   background:var(--card);
   border:1px solid var(--stroke);
-  border-radius:var(--radius);
+  border-radius:18px;
   padding:22px;
   box-shadow:0 30px 90px rgba(0,0,0,.35);
 }
 
-/* ---------- Typography ---------- */
-h1,h2,h3{
-  margin:0 0 10px;
-  color:var(--text);
-  line-height:1.15;
+.serviceTitle{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:6px;
 }
 
-h1{ font-size:clamp(28px,6vw,44px); }
-h2{ font-size:clamp(22px,3.5vw,30px); }
+.tag{
+  font-size:12px;
+  font-weight:800;
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(106,168,255,.16);
+  border:1px solid rgba(106,168,255,.32);
+  color:rgba(234,240,255,.95);
+}
 
-p{
-  margin:0 0 14px;
-  color:var(--muted);
+.serviceCtaRow{
+  display:flex;
+  gap:10px;
+  margin-top:12px;
+  align-items:center;
+}
+
+.fine{
+  margin-top:14px;
+  font-size:12px;
+  color:rgba(234,240,255,.62);
   line-height:1.6;
 }
 
-label{
-  font-size:13px;
-  color:var(--muted);
+/* Buttons used across pages */
+.btn.secondary{
+  background:rgba(0,0,0,.28);
+  border:1px solid rgba(255,255,255,.18);
+  color:rgba(234,240,255,.95);
+  font-weight:800;
+  backdrop-filter:blur(6px);
 }
-
-.muted{ color:var(--muted); }
-
-/* ---------- Forms ---------- */
-form{display:grid;gap:14px}
-
-input,
-select,
-textarea{
-  width:100%;
-  padding:14px;
+.btn.small{
+  padding:10px 12px;
   border-radius:12px;
-  border:1px solid var(--stroke);
-  background:rgba(255,255,255,.04);
-  color:var(--text);
-  font-size:15px;
-  outline:none;
-}
-
-input::placeholder,
-textarea::placeholder{
-  color:rgba(234,240,255,.45);
-}
-
-/* Dropdown open-state readability */
-select option{
-  color:#000 !important;
-  background:#fff;
-}
-select optgroup{
-  color:#000 !important;
-  background:#fff;
-}
-
-textarea{
-  min-height:90px;
-  resize:vertical;
-}
-
-/* ---------- Grid Rows ---------- */
-.row{
-  display:grid;
-  gap:14px;
-}
-@media(min-width:640px){
-  .row{grid-template-columns:1fr 1fr}
-}
-
-/* ---------- Buttons ---------- */
-.btn{
-  margin-top:8px;
-  padding:16px;
-  border-radius:14px;
-  border:none;
+  font-size:13px;
   font-weight:900;
-  font-size:16px;
-  cursor:pointer;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  color:#081225;
 }
 
-.btn:hover{ filter:brightness(1.05); }
-
-/* ---------- Notes ---------- */
-.note{
-  margin-top:14px;
-  font-size:13px;
-  color:var(--muted);
-}
-
-/* =========================
-   FOOTER — FAIL-PROOF
-   Works even if you do:
-   <footer> ... </footer>
-   OR
-   <footer class="site-footer"> ... </footer>
-========================= */
-footer,
-.site-footer{
-  margin-top:40px;
-  padding:22px 16px;
-  text-align:center;
-  border-top:1px solid var(--stroke);
-  background:rgba(255,255,255,.03);
-  font-size:13px;
-  color:rgba(234,240,255,.6);
-}
-
-/* Nice layout if you use footer-contact */
-.footer-contact{
-  margin-top:8px;
-  display:flex;
-  gap:10px;
-  justify-content:center;
-  align-items:center;
-  flex-wrap:wrap;
-}
-
-/* Make email + phone look clickable even if you forget classes */
-.footer-link,
-footer a{
-  color:var(--text);
-  text-decoration:none;
-  border-bottom:1px solid rgba(255,255,255,.18);
-  padding-bottom:2px;
-}
-
-.footer-link:hover,
-footer a:hover{
-  border-bottom-color:rgba(255,255,255,.45);
-}
-
-.footer-dot{
-  color:rgba(234,240,255,.45);
-}
-
-/* =========================
-   OPTIONAL: PHOTO GRID
-========================= */
-.photo-grid{
-  display:grid;
-  grid-template-columns:repeat(4, 1fr);
-  gap:14px;
-  margin-top:16px;
-}
-
-.photo{
-  margin:0;
-  border-radius:var(--radius);
-  overflow:hidden;
-  border:1px solid var(--stroke);
-  background:var(--card);
-  box-shadow:0 12px 30px rgba(0,0,0,.28);
-}
-
-.photo img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
-  display:block;
-}
-
-@media (max-width: 980px){
-  .photo-grid{ grid-template-columns:repeat(2, 1fr); }
-}
-
-@media (max-width: 560px){
-  .photo-grid{ grid-template-columns:1fr; }
-  .photo img{ height:240px; }
+/* Match your divider class */
+.divider{
+  margin:40px 0;
+  border:0;
+  border-top:1px solid rgba(255,255,255,.10);
 }
