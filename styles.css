@@ -1,97 +1,135 @@
-/* =========================================================
-   TURNOVER ATL — COMPATIBILITY PACK
-   Supports your existing HTML pages (index/services/about/etc)
-   Paste below your current styles.
-========================================================= */
+/* =========================
+   TURNOVER ATL — styles.css (SITE-WIDE)
+   Paste this whole file into styles.css
+========================= */
 
-/* Navlinks group (matches your existing header HTML) */
-.navlinks{
-  display:flex;
-  gap:14px;
-  align-items:center;
-  flex-wrap:wrap;
-  justify-content:flex-end;
-  font-size:14px;
-  color:rgba(234,240,255,.82);
+/* ---------- Theme Vars ---------- */
+:root{
+  --bg:#070b18;
+  --bg2:#0b1022;
+  --card:rgba(255,255,255,.06);
+  --stroke:rgba(255,255,255,.12);
+  --text:#eaf0ff;
+  --muted:rgba(234,240,255,.70);
+  --accent:#6aa8ff;
+  --accent2:#6ecbff;
+  --radius:18px;
+  --max:1280px;
 }
-.navlinks a{opacity:.9; padding:8px 10px; border-radius:12px; border:1px solid transparent;}
-.navlinks a:hover{opacity:1; border-color:rgba(255,255,255,.12); background:rgba(255,255,255,.04);}
 
-/* CTA in nav (your existing <a class="cta"> ) */
-.navlinks .cta,
-a.cta{
-  opacity:1;
+/* ---------- Reset ---------- */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font:inherit}
+
+/* ---------- Body ---------- */
+body{
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(1100px 520px at 20% 0%, rgba(106,168,255,.18), transparent 60%),
+    linear-gradient(180deg,var(--bg2),var(--bg));
+}
+
+/* ---------- Layout ---------- */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 18px;}
+main{padding:36px 0 80px;}
+
+/* ---------- Header ---------- */
+header{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  background:rgba(7,11,24,.72);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.navbar{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:12px; padding:14px 0;
+}
+.brand{
+  display:flex; align-items:center; gap:10px;
+  font-weight:900; letter-spacing:.2px; white-space:nowrap;
+}
+.brand img{width:28px;height:28px;opacity:.95}
+
+.navlinks{
+  display:flex; gap:14px; align-items:center; flex-wrap:wrap;
+  justify-content:flex-end;
+  font-size:14px; color:rgba(234,240,255,.82);
+}
+.navlinks a{opacity:.9}
+.navlinks a:hover{opacity:1}
+
+.cta{
+  opacity:1 !important;
   font-weight:900;
   padding:10px 14px;
   border-radius:999px;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  color:#081225 !important;
-  border:0 !important;
-  white-space:nowrap;
+  background:linear-gradient(135deg, rgba(106,168,255,.95), rgba(110,203,255,.85));
+  color:#081225;
 }
 
-/* Kicker (services/about pages) */
-.kicker{
-  text-transform:uppercase;
-  letter-spacing:.12em;
-  font-size:12px;
-  color:var(--accent);
-  margin-bottom:10px;
-}
-
-/* Hero (index.html layout + photos) */
+/* ---------- Hero (Reusable) ---------- */
 .hero{
   position:relative;
   overflow:hidden;
   border-radius:22px;
   padding:28px;
-  display:grid;
-  grid-template-columns:1.25fr .75fr;
-  gap:22px;
-  align-items:start;
   border:1px solid rgba(255,255,255,.10);
   box-shadow:0 30px 90px rgba(0,0,0,.35);
   isolation:isolate;
 }
-
-/* Hero split background photos */
-.hero::before{
+.heroGrid{
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  gap:22px;
+  align-items:start;
+}
+.heroSplit::before{
   content:"";
-  position:absolute;
-  inset:0;
-  z-index:0;
-  background-image:
-    url("assets/clean%20kitchen.jpg"),
-    url("assets/made%20bed.jpg");
+  position:absolute; inset:0; z-index:0;
+  background-image: var(--hero-left), var(--hero-right);
   background-size:50% 100%, 50% 100%;
   background-position:left center, right center;
   background-repeat:no-repeat;
   transform:scale(1.01);
 }
-
-/* Dark overlay */
-.hero::after{
+.heroSplit::after{
   content:"";
-  position:absolute;
-  inset:0;
-  z-index:1;
+  position:absolute; inset:0; z-index:1;
   background:linear-gradient(rgba(7,11,24,.28), rgba(7,11,24,.55));
   pointer-events:none;
 }
-
-.hero > *{position:relative; z-index:2;}
+.hero > *{position:relative;z-index:2;}
 
 @media (max-width:920px){
-  .hero{grid-template-columns:1fr}
-  .hero::before{
-    background-image:url("assets/clean%20kitchen.jpg");
+  .heroGrid{grid-template-columns:1fr}
+  .heroSplit::before{
+    background-image: var(--hero-left);
     background-size:cover;
     background-position:center;
   }
 }
 
-/* Hero text helpers */
-.sub{
+/* ---------- Typography ---------- */
+.kicker{
+  text-transform:uppercase;
+  letter-spacing:.10em;
+  font-size:12px;
+  color:rgba(106,168,255,.95);
+  margin-bottom:10px;
+}
+h1{
+  margin:0 0 12px;
+  font-size:clamp(34px,5vw,58px);
+  line-height:1.05;
+  letter-spacing:-.02em;
+  text-shadow:0 10px 40px rgba(0,0,0,.55);
+}
+.lead{
   margin:0 0 16px;
   color:rgba(234,240,255,.84);
   line-height:1.65;
@@ -100,110 +138,22 @@ a.cta{
   text-shadow:0 10px 34px rgba(0,0,0,.55);
 }
 
-.pillRow{
-  display:flex;
-  flex-wrap:wrap;
-  gap:14px;
-  margin:14px 0 18px;
-}
+/* ---------- Pills / Buttons ---------- */
+.pillRow{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0 18px;}
 .pill{
   font-size:13px;
   color:rgba(234,240,255,.95);
   text-shadow:0 2px 8px rgba(0,0,0,.65),0 0 18px rgba(0,0,0,.35);
 }
-
-.actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:14px;
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px;}
+.btn{
+  display:inline-block;
+  padding:14px 16px;
+  border-radius:14px;
+  font-weight:900;
+  background:linear-gradient(135deg, rgba(106,168,255,.95), rgba(110,203,255,.85));
+  color:#081225;
 }
-
-.contactLine{
-  margin-top:12px;
-  color:rgba(234,240,255,.82);
-  font-size:13px;
-  line-height:1.6;
-  text-shadow:0 10px 34px rgba(0,0,0,.55);
-}
-.contactLine a{
-  color:rgba(234,240,255,.96);
-  border-bottom:1px solid rgba(255,255,255,.25);
-}
-
-/* Card variations used on index */
-.hero > .card{
-  background:transparent;
-  border:1px solid rgba(255,255,255,.22);
-  border-radius:var(--radius);
-  padding:22px;
-  box-shadow:0 40px 110px rgba(0,0,0,.55);
-  backdrop-filter:blur(4px);
-}
-
-/* Checklist bullets in hero */
-.check{list-style:none;padding:0;margin:0;display:grid;gap:10px;}
-.check li{display:flex;gap:10px;align-items:flex-start;font-size:14px; padding-left:0;}
-.check li::before{display:none;}
-
-.dot{
-  width:10px;height:10px;border-radius:50%;
-  margin-top:6px;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  box-shadow:0 0 12px rgba(106,168,255,.35);
-}
-
-/* Service cards + grid used on index/services */
-.grid3{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:22px;
-}
-@media (max-width:920px){
-  .grid3{grid-template-columns:1fr}
-}
-
-.serviceCard{
-  background:var(--card);
-  border:1px solid var(--stroke);
-  border-radius:18px;
-  padding:22px;
-  box-shadow:0 30px 90px rgba(0,0,0,.35);
-}
-
-.serviceTitle{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  margin-bottom:6px;
-}
-
-.tag{
-  font-size:12px;
-  font-weight:800;
-  padding:6px 10px;
-  border-radius:999px;
-  background:rgba(106,168,255,.16);
-  border:1px solid rgba(106,168,255,.32);
-  color:rgba(234,240,255,.95);
-}
-
-.serviceCtaRow{
-  display:flex;
-  gap:10px;
-  margin-top:12px;
-  align-items:center;
-}
-
-.fine{
-  margin-top:14px;
-  font-size:12px;
-  color:rgba(234,240,255,.62);
-  line-height:1.6;
-}
-
-/* Buttons used across pages */
 .btn.secondary{
   background:rgba(0,0,0,.28);
   border:1px solid rgba(255,255,255,.18);
@@ -211,16 +161,126 @@ a.cta{
   font-weight:800;
   backdrop-filter:blur(6px);
 }
-.btn.small{
-  padding:10px 12px;
-  border-radius:12px;
-  font-size:13px;
-  font-weight:900;
-}
+.btn.small{padding:10px 12px;border-radius:12px;font-size:13px;font-weight:900;}
 
-/* Match your divider class */
-.divider{
-  margin:40px 0;
-  border:0;
-  border-top:1px solid rgba(255,255,255,.10);
+/* ---------- Contact line ---------- */
+.contactLine{
+  margin-top:12px;
+  color:rgba(234,240,255,.82);
+  font-size:13px;
+  line-height:1.6;
+  text-shadow:0 10px 34px rgba(0,0,0,.55);
 }
+.contactLine a{color:rgba(234,240,255,.96);border-bottom:1px solid rgba(255,255,255,.25);}
+
+/* ---------- Side Card ---------- */
+.card{
+  background:transparent;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:var(--radius);
+  padding:22px;
+  box-shadow:0 40px 110px rgba(0,0,0,.55);
+  backdrop-filter:blur(4px);
+}
+.card h3{margin:0 0 10px;font-size:16px;}
+.card p{margin:0 0 12px;line-height:1.6;}
+.check{list-style:none;padding:0;margin:0;display:grid;gap:10px;}
+.check li{display:flex;gap:10px;align-items:flex-start;font-size:14px;}
+.dot{
+  width:10px;height:10px;border-radius:50%;
+  margin-top:6px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  box-shadow:0 0 12px rgba(106,168,255,.35);
+}
+.fine{margin-top:14px;font-size:12px;color:rgba(234,240,255,.62);line-height:1.6;}
+
+/* ---------- Trust Strip ---------- */
+.trustStrip{
+  margin-top:22px;
+  padding:18px 0;
+  border-top:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+}
+.trustGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.trustItem{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:18px;
+  padding:14px 14px;
+  box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+.trustItem strong{display:block;font-size:14px;font-weight:900;color:rgba(234,240,255,.95);}
+.trustItem span{display:block;margin-top:6px;font-size:12.5px;color:rgba(234,240,255,.65);line-height:1.45;}
+@media (max-width:920px){ .trustGrid{grid-template-columns:1fr 1fr;} }
+
+/* ---------- Sections / Cards ---------- */
+.section{margin-top:30px;display:grid;gap:14px;}
+.sectionHead{
+  display:flex; justify-content:space-between; align-items:flex-end;
+  gap:14px; flex-wrap:wrap;
+}
+.sectionHead h2{margin:0;font-size:22px;letter-spacing:-.01em;}
+.sectionHead p{margin:0;color:rgba(234,240,255,.70);max-width:70ch;line-height:1.6;font-size:14px;}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+@media (max-width:920px){ .grid2{grid-template-columns:1fr;} }
+
+.serviceCard{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 30px 90px rgba(0,0,0,.35);
+}
+.serviceTitle{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:12px;margin-bottom:6px;
+}
+.tag{
+  font-size:12px;font-weight:800;
+  padding:6px 10px;border-radius:999px;
+  background:rgba(106,168,255,.16);
+  border:1px solid rgba(106,168,255,.32);
+  color:rgba(234,240,255,.95);
+}
+.serviceCtaRow{display:flex;gap:10px;margin-top:12px;align-items:center;flex-wrap:wrap;}
+
+/* ---------- Forms (native look) ---------- */
+.formCard{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 30px 90px rgba(0,0,0,.35);
+}
+.formGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media (max-width:920px){ .formGrid{grid-template-columns:1fr;} }
+.label{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:rgba(234,240,255,.65);margin:0 0 6px;}
+.input, .select, .textarea{
+  width:100%;
+  background:rgba(0,0,0,.28);
+  border:1px solid rgba(255,255,255,.18);
+  color:rgba(234,240,255,.95);
+  border-radius:14px;
+  padding:12px 12px;
+  outline:none;
+}
+.textarea{min-height:110px;resize:vertical;}
+.help{margin-top:8px;color:rgba(234,240,255,.62);font-size:12px;line-height:1.6;}
+
+/* ---------- Footer ---------- */
+.site-footer{
+  margin-top:34px;
+  font-size:13px;
+  color:rgba(234,240,255,.6);
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:10px;
+  padding:18px 0 0;
+  border-top:1px solid rgba(255,255,255,.08);
+}
+.footer-contact{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+.footer-link{color:rgba(234,240,255,.95);border-bottom:1px solid rgba(255,255,255,.18);}
+.footer-dot{color:rgba(234,240,255,.45);}
