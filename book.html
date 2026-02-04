@@ -3,298 +3,182 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Book a Turnover | Turnover ATL</title>
+  <title>Book a Turnover | Turnover ATL Cleaning</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --bg:#070b18;
-      --bg2:#0b1022;
-      --card:rgba(255,255,255,.06);
-      --stroke:rgba(255,255,255,.12);
-      --text:#eaf0ff;
-      --muted:rgba(234,240,255,.65);
-      --accent:#6aa8ff;
-      --radius:16px;
-      --max:720px;
-    }
-
-    *{box-sizing:border-box}
-
-    body{
-      margin:0;
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:linear-gradient(180deg,var(--bg2),var(--bg));
-      color:var(--text);
-    }
-
-    a{color:inherit;text-decoration:none}
-
-    header{
-      position:sticky;
-      top:0;
-      z-index:50;
-      backdrop-filter:blur(10px);
-      -webkit-backdrop-filter:blur(10px);
-      background:rgba(7,11,24,.7);
-      border-bottom:1px solid var(--stroke);
-    }
-
-    .nav{
-      max-width:1100px;
-      margin:auto;
-      padding:14px 18px;
-      display:flex;
-      align-items:center;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-weight:800;
-    }
-
-    .brand img{
-      width:28px;
-      height:28px;
-      opacity:.95;
-    }
-
-    main{
-      max-width:var(--max);
-      margin:auto;
-      padding:32px 18px 80px;
-    }
-
-    .card{
-      background:var(--card);
-      border:1px solid var(--stroke);
-      border-radius:var(--radius);
-      padding:22px;
-    }
-
-    h1{
-      margin:0 0 10px;
-      font-size:clamp(28px,6vw,40px);
-      letter-spacing:-.02em;
-    }
-
-    p{
-      margin:0 0 14px;
-      color:var(--muted);
-      line-height:1.6;
-    }
-
-    .steps{
-      display:grid;
-      gap:10px;
-      margin:18px 0 24px;
-    }
-
-    .step{
-      font-size:14px;
-      color:var(--muted);
-    }
-
-    form{
-      display:grid;
-      gap:14px;
-    }
-
-    label{
-      font-size:13px;
-      color:var(--muted);
-    }
-
-    input, select, textarea{
-      width:100%;
-      padding:14px;
-      border-radius:12px;
-      border:1px solid var(--stroke);
-      background:rgba(255,255,255,.04);
-      color:var(--text);
-      font-family:inherit;
-      font-size:15px;
-    }
-
-    textarea{
-      min-height:90px;
-      resize:vertical;
-    }
-
-    .row{
-      display:grid;
-      gap:14px;
-    }
-
-    @media(min-width:640px){
-      .row{grid-template-columns:1fr 1fr}
-    }
-
-    .btn{
-      margin-top:10px;
-      padding:16px;
-      border-radius:14px;
-      border:none;
-      font-weight:800;
-      font-size:16px;
-      cursor:pointer;
-      background:linear-gradient(135deg,#4f8dff,#6ecbff);
-      color:#081225;
-    }
-
-    .note{
-      margin-top:12px;
-      font-size:13px;
-      color:var(--muted);
-    }
-
-    footer{
-      margin-top:28px;
-      font-size:13px;
-      color:var(--muted);
-      text-align:center;
-    }
-  </style>
+  <!-- Will use your shared site styles later -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
 
 <header>
-  <div class="nav">
+  <div class="wrap navbar">
     <a class="brand" href="index.html">
       <img src="assets/t-logo.png" alt="Turnover ATL logo">
       <span>Turnover ATL Cleaning</span>
     </a>
+
+    <nav class="navlinks">
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+      <a href="apply.html">Careers</a>
+      <a class="cta" href="book.html">Book a Cleaning</a>
+    </nav>
   </div>
 </header>
 
-<main>
+<main class="wrap">
 
-  <div class="card">
-    <h1>Book a Turnover</h1>
-    <p>
-      Submit a booking request and we’ll confirm availability, schedule a cleaner,
+  <section class="hero">
+    <div class="kicker">Booking</div>
+
+    <h1>Book a turnover clean.</h1>
+
+    <p class="lead">
+      Submit your booking request and we’ll confirm availability, schedule a cleaner,
       and send an invoice once everything is locked in.
     </p>
 
-    <div class="steps">
-      <div class="step">1) Submit unit details + preferred date</div>
-      <div class="step">2) We confirm availability</div>
-      <div class="step">3) Cleaner scheduled + photo confirmation after completion</div>
+    <div class="pillRow">
+      <div class="pill">Fast availability confirmation</div>
+      <div class="pill">Checklist-based cleaning</div>
+      <div class="pill">Photo confirmation after completion</div>
     </div>
 
-    <form action="https://formspree.io/f/mdaokknp" method="POST">
+    <div class="contactLine">
+      Questions?
+      Text <a href="tel:+14702902837"><strong>(470) 290-2837</strong></a>
+      · Email
+      <a href="mailto:Ayinde@TurnoverATL.com"><strong>Ayinde@TurnoverATL.com</strong></a>
+    </div>
+  </section>
 
-      <div class="row">
-        <div>
-          <label>Name</label>
-          <input name="name" placeholder="Your name" required>
-        </div>
-        <div>
-          <label>Email</label>
-          <input type="email" name="email" placeholder="you@email.com" required>
-        </div>
+  <section class="section">
+
+    <div class="formCard">
+
+      <div class="sectionHead">
+        <h2>Turnover request</h2>
+        <p>No payment is required to submit. Deposit is collected only after availability is confirmed.</p>
       </div>
 
-      <div class="row">
-        <div>
-          <label>Phone</label>
-          <input name="Phone" placeholder="Best number to text">
+      <!-- FORM — Formspree endpoint preserved exactly -->
+      <form action="https://formspree.io/f/mdaokknp" method="POST">
+
+        <div class="formGrid" style="margin-top:14px;">
+
+          <div>
+            <label class="label">Name</label>
+            <input class="input" name="name" placeholder="Your name" required>
+          </div>
+
+          <div>
+            <label class="label">Email</label>
+            <input class="input" type="email" name="email" placeholder="you@email.com" required>
+          </div>
+
+          <div>
+            <label class="label">Phone</label>
+            <input class="input" name="Phone" placeholder="Best number to text">
+          </div>
+
+          <div>
+            <label class="label">Unit size</label>
+            <select class="select" name="Unit Size">
+              <option>1BR / 1BA</option>
+              <option>2BR / 2BA</option>
+              <option>3BR / 2BA</option>
+              <option>4BR+</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="label">Approx. square footage</label>
+            <select class="select" name="Square Footage">
+              <option value="">Select (approx. is fine)</option>
+              <option>Under 800 sq ft</option>
+              <option>800 – 1,200 sq ft</option>
+              <option>1,200 – 1,800 sq ft</option>
+              <option>1,800 – 2,500 sq ft</option>
+              <option>2,500 – 3,500 sq ft</option>
+              <option>3,500+ sq ft</option>
+              <option>Not sure</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="label">How did you hear about us?</label>
+            <select class="select" name="Referral Source">
+              <option value="">Select one (optional)</option>
+              <option>Google search</option>
+              <option>Facebook</option>
+              <option>Instagram</option>
+              <option>Airbnb / VRBO host group</option>
+              <option>Referral</option>
+              <option>Returning customer</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="label">If referral, who can we thank?</label>
+            <input class="input" name="Referral Name" placeholder="Name (optional)">
+          </div>
+
+          <div>
+            <label class="label">Preferred date</label>
+            <input class="input" type="date" name="Preferred Date">
+          </div>
+
+          <div>
+            <label class="label">Time window</label>
+            <input class="input" name="Time Window" placeholder="Example: 11am–3pm">
+          </div>
+
+          <div>
+            <label class="label">Access type</label>
+            <input class="input" name="Access" placeholder="Smart lock / lockbox / concierge">
+          </div>
+
         </div>
-        <div>
-          <label>Unit Size</label>
-          <select name="Unit Size">
-            <option>1BR / 1BA</option>
-            <option>2BR / 2BA</option>
-            <option>3BR / 2BA</option>
-            <option>4BR+</option>
-          </select>
+
+        <div style="margin-top:14px;">
+          <label class="label">Address + notes</label>
+          <textarea class="textarea" name="Notes" placeholder="Address, parking, codes, special instructions"></textarea>
+          <div class="help">
+            Have photos or special instructions? Email them to
+            <strong>Ayinde@TurnoverATL.com</strong> after submitting.
+          </div>
         </div>
-      </div>
 
-      <!-- Square footage -->
-      <div class="row">
-        <div>
-          <label>Approx. square footage</label>
-          <select name="Square Footage">
-            <option value="">Select (estimate is fine)</option>
-            <option>Under 800 sq ft</option>
-            <option>800 – 1,200 sq ft</option>
-            <option>1,200 – 1,800 sq ft</option>
-            <option>1,800 – 2,500 sq ft</option>
-            <option>2,500 – 3,500 sq ft</option>
-            <option>3,500+ sq ft</option>
-            <option>Not sure</option>
-          </select>
+        <div class="actions" style="margin-top:16px;">
+          <button class="btn" type="submit">Submit booking request</button>
+          <a class="btn secondary" href="pricing.html">View pricing</a>
         </div>
-      </div>
 
-      <!-- HOW DID YOU HEAR ABOUT US -->
-      <div class="row">
-        <div>
-          <label>How did you hear about us?</label>
-          <select name="Referral Source">
-            <option value="">Select one (optional)</option>
-            <option>Google search</option>
-            <option>Facebook</option>
-            <option>Instagram</option>
-            <option>Airbnb / VRBO host group</option>
-            <option>Referral</option>
-            <option>Returning customer</option>
-            <option>Other</option>
-          </select>
+        <div class="help">
+          No payment is required to submit. Deposit is collected only after availability is confirmed.
         </div>
-        <div>
-          <label>If referral, who can we thank?</label>
-          <input name="Referral Name" placeholder="Name (optional)">
-        </div>
-      </div>
-      <!-- END REFERRAL -->
 
-      <div class="row">
-        <div>
-          <label>Preferred Date</label>
-          <input type="date" name="Preferred Date">
-        </div>
-        <div>
-          <label>Time Window</label>
-          <input name="Time Window" placeholder="Example: 11am–3pm">
-        </div>
-      </div>
+      </form>
 
-      <div class="row">
-        <div>
-          <label>Access Type</label>
-          <input name="Access" placeholder="Smart lock / lockbox / concierge">
-        </div>
-      </div>
+    </div>
 
-      <div>
-        <label>Address + Notes</label>
-        <textarea name="Notes" placeholder="Address, parking, codes, special instructions"></textarea>
-      </div>
+  </section>
 
-      <div class="note">
-        Have photos or special instructions?
-        Email them to <strong>Ayinde@TurnoverAtl.com</strong> after submitting.
-      </div>
+  <footer class="site-footer">
+    <div>© 2026 Turnover ATL Cleaning</div>
 
-      <button class="btn" type="submit">Submit Booking Request</button>
-
-      <div class="note">
-        No payment required to submit. Deposit is collected only after availability is confirmed.
-      </div>
-
-    </form>
-  </div>
-
-  <footer>
-    Questions? Text (470) 290-2837 · Ayinde@TurnoverAtl.com
+    <div class="footer-contact">
+      <a class="footer-link" href="mailto:Ayinde@TurnoverATL.com">Ayinde@TurnoverATL.com</a>
+      <span class="footer-dot">•</span>
+      <a class="footer-link" href="tel:+14702902837">(470) 290-2837</a>
+    </div>
   </footer>
 
 </main>
