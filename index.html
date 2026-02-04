@@ -19,7 +19,7 @@
       --accent:#6aa8ff;
       --accent2:#6ecbff;
       --radius:18px;
-      --max:1100px;
+      --max:1280px; /* widened to reduce empty space */
     }
 
     *{box-sizing:border-box}
@@ -117,8 +117,8 @@
       inset:0;
       z-index:0;
       background-image:
-        url("assets/clean%20kitchen.jpg"),
-        url("assets/made%20bed.jpg");
+        url("assets/clean kitchen.jpg"),
+        url("assets/made bed.jpg");
       background-size:50% 100%, 50% 100%;
       background-position:left center, right center;
       background-repeat:no-repeat;
@@ -139,7 +139,7 @@
     @media (max-width:920px){
       .hero{grid-template-columns:1fr}
       .hero::before{
-        background-image:url("assets/clean%20kitchen.jpg");
+        background-image:url("assets/clean kitchen.jpg");
         background-size:cover;
         background-position:center;
       }
@@ -247,6 +247,48 @@
       margin-top:6px;
       background:linear-gradient(135deg,var(--accent),var(--accent2));
       box-shadow:0 0 12px rgba(106,168,255,.35);
+    }
+
+    /* ---------- Trust Strip ---------- */
+    .trustStrip{
+      margin-top:22px;
+      padding:18px 0;
+      border-top:1px solid rgba(255,255,255,.08);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+    }
+
+    .trustGrid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+
+    .trustItem{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:18px;
+      padding:14px 14px;
+      box-shadow:0 20px 60px rgba(0,0,0,.25);
+    }
+
+    .trustItem strong{
+      display:block;
+      font-size:14px;
+      font-weight:900;
+      color:rgba(234,240,255,.95);
+    }
+
+    .trustItem span{
+      display:block;
+      margin-top:6px;
+      font-size:12.5px;
+      color:rgba(234,240,255,.65);
+      line-height:1.45;
+    }
+
+    @media (max-width:920px){
+      .trustGrid{grid-template-columns:1fr 1fr;}
     }
 
     .section{margin-top:30px;display:grid;gap:16px;}
@@ -398,9 +440,29 @@
     </div>
   </section>
 
+  <section class="trustStrip">
+    <div class="trustGrid">
+      <div class="trustItem">
+        <strong>Metro Atlanta coverage</strong>
+        <span>Atlanta + surrounding areas</span>
+      </div>
+      <div class="trustItem">
+        <strong>Consistent cleaners</strong>
+        <span>Same cleaner–unit pairing whenever possible</span>
+      </div>
+      <div class="trustItem">
+        <strong>Photo confirmation</strong>
+        <span>Sent after every clean</span>
+      </div>
+      <div class="trustItem">
+        <strong>Fast confirmation</strong>
+        <span>We confirm availability before next steps</span>
+      </div>
+    </div>
+  </section>
+
   <section class="section">
     <div class="grid3">
-
       <div class="serviceCard">
         <div class="serviceTitle">
           <h3 style="margin:0;">Standard Cleaning</h3>
@@ -428,7 +490,6 @@
           <h3 style="margin:0;">Residential Cleaning</h3>
           <span class="tag">Also available</span>
         </div>
-
         <p style="margin:0 0 12px;color:rgba(234,240,255,.72);line-height:1.6;">
           Ongoing home cleaning for people who live in the home — not a short-term rental turnover.
         </p>
@@ -453,7 +514,6 @@
         </p>
         <div class="fine">Scope confirmed based on home condition and size.</div>
       </div>
-
     </div>
   </section>
 
