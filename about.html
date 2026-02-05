@@ -170,6 +170,35 @@
       padding-left:0;
     }
 
+    /* Who we serve grid */
+    .serve-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-top:14px;
+    }
+    @media (max-width:820px){
+      .serve-grid{grid-template-columns:1fr;}
+    }
+    .serve-item{
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:14px;
+      padding:14px;
+    }
+    .serve-item strong{
+      display:block;
+      font-weight:900;
+      color:rgba(234,240,255,.95);
+      margin-bottom:6px;
+    }
+    .serve-item span{
+      display:block;
+      color:rgba(234,240,255,.72);
+      line-height:1.55;
+      font-size:13.5px;
+    }
+
     /* ---------- Footer (clickable + styled) ---------- */
     .site-footer{
       margin-top:28px;
@@ -257,13 +286,49 @@
   <div class="card">
     <h2>Why we exist</h2>
     <p>
-      Most cleaning problems come from inconsistency — different cleaners every visit, unclear expectations,
-      missed details, and no real accountability.
+      Most cleaning problems don’t happen because people don’t care — they happen because the system breaks.
+      Different cleaners every visit. Unclear expectations. Missed details. No photos. No real accountability.
     </p>
     <p>
-      Turnover ATL exists to solve that by combining standardized checklists, photo documentation,
-      and coordinated scheduling with a local team that follows the same process every job.
+      Hosts, homeowners, and property managers end up chasing people, double-checking work, and stressing about whether a job was actually done right.
     </p>
+    <p>
+      <strong>Turnover ATL exists to remove that chaos.</strong>
+      We use a consistent checklist, photo documentation, and coordinated scheduling — delivered through a vetted local team and trusted partner crews that operate under the same standards.
+    </p>
+    <p style="margin-bottom:0;">
+      The bigger problem we solve isn’t dirt. <strong>It’s reliability.</strong>
+      Our job is to make sure cleaning operations never become the weak link in your home or business.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Who we serve &amp; how</h2>
+    <p>
+      Whether it’s one home or multiple properties, we bring the same operating system: clear scope, consistent standards, and completion photos.
+    </p>
+
+    <div class="serve-grid">
+      <div class="serve-item">
+        <strong>Short-term rental hosts</strong>
+        <span>Turnover execution between guests with a standardized checklist and photo confirmation after every clean.</span>
+      </div>
+
+      <div class="serve-item">
+        <strong>Residential homeowners</strong>
+        <span>Recurring and one-time cleanings with consistent expectations — so quality doesn’t change from visit to visit.</span>
+      </div>
+
+      <div class="serve-item">
+        <strong>Property managers &amp; co-hosts</strong>
+        <span>Cleaning operations support: coverage, standards enforcement, documentation, and one clear point of communication.</span>
+      </div>
+
+      <div class="serve-item">
+        <strong>Partners (subcontract support)</strong>
+        <span>White-label and overflow execution using our system and vetted partner crews — aligned to your requirements when needed.</span>
+      </div>
+    </div>
   </div>
 
   <div class="card">
