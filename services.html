@@ -94,6 +94,46 @@
       border:0;
     }
 
+    /* =========================
+       PROMO BANNER (full width)
+    ========================= */
+    .promo-bar{
+      width:100%;
+      background:linear-gradient(90deg, rgba(106,168,255,.95), rgba(110,203,255,.88));
+      color:#061226;
+      font-weight:900;
+      overflow:hidden;
+      border-bottom:1px solid rgba(0,0,0,.18);
+    }
+
+    .promo-track{
+      display:flex;
+      gap:56px;
+      padding:10px 0;
+      white-space:nowrap;
+      will-change:transform;
+      animation: promoScroll 22s linear infinite;
+    }
+
+    .promo-track span{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding-left:24px;
+      padding-right:24px;
+      letter-spacing:.01em;
+      font-size:13.5px;
+    }
+
+    .promo-bar:hover .promo-track{
+      animation-play-state:paused;
+    }
+
+    @keyframes promoScroll{
+      from{ transform:translateX(100%); }
+      to{ transform:translateX(-100%); }
+    }
+
     main{
       max-width:var(--max);
       margin:auto;
@@ -245,6 +285,19 @@
   </div>
 </header>
 
+<!-- PROMO BANNER -->
+<div class="promo-bar" aria-label="Current specials and referral program">
+  <div class="promo-track">
+    <span>🎉 $25 off your first service — limited-time offer</span>
+    <span>🤝 Refer a client, earn a $35 credit toward any service</span>
+    <span>⚡ Fast confirmation · Clear checklist · Completion photos</span>
+
+    <span>🎉 $25 off your first service — limited-time offer</span>
+    <span>🤝 Refer a client, earn a $35 credit toward any service</span>
+    <span>⚡ Fast confirmation · Clear checklist · Completion photos</span>
+  </div>
+</div>
+
 <main>
   <div class="kicker">Services</div>
 
@@ -304,75 +357,4 @@
         <li>Standard, Deep Clean, and Move-In/Move-Out options</li>
         <li><strong>Final pricing confirmed after review</strong></li>
       </ul>
-      <a class="cta" href="residential-quote.html" style="margin-top:10px;">Get a Residential Quote</a>
-    </div>
-
-    <div class="card">
-      <h3>Move-Out / Move-In Cleaning</h3>
-      <ul>
-        <li>Quoted after review of size + condition</li>
-        <li>Best for transitions and handoffs</li>
-      </ul>
-      <a class="cta" href="residential-quote.html" style="margin-top:10px;">Get a Quote</a>
-    </div>
-  </div>
-
-  <hr class="divider" />
-
-  <h2>Subcontracting &amp; Partner Support</h2>
-
-  <p>
-    If you’re a <strong>property manager</strong>, <strong>co-host</strong>, or a service business that needs
-    dependable cleaning coverage, Turnover ATL can support you as a subcontractor. We provide
-    standardized execution, photo documentation, and direct communication — so you can deliver for
-    your clients without building a cleaning team from scratch.
-  </p>
-
-  <div class="grid">
-    <div class="card">
-      <h3>Overflow &amp; Backup Coverage</h3>
-      <ul>
-        <li>Fill gaps when your cleaners are booked or unavailable</li>
-        <li>Consistent checklist + documented completion</li>
-        <li>Fast confirmation and clear scheduling</li>
-      </ul>
-      <a class="cta" href="book.html" style="margin-top:10px;">Request Coverage</a>
-      <small class="micro-note">Use the booking form and select “Partner / Subcontract” in your notes.</small>
-    </div>
-
-    <div class="card">
-      <h3>White-Label Cleaning Execution</h3>
-      <ul>
-        <li>We run the clean — you keep the client relationship</li>
-        <li>Photo confirmation + checklist compliance</li>
-        <li>Designed for property managers and service companies</li>
-      </ul>
-      <span class="info-pill">Partner Service</span>
-      <small class="micro-note">Ask for white-label support and we’ll confirm details.</small>
-    </div>
-
-    <div class="card">
-      <h3>Multi-Unit Coordination</h3>
-      <ul>
-        <li>Support for multiple units / recurring clean schedules</li>
-        <li>Standardized expectations across properties</li>
-        <li>Scheduling + communication built for operations</li>
-      </ul>
-      <span class="info-pill">By Request</span>
-      <small class="micro-note">Best fit for recurring partners and multi-unit clients.</small>
-    </div>
-  </div>
-
-  <footer class="site-footer">
-    <div>© 2026 Turnover ATL Cleaning</div>
-
-    <div class="footer-contact">
-      <a class="footer-link" href="mailto:Ayinde@TurnoverATL.com">Ayinde@TurnoverATL.com</a>
-      <span class="footer-dot">•</span>
-      <a class="footer-link" href="tel:+14702902837">(470) 290-2837</a>
-    </div>
-  </footer>
-</main>
-
-</body>
-</html>
+      <a class="cta
