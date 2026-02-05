@@ -11,6 +11,43 @@
 
   <!-- Will use your shared site styles later -->
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* =========================
+       PROMO BANNER (full width)
+       (kept local to this page since this page uses styles.css)
+    ========================= */
+    .promo-bar{
+      width:100%;
+      background:linear-gradient(90deg, rgba(106,168,255,.95), rgba(110,203,255,.88));
+      color:#061226;
+      font-weight:900;
+      overflow:hidden;
+      border-bottom:1px solid rgba(0,0,0,.18);
+    }
+    .promo-track{
+      display:flex;
+      gap:56px;
+      padding:10px 0;
+      white-space:nowrap;
+      will-change:transform;
+      animation: promoScroll 22s linear infinite;
+    }
+    .promo-track span{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding-left:24px;
+      padding-right:24px;
+      letter-spacing:.01em;
+      font-size:13.5px;
+    }
+    .promo-bar:hover .promo-track{ animation-play-state:paused; }
+    @keyframes promoScroll{
+      from{ transform:translateX(100%); }
+      to{ transform:translateX(-100%); }
+    }
+  </style>
 </head>
 
 <body>
@@ -31,6 +68,19 @@
     </nav>
   </div>
 </header>
+
+<!-- PROMO BANNER -->
+<div class="promo-bar" aria-label="Current specials and referral program">
+  <div class="promo-track">
+    <span>🎉 $25 off your first service — limited-time offer</span>
+    <span>🤝 Refer a client, earn a $35 credit toward any service</span>
+    <span>⚡ Fast confirmation · Clear checklist · Completion photos</span>
+
+    <span>🎉 $25 off your first service — limited-time offer</span>
+    <span>🤝 Refer a client, earn a $35 credit toward any service</span>
+    <span>⚡ Fast confirmation · Clear checklist · Completion photos</span>
+  </div>
+</div>
 
 <main class="wrap">
 
