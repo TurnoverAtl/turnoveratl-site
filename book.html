@@ -3,19 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Book a Turnover | Turnover ATL Cleaning</title>
+  <title>Schedule a Clean | Turnover ATL Cleaning</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Will use your shared site styles later -->
   <link rel="stylesheet" href="styles.css" />
 
   <style>
     /* =========================
        PROMO BANNER (full width)
-       (kept local to this page since this page uses styles.css)
     ========================= */
     .promo-bar{
       width:100%;
@@ -47,6 +45,47 @@
       from{ transform:translateX(100%); }
       to{ transform:translateX(-100%); }
     }
+
+    /* Small local helpers to match your styles.css look */
+    .howItWorks{
+      margin-top:14px;
+      padding:14px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+    }
+    .howItWorks h3{
+      margin:0 0 10px;
+      font-size:14px;
+      font-weight:900;
+      letter-spacing:.01em;
+    }
+    .howItWorks ol{
+      margin:0;
+      padding-left:18px;
+      color:rgba(234,240,255,.85);
+      line-height:1.7;
+      font-size:13.5px;
+    }
+    .howItWorks li{ margin:6px 0; }
+
+    .subtle{
+      color:rgba(234,240,255,.72);
+      font-size:13px;
+      line-height:1.55;
+      margin-top:10px;
+    }
+
+    .serviceNotice{
+      margin-top:10px;
+      color:rgba(234,240,255,.78);
+      font-size:13px;
+      line-height:1.55;
+    }
+
+    /* Conditional sections */
+    .conditional{ display:none; }
+    .conditional.active{ display:block; }
   </style>
 </head>
 
@@ -64,7 +103,7 @@
       <a href="pricing.html">Pricing</a>
       <a href="about.html">About</a>
       <a href="apply.html">Careers</a>
-      <a class="cta" href="book.html">Book a Cleaning</a>
+      <a class="cta" href="book.html">Schedule a Clean</a>
     </nav>
   </div>
 </header>
@@ -87,17 +126,30 @@
   <section class="hero">
     <div class="kicker">Booking</div>
 
-    <h1>Schedule a Cleaning.</h1>
+    <h1>Schedule a Clean.</h1>
 
     <p class="lead">
-      Submit your booking request and we’ll confirm availability, schedule a cleaner,
-      and send an invoice once everything is locked in.
+      Submit your request and we’ll confirm availability, clarify any details, and schedule your clean.
+      Once confirmed, we’ll send next steps.
     </p>
 
     <div class="pillRow">
-      <div class="pill">Fast availability confirmation</div>
+      <div class="pill">Fast confirmation</div>
       <div class="pill">Checklist-based cleaning</div>
-      <div class="pill">Photo confirmation after completion</div>
+      <div class="pill">Completion photos</div>
+    </div>
+
+    <div class="howItWorks">
+      <h3>How it works</h3>
+      <ol>
+        <li><strong>Submit your request</strong> (service type, date, notes)</li>
+        <li><strong>We confirm availability</strong> + finalize scope</li>
+        <li><strong>You receive next steps</strong> once scheduled</li>
+        <li><strong>Cleaner completes the job</strong> + photos are sent after completion</li>
+      </ol>
+      <div class="subtle">
+        No payment is required to submit. We confirm first.
+      </div>
     </div>
 
     <div class="contactLine">
@@ -113,14 +165,26 @@
     <div class="formCard">
 
       <div class="sectionHead">
-        <h2>Turnover request</h2>
-        <p>No payment is required to submit. Deposit is collected only after availability is confirmed.</p>
+        <h2>Request a cleaning</h2>
+        <p>Select your service type and share a few details. We’ll confirm quickly.</p>
       </div>
 
-      <!-- FORM — Formspree endpoint preserved exactly -->
+      <!-- FORM — Formspree endpoint preserved -->
       <form action="https://formspree.io/f/mdaokknp" method="POST">
 
+        <!-- ALWAYS INCLUDED -->
         <div class="formGrid" style="margin-top:14px;">
+
+          <div>
+            <label class="label">Service type</label>
+            <select class="select" name="Service Type" id="serviceType" required>
+              <option value="">Select one</option>
+              <option value="STR">Short-Term Rental Turnover</option>
+              <option value="RES">Residential Cleaning</option>
+              <option value="MIMO">Move-In / Move-Out</option>
+            </select>
+            <div class="serviceNotice" id="serviceNotice"></div>
+          </div>
 
           <div>
             <label class="label">Name</label>
@@ -138,27 +202,18 @@
           </div>
 
           <div>
-            <label class="label">Unit size</label>
-            <select class="select" name="Unit Size">
-              <option>1BR / 1BA</option>
-              <option>2BR / 2BA</option>
-              <option>3BR / 2BA</option>
-              <option>4BR+</option>
-            </select>
+            <label class="label">Preferred date</label>
+            <input class="input" type="date" name="Preferred Date">
           </div>
 
           <div>
-            <label class="label">Approx. square footage</label>
-            <select class="select" name="Square Footage">
-              <option value="">Select (approx. is fine)</option>
-              <option>Under 800 sq ft</option>
-              <option>800 – 1,200 sq ft</option>
-              <option>1,200 – 1,800 sq ft</option>
-              <option>1,800 – 2,500 sq ft</option>
-              <option>2,500 – 3,500 sq ft</option>
-              <option>3,500+ sq ft</option>
-              <option>Not sure</option>
-            </select>
+            <label class="label">Time window</label>
+            <input class="input" name="Time Window" placeholder="Example: 11am–3pm">
+          </div>
+
+          <div class="full">
+            <label class="label">Service address</label>
+            <input class="input" name="Service Address" placeholder="Street address (include unit # if applicable)">
           </div>
 
           <div>
@@ -180,26 +235,194 @@
             <input class="input" name="Referral Name" placeholder="Name (optional)">
           </div>
 
-          <div>
-            <label class="label">Preferred date</label>
-            <input class="input" type="date" name="Preferred Date">
-          </div>
-
-          <div>
-            <label class="label">Time window</label>
-            <input class="input" name="Time Window" placeholder="Example: 11am–3pm">
-          </div>
-
-          <div>
-            <label class="label">Access type</label>
-            <input class="input" name="Access" placeholder="Smart lock / lockbox / concierge">
-          </div>
-
         </div>
 
+        <!-- STR ONLY -->
+        <div class="conditional" id="strFields" style="margin-top:14px;">
+          <div class="sectionHead" style="margin-top:6px;">
+            <h2 style="margin:0;">STR turnover details</h2>
+            <p style="margin:6px 0 0;">This helps us quote correctly and plan the clean.</p>
+          </div>
+
+          <div class="formGrid" style="margin-top:12px;">
+            <div>
+              <label class="label">Unit size</label>
+              <select class="select" name="STR Unit Size">
+                <option value="">Select one</option>
+                <option>1BR / 1BA</option>
+                <option>2BR / 2BA</option>
+                <option>3BR / 2BA</option>
+                <option>4BR+</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label">Approx. square footage</label>
+              <select class="select" name="STR Square Footage">
+                <option value="">Select (approx. is fine)</option>
+                <option>Under 800 sq ft</option>
+                <option>800 – 1,200 sq ft</option>
+                <option>1,200 – 1,800 sq ft</option>
+                <option>1,800 – 2,500 sq ft</option>
+                <option>2,500 – 3,500 sq ft</option>
+                <option>3,500+ sq ft</option>
+                <option>Not sure</option>
+              </select>
+            </div>
+
+            <div class="full">
+              <label class="label">Access type</label>
+              <input class="input" name="STR Access" placeholder="Smart lock / lockbox / concierge + any codes (or say you’ll send after)">
+            </div>
+          </div>
+        </div>
+
+        <!-- RESIDENTIAL ONLY -->
+        <div class="conditional" id="resFields" style="margin-top:14px;">
+          <div class="sectionHead" style="margin-top:6px;">
+            <h2 style="margin:0;">Residential details</h2>
+            <p style="margin:6px 0 0;">Final pricing is confirmed after reviewing home details.</p>
+          </div>
+
+          <div class="formGrid" style="margin-top:12px;">
+            <div>
+              <label class="label">Home type</label>
+              <select class="select" name="Home Type">
+                <option value="">Select one</option>
+                <option>Apartment</option>
+                <option>Townhome</option>
+                <option>Single-family home</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label">Bedrooms</label>
+              <select class="select" name="Bedrooms">
+                <option value="">Select one</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4+</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label">Bathrooms</label>
+              <select class="select" name="Bathrooms">
+                <option value="">Select one</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3+</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label">Clean type</label>
+              <select class="select" name="Residential Clean Type">
+                <option value="">Select one</option>
+                <option>Standard Clean</option>
+                <option>Deep Clean</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label">Last professionally cleaned</label>
+              <select class="select" name="Last Cleaned">
+                <option value="">Select one</option>
+                <option>Within the last month</option>
+                <option>1–3 months ago</option>
+                <option>3+ months ago</option>
+                <option>Not sure / never</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label">One-time or recurring?</label>
+              <select class="select" name="Frequency">
+                <option value="">Select one</option>
+                <option>One-time</option>
+                <option>Weekly</option>
+                <option>Bi-weekly</option>
+                <option>Monthly</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label">Pets</label>
+              <select class="select" name="Pets">
+                <option value="">Select one</option>
+                <option>No</option>
+                <option>Yes – light shedding</option>
+                <option>Yes – heavy shedding</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label">Heavy buildup or special concerns?</label>
+              <select class="select" name="Special Concerns">
+                <option value="">Select one</option>
+                <option>No</option>
+                <option>Yes (details in notes)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- MOVE-IN / MOVE-OUT ONLY -->
+        <div class="conditional" id="mimoFields" style="margin-top:14px;">
+          <div class="sectionHead" style="margin-top:6px;">
+            <h2 style="margin:0;">Move-in / move-out details</h2>
+            <p style="margin:6px 0 0;">Quoted after review of size + condition.</p>
+          </div>
+
+          <div class="formGrid" style="margin-top:12px;">
+            <div>
+              <label class="label">Is the home empty?</label>
+              <select class="select" name="Empty Home">
+                <option value="">Select one</option>
+                <option>Yes (empty)</option>
+                <option>Mostly empty</option>
+                <option>No (still furnished)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label">Bedrooms</label>
+              <select class="select" name="MIMO Bedrooms">
+                <option value="">Select one</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4+</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label">Bathrooms</label>
+              <select class="select" name="MIMO Bathrooms">
+                <option value="">Select one</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3+</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label">Condition</label>
+              <select class="select" name="MIMO Condition">
+                <option value="">Select one</option>
+                <option>Light (already fairly clean)</option>
+                <option>Normal (standard move-out)</option>
+                <option>Heavy (buildup / lots of work)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- NOTES ALWAYS -->
         <div style="margin-top:14px;">
-          <label class="label">Address + notes</label>
-          <textarea class="textarea" name="Notes" placeholder="Address, parking, codes, special instructions"></textarea>
+          <label class="label">Notes</label>
+          <textarea class="textarea" name="Notes" placeholder="Parking, access notes, special instructions, concerns, and anything else we should know"></textarea>
           <div class="help">
             Have photos or special instructions? Email them to
             <strong>Ayinde@TurnoverATL.com</strong> after submitting.
@@ -207,12 +430,12 @@
         </div>
 
         <div class="actions" style="margin-top:16px;">
-          <button class="btn" type="submit">Submit booking request</button>
+          <button class="btn" type="submit">Request a time</button>
           <a class="btn secondary" href="pricing.html">View pricing</a>
         </div>
 
         <div class="help">
-          No payment is required to submit. Deposit is collected only after availability is confirmed.
+          No payment is required to submit. We confirm availability first.
         </div>
 
       </form>
@@ -232,6 +455,39 @@
   </footer>
 
 </main>
+
+<script>
+  (function(){
+    const serviceType = document.getElementById("serviceType");
+    const strFields = document.getElementById("strFields");
+    const resFields = document.getElementById("resFields");
+    const mimoFields = document.getElementById("mimoFields");
+    const notice = document.getElementById("serviceNotice");
+
+    function setActive(type){
+      // reset
+      strFields.classList.remove("active");
+      resFields.classList.remove("active");
+      mimoFields.classList.remove("active");
+      notice.textContent = "";
+
+      if(type === "STR"){
+        strFields.classList.add("active");
+        notice.textContent = "STR turnovers follow a standardized checklist with completion photos.";
+      } else if(type === "RES"){
+        resFields.classList.add("active");
+        notice.textContent = "Residential pricing is confirmed after reviewing home details.";
+      } else if(type === "MIMO"){
+        mimoFields.classList.add("active");
+        notice.textContent = "Move-in / move-out jobs are quoted after review of size + condition.";
+      }
+    }
+
+    serviceType.addEventListener("change", function(){
+      setActive(this.value);
+    });
+  })();
+</script>
 
 </body>
 </html>
