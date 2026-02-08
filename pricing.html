@@ -88,9 +88,6 @@
       white-space:nowrap;
     }
 
-    /* =========================
-       PROMO BANNER (full width)
-    ========================= */
     .promo-bar{
       width:100%;
       background:linear-gradient(90deg, rgba(106,168,255,.95), rgba(110,203,255,.88));
@@ -119,9 +116,7 @@
       font-size:13.5px;
     }
 
-    .promo-bar:hover .promo-track{
-      animation-play-state:paused;
-    }
+    .promo-bar:hover .promo-track{ animation-play-state:paused; }
 
     @keyframes promoScroll{
       from{ transform:translateX(100%); }
@@ -237,7 +232,6 @@
       line-height:1.6;
     }
 
-    /* ---------- Footer (clickable + styled) ---------- */
     .site-footer{
       margin-top:28px;
       font-size:13px;
@@ -264,13 +258,8 @@
       text-decoration:none;
     }
 
-    .footer-link:hover{
-      border-bottom-color:rgba(255,255,255,.45);
-    }
-
-    .footer-dot{
-      color:rgba(234,240,255,.45);
-    }
+    .footer-link:hover{ border-bottom-color:rgba(255,255,255,.45); }
+    .footer-dot{ color:rgba(234,240,255,.45); }
   </style>
 </head>
 
@@ -292,13 +281,11 @@
   </div>
 </header>
 
-<!-- PROMO BANNER -->
 <div class="promo-bar" aria-label="Current specials and referral program">
   <div class="promo-track">
     <span>🎉 $25 off your first service — limited-time offer</span>
     <span>🤝 Refer a client, earn a $35 credit toward any service</span>
     <span>⚡ Fast confirmation · Clear checklist · Completion photos</span>
-
     <span>🎉 $25 off your first service — limited-time offer</span>
     <span>🤝 Refer a client, earn a $35 credit toward any service</span>
     <span>⚡ Fast confirmation · Clear checklist · Completion photos</span>
@@ -313,7 +300,6 @@
   </div>
 
   <div class="ta-grid">
-    <!-- MAIN -->
     <div class="ta-card">
       <div class="titleRow">
         <h3>Standard Turnover</h3>
@@ -350,7 +336,6 @@
       </p>
     </div>
 
-    <!-- SIDE -->
     <div class="ta-card">
       <h3 style="margin:0 0 12px;">Optional services</h3>
 
@@ -388,9 +373,60 @@
     </div>
   </div>
 
+  <!-- ADDED: Residential + Move-In / Move-Out -->
+  <div class="ta-grid" style="margin-top:32px;">
+    <div class="ta-card">
+      <div class="titleRow">
+        <h3>Residential Cleaning (non-STR homes)</h3>
+        <span class="ta-badge">Starting rates</span>
+      </div>
+
+      <p>Ongoing home cleaning for people who live in the home.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Home Size</th>
+            <th>Starting Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1 bedroom</td><td class="price">$120</td></tr>
+          <tr><td>2 bedrooms</td><td class="price">$160</td></tr>
+          <tr><td>3 bedrooms</td><td class="price">$200</td></tr>
+          <tr><td>4+ bedrooms</td><td class="price">From $240</td></tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top:14px;">
+        Final pricing is confirmed after reviewing home details.
+      </p>
+
+      <a class="ctaBtn" href="book.html">Get a Residential Quote</a>
+    </div>
+
+    <div class="ta-card">
+      <div class="titleRow">
+        <h3>Move-In / Move-Out Cleaning (empty homes)</h3>
+        <span class="ta-badge">Quoted</span>
+      </div>
+
+      <p>Move-in and move-out cleanings are quoted individually based on:</p>
+
+      <ul>
+        <li>Home size and layout</li>
+        <li>Condition and level of buildup</li>
+        <li>Requested scope (inside appliances, cabinets, baseboards, etc.)</li>
+      </ul>
+
+      <p><strong>Pricing is competitive and confirmed before scheduling.</strong></p>
+
+      <a class="ctaBtn" href="book.html">Request a Move-In / Move-Out Quote</a>
+    </div>
+  </div>
+
   <footer class="site-footer">
     <div>© 2026 Turnover ATL Cleaning</div>
-
     <div class="footer-contact">
       <a class="footer-link" href="mailto:Ayinde@TurnoverATL.com">Ayinde@TurnoverATL.com</a>
       <span class="footer-dot">•</span>
