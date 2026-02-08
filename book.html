@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
+  <!-- Your global CSS -->
   <link rel="stylesheet" href="styles.css" />
 
   <style>
@@ -78,7 +79,18 @@
 
     .serviceNotice{
       margin-top:10px;
-      color:rgba(234,240,255,.78);
+      color:rgba(234,240,255,.82);
+      font-size:13px;
+      line-height:1.55;
+    }
+
+    .noticeBox{
+      margin-top:12px;
+      padding:12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(0,0,0,.18);
+      color:rgba(234,240,255,.82);
       font-size:13px;
       line-height:1.55;
     }
@@ -142,7 +154,7 @@
     <div class="howItWorks">
       <h3>How it works</h3>
       <ol>
-        <li><strong>Submit your request</strong> (service type, date, notes)</li>
+        <li><strong>Submit your request</strong> (service type, date, details)</li>
         <li><strong>We confirm availability</strong> + finalize scope</li>
         <li><strong>You receive next steps</strong> once scheduled</li>
         <li><strong>Cleaner completes the job</strong> + photos are sent after completion</li>
@@ -193,12 +205,33 @@
 
           <div>
             <label class="label">Email</label>
-            <input class="input" type="email" name="email" placeholder="you@email.com" required>
+            <input class="input" type="email" name="email" id="emailField" placeholder="you@email.com" required>
           </div>
 
           <div>
             <label class="label">Phone</label>
-            <input class="input" name="Phone" placeholder="Best number to text">
+            <input class="input" name="Phone" id="phoneField" placeholder="Best number to text">
+          </div>
+
+          <!-- ✅ NEW: ZIP -->
+          <div>
+            <label class="label">ZIP code</label>
+            <input class="input" name="ZIP Code" id="zipField" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" placeholder="30318">
+          </div>
+
+          <!-- ✅ NEW: SQ FT (applies to all services) -->
+          <div>
+            <label class="label">Approx. square footage</label>
+            <select class="select" name="Square Footage" id="sqftField">
+              <option value="">Select (approx. is fine)</option>
+              <option>Under 800</option>
+              <option>800–1,200</option>
+              <option>1,200–1,800</option>
+              <option>1,800–2,500</option>
+              <option>2,500–3,500</option>
+              <option>3,500+</option>
+              <option>Not sure</option>
+            </select>
           </div>
 
           <div>
@@ -214,21 +247,6 @@
           <div class="full">
             <label class="label">Service address</label>
             <input class="input" name="Service Address" placeholder="Street address (include unit # if applicable)">
-          </div>
-
-          <!-- ✅ ADDED: ONE SQ FT QUESTION FOR ALL SERVICE TYPES -->
-          <div>
-            <label class="label">Approx. square footage</label>
-            <select class="select" name="Square Footage">
-              <option value="">Select (approx. is fine)</option>
-              <option>Under 800 sq ft</option>
-              <option>800 – 1,200 sq ft</option>
-              <option>1,200 – 1,800 sq ft</option>
-              <option>1,800 – 2,500 sq ft</option>
-              <option>2,500 – 3,500 sq ft</option>
-              <option>3,500+ sq ft</option>
-              <option>Not sure</option>
-            </select>
           </div>
 
           <div>
@@ -256,7 +274,7 @@
         <div class="conditional" id="strFields" style="margin-top:14px;">
           <div class="sectionHead" style="margin-top:6px;">
             <h2 style="margin:0;">STR turnover details</h2>
-            <p style="margin:6px 0 0;">This helps us quote correctly and plan the clean.</p>
+            <p style="margin:6px 0 0;">This helps us confirm scope and plan the clean.</p>
           </div>
 
           <div class="formGrid" style="margin-top:12px;">
@@ -264,17 +282,31 @@
               <label class="label">Unit size</label>
               <select class="select" name="STR Unit Size">
                 <option value="">Select one</option>
+                <option>Studio</option>
                 <option>1BR / 1BA</option>
                 <option>2BR / 2BA</option>
-                <option>3BR / 2BA</option>
-                <option>4BR+</option>
+                <option>3BR+</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label">Approx. bathrooms</label>
+              <select class="select" name="STR Bathrooms">
+                <option value="">Select one</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3+</option>
               </select>
             </div>
 
             <div class="full">
               <label class="label">Access type</label>
-              <input class="input" name="STR Access" placeholder="Smart lock / lockbox / concierge + any codes (or say you’ll send after)">
+              <input class="input" name="STR Access" placeholder="Smart lock / lockbox / concierge (codes can be sent after scheduling)">
             </div>
+          </div>
+
+          <div class="noticeBox">
+            STR turnovers follow a standardized checklist with completion photos. Flat-rate pricing is listed on the Pricing page.
           </div>
         </div>
 
@@ -323,6 +355,7 @@
                 <option value="">Select one</option>
                 <option>Standard Clean</option>
                 <option>Deep Clean</option>
+                <option>Move-In / Move-Out</option>
               </select>
             </div>
 
@@ -366,6 +399,11 @@
                 <option>Yes (details in notes)</option>
               </select>
             </div>
+          </div>
+
+          <div class="noticeBox">
+            Residential pricing starts at <strong>$120 (1BR)</strong>, <strong>$160 (2BR)</strong>, <strong>$200 (3BR)</strong>, and <strong>$240+ (4BR+)</strong>.
+            Final pricing is confirmed after reviewing home size, condition, and requested service level.
           </div>
         </div>
 
@@ -418,6 +456,11 @@
               </select>
             </div>
           </div>
+
+          <div class="noticeBox">
+            Move-in / move-out pricing is quoted <strong>competitively</strong> based on <strong>square footage, home condition, and requested scope</strong>.
+            We’ll confirm details first, then send next steps.
+          </div>
         </div>
 
         <!-- NOTES ALWAYS -->
@@ -465,6 +508,11 @@
     const mimoFields = document.getElementById("mimoFields");
     const notice = document.getElementById("serviceNotice");
 
+    const zipField = document.getElementById("zipField");
+    const sqftField = document.getElementById("sqftField");
+    const emailField = document.getElementById("emailField");
+    const phoneField = document.getElementById("phoneField");
+
     function setActive(type){
       strFields.classList.remove("active");
       resFields.classList.remove("active");
@@ -473,19 +521,109 @@
 
       if(type === "STR"){
         strFields.classList.add("active");
-        notice.textContent = "STR turnovers follow a standardized checklist with completion photos.";
+        notice.textContent = "STR turnovers follow a standardized checklist with completion photos. Flat-rate pricing is on the Pricing page.";
       } else if(type === "RES"){
         resFields.classList.add("active");
-        notice.textContent = "Residential pricing is confirmed after reviewing home details.";
+        notice.textContent = "Residential pricing starts at $120 (1BR), $160 (2BR), $200 (3BR), $240+ (4BR+). Final pricing is confirmed after home details.";
       } else if(type === "MIMO"){
         mimoFields.classList.add("active");
-        notice.textContent = "Move-in / move-out jobs are quoted after review of size + condition.";
+        notice.textContent = "Move-in / move-out is quoted competitively based on square footage, condition, and requested scope.";
       }
     }
 
     serviceType.addEventListener("change", function(){
       setActive(this.value);
     });
+
+    // ✅ Autofill from URL params (from homepage quick quote)
+    function normalizeSqft(v){
+      if(!v) return "";
+      const s = String(v).trim();
+
+      // allow both "800–1,200" and "800-1,200" etc.
+      const map = {
+        "Under 800": "Under 800",
+        "under 800": "Under 800",
+        "800–1,200": "800–1,200",
+        "800-1,200": "800–1,200",
+        "800 – 1,200": "800–1,200",
+        "1,200–1,800": "1,200–1,800",
+        "1,200-1,800": "1,200–1,800",
+        "1,800–2,500": "1,800–2,500",
+        "1,800-2,500": "1,800–2,500",
+        "2,500–3,500": "2,500–3,500",
+        "2,500-3,500": "2,500–3,500",
+        "3,500+": "3,500+",
+        "3500+": "3,500+",
+        "Not sure": "Not sure",
+        "not sure": "Not sure"
+      };
+
+      return map[s] || s;
+    }
+
+    function smartSetContact(contact){
+      if(!contact) return;
+
+      const c = String(contact).trim();
+
+      // If it's an email
+      if(c.includes("@")){
+        if(!emailField.value) emailField.value = c;
+        return;
+      }
+
+      // If it looks like a phone number
+      const digits = c.replace(/[^\d]/g, "");
+      if(digits.length >= 7){
+        if(!phoneField.value) phoneField.value = c;
+        return;
+      }
+
+      // Otherwise, prefer email if empty, else phone
+      if(!emailField.value) emailField.value = c;
+      else if(!phoneField.value) phoneField.value = c;
+    }
+
+    function applyParams(){
+      const params = new URLSearchParams(window.location.search);
+
+      const svc = params.get("service");
+      const zip = params.get("zip");
+      const sqft = params.get("sqft");
+      const contact = params.get("contact");
+
+      if(svc){
+        // only accept known values
+        const val = svc.toUpperCase();
+        if(["STR","RES","MIMO"].includes(val)){
+          serviceType.value = val;
+          setActive(val);
+        }
+      }
+
+      if(zip && zipField && !zipField.value){
+        zipField.value = zip.replace(/[^\d]/g,"").slice(0,5);
+      }
+
+      if(sqft && sqftField && !sqftField.value){
+        const normalized = normalizeSqft(sqft);
+        // try to select matching option
+        const opts = Array.from(sqftField.options).map(o => o.value || o.text);
+        const idx = opts.findIndex(o => String(o).trim() === String(normalized).trim());
+        if(idx >= 0) sqftField.selectedIndex = idx;
+      }
+
+      if(contact){
+        smartSetContact(contact);
+      }
+    }
+
+    // run once on load
+    applyParams();
+
+    // If no service selected, keep sections hidden by default
+    // (User will select manually)
   })();
 </script>
 
