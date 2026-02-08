@@ -177,12 +177,9 @@
       position:absolute;
       inset:0;
       z-index:0;
-
-      /* ✅ Use SEO-friendly file names (no spaces) */
       background-image:
         url("assets/clean-kitchen.jpg"),
         url("assets/made-bed.jpg");
-
       background-size:50% 100%, 50% 100%;
       background-position:left center, right center;
       background-repeat:no-repeat;
@@ -311,6 +308,70 @@
       margin-top:6px;
       background:linear-gradient(135deg,var(--accent),var(--accent2));
       box-shadow:0 0 12px rgba(106,168,255,.35);
+    }
+
+    /* ✅ QUICK QUOTE (new) */
+    .quoteBox{
+      margin-top:16px;
+      padding-top:14px;
+      border-top:1px solid rgba(255,255,255,.12);
+    }
+    .quoteBox h4{
+      margin:0 0 8px;
+      font-size:14px;
+      font-weight:900;
+      letter-spacing:.01em;
+    }
+    .quoteGrid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-top:10px;
+    }
+    .quoteGrid .full{grid-column:1 / -1;}
+    .qLabel{
+      display:block;
+      font-size:11px;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      color:rgba(234,240,255,.62);
+      margin:0 0 6px;
+      font-weight:800;
+    }
+    .qInput,.qSelect{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(0,0,0,.22);
+      color:rgba(234,240,255,.92);
+      outline:none;
+    }
+    .qInput::placeholder{color:rgba(234,240,255,.42);}
+    .qInput:focus,.qSelect:focus{
+      border-color:rgba(106,168,255,.55);
+      box-shadow:0 0 0 3px rgba(106,168,255,.14);
+    }
+    .qHint{
+      margin-top:10px;
+      font-size:12px;
+      color:rgba(234,240,255,.62);
+      line-height:1.55;
+    }
+    .qBtn{
+      margin-top:12px;
+      width:100%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:none;
+      cursor:pointer;
+      font-weight:900;
+      background:linear-gradient(135deg, rgba(106,168,255,.95), rgba(110,203,255,.85));
+      color:#081225;
     }
 
     .trustStrip{
@@ -528,6 +589,59 @@
       <div class="fine">
         Submitting a request doesn’t require payment. We confirm availability first, then send next steps.
       </div>
+
+      <!-- ✅ QUICK QUOTE (new) -->
+      <div class="quoteBox" aria-label="Quick quote form">
+        <h4>Get a fast quote</h4>
+
+        <form action="book.html" method="GET">
+          <div class="quoteGrid">
+
+            <div class="full">
+              <label class="qLabel" for="qqService">Service</label>
+              <select class="qSelect" id="qqService" name="service" required>
+                <option value="">Select one</option>
+                <option value="STR">Short-Term Rental Turnover</option>
+                <option value="RES">Residential Cleaning</option>
+                <option value="MIMO">Move-In / Move-Out</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="qLabel" for="qqZip">ZIP code</label>
+              <input class="qInput" id="qqZip" name="zip" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" placeholder="30318" required>
+            </div>
+
+            <div>
+              <label class="qLabel" for="qqSqft">Sq ft (approx.)</label>
+              <select class="qSelect" id="qqSqft" name="sqft" required>
+                <option value="">Select</option>
+                <option>Under 800</option>
+                <option>800–1,200</option>
+                <option>1,200–1,800</option>
+                <option>1,800–2,500</option>
+                <option>2,500–3,500</option>
+                <option>3,500+</option>
+                <option>Not sure</option>
+              </select>
+            </div>
+
+            <div class="full">
+              <label class="qLabel" for="qqContact">Phone or email</label>
+              <input class="qInput" id="qqContact" name="contact" placeholder="Best number to text or email" required>
+            </div>
+
+          </div>
+
+          <button class="qBtn" type="submit">Continue to scheduling</button>
+
+          <div class="qHint">
+            No payment required to submit. We confirm availability first, then send next steps.
+          </div>
+        </form>
+      </div>
+      <!-- /quick quote -->
+
     </div>
   </section>
 
