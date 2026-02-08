@@ -3,11 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Turnover ATL Cleaning | Cleaning Operations in Atlanta</title>
 
+  <!-- ✅ SEO Title (keyword + location + brand) -->
+  <title>Turnover ATL Cleaning | STR Turnover & Residential Cleaning in Atlanta, GA</title>
+
+  <!-- ✅ Meta Description (strong local intent) -->
+  <meta name="description" content="Turnover ATL Cleaning provides short-term rental turnover cleaning and residential cleaning across Metro Atlanta. Fast confirmation, checklist-based service, and completion photos after every clean." />
+
+  <!-- ✅ Canonical (update to your real final URL) -->
+  <link rel="canonical" href="https://turnoveratl.com/" />
+
+  <!-- ✅ Robots -->
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <!-- ✅ Social preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Turnover ATL Cleaning | STR Turnover & Residential Cleaning in Atlanta, GA" />
+  <meta property="og:description" content="Fast confirmation, checklist-based cleaning, and completion photos after every clean. Serving Metro Atlanta and surrounding areas." />
+  <meta property="og:url" content="https://turnoveratl.com/" />
+  <meta property="og:image" content="https://turnoveratl.com/assets/og-cover.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Turnover ATL Cleaning | STR Turnover & Residential Cleaning in Atlanta, GA" />
+  <meta name="twitter:description" content="Fast confirmation, checklist-based cleaning, and completion photos after every clean. Serving Metro Atlanta and surrounding areas." />
+  <meta name="twitter:image" content="https://turnoveratl.com/assets/og-cover.jpg" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- ✅ Preload hero images (performance helps SEO) -->
+  <link rel="preload" as="image" href="assets/clean-kitchen.jpg">
+  <link rel="preload" as="image" href="assets/made-bed.jpg">
 
   <style>
     :root{
@@ -89,9 +117,6 @@
       color:#081225;
     }
 
-    /* =========================
-       PROMO BANNER (full width)
-    ========================= */
     .promo-bar{
       width:100%;
       background:linear-gradient(90deg, rgba(106,168,255,.95), rgba(110,203,255,.88));
@@ -107,7 +132,7 @@
       padding:10px 0;
       white-space:nowrap;
       will-change:transform;
-      animation: promoScroll 32s linear infinite; /* slowed down */
+      animation: promoScroll 32s linear infinite;
     }
 
     .promo-track span{
@@ -120,9 +145,7 @@
       font-size:13.5px;
     }
 
-    .promo-bar:hover .promo-track{
-      animation-play-state:paused;
-    }
+    .promo-bar:hover .promo-track{ animation-play-state:paused; }
 
     @keyframes promoScroll{
       from{ transform:translateX(100%); }
@@ -140,12 +163,10 @@
       overflow:hidden;
       border-radius:22px;
       padding:28px;
-
       display:grid;
       grid-template-columns:1.25fr .75fr;
       gap:22px;
       align-items:start;
-
       border:1px solid rgba(255,255,255,.10);
       box-shadow:0 30px 90px rgba(0,0,0,.35);
       isolation:isolate;
@@ -156,9 +177,12 @@
       position:absolute;
       inset:0;
       z-index:0;
+
+      /* ✅ Use SEO-friendly file names (no spaces) */
       background-image:
-        url("assets/clean kitchen.jpg"),
-        url("assets/made bed.jpg");
+        url("assets/clean-kitchen.jpg"),
+        url("assets/made-bed.jpg");
+
       background-size:50% 100%, 50% 100%;
       background-position:left center, right center;
       background-repeat:no-repeat;
@@ -179,7 +203,7 @@
     @media (max-width:920px){
       .hero{grid-template-columns:1fr}
       .hero::before{
-        background-image:url("assets/clean kitchen.jpg");
+        background-image:url("assets/clean-kitchen.jpg");
         background-size:cover;
         background-position:center;
       }
@@ -289,7 +313,6 @@
       box-shadow:0 0 12px rgba(106,168,255,.35);
     }
 
-    /* ---------- Trust Strip ---------- */
     .trustStrip{
       margin-top:22px;
       padding:18px 0;
@@ -409,17 +432,32 @@
 
     .footer-dot{color:rgba(234,240,255,.45)}
   </style>
+
+  <!-- ✅ LocalBusiness Schema (edit service areas if you want) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Turnover ATL Cleaning",
+    "url": "https://turnoveratl.com/",
+    "telephone": "+1-470-290-2837",
+    "email": "ayinde@turnoveratl.com",
+    "areaServed": ["Atlanta, GA", "Metro Atlanta"],
+    "description": "Short-term rental turnover cleaning and residential cleaning in Metro Atlanta. Fast confirmation, checklist-based cleaning, and completion photos after every clean.",
+    "sameAs": []
+  }
+  </script>
 </head>
 
 <body>
 <header>
   <div class="nav">
-    <a class="brand" href="index.html">
-      <img src="assets/t-logo.png" alt="Turnover ATL logo">
+    <a class="brand" href="index.html" aria-label="Turnover ATL Cleaning home">
+      <img src="assets/t-logo.png" alt="Turnover ATL Cleaning logo">
       <span>Turnover ATL Cleaning</span>
     </a>
 
-    <div class="navlinks">
+    <div class="navlinks" aria-label="Primary navigation">
       <a href="services.html">Services</a>
       <a href="pricing.html">Pricing</a>
       <a href="about.html">About</a>
@@ -429,7 +467,6 @@
   </div>
 </header>
 
-<!-- PROMO BANNER -->
 <div class="promo-bar" aria-label="Current specials and referral program">
   <div class="promo-track">
     <span>🎉 $25 off your first service — limited-time offer</span>
@@ -443,11 +480,12 @@
 </div>
 
 <main>
-
   <section class="hero">
     <div>
       <div class="kicker">Metro Atlanta and Surrounding Areas</div>
-      <h1>Reliable cleaning operations for homes and rentals.</h1>
+
+      <!-- ✅ Keep one H1 on page -->
+      <h1>Reliable cleaning for homes and short-term rentals in Atlanta.</h1>
 
       <p class="sub">
         Turnover ATL helps homeowners, hosts, and property managers stay consistent without the chaos.
@@ -468,7 +506,7 @@
 
       <div class="contactLine">
         Email:
-        <a href="mailto:Ayinde@TurnoverATL.com"><strong>Ayinde@TurnoverATL.com</strong></a>
+        <a href="mailto:ayinde@turnoveratl.com"><strong>ayinde@turnoveratl.com</strong></a>
         ·
         Text:
         <a href="tel:+14702902837"><strong>(470) 290-2837</strong></a>
@@ -574,12 +612,11 @@
     <div>© 2026 Turnover ATL Cleaning</div>
 
     <div class="footer-contact">
-      <a class="footer-link" href="mailto:Ayinde@TurnoverATL.com">Ayinde@TurnoverATL.com</a>
+      <a class="footer-link" href="mailto:ayinde@turnoveratl.com">ayinde@turnoveratl.com</a>
       <span class="footer-dot">•</span>
       <a class="footer-link" href="tel:+14702902837">(470) 290-2837</a>
     </div>
   </footer>
-
 </main>
 </body>
 </html>
