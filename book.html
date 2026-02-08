@@ -216,6 +216,21 @@
             <input class="input" name="Service Address" placeholder="Street address (include unit # if applicable)">
           </div>
 
+          <!-- ✅ ADDED: ONE SQ FT QUESTION FOR ALL SERVICE TYPES -->
+          <div>
+            <label class="label">Approx. square footage</label>
+            <select class="select" name="Square Footage">
+              <option value="">Select (approx. is fine)</option>
+              <option>Under 800 sq ft</option>
+              <option>800 – 1,200 sq ft</option>
+              <option>1,200 – 1,800 sq ft</option>
+              <option>1,800 – 2,500 sq ft</option>
+              <option>2,500 – 3,500 sq ft</option>
+              <option>3,500+ sq ft</option>
+              <option>Not sure</option>
+            </select>
+          </div>
+
           <div>
             <label class="label">How did you hear about us?</label>
             <select class="select" name="Referral Source">
@@ -253,20 +268,6 @@
                 <option>2BR / 2BA</option>
                 <option>3BR / 2BA</option>
                 <option>4BR+</option>
-              </select>
-            </div>
-
-            <div>
-              <label class="label">Approx. square footage</label>
-              <select class="select" name="STR Square Footage">
-                <option value="">Select (approx. is fine)</option>
-                <option>Under 800 sq ft</option>
-                <option>800 – 1,200 sq ft</option>
-                <option>1,200 – 1,800 sq ft</option>
-                <option>1,800 – 2,500 sq ft</option>
-                <option>2,500 – 3,500 sq ft</option>
-                <option>3,500+ sq ft</option>
-                <option>Not sure</option>
               </select>
             </div>
 
@@ -465,7 +466,6 @@
     const notice = document.getElementById("serviceNotice");
 
     function setActive(type){
-      // reset
       strFields.classList.remove("active");
       resFields.classList.remove("active");
       mimoFields.classList.remove("active");
