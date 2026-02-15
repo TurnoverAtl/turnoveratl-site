@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Turnover ATL | Pricing</title>
+  <title>Pricing | Turnover ATL Cleaning</title>
+  <meta name="description" content="Transparent pricing for STR turnovers in Metro Atlanta. Predictable flat-rate turnovers with completion photos. Residential and move-in/move-out quoted after review." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,8 +20,8 @@
       --muted:rgba(234,240,255,.65);
       --accent:#6aa8ff;
       --accent2:#6ecbff;
-      --radius:16px;
-      --max:1100px;
+      --radius:18px;
+      --max:1280px; /* ✅ match homepage width */
     }
 
     *{box-sizing:border-box}
@@ -30,7 +31,7 @@
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--text);
       background:
-        radial-gradient(1000px 520px at 20% 0%, rgba(106,168,255,.18), transparent 60%),
+        radial-gradient(1100px 520px at 20% 0%, rgba(106,168,255,.18), transparent 60%),
         linear-gradient(180deg,var(--bg2),var(--bg));
     }
 
@@ -42,6 +43,7 @@
       top:0;
       z-index:50;
       backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
       background:rgba(7,11,24,.72);
       border-bottom:1px solid rgba(255,255,255,.08);
     }
@@ -88,6 +90,7 @@
       white-space:nowrap;
     }
 
+    /* PROMO BANNER */
     .promo-bar{
       width:100%;
       background:linear-gradient(90deg, rgba(106,168,255,.95), rgba(110,203,255,.88));
@@ -129,8 +132,7 @@
       padding:34px 18px 80px;
     }
 
-    .ta-header{margin-bottom:20px}
-    .ta-kicker{
+    .kicker{
       text-transform:uppercase;
       letter-spacing:.10em;
       font-size:12px;
@@ -140,24 +142,24 @@
 
     h1{
       margin:0 0 10px;
-      font-size:clamp(30px,4.6vw,52px);
+      font-size:clamp(32px,4.8vw,56px);
       line-height:1.05;
       letter-spacing:-.02em;
     }
 
-    p{margin:0 0 14px;color:var(--muted);line-height:1.6}
+    p{margin:0 0 14px;color:var(--muted);line-height:1.6;max-width:92ch}
 
-    .ta-grid{
+    .grid{
       display:grid;
       grid-template-columns:2fr 1fr;
       gap:22px;
       margin-top:18px;
     }
-    @media (max-width: 900px){
-      .ta-grid{grid-template-columns:1fr}
+    @media (max-width: 980px){
+      .grid{grid-template-columns:1fr}
     }
 
-    .ta-card{
+    .card{
       background:var(--card);
       border:1px solid var(--stroke);
       border-radius:18px;
@@ -175,7 +177,7 @@
 
     h3{margin:0;font-size:16px}
 
-    .ta-badge{
+    .badge{
       display:inline-block;
       padding:6px 10px;
       border-radius:999px;
@@ -184,6 +186,7 @@
       background:rgba(106,168,255,.18);
       border:1px solid rgba(106,168,255,.38);
       color:rgba(234,240,255,.92);
+      white-space:nowrap;
     }
 
     ul{padding-left:18px;margin:14px 0}
@@ -203,7 +206,8 @@
     .price{font-weight:900;color:var(--text)}
 
     .addon{margin-bottom:16px}
-    .addon strong{display:block;font-weight:900}
+    .addon strong{display:block;font-weight:900;color:rgba(234,240,255,.92)}
+    .addon p{margin:6px 0 0;color:rgba(234,240,255,.65)}
 
     .ctaBtn{
       margin-top:18px;
@@ -215,7 +219,7 @@
       color:#081225;
     }
 
-    .guarantee{
+    .noteBox{
       margin-top:18px;
       background:rgba(106,168,255,.12);
       border:1px solid rgba(106,168,255,.28);
@@ -223,6 +227,7 @@
       border-radius:12px;
       font-size:14px;
       color:rgba(234,240,255,.85);
+      line-height:1.55;
     }
 
     .fineprint{
@@ -255,11 +260,10 @@
       color:rgba(234,240,255,.95);
       border-bottom:1px solid rgba(255,255,255,.18);
       padding-bottom:2px;
-      text-decoration:none;
     }
 
     .footer-link:hover{ border-bottom-color:rgba(255,255,255,.45); }
-    .footer-dot{ color:rgba(234,240,255,.45); }
+    .footer-dot{color:rgba(234,240,255,.45)}
   </style>
 </head>
 
@@ -286,6 +290,7 @@
     <span>🎉 $25 off your first service — limited-time offer</span>
     <span>🤝 Refer a client, earn a $35 credit toward any service</span>
     <span>⚡ Fast confirmation · Clear checklist · Completion photos</span>
+
     <span>🎉 $25 off your first service — limited-time offer</span>
     <span>🤝 Refer a client, earn a $35 credit toward any service</span>
     <span>⚡ Fast confirmation · Clear checklist · Completion photos</span>
@@ -293,24 +298,24 @@
 </div>
 
 <main>
-  <div class="ta-header">
-    <div class="ta-kicker">Transparent pricing</div>
-    <h1>Predictable, Flat-Rate STR Turnovers</h1>
-    <p>No hourly guessing. No surprise fees. Every turnover follows a standardized checklist with photo confirmation.</p>
-  </div>
+  <div class="kicker">Transparent pricing</div>
+  <h1>Predictable, Flat-Rate STR Turnovers</h1>
+  <p>No hourly guessing. No surprise fees. Every turnover follows a standardized checklist with photo confirmation.</p>
 
-  <div class="ta-grid">
-    <div class="ta-card">
+  <div class="grid">
+    <div class="card">
       <div class="titleRow">
         <h3>Standard Turnover</h3>
-        <span class="ta-badge">Most Popular</span>
+        <span class="badge">Most Popular</span>
       </div>
 
-      <p>Everything needed to reset your unit between guests.</p>
+      <p style="margin:0 0 10px;color:rgba(234,240,255,.70);">
+        Everything needed to reset your unit between guests.
+      </p>
 
       <ul>
         <li>Full turnover clean (kitchen, bathrooms, floors, high-touch areas)</li>
-        <li>Linen reset using host-supplied inventory</li>
+        <li>Linen reset using host-supplied inventory (when applicable)</li>
         <li>Trash removal + light staging reset</li>
         <li><strong>Photo confirmation after every turnover</strong></li>
         <li>Reliable scheduling with local support</li>
@@ -336,12 +341,12 @@
       </p>
     </div>
 
-    <div class="ta-card">
+    <div class="card">
       <h3 style="margin:0 0 12px;">Optional services</h3>
 
       <div class="addon">
         <strong>Same-Day / Rush Turnover — +$25</strong>
-        <p>For tight check-out to check-in windows.</p>
+        <p>For tight check-out to check-in windows (availability confirmed first).</p>
       </div>
 
       <div class="addon">
@@ -354,14 +359,14 @@
         <p>We note low or missing consumables during the turnover so you can restock with confidence.</p>
       </div>
 
-      <h3 style="margin:18px 0 8px;">Why we’re not the cheapest</h3>
-      <p>
-        Lower-cost services often rely on rushed cleans, rotating crews, and limited quality checks — which can lead to missed details and inconsistent results.
+      <h3 style="margin:18px 0 8px;">Residential &amp; Move-In/Move-Out</h3>
+      <p style="margin:0;color:rgba(234,240,255,.70);line-height:1.6;">
+        <strong>Residential:</strong> starting at $120 (1BR), $160 (2BR), $200 (3BR), $240+ (4BR). Final pricing confirmed after reviewing details.
         <br><br>
-        <strong>Turnover ATL is built for hosts who value consistency, clear communication, and peace of mind.</strong>
+        <strong>Move-In/Move-Out:</strong> quoted after review — based on <strong>size, condition, and square footage</strong>, and priced <strong>competitively</strong> once details are confirmed.
       </p>
 
-      <div class="guarantee">
+      <div class="noteBox">
         <strong>Our commitment:</strong> If something is missed, notify us within 24 hours and we’ll resolve it promptly.
       </div>
 
@@ -373,62 +378,11 @@
     </div>
   </div>
 
-  <!-- ADDED: Residential + Move-In / Move-Out -->
-  <div class="ta-grid" style="margin-top:32px;">
-    <div class="ta-card">
-      <div class="titleRow">
-        <h3>Residential Cleaning (non-STR homes)</h3>
-        <span class="ta-badge">Starting rates</span>
-      </div>
-
-      <p>Ongoing home cleaning for people who live in the home.</p>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Home Size</th>
-            <th>Starting Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>1 bedroom</td><td class="price">$120</td></tr>
-          <tr><td>2 bedrooms</td><td class="price">$160</td></tr>
-          <tr><td>3 bedrooms</td><td class="price">$200</td></tr>
-          <tr><td>4+ bedrooms</td><td class="price">From $240</td></tr>
-        </tbody>
-      </table>
-
-      <p style="margin-top:14px;">
-        Final pricing is confirmed after reviewing home details.
-      </p>
-
-      <a class="ctaBtn" href="book.html">Get a Residential Quote</a>
-    </div>
-
-    <div class="ta-card">
-      <div class="titleRow">
-        <h3>Move-In / Move-Out Cleaning (empty homes)</h3>
-        <span class="ta-badge">Quoted</span>
-      </div>
-
-      <p>Move-in and move-out cleanings are quoted individually based on:</p>
-
-      <ul>
-        <li>Home size and layout</li>
-        <li>Condition and level of buildup</li>
-        <li>Requested scope (inside appliances, cabinets, baseboards, etc.)</li>
-      </ul>
-
-      <p><strong>Pricing is competitive and confirmed before scheduling.</strong></p>
-
-      <a class="ctaBtn" href="book.html">Request a Move-In / Move-Out Quote</a>
-    </div>
-  </div>
-
   <footer class="site-footer">
     <div>© 2026 Turnover ATL Cleaning</div>
+
     <div class="footer-contact">
-      <a class="footer-link" href="mailto:Ayinde@TurnoverATL.com">Ayinde@TurnoverATL.com</a>
+      <a class="footer-link" href="mailto:ayinde@turnoveratl.com">ayinde@turnoveratl.com</a>
       <span class="footer-dot">•</span>
       <a class="footer-link" href="tel:+14702902837">(470) 290-2837</a>
     </div>
