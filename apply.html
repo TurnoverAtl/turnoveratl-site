@@ -1,90 +1,104 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Careers | Turnover ATL Cleaning</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 760px;
-      margin: 40px auto;
-      padding: 20px;
-      line-height: 1.5;
-    }
-    .msg {
-      display: none;
-      margin-bottom: 20px;
-      padding: 12px 14px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      background: #f6f6f6;
-    }
-    label {
-      display: block;
-      margin: 14px 0 6px;
-      font-weight: 600;
-    }
-    input, select, textarea, button {
-      width: 100%;
-      padding: 12px;
-      font-size: 16px;
-      box-sizing: border-box;
-    }
-    textarea {
-      min-height: 120px;
-    }
-    button {
-      margin-top: 18px;
-      cursor: pointer;
-    }
-  </style>
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
-  <h1>Apply to clean with Turnover ATL</h1>
+<header>
+  <div class="wrap navbar">
+    <a class="brand" href="index.html">
+      <span>Turnover ATL Cleaning</span>
+    </a>
 
-  <div id="successMsg" class="msg">
-    ✅ Your application was submitted.
+    <nav class="navlinks">
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+      <a href="apply.html">Careers</a>
+      <a class="cta" href="book.html">Book a Cleaning</a>
+    </nav>
   </div>
+</header>
 
-  <form action="https://formspree.io/f/mgopddjk" method="POST">
-    <input type="hidden" name="_subject" value="New Cleaner Application — Turnover ATL">
-    <input type="hidden" name="_next" value="https://turnoveratl.com/apply.html?sent=1">
+<main class="wrap">
 
-    <label for="name">Full name</label>
-    <input id="name" type="text" name="name" required>
+  <section class="hero">
+    <h1>Apply to clean with Turnover ATL</h1>
+    <p>Reliable cleaners. Clear standards. Consistent work.</p>
 
-    <label for="email">Email</label>
-    <input id="email" type="email" name="email" required>
+    <div id="successMsg" class="trustItem" style="display:none;">
+      ✅ Application submitted
+    </div>
+  </section>
 
-    <label for="phone">Phone</label>
-    <input id="phone" type="tel" name="phone" required>
+  <section class="section">
+    <div class="formCard">
 
-    <label for="area">Areas you can serve</label>
-    <input id="area" type="text" name="service_area">
+      <form action="https://formspree.io/f/mgopddjk" method="POST">
 
-    <label for="experience">Cleaning experience</label>
-    <select id="experience" name="experience" required>
-      <option value="">Select one</option>
-      <option>Yes — 1+ year</option>
-      <option>Yes — some experience</option>
-      <option>No short-term rental, but experienced cleaner</option>
-      <option>New to cleaning</option>
-    </select>
+        <input type="hidden" name="_subject" value="New Cleaner Application — Turnover ATL">
+        <input type="hidden" name="_next" value="https://turnoveratl.com/apply.html?sent=1">
 
-    <label for="notes">Tell us about your experience</label>
-    <textarea id="notes" name="experience_notes"></textarea>
+        <!-- CONTACT -->
+        <div class="serviceCard">
+          <h3>Contact</h3>
 
-    <button type="submit">Submit application</button>
-  </form>
+          <input class="input" type="text" name="name" placeholder="Full name" required>
+          <input class="input" type="email" name="email" placeholder="Email" required>
+          <input class="input" type="tel" name="phone" placeholder="Phone" required>
+          <input class="input" type="text" name="service_area" placeholder="Service area">
+        </div>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    if (params.get('sent') === '1') {
-      document.getElementById('successMsg').style.display = 'block';
-    }
-  </script>
+        <!-- AVAILABILITY -->
+        <div class="serviceCard">
+          <h3>Availability</h3>
+
+          <select class="select" name="availability" required>
+            <option value="">Select availability</option>
+            <option>Weekdays</option>
+            <option>Weekends</option>
+            <option>Both</option>
+          </select>
+        </div>
+
+        <!-- EXPERIENCE -->
+        <div class="serviceCard">
+          <h3>Experience</h3>
+
+          <select class="select" name="experience" required>
+            <option value="">Select experience</option>
+            <option>1+ years</option>
+            <option>Some experience</option>
+            <option>New</option>
+          </select>
+
+          <textarea class="textarea" name="notes" placeholder="Tell us about your experience"></textarea>
+        </div>
+
+        <!-- SUBMIT -->
+        <div class="actions">
+          <button class="btn" type="submit">Submit application</button>
+        </div>
+
+      </form>
+
+    </div>
+  </section>
+
+</main>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('sent') === '1') {
+    document.getElementById('successMsg').style.display = 'block';
+  }
+</script>
 
 </body>
 </html>
