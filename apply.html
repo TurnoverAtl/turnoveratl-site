@@ -1,23 +1,27 @@
-
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Careers | Turnover ATL Cleaning</title>
+  <meta name="description" content="Apply to join Turnover ATL’s cleaning team. Clear standards, fast communication, and opportunities for consistent work across Metro Atlanta." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-
 <header>
   <div class="wrap navbar">
     <a class="brand" href="index.html">
+      <img src="assets/t-logo.png" alt="Turnover ATL logo">
       <span>Turnover ATL Cleaning</span>
     </a>
 
-    <nav class="navlinks">
+    <nav class="navlinks" aria-label="Primary">
       <a href="services.html">Services</a>
       <a href="pricing.html">Pricing</a>
       <a href="about.html">About</a>
@@ -30,61 +34,379 @@
 <main class="wrap">
 
   <section class="hero">
-    <h1>Apply to clean with Turnover ATL</h1>
-    <p>Reliable cleaners. Clear standards. Consistent work.</p>
+    <div class="kicker">Careers</div>
+    <h1>Apply to clean with Turnover ATL.</h1>
+    <p class="lead">
+      We partner with reliable, detail-oriented cleaners for short-term rental and residential jobs across Metro Atlanta.
+      If selected, you’ll follow a checklist, send completion photos, and communicate clearly.
+    </p>
 
-    <div id="successMsg" class="trustItem" style="display:none;">
-      ✅ Application submitted
+    <div class="pillRow">
+      <div class="pill">Clear standards</div>
+      <div class="pill">Completion photos required</div>
+      <div class="pill">Fast communication during active jobs</div>
+      <div class="pill">Metro Atlanta service area</div>
+    </div>
+
+    <div id="successMsg" class="trustItem" style="display:none; margin-top:14px;">
+      <strong>✅ Submitted.</strong>
+      <span>If you don’t see the email within a minute, check Spam/Promotions.</span>
     </div>
   </section>
 
   <section class="section">
     <div class="formCard">
 
-      <form action="https://formspree.io/f/mgopddjk" method="POST">
+      <div class="sectionHead">
+        <h2>Cleaner application</h2>
+        <p>Applications are reviewed manually. Qualified applicants will be contacted by text or email.</p>
+      </div>
+
+      <form id="applyForm" action="https://formspree.io/f/mgopddjk" method="POST" style="margin-top:14px;">
 
         <input type="hidden" name="_subject" value="New Cleaner Application — Turnover ATL">
         <input type="hidden" name="_next" value="https://turnoveratl.com/apply.html?sent=1">
 
         <!-- CONTACT -->
-        <div class="serviceCard">
-          <h3>Contact</h3>
+        <div class="serviceCard" style="margin-top:14px;">
+          <div class="serviceTitle">
+            <h3 style="margin:0;">Contact</h3>
+            <span class="tag">Required</span>
+          </div>
 
-          <input class="input" type="text" name="name" placeholder="Full name" required>
-          <input class="input" type="email" name="email" placeholder="Email" required>
-          <input class="input" type="tel" name="phone" placeholder="Phone" required>
-          <input class="input" type="text" name="service_area" placeholder="Service area">
+          <div class="formGrid" style="margin-top:12px;">
+            <div>
+              <label class="label" for="fullName">Full name</label>
+              <input class="input" id="fullName" type="text" name="name" required autocomplete="name" placeholder="Your name">
+            </div>
+
+            <div>
+              <label class="label" for="cleanerEmail">Email</label>
+              <input class="input" id="cleanerEmail" type="email" name="email" required autocomplete="email" placeholder="you@email.com">
+            </div>
+
+            <div>
+              <label class="label" for="phone">Phone number</label>
+              <input class="input" id="phone" type="tel" name="phone" required autocomplete="tel" placeholder="404-555-1234">
+            </div>
+
+            <div>
+              <label class="label" for="serviceArea">Areas you can serve</label>
+              <input class="input" id="serviceArea" type="text" name="service_area" placeholder="Atlanta, Decatur, Sandy Springs, etc.">
+            </div>
+          </div>
         </div>
 
         <!-- AVAILABILITY -->
-        <div class="serviceCard">
-          <h3>Availability</h3>
+        <div class="serviceCard" style="margin-top:14px;">
+          <div class="serviceTitle">
+            <h3 style="margin:0;">Availability</h3>
+            <span class="tag">Required</span>
+          </div>
 
-          <select class="select" name="availability" required>
-            <option value="">Select availability</option>
-            <option>Weekdays</option>
-            <option>Weekends</option>
-            <option>Both</option>
-          </select>
+          <div class="fine" style="margin-top:10px;">
+            Many short-term rental jobs happen Fri–Sun. Strong performers may be offered consistent work over time.
+          </div>
+
+          <div style="margin-top:14px;">
+            <div class="label" style="margin-bottom:8px;">Which days are you regularly available?</div>
+
+            <div class="trustGrid" style="grid-template-columns:repeat(4,1fr);">
+              <label class="trustItem" style="display:flex;gap:10px;align-items:center;padding:12px 12px;">
+                <input type="checkbox" name="available_days[]" value="Mon">
+                <span>Mon</span>
+              </label>
+              <label class="trustItem" style="display:flex;gap:10px;align-items:center;padding:12px 12px;">
+                <input type="checkbox" name="available_days[]" value="Tue">
+                <span>Tue</span>
+              </label>
+              <label class="trustItem" style="display:flex;gap:10px;align-items:center;padding:12px 12px;">
+                <input type="checkbox" name="available_days[]" value="Wed">
+                <span>Wed</span>
+              </label>
+              <label class="trustItem" style="display:flex;gap:10px;align-items:center;padding:12px 12px;">
+                <input type="checkbox" name="available_days[]" value="Thu">
+                <span>Thu</span>
+              </label>
+              <label class="trustItem" style="display:flex;gap:10px;align-items:center;padding:12px 12px;">
+                <input type="checkbox" name="available_days[]" value="Fri">
+                <span>Fri</span>
+              </label>
+              <label class="trustItem" style="display:flex;gap:10px;align-items:center;padding:12px 12px;">
+                <input type="checkbox" name="available_days[]" value="Sat">
+                <span>Sat</span>
+              </label>
+              <label class="trustItem" style="display:flex;gap:10px;align-items:center;padding:12px 12px;">
+                <input type="checkbox" name="available_days[]" value="Sun">
+                <span>Sun</span>
+              </label>
+            </div>
+          </div>
+
+          <div style="margin-top:14px;">
+            <div class="label" style="margin-bottom:8px;">Which time blocks can you usually work?</div>
+
+            <div class="trustGrid" style="grid-template-columns:repeat(2,1fr);">
+              <label class="trustItem" style="display:flex;gap:10px;align-items:center;padding:12px 12px;">
+                <input type="checkbox" name="time_blocks[]" value="Mornings (8–12)">
+                <span>Mornings (8–12)</span>
+              </label>
+              <label class="trustItem" style="display:flex;gap:10px;align-items:center;padding:12px 12px;">
+                <input type="checkbox" name="time_blocks[]" value="Midday (11–3)">
+                <span>Midday (11–3)</span>
+              </label>
+              <label class="trustItem" style="display:flex;gap:10px;align-items:center;padding:12px 12px;">
+                <input type="checkbox" name="time_blocks[]" value="Afternoons (2–6)">
+                <span>Afternoons (2–6)</span>
+              </label>
+              <label class="trustItem" style="display:flex;gap:10px;align-items:center;padding:12px 12px;">
+                <input type="checkbox" name="time_blocks[]" value="Evenings (after 5)">
+                <span>Evenings (after 5)</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="formGrid" style="margin-top:14px;">
+            <div>
+              <label class="label" for="shortNotice">Short-notice / same-day jobs when needed?</label>
+              <select class="select" id="shortNotice" name="short_notice" required>
+                <option value="">Select</option>
+                <option>Often</option>
+                <option>Sometimes</option>
+                <option>Rarely</option>
+                <option>Never</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label" for="workPref">Preferred work type</label>
+              <select class="select" id="workPref" name="work_preference" required>
+                <option value="">Select</option>
+                <option>Consistent work</option>
+                <option>On-demand jobs</option>
+                <option>Both</option>
+              </select>
+            </div>
+          </div>
         </div>
 
         <!-- EXPERIENCE -->
-        <div class="serviceCard">
-          <h3>Experience</h3>
+        <div class="serviceCard" style="margin-top:14px;">
+          <div class="serviceTitle">
+            <h3 style="margin:0;">Experience</h3>
+            <span class="tag">Required</span>
+          </div>
 
-          <select class="select" name="experience" required>
-            <option value="">Select experience</option>
-            <option>1+ years</option>
-            <option>Some experience</option>
-            <option>New</option>
-          </select>
+          <div class="formGrid" style="margin-top:12px;">
+            <div>
+              <label class="label" for="strExp">Short-term rental (Airbnb/VRBO) experience?</label>
+              <select class="select" id="strExp" name="str_experience" required>
+                <option value="">Select</option>
+                <option>Yes — 1+ year</option>
+                <option>Yes — some experience</option>
+                <option>No short-term rental, but experienced cleaner</option>
+                <option>New to cleaning</option>
+              </select>
+            </div>
 
-          <textarea class="textarea" name="notes" placeholder="Tell us about your experience"></textarea>
+            <div>
+              <label class="label" for="turnovers">Approx. how many short-term rental jobs have you done?</label>
+              <select class="select" id="turnovers" name="short_term_rental_job_count" required>
+                <option value="">Select</option>
+                <option>0</option>
+                <option>1–10</option>
+                <option>10–50</option>
+                <option>50–100</option>
+                <option>100+</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label" for="checklistOk">Comfortable following a checklist and taking required photos?</label>
+              <select class="select" id="checklistOk" name="checklist_and_photos" required>
+                <option value="">Select</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label" for="transportation">Transportation</label>
+              <select class="select" id="transportation" name="transportation" required>
+                <option value="">Select</option>
+                <option>Reliable car</option>
+                <option>Public transit only</option>
+                <option>Ride-share / depends</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="margin-top:14px;">
+            <label class="label" for="notes">Tell us about your cleaning experience</label>
+            <textarea class="textarea" id="notes" name="experience_notes" placeholder="Years of experience, types of cleans, strengths, anything important."></textarea>
+          </div>
         </div>
 
-        <!-- SUBMIT -->
-        <div class="actions">
+        <!-- SUPPLIES -->
+        <div class="serviceCard" style="margin-top:14px;">
+          <div class="serviceTitle">
+            <h3 style="margin:0;">Supplies & equipment</h3>
+            <span class="tag">Required</span>
+          </div>
+
+          <div class="label" style="margin-top:12px;margin-bottom:8px;">What supplies/equipment do you currently own?</div>
+
+          <div class="trustGrid" style="grid-template-columns:repeat(2,1fr);">
+            <label class="trustItem" style="display:flex;gap:10px;align-items:center;padding:12px 12px;">
+              <input type="checkbox" name="supplies_owned[]" value="Vacuum"><span>Vacuum</span>
+            </label>
+            <label class="trustItem" style="display:flex;gap:10px;align-items:center;padding:12px 12px;">
+              <input type="checkbox" name="supplies_owned[]" value="Mop & bucket"><span>Mop &amp; bucket</span>
+            </label>
+            <label class="trustItem" style="display:flex;gap:10px;align-items:center;padding:12px 12px;">
+              <input type="checkbox" name="supplies_owned[]" value="Broom & dustpan"><span>Broom &amp; dustpan</span>
+            </label>
+            <label class="trustItem" style="display:flex;gap:10px;align-items:center;padding:12px 12px;">
+              <input type="checkbox" name="supplies_owned[]" value="All-purpose cleaner"><span>All-purpose cleaner</span>
+            </label>
+            <label class="trustItem" style="display:flex;gap:10px;align-items:center;padding:12px 12px;">
+              <input type="checkbox" name="supplies_owned[]" value="Bathroom cleaner"><span>Bathroom cleaner</span>
+            </label>
+            <label class="trustItem" style="display:flex;gap:10px;align-items:center;padding:12px 12px;">
+              <input type="checkbox" name="supplies_owned[]" value="Glass/mirror cleaner"><span>Glass / mirror cleaner</span>
+            </label>
+            <label class="trustItem" style="display:flex;gap:10px;align-items:center;padding:12px 12px;">
+              <input type="checkbox" name="supplies_owned[]" value="Microfiber cloths"><span>Microfiber cloths</span>
+            </label>
+            <label class="trustItem" style="display:flex;gap:10px;align-items:center;padding:12px 12px;">
+              <input type="checkbox" name="supplies_owned[]" value="Trash bags"><span>Trash bags</span>
+            </label>
+            <label class="trustItem" style="display:flex;gap:10px;align-items:center;padding:12px 12px;">
+              <input type="checkbox" name="supplies_owned[]" value="None / rely on on-site supplies"><span>None / rely on on-site supplies</span>
+            </label>
+          </div>
+
+          <div class="formGrid" style="margin-top:14px;">
+            <div>
+              <label class="label" for="bringBasics">Willing to bring basic supplies if needed?</label>
+              <select class="select" id="bringBasics" name="bring_basic_supplies" required>
+                <option value="">Select</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label" for="hostSupplies">Comfortable using on-site supplies when required?</label>
+              <select class="select" id="hostSupplies" name="use_onsite_supplies" required>
+                <option value="">Select</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="help">Some homes have supplies on-site, and some require the cleaner to bring basics. Flexibility matters.</div>
+        </div>
+
+        <!-- STANDARDS -->
+        <div class="serviceCard" style="margin-top:14px;">
+          <div class="serviceTitle">
+            <h3 style="margin:0;">Standards</h3>
+            <span class="tag">Required</span>
+          </div>
+
+          <div class="formGrid" style="margin-top:12px;">
+            <div>
+              <label class="label" for="onTime">Can you reliably arrive on time and communicate quickly if delayed?</label>
+              <select class="select" id="onTime" name="on_time_and_communication" required>
+                <option value="">Select</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label" for="photoPay">Okay with completion photos being required for payment?</label>
+              <select class="select" id="photoPay" name="photos_required_for_pay" required>
+                <option value="">Select</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label" for="phoneTextOk">Can you respond to texts within 15–30 minutes during active jobs?</label>
+              <select class="select" id="phoneTextOk" name="fast_text_response" required>
+                <option value="">Select</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label" for="weekendOk">Willing to work weekends?</label>
+              <select class="select" id="weekendOk" name="weekends_ok" required>
+                <option value="">Select</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label" for="extraPeople">Will you ever bring additional people without permission?</label>
+              <select class="select" id="extraPeople" name="extra_people" required>
+                <option value="">Select</option>
+                <option>No</option>
+                <option>Yes</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label" for="smoke">Do you smoke or vape during jobs?</label>
+              <select class="select" id="smoke" name="smoking_on_job" required>
+                <option value="">Select</option>
+                <option>No</option>
+                <option>Yes</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label" for="solo">Comfortable working alone in guest properties?</label>
+              <select class="select" id="solo" name="comfortable_solo" required>
+                <option value="">Select</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label" for="backgroundOk">Willing to provide ID and consent to a basic background check if selected?</label>
+              <select class="select" id="backgroundOk" name="background_check_ok" required>
+                <option value="">Select</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="margin-top:14px;">
+            <label class="label" for="handleIssue">If a client points out a missed detail, how do you usually handle it?</label>
+            <textarea class="textarea" id="handleIssue" name="complaint_handling" placeholder="Short answer. We care about accountability and communication."></textarea>
+          </div>
+
+          <div class="help">
+            By applying, you confirm the information is accurate and you can follow the standards listed above.
+          </div>
+        </div>
+
+        <div class="actions" style="margin-top:16px;">
           <button class="btn" type="submit">Submit application</button>
+          <a class="btn secondary" href="about.html">Learn about Turnover ATL</a>
+        </div>
+
+        <div class="help">
+          Applications are reviewed manually. Qualified applicants will be contacted by text or email.
         </div>
 
       </form>
@@ -92,13 +414,27 @@
     </div>
   </section>
 
+  <footer class="site-footer">
+    <div>© 2026 Turnover ATL Cleaning</div>
+
+    <div class="footer-contact">
+      <a class="footer-link" href="mailto:Ayinde@TurnoverATL.com">Ayinde@TurnoverATL.com</a>
+      <span class="footer-dot">•</span>
+      <a class="footer-link" href="tel:+14702902837">(470) 290-2837</a>
+    </div>
+  </footer>
+
 </main>
 
 <script>
-  const params = new URLSearchParams(window.location.search);
-  if (params.get('sent') === '1') {
-    document.getElementById('successMsg').style.display = 'block';
-  }
+  // Show success banner if redirected back with ?sent=1
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('sent') === '1') {
+      const el = document.getElementById('successMsg');
+      if (el) el.style.display = 'block';
+    }
+  })();
 </script>
 
 </body>
