@@ -9,45 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Your global CSS -->
   <link rel="stylesheet" href="styles.css" />
 
   <style>
-    /* =========================
-       PROMO BANNER (full width)
-    ========================= */
-    .promo-bar{
-      width:100%;
-      background:linear-gradient(90deg, rgba(106,168,255,.95), rgba(110,203,255,.88));
-      color:#061226;
-      font-weight:900;
-      overflow:hidden;
-      border-bottom:1px solid rgba(0,0,0,.18);
-    }
-    .promo-track{
-      display:flex;
-      gap:56px;
-      padding:10px 0;
-      white-space:nowrap;
-      will-change:transform;
-      animation: promoScroll 22s linear infinite;
-    }
-    .promo-track span{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding-left:24px;
-      padding-right:24px;
-      letter-spacing:.01em;
-      font-size:13.5px;
-    }
-    .promo-bar:hover .promo-track{ animation-play-state:paused; }
-    @keyframes promoScroll{
-      from{ transform:translateX(100%); }
-      to{ transform:translateX(-100%); }
-    }
-
-    /* Small local helpers to match your styles.css look */
     .howItWorks{
       margin-top:14px;
       padding:14px;
@@ -95,7 +59,6 @@
       line-height:1.55;
     }
 
-    /* Conditional sections */
     .conditional{ display:none; }
     .conditional.active{ display:block; }
   </style>
@@ -119,19 +82,6 @@
     </nav>
   </div>
 </header>
-
-<!-- PROMO BANNER -->
-<div class="promo-bar" aria-label="Current specials and referral program">
-  <div class="promo-track">
-    <span>🎉 $25 off your first service — limited-time offer</span>
-    <span>🤝 Refer a client, earn a $35 credit toward any service</span>
-    <span>⚡ Fast confirmation · Clear checklist · Completion photos</span>
-
-    <span>🎉 $25 off your first service — limited-time offer</span>
-    <span>🤝 Refer a client, earn a $35 credit toward any service</span>
-    <span>⚡ Fast confirmation · Clear checklist · Completion photos</span>
-  </div>
-</div>
 
 <main class="wrap">
 
@@ -181,10 +131,8 @@
         <p>Select your service type and share a few details. We’ll confirm quickly.</p>
       </div>
 
-      <!-- FORM — Formspree endpoint preserved -->
       <form action="https://formspree.io/f/mdaokknp" method="POST">
 
-        <!-- ALWAYS INCLUDED -->
         <div class="formGrid" style="margin-top:14px;">
 
           <div>
@@ -213,13 +161,11 @@
             <input class="input" name="Phone" id="phoneField" placeholder="Best number to text">
           </div>
 
-          <!-- ✅ NEW: ZIP -->
           <div>
             <label class="label">ZIP code</label>
             <input class="input" name="ZIP Code" id="zipField" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" placeholder="30318">
           </div>
 
-          <!-- ✅ NEW: SQ FT (applies to all services) -->
           <div>
             <label class="label">Approx. square footage</label>
             <select class="select" name="Square Footage" id="sqftField">
@@ -270,7 +216,6 @@
 
         </div>
 
-        <!-- STR ONLY -->
         <div class="conditional" id="strFields" style="margin-top:14px;">
           <div class="sectionHead" style="margin-top:6px;">
             <h2 style="margin:0;">STR turnover details</h2>
@@ -310,7 +255,6 @@
           </div>
         </div>
 
-        <!-- RESIDENTIAL ONLY -->
         <div class="conditional" id="resFields" style="margin-top:14px;">
           <div class="sectionHead" style="margin-top:6px;">
             <h2 style="margin:0;">Residential details</h2>
@@ -407,7 +351,6 @@
           </div>
         </div>
 
-        <!-- MOVE-IN / MOVE-OUT ONLY -->
         <div class="conditional" id="mimoFields" style="margin-top:14px;">
           <div class="sectionHead" style="margin-top:6px;">
             <h2 style="margin:0;">Move-in / move-out details</h2>
@@ -458,12 +401,11 @@
           </div>
 
           <div class="noticeBox">
-            Move-in / move-out pricing is quoted <strong>competitively</strong> based on <strong>square footage, home condition, and requested scope</strong>.
+            Move-in / move-out pricing is quoted <strong>competitively</strong> based on <strong>square footage, condition, and requested scope</strong>.
             We’ll confirm details first, then send next steps.
           </div>
         </div>
 
-        <!-- NOTES ALWAYS -->
         <div style="margin-top:14px;">
           <label class="label">Notes</label>
           <textarea class="textarea" name="Notes" placeholder="Parking, access notes, special instructions, concerns, and anything else we should know"></textarea>
@@ -535,12 +477,10 @@
       setActive(this.value);
     });
 
-    // ✅ Autofill from URL params (from homepage quick quote)
     function normalizeSqft(v){
       if(!v) return "";
       const s = String(v).trim();
 
-      // allow both "800–1,200" and "800-1,200" etc.
       const map = {
         "Under 800": "Under 800",
         "under 800": "Under 800",
@@ -567,20 +507,17 @@
 
       const c = String(contact).trim();
 
-      // If it's an email
       if(c.includes("@")){
         if(!emailField.value) emailField.value = c;
         return;
       }
 
-      // If it looks like a phone number
       const digits = c.replace(/[^\d]/g, "");
       if(digits.length >= 7){
         if(!phoneField.value) phoneField.value = c;
         return;
       }
 
-      // Otherwise, prefer email if empty, else phone
       if(!emailField.value) emailField.value = c;
       else if(!phoneField.value) phoneField.value = c;
     }
@@ -594,7 +531,6 @@
       const contact = params.get("contact");
 
       if(svc){
-        // only accept known values
         const val = svc.toUpperCase();
         if(["STR","RES","MIMO"].includes(val)){
           serviceType.value = val;
@@ -608,7 +544,6 @@
 
       if(sqft && sqftField && !sqftField.value){
         const normalized = normalizeSqft(sqft);
-        // try to select matching option
         const opts = Array.from(sqftField.options).map(o => o.value || o.text);
         const idx = opts.findIndex(o => String(o).trim() === String(normalized).trim());
         if(idx >= 0) sqftField.selectedIndex = idx;
@@ -619,11 +554,7 @@
       }
     }
 
-    // run once on load
     applyParams();
-
-    // If no service selected, keep sections hidden by default
-    // (User will select manually)
   })();
 </script>
 
