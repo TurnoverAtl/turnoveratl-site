@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Book a Cleaning | Turnover ATL Cleaning</title>
+  <title>Request Service | Turnover ATL Cleaning</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,6 +75,7 @@
 
     <nav class="navlinks">
       <a href="services.html">Services</a>
+      <a href="property-commercial.html">Property & Commercial</a>
       <a href="pricing.html">Pricing</a>
       <a href="about.html">About</a>
       <a href="apply.html">Careers</a>
@@ -86,28 +87,28 @@
 <main class="wrap">
 
   <section class="hero">
-    <div class="kicker">Booking</div>
+    <div class="kicker">Booking & Commercial Inquiry</div>
 
-    <h1>Schedule a Clean.</h1>
+    <h1>Request Service or a Commercial Walkthrough.</h1>
 
     <p class="lead">
-      Submit your request and we’ll confirm availability, clarify any details, and schedule your clean.
-      Once confirmed, we’ll send next steps.
+      Submit a cleaning request, property inquiry, or commercial walkthrough request.
+      We’ll review the details, confirm availability, clarify the scope, and send next steps.
     </p>
 
     <div class="pillRow">
       <div class="pill">Fast confirmation</div>
-      <div class="pill">Checklist-based cleaning</div>
-      <div class="pill">Completion photos</div>
+      <div class="pill">Property & commercial inquiries</div>
+      <div class="pill">Checklist-based service</div>
     </div>
 
     <div class="howItWorks">
       <h3>How it works</h3>
       <ol>
-        <li><strong>Submit your request</strong> (service type, date, details)</li>
-        <li><strong>We confirm availability</strong> + finalize scope</li>
-        <li><strong>You receive next steps</strong> once scheduled</li>
-        <li><strong>Cleaner completes the job</strong> + photos are sent after completion</li>
+        <li><strong>Submit your request</strong> with the service type, property details, preferred date, and notes</li>
+        <li><strong>We review the scope</strong> and confirm whether it is residential, turnover, recurring, or commercial</li>
+        <li><strong>You receive next steps</strong> once availability and service details are confirmed</li>
+        <li><strong>Service is scheduled</strong> or a walkthrough is arranged for commercial and property needs</li>
       </ol>
       <div class="subtle">
         No payment is required to submit. We confirm first.
@@ -127,8 +128,11 @@
     <div class="formCard">
 
       <div class="sectionHead">
-        <h2>Request a cleaning</h2>
-        <p>Select your service type and share a few details. We’ll confirm quickly.</p>
+        <h2>Request Service or Commercial Inquiry</h2>
+        <p>
+          Select your service type and share a few details. For commercial and property services,
+          we’ll review the scope and arrange next steps.
+        </p>
       </div>
 
       <form action="https://formspree.io/f/mdaokknp" method="POST">
@@ -139,6 +143,10 @@
             <label class="label">Service type</label>
             <select class="select" name="Service Type" id="serviceType" required>
               <option value="">Select one</option>
+              <option value="COMM">Property & Commercial Cleaning</option>
+              <option value="CW">Commercial Walkthrough</option>
+              <option value="OFFICE">Office Cleaning</option>
+              <option value="PM">Property Management / Apartment Turnover</option>
               <option value="STR">Short-Term Rental Turnover</option>
               <option value="RES">Residential Cleaning</option>
               <option value="MIMO">Move-In / Move-Out</option>
@@ -192,7 +200,7 @@
 
           <div class="full">
             <label class="label">Service address</label>
-            <input class="input" name="Service Address" placeholder="Street address (include unit # if applicable)">
+            <input class="input" name="Service Address" placeholder="Street address, city, unit # if applicable">
           </div>
 
           <div>
@@ -203,6 +211,7 @@
               <option>Facebook</option>
               <option>Instagram</option>
               <option>Airbnb / VRBO host group</option>
+              <option>Property manager / real estate contact</option>
               <option>Referral</option>
               <option>Returning customer</option>
               <option>Other</option>
@@ -214,6 +223,68 @@
             <input class="input" name="Referral Name" placeholder="Name (optional)">
           </div>
 
+        </div>
+
+        <div class="conditional" id="commFields" style="margin-top:14px;">
+          <div class="sectionHead" style="margin-top:6px;">
+            <h2 style="margin:0;">Commercial / property details</h2>
+            <p style="margin:6px 0 0;">This helps us understand the scope, schedule, and whether a walkthrough is needed.</p>
+          </div>
+
+          <div class="formGrid" style="margin-top:12px;">
+            <div>
+              <label class="label">Property type</label>
+              <select class="select" name="Commercial Property Type">
+                <option value="">Select one</option>
+                <option>Office</option>
+                <option>Retail space</option>
+                <option>Medical / professional office</option>
+                <option>Apartment community</option>
+                <option>Leasing office</option>
+                <option>Vacant unit / apartment turn</option>
+                <option>Common area</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label">Service frequency</label>
+              <select class="select" name="Commercial Frequency">
+                <option value="">Select one</option>
+                <option>One-time service</option>
+                <option>Weekly</option>
+                <option>Bi-weekly</option>
+                <option>Monthly</option>
+                <option>Recurring / custom schedule</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label">Walkthrough needed?</label>
+              <select class="select" name="Walkthrough Needed">
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+                <option>Not sure</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label">Best time to contact</label>
+              <input class="input" name="Best Contact Time" placeholder="Example: weekdays after 3pm">
+            </div>
+
+            <div class="full">
+              <label class="label">Commercial scope</label>
+              <textarea class="textarea" name="Commercial Scope" placeholder="Example: office bathrooms, breakroom, floors, trash, high-touch areas, vacant unit turn, common areas, recurring schedule, access details, etc."></textarea>
+            </div>
+          </div>
+
+          <div class="noticeBox">
+            Commercial and property services may require a walkthrough or scope review before final pricing.
+            We’ll confirm details first, then send next steps.
+          </div>
         </div>
 
         <div class="conditional" id="strFields" style="margin-top:14px;">
@@ -246,7 +317,7 @@
 
             <div class="full">
               <label class="label">Access type</label>
-              <input class="input" name="STR Access" placeholder="Smart lock / lockbox / concierge (codes can be sent after scheduling)">
+              <input class="input" name="STR Access" placeholder="Smart lock / lockbox / concierge">
             </div>
           </div>
 
@@ -408,7 +479,7 @@
 
         <div style="margin-top:14px;">
           <label class="label">Notes</label>
-          <textarea class="textarea" name="Notes" placeholder="Parking, access notes, special instructions, concerns, and anything else we should know"></textarea>
+          <textarea class="textarea" name="Notes" placeholder="Parking, access notes, special instructions, concerns, property type, recurring needs, walkthrough details, and anything else we should know"></textarea>
           <div class="help">
             Have photos or special instructions? Email them to
             <strong>Ayinde@TurnoverATL.com</strong> after submitting.
@@ -416,7 +487,7 @@
         </div>
 
         <div class="actions" style="margin-top:16px;">
-          <button class="btn" type="submit">Request a time</button>
+          <button class="btn" type="submit">Submit Request</button>
           <a class="btn secondary" href="pricing.html">View pricing</a>
         </div>
 
@@ -445,6 +516,7 @@
 <script>
   (function(){
     const serviceType = document.getElementById("serviceType");
+    const commFields = document.getElementById("commFields");
     const strFields = document.getElementById("strFields");
     const resFields = document.getElementById("resFields");
     const mimoFields = document.getElementById("mimoFields");
@@ -455,13 +527,21 @@
     const emailField = document.getElementById("emailField");
     const phoneField = document.getElementById("phoneField");
 
-    function setActive(type){
+    function hideAll(){
+      commFields.classList.remove("active");
       strFields.classList.remove("active");
       resFields.classList.remove("active");
       mimoFields.classList.remove("active");
       notice.textContent = "";
+    }
 
-      if(type === "STR"){
+    function setActive(type){
+      hideAll();
+
+      if(["COMM","CW","OFFICE","PM"].includes(type)){
+        commFields.classList.add("active");
+        notice.textContent = "Commercial and property requests may require a walkthrough or scope review before final pricing.";
+      } else if(type === "STR"){
         strFields.classList.add("active");
         notice.textContent = "STR turnovers follow a standardized checklist with completion photos. Flat-rate pricing is on the Pricing page.";
       } else if(type === "RES"){
@@ -522,6 +602,36 @@
       else if(!phoneField.value) phoneField.value = c;
     }
 
+    function normalizeService(v){
+      if(!v) return "";
+      const s = String(v).trim().toUpperCase();
+
+      const map = {
+        "COMM": "COMM",
+        "PROPERTY & COMMERCIAL CLEANING": "COMM",
+        "PROPERTY AND COMMERCIAL CLEANING": "COMM",
+        "COMMERCIAL": "COMM",
+        "CW": "CW",
+        "COMMERCIAL WALKTHROUGH": "CW",
+        "WALKTHROUGH": "CW",
+        "OFFICE": "OFFICE",
+        "OFFICE CLEANING": "OFFICE",
+        "PM": "PM",
+        "PROPERTY MANAGEMENT / APARTMENT TURNOVER": "PM",
+        "PROPERTY MANAGEMENT": "PM",
+        "APARTMENT TURNOVER": "PM",
+        "STR": "STR",
+        "SHORT-TERM RENTAL TURNOVER": "STR",
+        "RES": "RES",
+        "RESIDENTIAL CLEANING": "RES",
+        "MIMO": "MIMO",
+        "MOVE-IN / MOVE-OUT": "MIMO",
+        "MOVE IN MOVE OUT": "MIMO"
+      };
+
+      return map[s] || s;
+    }
+
     function applyParams(){
       const params = new URLSearchParams(window.location.search);
 
@@ -531,8 +641,9 @@
       const contact = params.get("contact");
 
       if(svc){
-        const val = svc.toUpperCase();
-        if(["STR","RES","MIMO"].includes(val)){
+        const val = normalizeService(svc);
+        const allowed = ["COMM","CW","OFFICE","PM","STR","RES","MIMO"];
+        if(allowed.includes(val)){
           serviceType.value = val;
           setActive(val);
         }
