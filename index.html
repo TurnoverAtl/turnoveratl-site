@@ -4,21 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Turnover ATL Cleaning | Property, Commercial & Turnover Cleaning in Atlanta, GA</title>
-  <meta name="description" content="Turnover ATL Cleaning provides property management, commercial cleaning, apartment turnover, short-term rental turnover, move-in/move-out, and residential cleaning services throughout Metro Atlanta." />
+  <title>Deep Cleaning & Rental Property Cleaning Atlanta | Turnover ATL</title>
+  <meta name="description" content="Turnover ATL provides deep cleaning, rental-property cleaning, PadSplit and co-living cleaning, room turns, move-in/move-out cleaning, and residential service throughout Metro Atlanta." />
 
   <link rel="canonical" href="https://turnoveratl.com/" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Turnover ATL Cleaning | Property, Commercial & Turnover Cleaning in Atlanta, GA" />
-  <meta property="og:description" content="Reliable property, commercial, turnover, and residential cleaning across Metro Atlanta. Standardized checklists, fast communication, and completion photos." />
+  <meta property="og:title" content="Deep Cleaning & Rental Property Specialists | Turnover ATL" />
+  <meta property="og:description" content="Deep cleans, PadSplit and co-living cleaning, rental turnovers, room turns, move-outs, and residential cleaning throughout Metro Atlanta." />
   <meta property="og:url" content="https://turnoveratl.com/" />
   <meta property="og:image" content="https://turnoveratl.com/assets/og-cover.jpg" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Turnover ATL Cleaning | Property, Commercial & Turnover Cleaning in Atlanta, GA" />
-  <meta name="twitter:description" content="Reliable property, commercial, turnover, and residential cleaning across Metro Atlanta." />
+  <meta name="twitter:title" content="Deep Cleaning & Rental Property Specialists | Turnover ATL" />
+  <meta name="twitter:description" content="Deep cleaning, rental-property service, PadSplit and co-living cleaning, room turns, and residential cleaning across Metro Atlanta." />
   <meta name="twitter:image" content="https://turnoveratl.com/assets/og-cover.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,6 +42,7 @@
     }
 
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     html,body{margin:0;padding:0}
 
     body{
@@ -61,7 +62,7 @@
       z-index:50;
       backdrop-filter:blur(10px);
       -webkit-backdrop-filter:blur(10px);
-      background:rgba(7,11,24,.72);
+      background:rgba(7,11,24,.78);
       border-bottom:1px solid rgba(255,255,255,.08);
     }
 
@@ -118,9 +119,9 @@
       position:relative;
       overflow:hidden;
       border-radius:22px;
-      padding:28px;
+      padding:32px;
       display:grid;
-      grid-template-columns:1.25fr .75fr;
+      grid-template-columns:1.2fr .8fr;
       gap:22px;
       align-items:start;
       border:1px solid rgba(255,255,255,.10);
@@ -147,64 +148,74 @@
       position:absolute;
       inset:0;
       z-index:1;
-      background:linear-gradient(rgba(7,11,24,.28), rgba(7,11,24,.55));
+      background:
+        linear-gradient(90deg, rgba(7,11,24,.87) 0%, rgba(7,11,24,.66) 52%, rgba(7,11,24,.52) 100%),
+        linear-gradient(rgba(7,11,24,.20), rgba(7,11,24,.62));
       pointer-events:none;
     }
 
-    .hero > *{position:relative;z-index:2;}
-
-    @media (max-width:920px){
-      .hero{grid-template-columns:1fr}
-      .hero::before{
-        background-image:url("assets/clean-kitchen.jpg");
-        background-size:cover;
-        background-position:center;
-      }
-    }
+    .hero > *{position:relative;z-index:2}
 
     .kicker{
       text-transform:uppercase;
-      letter-spacing:.10em;
+      letter-spacing:.11em;
       font-size:12px;
-      color:rgba(106,168,255,.95);
+      color:rgba(110,203,255,.98);
       margin-bottom:10px;
+      font-weight:900;
     }
 
     h1{
-      margin:0 0 12px;
-      font-size:clamp(34px,5vw,58px);
-      line-height:1.05;
-      letter-spacing:-.02em;
-      text-shadow:0 10px 40px rgba(0,0,0,.55);
+      margin:0 0 14px;
+      font-size:clamp(38px,5.4vw,66px);
+      line-height:1.01;
+      letter-spacing:-.035em;
+      text-shadow:0 10px 40px rgba(0,0,0,.60);
+      max-width:13ch;
     }
 
     .sub{
       margin:0 0 16px;
-      color:rgba(234,240,255,.84);
-      line-height:1.65;
-      font-size:15.5px;
-      max-width:64ch;
-      text-shadow:0 10px 34px rgba(0,0,0,.55);
+      color:rgba(234,240,255,.88);
+      line-height:1.66;
+      font-size:16px;
+      max-width:65ch;
+      text-shadow:0 10px 34px rgba(0,0,0,.60);
+    }
+
+    .priceCallout{
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      margin-top:4px;
+      padding:10px 13px;
+      border-radius:999px;
+      background:rgba(0,0,0,.34);
+      border:1px solid rgba(110,203,255,.35);
+      font-size:13px;
+      font-weight:900;
+      color:#fff;
+      backdrop-filter:blur(6px);
     }
 
     .pillRow{
       display:flex;
       flex-wrap:wrap;
       gap:14px;
-      margin:14px 0 18px;
+      margin:18px 0;
     }
 
     .pill{
       font-size:13px;
-      color:rgba(234,240,255,.95);
-      text-shadow:0 2px 8px rgba(0,0,0,.65),0 0 18px rgba(0,0,0,.35);
+      color:rgba(234,240,255,.97);
+      text-shadow:0 2px 8px rgba(0,0,0,.70);
     }
 
     .actions{
       display:flex;
       flex-wrap:wrap;
       gap:12px;
-      margin-top:14px;
+      margin-top:16px;
     }
 
     .btn{
@@ -212,14 +223,14 @@
       padding:14px 16px;
       border-radius:14px;
       font-weight:900;
-      background:linear-gradient(135deg, rgba(106,168,255,.95), rgba(110,203,255,.85));
+      background:linear-gradient(135deg, rgba(106,168,255,.98), rgba(110,203,255,.90));
       color:#081225;
     }
 
     .btn.secondary{
-      background:rgba(0,0,0,.28);
-      border:1px solid rgba(255,255,255,.18);
-      color:rgba(234,240,255,.95);
+      background:rgba(0,0,0,.34);
+      border:1px solid rgba(255,255,255,.22);
+      color:rgba(234,240,255,.98);
       font-weight:800;
       backdrop-filter:blur(6px);
     }
@@ -232,35 +243,36 @@
     }
 
     .contactLine{
-      margin-top:12px;
-      color:rgba(234,240,255,.82);
+      margin-top:13px;
+      color:rgba(234,240,255,.84);
       font-size:13px;
       line-height:1.6;
       text-shadow:0 10px 34px rgba(0,0,0,.55);
     }
 
     .contactLine a{
-      color:rgba(234,240,255,.96);
-      border-bottom:1px solid rgba(255,255,255,.25);
+      color:#fff;
+      border-bottom:1px solid rgba(255,255,255,.28);
     }
 
     .hero > .card{
-      background:transparent;
+      background:rgba(0,0,0,.20);
       border:1px solid rgba(255,255,255,.22);
       border-radius:var(--radius);
       padding:22px;
       box-shadow:0 40px 110px rgba(0,0,0,.55);
-      backdrop-filter:blur(4px);
+      backdrop-filter:blur(7px);
     }
 
-    .card h3{margin:0 0 10px;font-size:16px;}
-    .card p{margin:0 0 12px;line-height:1.6;}
+    .card h3{margin:0 0 10px;font-size:19px}
+    .card p{margin:0 0 12px;line-height:1.6;color:rgba(234,240,255,.78)}
 
-    .check{list-style:none;padding:0;margin:0;display:grid;gap:10px;}
-    .check li{display:flex;gap:10px;align-items:flex-start;font-size:14px;}
+    .check{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+    .check li{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.45}
 
     .dot{
       width:10px;height:10px;border-radius:50%;
+      flex:0 0 10px;
       margin-top:6px;
       background:linear-gradient(135deg,var(--accent),var(--accent2));
       box-shadow:0 0 12px rgba(106,168,255,.35);
@@ -276,7 +288,6 @@
       margin:0 0 8px;
       font-size:14px;
       font-weight:900;
-      letter-spacing:.01em;
     }
 
     .quoteGrid{
@@ -286,39 +297,40 @@
       margin-top:10px;
     }
 
-    .quoteGrid .full{grid-column:1 / -1;}
+    .quoteGrid .full{grid-column:1 / -1}
 
     .qLabel{
       display:block;
       font-size:11px;
       letter-spacing:.10em;
       text-transform:uppercase;
-      color:rgba(234,240,255,.62);
+      color:rgba(234,240,255,.65);
       margin:0 0 6px;
       font-weight:800;
     }
 
     .qInput,.qSelect{
       width:100%;
-      padding:12px 12px;
+      padding:12px;
       border-radius:14px;
       border:1px solid rgba(255,255,255,.14);
-      background:rgba(0,0,0,.22);
-      color:rgba(234,240,255,.92);
+      background:rgba(0,0,0,.30);
+      color:rgba(234,240,255,.95);
       outline:none;
     }
 
-    .qInput::placeholder{color:rgba(234,240,255,.42);}
+    .qSelect option{color:#081225}
+    .qInput::placeholder{color:rgba(234,240,255,.45)}
 
     .qInput:focus,.qSelect:focus{
-      border-color:rgba(106,168,255,.55);
+      border-color:rgba(106,168,255,.60);
       box-shadow:0 0 0 3px rgba(106,168,255,.14);
     }
 
     .qHint{
       margin-top:10px;
       font-size:12px;
-      color:rgba(234,240,255,.62);
+      color:rgba(234,240,255,.65);
       line-height:1.55;
     }
 
@@ -334,7 +346,7 @@
       border:none;
       cursor:pointer;
       font-weight:900;
-      background:linear-gradient(135deg, rgba(106,168,255,.95), rgba(110,203,255,.85));
+      background:linear-gradient(135deg, rgba(106,168,255,.98), rgba(110,203,255,.90));
       color:#081225;
     }
 
@@ -356,7 +368,7 @@
       background:rgba(255,255,255,.06);
       border:1px solid rgba(255,255,255,.12);
       border-radius:18px;
-      padding:14px 14px;
+      padding:15px;
       box-shadow:0 20px 60px rgba(0,0,0,.25);
     }
 
@@ -364,35 +376,53 @@
       display:block;
       font-size:14px;
       font-weight:900;
-      color:rgba(234,240,255,.95);
+      color:rgba(234,240,255,.97);
     }
 
     .trustItem span{
       display:block;
       margin-top:6px;
       font-size:12.5px;
-      color:rgba(234,240,255,.65);
+      color:rgba(234,240,255,.67);
       line-height:1.45;
     }
 
-    @media (max-width:920px){
-      .trustGrid{grid-template-columns:1fr 1fr;}
-    }
-
     .section{
-      margin-top:30px;
+      margin-top:34px;
       display:grid;
       gap:16px;
     }
 
-    .grid3{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:22px;
+    .sectionHead{
+      max-width:820px;
     }
 
-    @media (max-width:920px){
-      .grid3{grid-template-columns:1fr}
+    .sectionHead .eyebrow{
+      text-transform:uppercase;
+      letter-spacing:.11em;
+      font-size:12px;
+      font-weight:900;
+      color:rgba(110,203,255,.95);
+      margin-bottom:8px;
+    }
+
+    .sectionHead h2{
+      margin:0 0 10px;
+      font-size:clamp(28px,4vw,44px);
+      letter-spacing:-.025em;
+    }
+
+    .sectionHead p{
+      margin:0;
+      color:rgba(234,240,255,.70);
+      line-height:1.7;
+      max-width:70ch;
+    }
+
+    .grid3{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:22px;
     }
 
     .serviceCard{
@@ -408,8 +438,10 @@
       align-items:center;
       justify-content:space-between;
       gap:12px;
-      margin-bottom:6px;
+      margin-bottom:8px;
     }
+
+    .serviceTitle h3{font-size:19px}
 
     .tag{
       font-size:12px;
@@ -419,12 +451,13 @@
       background:rgba(106,168,255,.16);
       border:1px solid rgba(106,168,255,.32);
       color:rgba(234,240,255,.95);
+      white-space:nowrap;
     }
 
     .serviceCtaRow{
       display:flex;
       gap:10px;
-      margin-top:12px;
+      margin-top:14px;
       align-items:center;
       flex-wrap:wrap;
     }
@@ -434,6 +467,54 @@
       font-size:12px;
       color:rgba(234,240,255,.62);
       line-height:1.6;
+    }
+
+    .process{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+
+    .step{
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:18px;
+      padding:18px;
+    }
+
+    .stepNum{
+      font-size:12px;
+      font-weight:900;
+      color:rgba(110,203,255,.95);
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .step h3{margin:8px 0 7px;font-size:16px}
+    .step p{margin:0;color:rgba(234,240,255,.65);font-size:13px;line-height:1.55}
+
+    .finalCta{
+      margin-top:34px;
+      padding:28px;
+      border-radius:22px;
+      text-align:center;
+      background:
+        radial-gradient(700px 220px at 50% 0%, rgba(106,168,255,.18), transparent 70%),
+        rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+    }
+
+    .finalCta h2{
+      margin:0 0 10px;
+      font-size:clamp(28px,4vw,43px);
+      letter-spacing:-.025em;
+    }
+
+    .finalCta p{
+      margin:0 auto 18px;
+      max-width:700px;
+      color:rgba(234,240,255,.70);
+      line-height:1.65;
     }
 
     .site-footer{
@@ -461,6 +542,30 @@
     }
 
     .footer-dot{color:rgba(234,240,255,.45)}
+
+    @media (max-width:920px){
+      .hero{grid-template-columns:1fr;padding:25px}
+      .hero::before{
+        background-image:url("assets/clean-kitchen.jpg");
+        background-size:cover;
+        background-position:center;
+      }
+      .trustGrid{grid-template-columns:1fr 1fr}
+      .grid3{grid-template-columns:1fr}
+      .process{grid-template-columns:1fr 1fr}
+    }
+
+    @media (max-width:680px){
+      .nav{align-items:flex-start}
+      .navlinks{gap:9px;font-size:12px}
+      .navlinks a:not(.cta){display:none}
+      main{padding-top:22px}
+      .hero{padding:22px}
+      h1{max-width:none}
+      .quoteGrid{grid-template-columns:1fr}
+      .quoteGrid .full{grid-column:auto}
+      .trustGrid,.process{grid-template-columns:1fr}
+    }
   </style>
 
   <script type="application/ld+json">
@@ -470,9 +575,9 @@
     "name": "Turnover ATL Cleaning",
     "url": "https://turnoveratl.com/",
     "telephone": "+1-470-290-2837",
-    "email": "ayinde@turnoveratl.com",
     "areaServed": ["Atlanta, GA", "Metro Atlanta"],
-    "description": "Property management, commercial cleaning, apartment turnover, short-term rental turnover, move-in/move-out, and residential cleaning services throughout Metro Atlanta.",
+    "priceRange": "$$$",
+    "description": "Deep cleaning, rental-property cleaning, PadSplit and co-living cleaning, room turns, move-in and move-out cleaning, and residential cleaning throughout Metro Atlanta.",
     "sameAs": []
   }
   </script>
@@ -487,83 +592,86 @@
     </a>
 
     <div class="navlinks" aria-label="Primary navigation">
-      <a href="services.html">Services</a>
-      <a href="property-commercial.html">Property & Commercial</a>
-      <a href="pricing.html">Pricing</a>
+      <a href="#deep-cleaning">Deep Cleaning</a>
+      <a href="#rentals">Rental Properties</a>
+      <a href="#services">All Services</a>
+      <a href="#process">How It Works</a>
       <a href="about.html">About</a>
-      <a href="apply.html">Careers</a>
-      <a class="cta" href="book.html">Book a Cleaning</a>
+      <a class="cta" href="book.html">Request a Quote</a>
     </div>
   </div>
 </header>
 
 <main>
-  <section class="hero">
+  <section class="hero" id="deep-cleaning">
     <div>
-      <div class="kicker">Metro Atlanta and Surrounding Areas</div>
+      <div class="kicker">Deep Cleaning & Rental Property Specialists</div>
 
-      <h1>Property & Commercial Cleaning Services Across Metro Atlanta.</h1>
+      <h1>Detailed Cleaning for Homes, Rentals & Shared Properties.</h1>
 
       <p class="sub">
-        Turnover ATL helps property managers, business owners, apartment communities,
-        and short-term rental operators maintain clean, tenant-ready, guest-ready,
-        and business-ready spaces through reliable service and standardized processes.
+        Turnover ATL provides dependable cleaning for deep-clean projects, rental
+        properties, PadSplit and co-living homes, individual room turns, move-ins,
+        move-outs, and residential clients throughout Metro Atlanta.
       </p>
 
+      <div class="priceCallout">Deep cleans start at $300 · Smaller and recurring jobs welcome</div>
+
       <div class="pillRow">
-        <div class="pill">Standardized cleaning checklists</div>
-        <div class="pill">Completion photo documentation</div>
-        <div class="pill">Fast response times</div>
-        <div class="pill">Reliable communication</div>
+        <div class="pill">Deep cleaning and heavy buildup</div>
+        <div class="pill">PadSplit and co-living homes</div>
+        <div class="pill">Room turns and rental turnovers</div>
+        <div class="pill">Residential cleaning by request</div>
       </div>
 
       <div class="actions">
-        <a class="btn" href="book.html">Schedule a Walkthrough</a>
-        <a class="btn secondary" href="pricing.html">Get a Quote</a>
+        <a class="btn" href="book.html">Request a Cleaning Quote</a>
+        <a class="btn secondary" href="sms:+14702902837">Text Photos for an Estimate</a>
       </div>
 
       <div class="contactLine">
-        Email:
-        <a href="mailto:ayinde@turnoveratl.com"><strong>ayinde@turnoveratl.com</strong></a>
-        ·
-        Text:
+        Call or text:
         <a href="tel:+14702902837"><strong>(470) 290-2837</strong></a>
       </div>
     </div>
 
     <div class="card">
-      <h3>Built for reliable property service</h3>
+      <h3>Cleaning built around the property</h3>
       <p>
-        Every service follows a clear process designed for property managers,
-        business owners, hosts, and clients who need consistency.
+        From one-room turns to full-property deep cleans, we adjust the scope to
+        the condition, property type, and result you need.
       </p>
 
       <ul class="check">
-        <li><span class="dot"></span><span>Property and commercial cleaning available</span></li>
-        <li><span class="dot"></span><span>Standardized checklist-based service</span></li>
-        <li><span class="dot"></span><span>Turnover, move-in, and move-out support</span></li>
-        <li><span class="dot"></span><span>Recurring weekly, bi-weekly, or monthly plans</span></li>
-        <li><span class="dot"></span><span>Completion photos available after service</span></li>
+        <li><span class="dot"></span><span>Whole-home and high-detail deep cleaning</span></li>
+        <li><span class="dot"></span><span>PadSplit, co-living, and shared-area cleaning</span></li>
+        <li><span class="dot"></span><span>Individual bedroom, bathroom, and common-area turns</span></li>
+        <li><span class="dot"></span><span>Vacant rentals, move-ins, move-outs, and apartment turns</span></li>
+        <li><span class="dot"></span><span>Standard residential and recurring service by request</span></li>
       </ul>
 
       <div class="fine">
-        Submitting a request doesn’t require payment. We confirm availability first, then send next steps.
+        Final pricing depends on the property’s size, condition, requested scope, and required labor.
       </div>
 
-      <div class="quoteBox" aria-label="Quick quote form">
-        <h4>Request a Quote or Walkthrough</h4>
+      <div class="quoteBox" aria-label="Quick deep cleaning quote form">
+        <h4>Start Your Quote</h4>
 
         <form action="book.html" method="GET">
           <div class="quoteGrid">
 
             <div class="full">
-              <label class="qLabel" for="qqService">Service</label>
+              <label class="qLabel" for="qqService">Project type</label>
               <select class="qSelect" id="qqService" name="service" required>
                 <option value="">Select one</option>
-                <option value="COMM">Property & Commercial Cleaning</option>
-                <option value="STR">Short-Term Rental Turnover</option>
-                <option value="RES">Residential Cleaning</option>
-                <option value="MIMO">Move-In / Move-Out</option>
+                <option value="DEEP">Residential Deep Cleaning</option>
+                <option value="PAD">PadSplit / Co-Living Cleaning</option>
+                <option value="ROOM">Bedroom or Bathroom Turn</option>
+                <option value="RENTAL">Rental Property / Common Areas</option>
+                <option value="MIMO">Move-In / Move-Out Cleaning</option>
+                <option value="RES">Standard Residential Cleaning</option>
+                <option value="HEAVY">Heavy Buildup / Specialty Cleaning</option>
+                <option value="OTHER">Other Cleaning Request</option>
               </select>
             </div>
 
@@ -573,30 +681,44 @@
             </div>
 
             <div>
-              <label class="qLabel" for="qqSqft">Sq ft approx.</label>
+              <label class="qLabel" for="qqSqft">Approx. size</label>
               <select class="qSelect" id="qqSqft" name="sqft" required>
                 <option value="">Select</option>
-                <option>Under 800</option>
-                <option>800–1,200</option>
-                <option>1,200–1,800</option>
-                <option>1,800–2,500</option>
-                <option>2,500–3,500</option>
-                <option>3,500+</option>
+                <option>Under 800 sq ft</option>
+                <option>800–1,200 sq ft</option>
+                <option>1,200–1,800 sq ft</option>
+                <option>1,800–2,500 sq ft</option>
+                <option>2,500–3,500 sq ft</option>
+                <option>3,500+ sq ft</option>
                 <option>Not sure</option>
               </select>
             </div>
 
             <div class="full">
-              <label class="qLabel" for="qqContact">Phone or email</label>
-              <input class="qInput" id="qqContact" name="contact" placeholder="Best number to text or email" required>
+              <label class="qLabel" for="qqCondition">Property condition or service frequency</label>
+              <select class="qSelect" id="qqCondition" name="condition" required>
+                <option value="">Select one</option>
+                <option>Standard / maintained</option>
+                <option>Moderate buildup</option>
+                <option>Heavy buildup</option>
+                <option>Very heavy / neglected</option>
+                <option>Vacant move-out</option>
+                <option>Recurring service</option>
+                <option>Not sure — I can send photos</option>
+              </select>
+            </div>
+
+            <div class="full">
+              <label class="qLabel" for="qqContact">Best phone number</label>
+              <input class="qInput" id="qqContact" name="contact" inputmode="tel" placeholder="Best number to call or text" required>
             </div>
 
           </div>
 
-          <button class="qBtn" type="submit">Continue to scheduling</button>
+          <button class="qBtn" type="submit">Continue to Quote Request</button>
 
           <div class="qHint">
-            No payment required to submit. We confirm availability first, then send next steps.
+            No payment is required to submit. Photos may be requested before final pricing.
           </div>
         </form>
       </div>
@@ -606,54 +728,142 @@
   <section class="trustStrip">
     <div class="trustGrid">
       <div class="trustItem">
-        <strong>Metro Atlanta coverage</strong>
-        <span>Atlanta and surrounding areas</span>
+        <strong>Flexible project sizes</strong>
+        <span>From individual room turns to full deep cleans</span>
       </div>
       <div class="trustItem">
-        <strong>Commercial-ready process</strong>
-        <span>Standard checklist across services</span>
+        <strong>Deep-clean expertise</strong>
+        <span>Higher-detail service when a basic clean is not enough</span>
       </div>
       <div class="trustItem">
-        <strong>Photo documentation</strong>
-        <span>Available after completed service</span>
+        <strong>Rental-ready process</strong>
+        <span>Clear scopes, communication, and completion photos</span>
       </div>
       <div class="trustItem">
-        <strong>Fast confirmation</strong>
-        <span>We confirm availability before next steps</span>
+        <strong>Metro Atlanta service</strong>
+        <span>Atlanta and surrounding communities</span>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="rentals">
+    <div class="sectionHead">
+      <div class="eyebrow">Our core specialties</div>
+      <h2>Deep Cleans, Rental Properties & Co-Living Homes.</h2>
+      <p>
+        We are building our reputation around high-detail deep cleaning and dependable
+        rental-property service, without turning away smaller room turns, common-area
+        cleanings, recurring work, or standard residential clients.
+      </p>
+    </div>
+
     <div class="grid3">
       <div class="serviceCard">
         <div class="serviceTitle">
-          <h3 style="margin:0;">Property Management Cleaning</h3>
-          <span class="tag">Best fit</span>
+          <h3 style="margin:0;">Residential Deep Cleaning</h3>
+          <span class="tag">Core service</span>
         </div>
-        <p style="margin:0 0 12px;color:rgba(234,240,255,.72);line-height:1.6;">
-          Cleaning support for property managers, apartment communities, vacant units,
-          move-outs, common areas, and turnover situations.
+        <p style="margin:0;color:rgba(234,240,255,.72);line-height:1.65;">
+          A detailed reset for occupied homes that have not been professionally
+          cleaned recently or require more attention than routine housekeeping.
         </p>
-        <div class="serviceCtaRow">
-          <a class="btn small" href="property-commercial.html">View Property Services</a>
+        <div class="fine">
+          Common focus areas include kitchens, bathrooms, baseboards, doors,
+          trim, reachable surfaces, floors, edges, dust, and buildup.
         </div>
-        <div class="fine">Built for recurring work, unit turns, and property-ready spaces.</div>
+        <div class="serviceCtaRow">
+          <a class="btn small" href="book.html?service=DEEP">Request a Quote</a>
+        </div>
       </div>
 
       <div class="serviceCard">
         <div class="serviceTitle">
-          <h3 style="margin:0;">Commercial Cleaning</h3>
-          <span class="tag">Recurring</span>
+          <h3 style="margin:0;">Move-In / Move-Out Deep Cleaning</h3>
+          <span class="tag">High demand</span>
         </div>
-        <p style="margin:0 0 12px;color:rgba(234,240,255,.72);line-height:1.6;">
-          Cleaning for offices, small businesses, retail spaces, professional offices,
-          leasing offices, and shared workspaces.
+        <p style="margin:0;color:rgba(234,240,255,.72);line-height:1.65;">
+          Detailed cleaning for vacant houses, apartments, rental properties,
+          tenant transitions, and spaces being prepared for new occupancy.
         </p>
-        <div class="serviceCtaRow">
-          <a class="btn small" href="property-commercial.html">View Commercial Services</a>
+        <div class="fine">
+          Appliance interiors, cabinets, walls, and other add-ons are quoted
+          according to the requested scope and property condition.
         </div>
-        <div class="fine">Weekly, bi-weekly, monthly, and custom schedules available.</div>
+        <div class="serviceCtaRow">
+          <a class="btn small" href="book.html?service=MIMO">Request a Quote</a>
+        </div>
+      </div>
+
+      <div class="serviceCard">
+        <div class="serviceTitle">
+          <h3 style="margin:0;">Heavy Buildup & Neglected Properties</h3>
+          <span class="tag">Specialty</span>
+        </div>
+        <p style="margin:0;color:rgba(234,240,255,.72);line-height:1.65;">
+          For spaces affected by accumulated grease, excessive dust, residue,
+          heavy grime, pet-related buildup, or areas that have gone uncleaned.
+        </p>
+        <div class="fine">
+          Send clear photos of the kitchen, bathrooms, floors, and difficult
+          areas so we can evaluate labor and scope accurately.
+        </div>
+        <div class="serviceCtaRow">
+          <a class="btn small" href="sms:+14702902837">Text Property Photos</a>
+        </div>
+      </div>
+
+      <div class="serviceCard">
+        <div class="serviceTitle">
+          <h3 style="margin:0;">PadSplit & Co-Living Cleaning</h3>
+          <span class="tag">Core niche</span>
+        </div>
+        <p style="margin:0;color:rgba(234,240,255,.72);line-height:1.65;">
+          Cleaning for shared housing, PadSplit-style properties, co-living homes,
+          occupied rentals, common areas, and individual room or bathroom turns.
+        </p>
+        <div class="fine">
+          Available for room turns, kitchens, bathrooms, shared spaces, recurring
+          common-area service, move-outs, and custom property scopes.
+        </div>
+        <div class="serviceCtaRow">
+          <a class="btn small" href="property-commercial.html">View Rental Property Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="sectionHead">
+      <div class="eyebrow">Additional cleaning services</div>
+      <h2>Smaller Jobs Are Still Welcome.</h2>
+      <p>
+        Deep cleaning and rental properties are our specialties, but we also accept
+        standard residential cleanings, individual rooms and bathrooms, short-term
+        rental turnovers, recurring common-area service, and other well-defined jobs.
+      </p>
+    </div>
+
+    <div class="grid3">
+      <div class="serviceCard">
+        <div class="serviceTitle">
+          <h3 style="margin:0;">Individual Room & Bathroom Turns</h3>
+          <span class="tag">Smaller scope</span>
+        </div>
+        <p style="margin:0;color:rgba(234,240,255,.72);line-height:1.65;">
+          Cleaning for newly vacant bedrooms, private bathrooms, shared bathrooms,
+          or selected areas without requiring a full-property booking.
+        </p>
+      </div>
+
+      <div class="serviceCard">
+        <div class="serviceTitle">
+          <h3 style="margin:0;">Standard Residential Cleaning</h3>
+          <span class="tag">By request</span>
+        </div>
+        <p style="margin:0;color:rgba(234,240,255,.72);line-height:1.65;">
+          Routine or one-time home cleaning for clients who do not need a full deep clean.
+          The scope and pricing are confirmed before service.
+        </p>
       </div>
 
       <div class="serviceCard">
@@ -661,55 +871,69 @@
           <h3 style="margin:0;">Short-Term Rental Turnovers</h3>
           <span class="tag">Guest-ready</span>
         </div>
-        <p style="margin:0 0 12px;color:rgba(234,240,255,.72);line-height:1.6;">
-          Reliable turnover cleaning for hosts and short-term rental operators who need
-          clean, staged, and ready spaces between guests.
+        <p style="margin:0;color:rgba(234,240,255,.72);line-height:1.65;">
+          Reset cleaning, light staging, and completion photos for hosts who need
+          reliable service between guest stays.
         </p>
-        <div class="fine">Includes reset cleaning, light staging, and completion photos.</div>
       </div>
 
       <div class="serviceCard">
         <div class="serviceTitle">
-          <h3 style="margin:0;">Residential Cleaning</h3>
-          <span class="tag">By request</span>
+          <h3 style="margin:0;">Recurring Common-Area Cleaning</h3>
+          <span class="tag">Scheduled</span>
         </div>
-        <p style="margin:0 0 12px;color:rgba(234,240,255,.72);line-height:1.6;">
-          Ongoing home cleaning for people who live in the home and need consistent upkeep.
+        <p style="margin:0;color:rgba(234,240,255,.72);line-height:1.65;">
+          Weekly, bi-weekly, monthly, or custom service for kitchens, living areas,
+          shared bathrooms, hallways, and other common spaces.
         </p>
-
-        <div class="serviceCtaRow">
-          <a class="btn small" href="book.html">Book Residential</a>
-          <a class="btn secondary small" href="pricing.html">See Pricing</a>
-        </div>
-
-        <div class="fine">
-          Weekly, bi-weekly, or monthly. We confirm details and send next steps.
-        </div>
       </div>
+    </div>
+  </section>
 
-      <div class="serviceCard">
-        <div class="serviceTitle">
-          <h3 style="margin:0;">Move-In / Move-Out</h3>
-          <span class="tag">Transition</span>
-        </div>
-        <p style="margin:0 0 12px;color:rgba(234,240,255,.72);line-height:1.6;">
-          A more thorough clean for empty homes, transitions, apartment turns,
-          and start-fresh situations.
-        </p>
-        <div class="fine">Scope confirmed based on property condition and size.</div>
-      </div>
+  <section class="section" id="process">
+    <div class="sectionHead">
+      <div class="eyebrow">Simple quoting process</div>
+      <h2>From Photos to a Finished Property.</h2>
+      <p>
+        Deep cleaning is not one-size-fits-all. We review the actual condition
+        before confirming the scope, labor, and price.
+      </p>
+    </div>
 
-      <div class="serviceCard">
-        <div class="serviceTitle">
-          <h3 style="margin:0;">Recurring Service Plans</h3>
-          <span class="tag">Asset builder</span>
-        </div>
-        <p style="margin:0 0 12px;color:rgba(234,240,255,.72);line-height:1.6;">
-          Recurring cleaning plans for property managers, offices, businesses,
-          hosts, and residential clients who want reliable scheduled service.
-        </p>
-        <div class="fine">Weekly, bi-weekly, monthly, or custom schedules.</div>
+    <div class="process">
+      <div class="step">
+        <div class="stepNum">Step 1</div>
+        <h3>Send the details</h3>
+        <p>Provide the address, approximate size, preferred date, and type of property.</p>
       </div>
+      <div class="step">
+        <div class="stepNum">Step 2</div>
+        <h3>Share clear photos</h3>
+        <p>Include the kitchen, bathrooms, floors, and any especially difficult areas.</p>
+      </div>
+      <div class="step">
+        <div class="stepNum">Step 3</div>
+        <h3>Receive your quote</h3>
+        <p>We evaluate condition, requested scope, required labor, and availability.</p>
+      </div>
+      <div class="step">
+        <div class="stepNum">Step 4</div>
+        <h3>Get the property reset</h3>
+        <p>We complete the agreed scope and provide completion photos when requested.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="finalCta">
+    <h2>Show Us What the Property Needs.</h2>
+    <p>
+      Send the property details and photos for the fastest estimate. Deep cleans
+      start at $300, while smaller, recurring, and room-specific jobs are quoted
+      according to their actual scope.
+    </p>
+    <div class="actions" style="justify-content:center;">
+      <a class="btn" href="sms:+14702902837">Text Photos: (470) 290-2837</a>
+      <a class="btn secondary" href="book.html">Complete Quote Form</a>
     </div>
   </section>
 
@@ -717,7 +941,7 @@
     <div>© 2026 Turnover ATL Cleaning</div>
 
     <div class="footer-contact">
-      <a class="footer-link" href="mailto:ayinde@turnoveratl.com">ayinde@turnoveratl.com</a>
+      <span>Deep Cleaning & Rental Property Specialists</span>
       <span class="footer-dot">•</span>
       <a class="footer-link" href="tel:+14702902837">(470) 290-2837</a>
     </div>
