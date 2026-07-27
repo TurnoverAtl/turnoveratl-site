@@ -37,7 +37,7 @@
       --accent:#6aa8ff;
       --accent2:#6ecbff;
       --radius:18px;
-      --max:1510px;
+      --max:1280px;
     }
 
     *{box-sizing:border-box}
@@ -68,7 +68,7 @@
     .nav{
       max-width:var(--max);
       margin:auto;
-      padding:16px 28px;
+      padding:12px 20px;
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -88,11 +88,11 @@
 
     .navlinks{
       display:flex;
-      gap:18px;
+      gap:15px;
       align-items:center;
       flex-wrap:wrap;
       justify-content:flex-end;
-      font-size:14px;
+      font-size:13px;
       color:rgba(234,240,255,.82);
     }
 
@@ -134,7 +134,7 @@
     .serviceTickerGroup{
       display:flex;
       align-items:center;
-      gap:18px;
+      gap:15px;
       white-space:nowrap;
       padding-right:18px;
       color:#172033;
@@ -183,7 +183,7 @@
       }
 
       .serviceTickerGroup{
-        gap:14px;
+        gap:12px;
         font-size:12px;
       }
 
@@ -195,22 +195,22 @@
     main{
       max-width:var(--max);
       margin:auto;
-      padding:0 28px 88px;
+      padding:0 20px 70px;
     }
 
     .hero{
       position:relative;
       overflow:hidden;
       width:100vw;
-      min-height:720px;
+      min-height:540px;
       margin-left:calc(50% - 50vw);
       border-radius:0;
       padding:
-        42px
-        max(28px, calc((100vw - var(--max))/2 + 28px));
+        30px
+        max(20px, calc((100vw - var(--max))/2 + 20px));
       display:grid;
-      grid-template-columns:minmax(0,1.12fr) minmax(420px,.88fr);
-      gap:30px;
+      grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);
+      gap:16px;
       align-items:center;
       border-top:1px solid rgba(255,255,255,.14);
       border-bottom:1px solid rgba(255,255,255,.14);
@@ -284,8 +284,8 @@
     }
 
     h1{
-      margin:0 0 14px;
-      font-size:clamp(42px,4.4vw,68px);
+      margin:0 0 10px;
+      font-size:clamp(38px,4vw,56px);
       line-height:1.03;
       letter-spacing:-.035em;
       text-shadow:0 3px 18px rgba(0,0,0,.92), 0 10px 40px rgba(0,0,0,.55);
@@ -296,8 +296,8 @@
     .sub{
       margin:0 0 16px;
       color:rgba(234,240,255,.88);
-      line-height:1.66;
-      font-size:16px;
+      line-height:1.55;
+      font-size:14px;
       max-width:65ch;
       text-shadow:0 2px 14px rgba(0,0,0,.92), 0 10px 34px rgba(0,0,0,.50);
     }
@@ -320,8 +320,8 @@
     .pillRow{
       display:flex;
       flex-wrap:wrap;
-      gap:14px;
-      margin:18px 0;
+      gap:12px;
+      margin:14px 0;
     }
 
     .pill{
@@ -334,13 +334,13 @@
       display:flex;
       flex-wrap:wrap;
       gap:12px;
-      margin-top:16px;
+      margin-top:12px;
     }
 
     .btn{
       display:inline-block;
-      padding:14px 16px;
-      border-radius:14px;
+      padding:12px 14px;
+      border-radius:12px;
       font-weight:900;
       background:linear-gradient(135deg, rgba(106,168,255,.98), rgba(110,203,255,.90));
       color:#081225;
@@ -377,18 +377,18 @@
     .hero > .card{
       background:rgba(7,11,24,.22);
       border:1px solid rgba(255,255,255,.34);
-      border-radius:20px;
-      padding:26px;
+      border-radius:16px;
+      padding:20px;
       box-shadow:0 42px 115px rgba(0,0,0,.28);
       backdrop-filter:blur(1px);
       -webkit-backdrop-filter:blur(1px);
     }
 
-    .card h3{margin:0 0 10px;font-size:19px}
-    .card p{margin:0 0 12px;line-height:1.6;color:rgba(234,240,255,.78)}
+    .card h3{margin:0 0 8px;font-size:16px}
+    .card p{margin:0 0 10px;line-height:1.5;color:rgba(234,240,255,.78);font-size:13px}
 
-    .check{list-style:none;padding:0;margin:0;display:grid;gap:10px}
-    .check li{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.45}
+    .check{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+    .check li{display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.45}
 
     .dot{
       width:10px;height:10px;border-radius:50%;
@@ -399,14 +399,14 @@
     }
 
     .quoteBox{
-      margin-top:16px;
+      margin-top:12px;
       padding-top:14px;
       border-top:1px solid rgba(255,255,255,.12);
     }
 
     .quoteBox h4{
       margin:0 0 8px;
-      font-size:14px;
+      font-size:13px;
       font-weight:900;
     }
 
@@ -432,7 +432,7 @@
     .qInput,.qSelect{
       width:100%;
       padding:12px;
-      border-radius:14px;
+      border-radius:12px;
       border:1px solid rgba(255,255,255,.14);
       background:rgba(7,11,24,.58);
       color:rgba(234,240,255,.95);
@@ -462,7 +462,7 @@
       align-items:center;
       gap:10px;
       padding:12px 14px;
-      border-radius:14px;
+      border-radius:12px;
       border:none;
       cursor:pointer;
       font-weight:900;
@@ -471,8 +471,8 @@
     }
 
     .trustStrip{
-      margin-top:22px;
-      padding:18px 0;
+      margin-top:16px;
+      padding:14px 0;
       border-top:1px solid rgba(255,255,255,.08);
       border-bottom:1px solid rgba(255,255,255,.08);
       background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
@@ -481,20 +481,20 @@
     .trustGrid{
       display:grid;
       grid-template-columns:repeat(4,1fr);
-      gap:14px;
+      gap:12px;
     }
 
     .trustItem{
       background:rgba(255,255,255,.06);
       border:1px solid rgba(255,255,255,.12);
-      border-radius:18px;
-      padding:15px;
+      border-radius:15px;
+      padding:12px;
       box-shadow:0 20px 60px rgba(0,0,0,.25);
     }
 
     .trustItem strong{
       display:block;
-      font-size:14px;
+      font-size:13px;
       font-weight:900;
       color:rgba(234,240,255,.97);
     }
@@ -508,9 +508,9 @@
     }
 
     .section{
-      margin-top:42px;
+      margin-top:32px;
       display:grid;
-      gap:16px;
+      gap:13px;
     }
 
     .sectionHead{
@@ -528,28 +528,28 @@
 
     .sectionHead h2{
       margin:0 0 10px;
-      font-size:clamp(32px,3.7vw,50px);
+      font-size:clamp(28px,3.2vw,42px);
       letter-spacing:-.025em;
     }
 
     .sectionHead p{
       margin:0;
       color:rgba(234,240,255,.70);
-      line-height:1.7;
+      line-height:1.55;
       max-width:70ch;
     }
 
     .grid3{
       display:grid;
       grid-template-columns:repeat(2,1fr);
-      gap:24px;
+      gap:16px;
     }
 
     .serviceCard{
       background:rgba(255,255,255,.06);
       border:1px solid rgba(255,255,255,.12);
-      border-radius:18px;
-      padding:24px;
+      border-radius:15px;
+      padding:18px;
       box-shadow:0 30px 90px rgba(0,0,0,.35);
     }
 
@@ -561,12 +561,12 @@
       margin-bottom:8px;
     }
 
-    .serviceTitle h3{font-size:19px}
+    .serviceTitle h3{font-size:16px}
 
     .tag{
-      font-size:12px;
+      font-size:11px;
       font-weight:800;
-      padding:6px 10px;
+      padding:5px 8px;
       border-radius:999px;
       background:rgba(106,168,255,.16);
       border:1px solid rgba(106,168,255,.32);
@@ -594,14 +594,14 @@
     .process{
       display:grid;
       grid-template-columns:repeat(4,1fr);
-      gap:14px;
+      gap:12px;
     }
 
     .step{
       background:rgba(255,255,255,.05);
       border:1px solid rgba(255,255,255,.10);
-      border-radius:18px;
-      padding:22px;
+      border-radius:15px;
+      padding:18px;
     }
 
     .stepNum{
@@ -612,35 +612,48 @@
       text-transform:uppercase;
     }
 
-    .step h3{margin:8px 0 7px;font-size:16px}
-    .step p{margin:0;color:rgba(234,240,255,.65);font-size:13px;line-height:1.55}
+    .step h3{margin:7px 0 6px;font-size:14px}
+    .step p{margin:0;color:rgba(234,240,255,.65);font-size:12px;line-height:1.45}
 
     .finalCta{
-      margin-top:42px;
-      padding:28px;
-      border-radius:22px;
+      width:min(100%,1100px);
+      margin:34px auto 0;
+      padding:22px 24px;
+      border-radius:15px;
       text-align:center;
       background:
-        radial-gradient(700px 220px at 50% 0%, rgba(106,168,255,.18), transparent 70%),
-        rgba(255,255,255,.06);
+        radial-gradient(620px 180px at 50% 0%, rgba(106,168,255,.15), transparent 70%),
+        rgba(255,255,255,.055);
       border:1px solid rgba(255,255,255,.12);
     }
 
     .finalCta h2{
-      margin:0 0 10px;
-      font-size:clamp(28px,4vw,43px);
+      margin:0 0 8px;
+      font-size:clamp(26px,3vw,36px);
       letter-spacing:-.025em;
     }
 
     .finalCta p{
-      margin:0 auto 18px;
-      max-width:700px;
+      margin:0 auto 14px;
+      max-width:660px;
       color:rgba(234,240,255,.70);
-      line-height:1.65;
+      line-height:1.55;
+      font-size:15px;
+    }
+
+    .finalCta .actions{
+      margin-top:12px;
+      gap:10px;
+    }
+
+    .finalCta .btn{
+      padding:12px 14px;
+      border-radius:12px;
+      font-size:13px;
     }
 
     .site-footer{
-      margin-top:42px;
+      margin-top:32px;
       font-size:13px;
       color:rgba(234,240,255,.6);
       display:flex;
@@ -664,6 +677,26 @@
     }
 
     .footer-dot{color:rgba(234,240,255,.45)}
+
+    /* Compact desktop sizing */
+    @media (min-width:1101px){
+      .heroContent{max-width:620px}
+      .priceCallout{font-size:12px;padding:8px 11px}
+      .pill{font-size:12px}
+      .contactLine{font-size:12px}
+      .quoteBox{margin-top:12px;padding-top:12px}
+      .quoteGrid{gap:8px}
+      .qInput,.qSelect{padding:10px;font-size:12px}
+      .qBtn{padding:10px 12px;font-size:12px}
+      .qHint{font-size:11px}
+      .trustItem strong{font-size:12px}
+      .trustItem span{font-size:11px}
+      .sectionHead{max-width:760px}
+      .sectionHead p{font-size:13px}
+      .serviceCard p{font-size:13px}
+      .fine{font-size:11px}
+      .finalCta{width:min(100%,1040px)}
+    }
 
     @media (max-width:1100px){
       .hero{
