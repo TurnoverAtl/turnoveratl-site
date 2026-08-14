@@ -150,6 +150,7 @@
               <option value="STR">Short-Term Rental Turnover</option>
               <option value="RES">Residential Cleaning</option>
               <option value="MIMO">Move-In / Move-Out</option>
+              <option value="CARPET">Carpet Cleaning</option>
             </select>
             <div class="serviceNotice" id="serviceNotice"></div>
           </div>
@@ -477,6 +478,108 @@
           </div>
         </div>
 
+        <div class="conditional" id="carpetFields" style="margin-top:14px;">
+          <div class="sectionHead" style="margin-top:6px;">
+            <h2 style="margin:0;">Carpet cleaning details</h2>
+            <p style="margin:6px 0 0;">Tell us about the carpeted areas so we can confirm the correct scope and pricing.</p>
+          </div>
+
+          <div class="formGrid" style="margin-top:12px;">
+            <div>
+              <label class="label">Carpeted rooms</label>
+              <select class="select" name="Carpeted Rooms">
+                <option value="">Select one</option>
+                <option>1 room</option>
+                <option>2 rooms</option>
+                <option>3 rooms</option>
+                <option>4 rooms</option>
+                <option>5+ rooms</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label">Carpeted areas</label>
+              <select class="select" name="Carpeted Areas">
+                <option value="">Select the closest match</option>
+                <option>Bedroom(s) only</option>
+                <option>Living room / family room</option>
+                <option>Bedrooms and living room</option>
+                <option>Hallways / landings</option>
+                <option>Whole carpeted level</option>
+                <option>Other — explain in notes</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label">Stairs</label>
+              <select class="select" name="Carpeted Stairs">
+                <option value="">Select one</option>
+                <option>No carpeted stairs</option>
+                <option>One flight</option>
+                <option>Two or more flights</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label">Carpet condition</label>
+              <select class="select" name="Carpet Condition">
+                <option value="">Select one</option>
+                <option>Light soil / routine refresh</option>
+                <option>Moderate traffic soil</option>
+                <option>Heavy soil or visible buildup</option>
+                <option>Not sure — I can send photos</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label">Stains or spots?</label>
+              <select class="select" name="Carpet Stains">
+                <option value="">Select one</option>
+                <option>No major stains</option>
+                <option>A few spots</option>
+                <option>Multiple or heavy stains</option>
+                <option>Not sure</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label">Pet odor treatment?</label>
+              <select class="select" name="Pet Odor Treatment">
+                <option value="">Select one</option>
+                <option>No</option>
+                <option>Yes</option>
+                <option>Not sure</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label">Furniture in the rooms?</label>
+              <select class="select" name="Furniture in Carpeted Areas">
+                <option value="">Select one</option>
+                <option>Rooms are empty</option>
+                <option>Light furniture</option>
+                <option>Fully furnished</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label">Service type</label>
+              <select class="select" name="Carpet Service Type">
+                <option value="">Select one</option>
+                <option>Standalone carpet cleaning</option>
+                <option>Add-on to another cleaning service</option>
+                <option>Rental turnover / move-out</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="noticeBox">
+            Carpet cleaning is quoted according to room count, area size, condition,
+            stairs, stains, odor treatment, and furniture. Send photos after submitting
+            for the fastest final estimate.
+          </div>
+        </div>
+
         <div style="margin-top:14px;">
           <label class="label">Notes</label>
           <textarea class="textarea" name="Notes" placeholder="Parking, access notes, special instructions, concerns, property type, recurring needs, walkthrough details, and anything else we should know"></textarea>
@@ -520,6 +623,7 @@
     const strFields = document.getElementById("strFields");
     const resFields = document.getElementById("resFields");
     const mimoFields = document.getElementById("mimoFields");
+    const carpetFields = document.getElementById("carpetFields");
     const notice = document.getElementById("serviceNotice");
 
     const zipField = document.getElementById("zipField");
@@ -532,6 +636,7 @@
       strFields.classList.remove("active");
       resFields.classList.remove("active");
       mimoFields.classList.remove("active");
+      carpetFields.classList.remove("active");
       notice.textContent = "";
     }
 
@@ -550,6 +655,9 @@
       } else if(type === "MIMO"){
         mimoFields.classList.add("active");
         notice.textContent = "Move-in / move-out is quoted competitively based on square footage, condition, and requested scope.";
+      } else if(type === "CARPET"){
+        carpetFields.classList.add("active");
+        notice.textContent = "Carpet cleaning is quoted by room count, condition, stairs, stains, odor treatment, and furniture.";
       }
     }
 
@@ -626,7 +734,9 @@
         "RESIDENTIAL CLEANING": "RES",
         "MIMO": "MIMO",
         "MOVE-IN / MOVE-OUT": "MIMO",
-        "MOVE IN MOVE OUT": "MIMO"
+        "MOVE IN MOVE OUT": "MIMO",
+        "CARPET": "CARPET",
+        "CARPET CLEANING": "CARPET"
       };
 
       return map[s] || s;
@@ -642,7 +752,7 @@
 
       if(svc){
         const val = normalizeService(svc);
-        const allowed = ["COMM","CW","OFFICE","PM","STR","RES","MIMO"];
+        const allowed = ["COMM","CW","OFFICE","PM","STR","RES","MIMO","CARPET"];
         if(allowed.includes(val)){
           serviceType.value = val;
           setActive(val);
