@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Deep Cleaning & Rental Property Cleaning Atlanta | Turnover ATL</title>
-  <meta name="description" content="Turnover ATL provides deep cleaning, rental-property cleaning, PadSplit and co-living cleaning, room turns, move-in/move-out cleaning, and residential service throughout Metro Atlanta." />
+  <meta name="description" content="Turnover ATL provides deep cleaning, carpet cleaning, rental-property cleaning, PadSplit and co-living cleaning, room turns, move-in/move-out cleaning, and residential service throughout Metro Atlanta." />
 
   <link rel="canonical" href="https://turnoveratl.com/" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
@@ -553,6 +553,27 @@
       box-shadow:0 30px 90px rgba(0,0,0,.35);
     }
 
+    .serviceCard.carpetService{
+      grid-column:1 / -1;
+      background:
+        radial-gradient(620px 180px at 0% 0%, rgba(106,168,255,.14), transparent 70%),
+        rgba(255,255,255,.06);
+      border-color:rgba(106,168,255,.34);
+    }
+
+    .carpetServiceBody{
+      display:grid;
+      grid-template-columns:minmax(0,1.45fr) minmax(260px,.55fr);
+      gap:24px;
+      align-items:center;
+    }
+
+    .carpetServiceActions{
+      display:flex;
+      justify-content:flex-end;
+      align-items:center;
+    }
+
     .serviceTitle{
       display:flex;
       align-items:center;
@@ -718,6 +739,8 @@
       .trustGrid{grid-template-columns:1fr 1fr}
       .grid3{grid-template-columns:1fr}
       .process{grid-template-columns:1fr 1fr}
+      .carpetServiceBody{grid-template-columns:1fr}
+      .carpetServiceActions{justify-content:flex-start}
     }
 
     @media (max-width:680px){
@@ -791,6 +814,7 @@
     <div class="navlinks" aria-label="Primary navigation">
       <a href="#deep-cleaning">Deep Cleaning</a>
       <a href="#rentals">Rental Properties</a>
+      <a href="#carpet-cleaning">Carpet Cleaning</a>
       <a href="#services">All Services</a>
       <a href="#process">How It Works</a>
       <a href="about.html">About</a>
@@ -919,6 +943,7 @@
         <li><span class="dot"></span><span>Individual bedroom, bathroom, and common-area turns</span></li>
         <li><span class="dot"></span><span>Vacant rentals, move-ins, move-outs, and apartment turns</span></li>
         <li><span class="dot"></span><span>Standard residential and recurring service by request</span></li>
+        <li><span class="dot"></span><span>Carpet cleaning for rooms, rentals, and move-outs</span></li>
       </ul>
 
       <div class="fine">
@@ -941,6 +966,7 @@
                 <option value="RENTAL">Rental Property / Common Areas</option>
                 <option value="MIMO">Move-In / Move-Out Cleaning</option>
                 <option value="RES">Standard Residential Cleaning</option>
+                <option value="CARPET">Carpet Cleaning</option>
                 <option value="HEAVY">Heavy Buildup / Specialty Cleaning</option>
                 <option value="OTHER">Other Cleaning Request</option>
               </select>
@@ -1111,8 +1137,8 @@
       <h2>Smaller Jobs Are Still Welcome.</h2>
       <p>
         Deep cleaning and rental properties are our specialties, but we also accept
-        standard residential cleanings, individual rooms and bathrooms, short-term
-        rental turnovers, recurring common-area service, and other well-defined jobs.
+        standard residential cleanings, carpet cleaning, individual rooms and bathrooms,
+        short-term rental turnovers, recurring common-area service, and other well-defined jobs.
       </p>
     </div>
 
@@ -1159,6 +1185,28 @@
           Weekly, bi-weekly, monthly, or custom service for kitchens, living areas,
           shared bathrooms, hallways, and other common spaces.
         </p>
+      </div>
+
+      <div class="serviceCard carpetService" id="carpet-cleaning">
+        <div class="serviceTitle">
+          <h3 style="margin:0;">Carpet Cleaning</h3>
+          <span class="tag">Now available</span>
+        </div>
+        <div class="carpetServiceBody">
+          <div>
+            <p style="margin:0;color:rgba(234,240,255,.72);line-height:1.65;">
+              Deep-extraction carpet cleaning for bedrooms, living rooms, hallways,
+              rental properties, move-outs, and other carpeted areas.
+            </p>
+            <div class="fine">
+              Available as a standalone service or cleaning add-on. Final pricing is
+              based on room count, carpet condition, stains, stairs, and treatment needs.
+            </div>
+          </div>
+          <div class="carpetServiceActions">
+            <a class="btn small" href="book.html?service=CARPET">Request Carpet Cleaning</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
