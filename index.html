@@ -786,6 +786,20 @@
       .quoteGrid .full{grid-column:auto}
       .trustGrid,.process{grid-template-columns:1fr}
     }
+
+    /* Google customer reviews */
+    .reviewsSummary{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin:3px 0 8px}
+    .reviewsScore{font-size:34px;font-weight:900;letter-spacing:-.04em}
+    .reviewsStars{color:#ffce62;letter-spacing:2px;font-size:20px;white-space:nowrap}
+    .reviewsCount{font-size:13px;color:var(--muted)}
+    .reviewsGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .reviewCard{display:flex;flex-direction:column;gap:11px;padding:20px;border:1px solid var(--stroke);border-radius:15px;background:rgba(255,255,255,.06)}
+    .reviewCard .reviewsStars{font-size:17px}
+    .reviewCard blockquote{margin:0;line-height:1.65;font-size:14px;color:var(--text);flex:1}
+    .reviewCard .reviewAuthor{font-weight:800;font-size:13px}
+    .reviewCard .reviewType{font-size:12px;color:var(--muted)}
+    .reviewsAction{margin-top:14px}
+    @media(max-width:900px){.reviewsGrid{grid-template-columns:1fr}}
   </style>
 
   <script type="application/ld+json">
@@ -1209,6 +1223,47 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section" id="reviews" aria-labelledby="reviews-title">
+    <div class="sectionHead">
+      <div class="eyebrow">Customer feedback</div>
+      <h2 id="reviews-title">What Our Customers Say.</h2>
+      <p>Real feedback from customers across Metro Atlanta, shared on Google.</p>
+    </div>
+
+    <div class="reviewsSummary" aria-label="5.0 out of 5 stars from 26 Google reviews">
+      <span class="reviewsScore">5.0</span>
+      <span class="reviewsStars" aria-label="5 out of 5 stars">★★★★★</span>
+      <span class="reviewsCount">26 Google reviews</span>
+    </div>
+
+    <div class="reviewsGrid">
+      <article class="reviewCard">
+        <div class="reviewsStars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>“These folks had to work HARD to recover this property after I evicted the tenants...I wasn’t sure the floor could be saved. And all with a smile!”</blockquote>
+        <div class="reviewAuthor">Google customer review</div>
+        <div class="reviewType">Post-eviction property cleaning</div>
+      </article>
+
+      <article class="reviewCard">
+        <div class="reviewsStars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>“I just moved into a new apartment and needed a deep clean before I moved my stuff in. Turnover did a great job for a great price and on short notice. Highly recommend!”</blockquote>
+        <div class="reviewAuthor">Stephen Davis-Vauls</div>
+        <div class="reviewType">Move-in deep cleaning · Google review</div>
+      </article>
+
+      <article class="reviewCard">
+        <div class="reviewsStars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>“Very pleased with their property services! They got my rental tenant ready!”</blockquote>
+        <div class="reviewAuthor">Daviyon Broach</div>
+        <div class="reviewType">Rental property cleaning · Google review</div>
+      </article>
+    </div>
+
+    <div class="reviewsAction">
+      <a class="btn small" href="https://maps.app.goo.gl/g1HJgxq1rxdzTXXQ8" target="_blank" rel="noopener noreferrer">Read All Reviews on Google ↗</a>
     </div>
   </section>
 
