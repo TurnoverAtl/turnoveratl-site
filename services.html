@@ -1,406 +1,494 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Services | Turnover ATL Cleaning</title>
-  <meta name="description" content="Turnover ATL provides checklist-driven cleaning with photo confirmation across Metro Atlanta — including STR turnovers, residential cleaning, and move-in/move-out services." />
+  <meta name="description" content="Turnover ATL provides checklist-driven cleaning with photo confirmation across Metro Atlanta, including short-term rental turnovers, residential cleaning, and move-in and move-out cleaning.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --bg:#070b18;
-      --bg2:#0b1022;
-      --card:rgba(255,255,255,.06);
-      --stroke:rgba(255,255,255,.12);
-      --text:#eaf0ff;
-      --muted:rgba(234,240,255,.65);
-      --accent:#6aa8ff;
-      --accent2:#6ecbff;
-      --radius:18px;
-      --max:1280px;
+    :root {
+      --bg: #070b18;
+      --bg2: #0b1022;
+      --card: rgba(255, 255, 255, .06);
+      --stroke: rgba(255, 255, 255, .12);
+      --text: #eaf0ff;
+      --accent: #6aa8ff;
+      --max: 1280px;
     }
 
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
 
-    body{
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      color:var(--text);
+    body {
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--text);
       background:
-        radial-gradient(1100px 520px at 20% 0%, rgba(106,168,255,.18), transparent 60%),
-        linear-gradient(180deg,var(--bg2),var(--bg));
+        radial-gradient(1100px 520px at 20% 0%, rgba(106, 168, 255, .18), transparent 60%),
+        linear-gradient(180deg, var(--bg2), var(--bg));
     }
 
-    a{color:inherit;text-decoration:none}
-    a:hover{opacity:.96}
+    a { color: inherit; text-decoration: none; }
+    a:hover { opacity: .96; }
 
-    header{
-      position:sticky;
-      top:0;
-      z-index:50;
-      backdrop-filter:blur(10px);
-      -webkit-backdrop-filter:blur(10px);
-      background:rgba(7,11,24,.75);
-      border-bottom:1px solid rgba(255,255,255,.08);
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      background: rgba(7, 11, 24, .75);
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
     }
 
-    .nav{
-      max-width:var(--max);
-      margin:auto;
-      padding:14px 18px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
+    .nav {
+      max-width: var(--max);
+      margin: auto;
+      padding: 14px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
     }
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-weight:900;
-      letter-spacing:.2px;
-      white-space:nowrap;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      letter-spacing: .2px;
+      white-space: nowrap;
     }
 
-    .brand img{width:28px;height:28px;opacity:.95}
+    .brand img { width: 28px; height: 28px; opacity: .95; }
 
-    .navlinks{
-      display:flex;
-      gap:14px;
-      align-items:center;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-      font-size:14px;
-      color:rgba(234,240,255,.85);
+    .navlinks {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      font-size: 14px;
+      color: rgba(234, 240, 255, .85);
     }
 
-    .navlinks a{opacity:.9}
-    .navlinks a:hover{opacity:1}
+    .navlinks a { opacity: .9; }
+    .navlinks a:hover { opacity: 1; }
 
-    .navlinks .cta{
-      opacity:1;
-      font-weight:900;
-      padding:10px 14px;
-      border-radius:999px;
-      background:linear-gradient(135deg, rgba(106,168,255,.95), rgba(110,203,255,.85));
-      color:#081225;
-      white-space:nowrap;
+    .navlinks .cta {
+      opacity: 1;
+      font-weight: 900;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(106, 168, 255, .95), rgba(110, 203, 255, .85));
+      color: #081225;
+      white-space: nowrap;
     }
 
-    main{
-      max-width:var(--max);
-      margin:auto;
-      padding:40px 18px 80px;
+    .serviceBanner {
+      width: 100%;
+      height: 40px;
+      overflow: hidden;
+      background: #eef5ff;
+      border-bottom: 1px solid rgba(8, 18, 37, .14);
     }
 
-    .kicker{
-      text-transform:uppercase;
-      letter-spacing:.12em;
-      font-size:12px;
-      color:rgba(106,168,255,.95);
-      margin-bottom:10px;
+    .serviceTicker {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      height: 100%;
+      animation: serviceTickerMove 28s linear infinite;
     }
 
-    h1{
-      margin:0 0 14px;
-      font-size:clamp(32px,4.8vw,56px);
-      line-height:1.05;
-      letter-spacing:-.02em;
+    .serviceTicker:hover,
+    .serviceTicker:focus-within {
+      animation-play-state: paused;
     }
 
-    .lead{
-      margin:0 0 18px;
-      color:rgba(234,240,255,.72);
-      line-height:1.65;
-      font-size:15.5px;
-      max-width:80ch;
+    .serviceTickerGroup {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding-right: 18px;
+      color: #172033;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
     }
 
-    .sectionTitle{
-      margin:28px 0 10px;
-      font-size:22px;
-      letter-spacing:-.01em;
+    .serviceTicker a {
+      color: #0b315a;
+      font-weight: 900;
+      border-bottom: 1px solid rgba(11, 49, 90, .25);
     }
 
-    .subtext{
-      margin:0 0 18px;
-      color:rgba(234,240,255,.62);
-      line-height:1.6;
-      max-width:90ch;
+    .serviceTicker .serviceTickerLabel {
+      color: #0f6fbf;
+      font-size: 11px;
+      letter-spacing: .09em;
+      text-transform: uppercase;
     }
 
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:22px;
-      margin-top:16px;
+    .serviceTickerDot { color: #6f7f95; }
+
+    @keyframes serviceTickerMove {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
     }
 
-    @media (max-width: 980px){
-      .grid{grid-template-columns:1fr}
+    main {
+      max-width: var(--max);
+      margin: auto;
+      padding: 40px 18px 80px;
     }
 
-    .card{
-      background:var(--card);
-      border:1px solid var(--stroke);
-      border-radius:18px;
-      padding:22px;
-      box-shadow:0 30px 90px rgba(0,0,0,.35);
+    .kicker {
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: 12px;
+      color: var(--accent);
+      margin-bottom: 10px;
     }
 
-    .titleRow{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      margin-bottom:10px;
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(32px, 4.8vw, 56px);
+      line-height: 1.05;
+      letter-spacing: -.02em;
     }
 
-    h3{margin:0;font-size:18px}
-
-    .tag{
-      font-size:12px;
-      font-weight:900;
-      padding:6px 10px;
-      border-radius:999px;
-      background:rgba(106,168,255,.16);
-      border:1px solid rgba(106,168,255,.32);
-      color:rgba(234,240,255,.95);
-      white-space:nowrap;
+    .lead {
+      margin: 0 0 18px;
+      color: rgba(234, 240, 255, .72);
+      line-height: 1.65;
+      font-size: 15.5px;
+      max-width: 80ch;
     }
 
-    ul{padding-left:18px;margin:12px 0 0}
-
-    li{
-      margin-bottom:10px;
-      color:rgba(234,240,255,.85);
-      line-height:1.5;
+    .sectionTitle {
+      margin: 28px 0 10px;
+      font-size: 22px;
+      letter-spacing: -.01em;
     }
 
-    .micro{
-      margin-top:12px;
-      font-size:12.5px;
-      color:rgba(234,240,255,.62);
-      line-height:1.6;
+    .subtext {
+      margin: 0 0 18px;
+      color: rgba(234, 240, 255, .62);
+      line-height: 1.6;
+      max-width: 90ch;
     }
 
-    .ctaRow{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top:14px;
-      align-items:center;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 16px;
     }
 
-    .btn{
-      display:inline-block;
-      padding:12px 14px;
-      border-radius:14px;
-      font-weight:900;
-      background:linear-gradient(135deg, rgba(106,168,255,.95), rgba(110,203,255,.85));
-      color:#081225;
+    .card {
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, .35);
     }
 
-    .btn.secondary{
-      background:rgba(0,0,0,.28);
-      border:1px solid rgba(255,255,255,.18);
-      color:rgba(234,240,255,.95);
-      font-weight:800;
-      backdrop-filter:blur(6px);
+    .titleRow {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
     }
 
-    .divider{
-      margin:34px 0;
-      border:0;
-      border-top:1px solid rgba(255,255,255,.10);
+    h3 { margin: 0; font-size: 18px; }
+
+    .tag {
+      font-size: 12px;
+      font-weight: 900;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(106, 168, 255, .16);
+      border: 1px solid rgba(106, 168, 255, .32);
+      color: rgba(234, 240, 255, .95);
+      white-space: nowrap;
     }
 
-    .site-footer{
-      margin-top:46px;
-      font-size:13px;
-      color:rgba(234,240,255,.6);
-      display:flex;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      gap:10px;
-      padding-top:18px;
-      border-top:1px solid rgba(255,255,255,.08);
+    ul { padding-left: 18px; margin: 12px 0 0; }
+
+    li {
+      margin-bottom: 10px;
+      color: rgba(234, 240, 255, .85);
+      line-height: 1.5;
     }
 
-    .footer-contact{
-      display:flex;
-      gap:10px;
-      align-items:center;
-      flex-wrap:wrap;
+    .micro {
+      margin-top: 12px;
+      font-size: 12.5px;
+      color: rgba(234, 240, 255, .62);
+      line-height: 1.6;
     }
 
-    .footer-link{
-      color:rgba(234,240,255,.95);
-      border-bottom:1px solid rgba(255,255,255,.18);
-      padding-bottom:2px;
+    .ctaRow {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+      align-items: center;
     }
 
-    .footer-link:hover{ border-bottom-color:rgba(255,255,255,.45); }
-    .footer-dot{ color:rgba(234,240,255,.45); }
+    .btn {
+      display: inline-block;
+      padding: 12px 14px;
+      border-radius: 14px;
+      font-weight: 900;
+      background: linear-gradient(135deg, rgba(106, 168, 255, .95), rgba(110, 203, 255, .85));
+      color: #081225;
+    }
+
+    .btn.secondary {
+      background: rgba(0, 0, 0, .28);
+      border: 1px solid rgba(255, 255, 255, .18);
+      color: rgba(234, 240, 255, .95);
+      font-weight: 800;
+      backdrop-filter: blur(6px);
+    }
+
+    .divider {
+      margin: 34px 0;
+      border: 0;
+      border-top: 1px solid rgba(255, 255, 255, .10);
+    }
+
+    .site-footer {
+      margin-top: 46px;
+      font-size: 13px;
+      color: rgba(234, 240, 255, .6);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .footer-contact {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-link {
+      color: rgba(234, 240, 255, .95);
+      border-bottom: 1px solid rgba(255, 255, 255, .18);
+      padding-bottom: 2px;
+    }
+
+    .footer-link:hover { border-bottom-color: rgba(255, 255, 255, .45); }
+    .footer-dot { color: rgba(234, 240, 255, .45); }
+
+    @media (max-width: 980px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 760px) {
+      .serviceBanner { height: 38px; }
+      .serviceTickerGroup { gap: 12px; font-size: 12px; }
+      .serviceTicker .serviceTickerLabel { font-size: 10px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .serviceBanner { overflow-x: auto; }
+      .serviceTicker { animation: none; }
+      .serviceTickerGroup[aria-hidden="true"] { display: none; }
+    }
   </style>
 </head>
 
 <body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="index.html">
+        <img src="assets/t-logo.png" alt="Turnover ATL logo">
+        <span>Turnover ATL Cleaning</span>
+      </a>
 
-<header>
-  <div class="nav">
-    <a class="brand" href="index.html">
-      <img src="assets/t-logo.png" alt="Turnover ATL logo">
-      <span>Turnover ATL Cleaning</span>
-    </a>
-
-    <div class="navlinks">
-      <a href="services.html">Services</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="about.html">About</a>
-      <a href="apply.html">Careers</a>
-      <a class="cta" href="book.html">Book a Cleaning</a>
+      <nav class="navlinks" aria-label="Main navigation">
+        <a href="services.html" aria-current="page">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="apply.html">Careers</a>
+        <a class="cta" href="book.html">Book a Cleaning</a>
+      </nav>
     </div>
-  </div>
-</header>
+  </header>
 
-<main>
-  <div class="kicker">Services</div>
-  <h1>Cleaning services built around consistency.</h1>
-  <p class="lead">
-    Turnover ATL provides checklist-driven cleaning with clear communication and
-    <strong>photo confirmation</strong> after every job. We support short-term rentals, residential homes,
-    and move-in / move-out cleanings across Metro Atlanta.
-  </p>
+  <div class="serviceBanner" role="region" aria-label="Recurring cleaning deals and contact information">
+    <div class="serviceTicker">
+      <div class="serviceTickerGroup">
+        <a class="serviceTickerLabel" href="pricing.html#deals">Save 10% on Monthly Cleaning</a>
+        <span class="serviceTickerDot" aria-hidden="true">•</span>
+        <span>$180 per visit prepaid for qualifying homes</span>
+        <span class="serviceTickerDot" aria-hidden="true">•</span>
+        <span>Ask about a custom recurring quote</span>
+        <span class="serviceTickerDot" aria-hidden="true">•</span>
+        <a href="mailto:ayinde@turnoveratl.com?subject=Recurring%20Cleaning%20Quote&amp;body=Hi%20Turnover%20ATL%2C%0D%0A%0D%0AI%27d%20like%20to%20ask%20about%20a%20prepaid%20cleaning%20plan%20or%20a%20custom%20recurring%20quote.%0D%0AZIP%20code%3A%20%0D%0APreferred%20plan%20or%20cleaning%20schedule%3A%20%0D%0A">Email Us</a>
+        <span class="serviceTickerDot" aria-hidden="true">•</span>
+        <a href="tel:+14702902837">Call (470) 290-2837</a>
+        <span class="serviceTickerDot" aria-hidden="true">•</span>
+      </div>
 
-  <h2 class="sectionTitle">Short-Term Rental Turnovers</h2>
-  <p class="subtext">Reliable resets between guests — built for hosts who value consistency and clean execution.</p>
-
-  <div class="grid">
-    <div class="card">
-      <div class="titleRow">
-        <h3>Standard Turnover</h3>
-        <span class="tag">Most common</span>
+      <div class="serviceTickerGroup" aria-hidden="true">
+        <a class="serviceTickerLabel" href="pricing.html#deals" tabindex="-1">Save 10% on Monthly Cleaning</a>
+        <span class="serviceTickerDot">•</span>
+        <span>$180 per visit prepaid for qualifying homes</span>
+        <span class="serviceTickerDot">•</span>
+        <span>Ask about a custom recurring quote</span>
+        <span class="serviceTickerDot">•</span>
+        <a href="mailto:ayinde@turnoveratl.com?subject=Recurring%20Cleaning%20Quote&amp;body=Hi%20Turnover%20ATL%2C%0D%0A%0D%0AI%27d%20like%20to%20ask%20about%20a%20prepaid%20cleaning%20plan%20or%20a%20custom%20recurring%20quote.%0D%0AZIP%20code%3A%20%0D%0APreferred%20plan%20or%20cleaning%20schedule%3A%20%0D%0A" tabindex="-1">Email Us</a>
+        <span class="serviceTickerDot">•</span>
+        <a href="tel:+14702902837" tabindex="-1">Call (470) 290-2837</a>
+        <span class="serviceTickerDot">•</span>
       </div>
-      <ul>
-        <li>Kitchen &amp; bathroom reset</li>
-        <li>Floors + high-touch surfaces</li>
-        <li>Trash removal + light staging reset</li>
-        <li>Linen reset (host-supplied, when applicable)</li>
-        <li><strong>Completion photos after every turnover</strong></li>
-      </ul>
-      <div class="ctaRow">
-        <a class="btn" href="book.html">Book a Turnover</a>
-        <a class="btn secondary" href="pricing.html">View Pricing</a>
-      </div>
-      <div class="micro">We confirm availability first. No payment required to submit.</div>
-    </div>
-
-    <div class="card">
-      <div class="titleRow">
-        <h3>Same-Day / Rush Turnovers</h3>
-        <span class="tag">+ $25</span>
-      </div>
-      <ul>
-        <li>For tight check-out to check-in windows</li>
-        <li>Availability depends on schedule + location</li>
-        <li>Confirmed before scheduling</li>
-      </ul>
-      <div class="ctaRow">
-        <a class="btn" href="book.html">Request Same-Day</a>
-      </div>
-      <div class="micro">Rush fee applies only when same-day scheduling is requested and confirmed.</div>
-    </div>
-
-    <div class="card">
-      <div class="titleRow">
-        <h3>Deep Clean Add-On</h3>
-        <span class="tag">By review</span>
-      </div>
-      <ul>
-        <li>Extra detail work beyond a standard turnover</li>
-        <li>Great for buildup, first service, or seasonal resets</li>
-        <li>Scope and pricing confirmed before work begins</li>
-      </ul>
-      <div class="ctaRow">
-        <a class="btn" href="book.html">Request Add-On</a>
-      </div>
-      <div class="micro">We’ll review details and confirm what’s included before scheduling.</div>
     </div>
   </div>
 
-  <hr class="divider" />
+  <main>
+    <div class="kicker">Services</div>
+    <h1>Cleaning services built around consistency.</h1>
+    <p class="lead">
+      Turnover ATL provides checklist-driven cleaning with clear communication and
+      <strong>photo confirmation</strong> after every job. We support short-term rentals,
+      residential homes, and move-in and move-out cleanings across Metro Atlanta.
+    </p>
 
-  <h2 class="sectionTitle">Residential Cleaning</h2>
-  <p class="subtext">For people who live in the home — one-time or recurring service.</p>
+    <h2 class="sectionTitle">Short-Term Rental Turnovers</h2>
+    <p class="subtext">Reliable resets between guests, built for hosts who value consistent results.</p>
 
-  <div class="grid">
-    <div class="card">
-      <div class="titleRow">
-        <h3>Standard Residential</h3>
-        <span class="tag">Starting prices</span>
+    <div class="grid">
+      <div class="card">
+        <div class="titleRow">
+          <h3>Standard Turnover</h3>
+          <span class="tag">Most common</span>
+        </div>
+        <ul>
+          <li>Kitchen &amp; bathroom reset</li>
+          <li>Floors and high-touch surfaces</li>
+          <li>Trash removal and light staging</li>
+          <li>Linen reset using host-supplied linens, when applicable</li>
+          <li><strong>Completion photos after every turnover</strong></li>
+        </ul>
+        <div class="ctaRow">
+          <a class="btn" href="book.html">Book a Turnover</a>
+          <a class="btn secondary" href="pricing.html">View Pricing</a>
+        </div>
+        <div class="micro">We confirm availability first. No payment is required to submit a request.</div>
       </div>
-      <ul>
-        <li><strong>1BR:</strong> from $120</li>
-        <li><strong>2BR:</strong> from $160</li>
-        <li><strong>3BR:</strong> from $200</li>
-        <li><strong>4BR+:</strong> from $240+</li>
-        <li><strong>Final pricing confirmed after reviewing details</strong></li>
-      </ul>
-      <div class="ctaRow">
-        <a class="btn" href="book.html">Book Residential</a>
-        <a class="btn secondary" href="pricing.html">See Pricing</a>
+
+      <div class="card">
+        <div class="titleRow">
+          <h3>Same-Day / Rush Turnovers</h3>
+          <span class="tag">+$25</span>
+        </div>
+        <ul>
+          <li>For tight windows between checkout and check-in</li>
+          <li>Availability depends on schedule and location</li>
+          <li>Confirmed before scheduling</li>
+        </ul>
+        <div class="ctaRow">
+          <a class="btn" href="book.html">Request Same-Day</a>
+        </div>
+        <div class="micro">The rush fee applies when you request same-day service and we confirm availability.</div>
       </div>
-      <div class="micro">Weekly, bi-weekly, or monthly options available.</div>
+
+      <div class="card">
+        <div class="titleRow">
+          <h3>Deep Clean Add-On</h3>
+          <span class="tag">By review</span>
+        </div>
+        <ul>
+          <li>Extra detail work beyond a standard turnover</li>
+          <li>For buildup, first service, or seasonal resets</li>
+          <li>Scope and pricing confirmed before work begins</li>
+        </ul>
+        <div class="ctaRow">
+          <a class="btn" href="book.html">Request Add-On</a>
+        </div>
+        <div class="micro">We’ll review the details and confirm what’s included before scheduling.</div>
+      </div>
     </div>
 
-    <div class="card">
-      <div class="titleRow">
-        <h3>Deep Residential</h3>
-        <span class="tag">By review</span>
+    <hr class="divider">
+
+    <h2 class="sectionTitle">Residential Cleaning</h2>
+    <p class="subtext">One-time or recurring cleaning for the home you live in.</p>
+
+    <div class="grid">
+      <div class="card">
+        <div class="titleRow">
+          <h3>Standard Residential</h3>
+          <span class="tag">Starting prices</span>
+        </div>
+        <ul>
+          <li><strong>1BR:</strong> from $120</li>
+          <li><strong>2BR:</strong> from $160</li>
+          <li><strong>3BR:</strong> from $200</li>
+          <li><strong>4BR+:</strong> from $240</li>
+          <li><strong>Final pricing confirmed after reviewing details</strong></li>
+        </ul>
+        <div class="ctaRow">
+          <a class="btn" href="book.html">Book Residential</a>
+          <a class="btn secondary" href="pricing.html">See Pricing</a>
+        </div>
+        <div class="micro">Weekly, biweekly, or monthly options available.</div>
       </div>
-      <ul>
-        <li>Extra detail work (buildup, first visit, seasonal reset)</li>
-        <li>Scope confirmed based on home size + condition</li>
-        <li>Recommended for first-time clients or long gaps between cleans</li>
-      </ul>
-      <div class="ctaRow">
-        <a class="btn" href="book.html">Request Deep Clean</a>
+
+      <div class="card">
+        <div class="titleRow">
+          <h3>Deep Residential</h3>
+          <span class="tag">By review</span>
+        </div>
+        <ul>
+          <li>Extra detail for buildup, a first visit, or a seasonal reset</li>
+          <li>Scope based on the home’s size and condition</li>
+          <li>Recommended for first-time clients or long gaps between cleans</li>
+        </ul>
+        <div class="ctaRow">
+          <a class="btn" href="book.html">Request Deep Clean</a>
+        </div>
+        <div class="micro">We confirm what’s included before scheduling.</div>
       </div>
-      <div class="micro">We confirm scope before scheduling so expectations are clear.</div>
+
+      <div class="card">
+        <div class="titleRow">
+          <h3>Move-In / Move-Out</h3>
+          <span class="tag">Quoted</span>
+        </div>
+        <ul>
+          <li>Detailed cleaning for empty homes before you move in or hand over the keys</li>
+          <li><strong>Quoted based on the home’s size, condition, and the work needed</strong></li>
+        </ul>
+        <div class="ctaRow">
+          <a class="btn" href="book.html">Request a Quote</a>
+        </div>
+        <div class="micro">We’ll confirm scope and pricing before work begins.</div>
+      </div>
     </div>
 
-    <div class="card">
-      <div class="titleRow">
-        <h3>Move-In / Move-Out</h3>
-        <span class="tag">Quoted</span>
+    <footer class="site-footer">
+      <div>© 2026 Turnover ATL Cleaning</div>
+      <div class="footer-contact">
+        <a class="footer-link" href="mailto:ayinde@turnoveratl.com">ayinde@turnoveratl.com</a>
+        <span class="footer-dot" aria-hidden="true">•</span>
+        <a class="footer-link" href="tel:+14702902837">(470) 290-2837</a>
       </div>
-      <ul>
-        <li>More thorough clean for empty or transitioning homes</li>
-        <li><strong>Quoted based on size, condition, and square footage</strong></li>
-        <li><strong>Competitively priced once details are reviewed</strong></li>
-      </ul>
-      <div class="ctaRow">
-        <a class="btn" href="book.html">Request a Quote</a>
-      </div>
-      <div class="micro">We’ll confirm scope + pricing before any work begins.</div>
-    </div>
-  </div>
-
-  <footer class="site-footer">
-    <div>© 2026 Turnover ATL Cleaning</div>
-    <div class="footer-contact">
-      <a class="footer-link" href="mailto:ayinde@turnoveratl.com">ayinde@turnoveratl.com</a>
-      <span class="footer-dot">•</span>
-      <a class="footer-link" href="tel:+14702902837">(470) 290-2837</a>
-    </div>
-  </footer>
-</main>
-
+    </footer>
+  </main>
 </body>
 </html>
