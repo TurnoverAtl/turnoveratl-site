@@ -24,7 +24,11 @@
     }
 
     * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
@@ -95,6 +99,60 @@
       white-space: nowrap;
     }
 
+    .serviceBanner {
+      width: 100%;
+      height: 40px;
+      overflow: hidden;
+      position: relative;
+      background: #eef5ff;
+      border-bottom: 1px solid rgba(8, 18, 37, .14);
+    }
+
+    .serviceTicker {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      height: 100%;
+      animation: serviceTickerMove 28s linear infinite;
+    }
+
+    .serviceTicker:hover,
+    .serviceTicker:focus-within {
+      animation-play-state: paused;
+    }
+
+    .serviceTickerGroup {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding-right: 18px;
+      color: #172033;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .serviceTickerLabel {
+      color: #0f6fbf;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .serviceTickerDot { color: #6f7f95; }
+
+    .serviceTicker a {
+      color: #0b315a;
+      font-weight: 900;
+      border-bottom: 1px solid rgba(11, 49, 90, .25);
+    }
+
+    @keyframes serviceTickerMove {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
     main {
       max-width: var(--max);
       margin: auto;
@@ -116,7 +174,10 @@
       letter-spacing: -.02em;
     }
 
-    h3 { margin: 0; font-size: 16px; }
+    h3 {
+      margin: 0;
+      font-size: 16px;
+    }
 
     p {
       margin: 0 0 14px;
@@ -133,30 +194,30 @@
     }
 
     .card {
-      background: var(--card);
+      padding: 22px;
       border: 1px solid var(--stroke);
       border-radius: 18px;
-      padding: 22px;
+      background: var(--card);
       box-shadow: 0 30px 90px rgba(0, 0, 0, .35);
     }
 
     .titleRow {
       display: flex;
       align-items: center;
-      gap: 10px;
       flex-wrap: wrap;
+      gap: 10px;
       margin-bottom: 10px;
     }
 
     .badge {
       display: inline-block;
       padding: 6px 10px;
+      border: 1px solid rgba(106, 168, 255, .38);
       border-radius: 999px;
+      background: rgba(106, 168, 255, .18);
+      color: rgba(234, 240, 255, .92);
       font-size: 12px;
       font-weight: 900;
-      background: rgba(106, 168, 255, .18);
-      border: 1px solid rgba(106, 168, 255, .38);
-      color: rgba(234, 240, 255, .92);
       white-space: nowrap;
     }
 
@@ -183,16 +244,27 @@
       text-align: left;
     }
 
-    th { color: rgba(234, 240, 255, .9); font-weight: 900; }
-    .price { color: var(--text); font-weight: 900; }
-    .savings { color: var(--accent2); font-weight: 900; }
+    th {
+      color: rgba(234, 240, 255, .9);
+      font-weight: 900;
+    }
+
+    .price {
+      color: var(--text);
+      font-weight: 900;
+    }
+
+    .savings {
+      color: var(--accent2);
+      font-weight: 900;
+    }
 
     .addon { margin-bottom: 16px; }
 
     .addon strong {
       display: block;
-      font-weight: 900;
       color: rgba(234, 240, 255, .92);
+      font-weight: 900;
     }
 
     .addon p { margin: 6px 0 0; }
@@ -202,17 +274,17 @@
       margin-top: 18px;
       padding: 14px 18px;
       border-radius: 14px;
-      font-weight: 900;
       background: linear-gradient(135deg, rgba(106, 168, 255, .95), rgba(110, 203, 255, .85));
       color: #081225;
+      font-weight: 900;
     }
 
     .noteBox {
       margin-top: 18px;
       padding: 14px;
+      border: 1px solid rgba(106, 168, 255, .28);
       border-radius: 12px;
       background: rgba(106, 168, 255, .12);
-      border: 1px solid rgba(106, 168, 255, .28);
       color: rgba(234, 240, 255, .85);
       font-size: 14px;
       line-height: 1.55;
@@ -225,52 +297,20 @@
       line-height: 1.6;
     }
 
-    .recurringBanner {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px 24px;
-      margin: 22px 0;
-      padding: clamp(18px, 3vw, 30px);
-      border: 1px solid rgba(110, 203, 255, .42);
-      border-radius: 18px;
-      background: linear-gradient(115deg, #182e50, #101a32);
-    }
-
-    .recurringBanner h2 {
-      margin: 0 0 8px;
-      font-size: clamp(22px, 3.2vw, 34px);
-      line-height: 1.15;
-    }
-
-    .recurringBanner p {
-      margin: 0;
-      color: var(--text);
-    }
-
-    .recurringBanner p + p { margin-top: 8px; }
-
-    .recurringBannerActions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .recurringBanner .ctaBtn { margin-top: 0; }
-
-    .recurringBanner .customQuote {
-      background: transparent;
-      border: 1px solid var(--accent2);
-      color: var(--text);
-    }
-
     #deals {
       margin-top: 24px;
       scroll-margin-top: 145px;
     }
 
     #deals h2 { margin-top: 0; }
+
+    .dealActions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .dealActions .ctaBtn { margin-top: 0; }
 
     .site-footer {
       display: flex;
@@ -304,6 +344,12 @@
       .grid { grid-template-columns: 1fr; }
     }
 
+    @media (max-width: 760px) {
+      .serviceBanner { height: 38px; }
+      .serviceTickerGroup { gap: 12px; font-size: 12px; }
+      .serviceTickerLabel { font-size: 10px; }
+    }
+
     @media (max-width: 640px) {
       .nav { flex-wrap: wrap; }
       .navlinks { justify-content: flex-start; }
@@ -312,6 +358,12 @@
         padding: 10px 5px;
         font-size: 13px;
       }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .serviceBanner { overflow-x: auto; }
+      .serviceTicker { animation: none; }
+      .serviceTickerGroup:last-child { display: none; }
     }
   </style>
 </head>
@@ -335,35 +387,78 @@
     </div>
   </header>
 
+  <div class="serviceBanner" role="region" aria-label="Service areas and contact information">
+    <div class="serviceTicker">
+      <div class="serviceTickerGroup">
+        <span class="serviceTickerLabel">Now serving</span>
+        <span>Atlanta</span>
+        <span class="serviceTickerDot">•</span>
+        <span>Marietta</span>
+        <span class="serviceTickerDot">•</span>
+        <span>Kennesaw</span>
+        <span class="serviceTickerDot">•</span>
+        <span>Smyrna</span>
+        <span class="serviceTickerDot">•</span>
+        <span>Sandy Springs</span>
+        <span class="serviceTickerDot">•</span>
+        <span>Roswell</span>
+        <span class="serviceTickerDot">•</span>
+        <span>Alpharetta</span>
+        <span class="serviceTickerDot">•</span>
+        <span>Decatur</span>
+        <span class="serviceTickerDot">•</span>
+        <span>Buford</span>
+        <span class="serviceTickerDot">•</span>
+        <span>Duluth</span>
+        <span class="serviceTickerDot">•</span>
+        <span>Conyers</span>
+        <span class="serviceTickerDot">•</span>
+        <span>Surrounding Metro Atlanta areas</span>
+        <span class="serviceTickerDot">•</span>
+        <a href="tel:+14702902837">(470) 290-2837</a>
+        <span class="serviceTickerDot">•</span>
+        <a href="mailto:Info@TurnoverAtl.com">Info@TurnoverAtl.com</a>
+        <span class="serviceTickerDot">•</span>
+      </div>
+
+      <div class="serviceTickerGroup" aria-hidden="true">
+        <span class="serviceTickerLabel">Now serving</span>
+        <span>Atlanta</span>
+        <span class="serviceTickerDot">•</span>
+        <span>Marietta</span>
+        <span class="serviceTickerDot">•</span>
+        <span>Kennesaw</span>
+        <span class="serviceTickerDot">•</span>
+        <span>Smyrna</span>
+        <span class="serviceTickerDot">•</span>
+        <span>Sandy Springs</span>
+        <span class="serviceTickerDot">•</span>
+        <span>Roswell</span>
+        <span class="serviceTickerDot">•</span>
+        <span>Alpharetta</span>
+        <span class="serviceTickerDot">•</span>
+        <span>Decatur</span>
+        <span class="serviceTickerDot">•</span>
+        <span>Buford</span>
+        <span class="serviceTickerDot">•</span>
+        <span>Duluth</span>
+        <span class="serviceTickerDot">•</span>
+        <span>Conyers</span>
+        <span class="serviceTickerDot">•</span>
+        <span>Surrounding Metro Atlanta areas</span>
+        <span class="serviceTickerDot">•</span>
+        <a href="tel:+14702902837" tabindex="-1">(470) 290-2837</a>
+        <span class="serviceTickerDot">•</span>
+        <a href="mailto:Info@TurnoverAtl.com" tabindex="-1">Info@TurnoverAtl.com</a>
+        <span class="serviceTickerDot">•</span>
+      </div>
+    </div>
+  </div>
+
   <main>
     <div class="kicker">Transparent pricing</div>
     <h1>Short-Term Rental Turnover Pricing</h1>
     <p>Every turnover follows a standardized checklist with photo confirmation. We confirm your price before scheduling.</p>
-
-    <section class="recurringBanner" aria-labelledby="recurring-banner-title">
-      <div>
-        <h2 id="recurring-banner-title">Save 10% on Monthly Cleaning</h2>
-        <p>
-          Pay <strong>$180 per visit</strong> instead of $200 when you prepay for
-          3, 6, 9, or 12 monthly visits. Available for qualifying homes.
-        </p>
-        <p>
-          Prefer weekly, biweekly, or a different schedule? Tell us what you need
-          and we’ll put together a custom quote.
-        </p>
-      </div>
-
-      <div class="recurringBannerActions">
-        <a class="ctaBtn" href="#deals">Compare Plans &amp; Savings</a>
-        <a
-          class="ctaBtn customQuote"
-          href="mailto:ayinde@turnoveratl.com?subject=Custom%20Recurring%20Cleaning%20Quote&amp;body=Hi%20Turnover%20ATL%2C%0A%0AI%27d%20like%20a%20custom%20recurring%20cleaning%20quote.%0AZIP%20code%3A%20%0APreferred%20cleaning%20schedule%3A%20%0A%0AThank%20you%21"
-        >
-          Email for a Custom Recurring Quote
-        </a>
-        <a class="ctaBtn customQuote" href="tel:+14702902837">Call (470) 290-2837</a>
-      </div>
-    </section>
 
     <div class="grid">
       <div class="card">
@@ -445,7 +540,7 @@
 
     <section id="deals" class="card" aria-labelledby="deals-title">
       <!-- Add the savings graphic here. -->
-      <h2 id="deals-title">Compare Monthly Cleaning Plans</h2>
+      <h2 id="deals-title">Save 10% on Monthly Cleaning</h2>
       <p>
         For qualifying homes with a $200 standard cleaning rate, prepay for 3, 6, 9,
         or 12 monthly visits and pay <strong class="price">$180 per visit</strong>.
@@ -493,9 +588,20 @@
         before you pay. If your home needs an initial deep clean, we’ll quote it separately.
       </p>
 
-      <a class="ctaBtn" href="sms:+14702902837?body=Hi%20Turnover%20ATL%21%20Can%20you%20tell%20me%20if%20my%20home%20qualifies%20for%20a%20monthly%20cleaning%20pass%3F">
-        Ask About a Cleaning Pass
-      </a>
+      <p>
+        Prefer weekly, biweekly, or a different schedule? Email or call us for a
+        custom recurring quote.
+      </p>
+
+      <div class="dealActions">
+        <a
+          class="ctaBtn"
+          href="mailto:ayinde@turnoveratl.com?subject=Recurring%20Cleaning%20Quote&amp;body=Hi%20Turnover%20ATL%2C%0D%0A%0D%0AI%27d%20like%20to%20ask%20about%20a%20prepaid%20cleaning%20plan%20or%20a%20custom%20recurring%20quote.%0D%0AZIP%20code%3A%20%0D%0APreferred%20plan%20or%20cleaning%20schedule%3A%20%0D%0A"
+        >
+          Email Us About Recurring Cleaning
+        </a>
+        <a class="ctaBtn" href="tel:+14702902837">Call (470) 290-2837</a>
+      </div>
     </section>
 
     <footer class="site-footer">
