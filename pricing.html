@@ -74,10 +74,10 @@
 
     .navlinks {
       display: flex;
-      gap: 14px;
       align-items: center;
-      flex-wrap: wrap;
       justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 14px;
       font-size: 14px;
       color: rgba(234, 240, 255, .82);
     }
@@ -102,11 +102,11 @@
     }
 
     .kicker {
-      text-transform: uppercase;
-      letter-spacing: .10em;
-      font-size: 12px;
-      color: rgba(106, 168, 255, .95);
       margin-bottom: 10px;
+      color: var(--accent);
+      font-size: 12px;
+      letter-spacing: .10em;
+      text-transform: uppercase;
     }
 
     h1 {
@@ -116,10 +116,7 @@
       letter-spacing: -.02em;
     }
 
-    h3 {
-      margin: 0;
-      font-size: 16px;
-    }
+    h3 { margin: 0; font-size: 16px; }
 
     p {
       margin: 0 0 14px;
@@ -186,15 +183,9 @@
       text-align: left;
     }
 
-    th {
-      color: rgba(234, 240, 255, .9);
-      font-weight: 900;
-    }
-
-    .price {
-      font-weight: 900;
-      color: var(--text);
-    }
+    th { color: rgba(234, 240, 255, .9); font-weight: 900; }
+    .price { color: var(--text); font-weight: 900; }
+    .savings { color: var(--accent2); font-weight: 900; }
 
     .addon { margin-bottom: 16px; }
 
@@ -204,14 +195,11 @@
       color: rgba(234, 240, 255, .92);
     }
 
-    .addon p {
-      margin: 6px 0 0;
-      color: var(--muted);
-    }
+    .addon p { margin: 6px 0 0; }
 
     .ctaBtn {
-      margin-top: 18px;
       display: inline-block;
+      margin-top: 18px;
       padding: 14px 18px;
       border-radius: 14px;
       font-weight: 900;
@@ -221,20 +209,60 @@
 
     .noteBox {
       margin-top: 18px;
-      background: rgba(106, 168, 255, .12);
-      border: 1px solid rgba(106, 168, 255, .28);
       padding: 14px;
       border-radius: 12px;
-      font-size: 14px;
+      background: rgba(106, 168, 255, .12);
+      border: 1px solid rgba(106, 168, 255, .28);
       color: rgba(234, 240, 255, .85);
+      font-size: 14px;
       line-height: 1.55;
     }
 
     .fineprint {
       margin-top: 18px;
-      font-size: 12px;
       color: rgba(234, 240, 255, .55);
+      font-size: 12px;
       line-height: 1.6;
+    }
+
+    .recurringBanner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px 24px;
+      margin: 22px 0;
+      padding: clamp(18px, 3vw, 30px);
+      border: 1px solid rgba(110, 203, 255, .42);
+      border-radius: 18px;
+      background: linear-gradient(115deg, #182e50, #101a32);
+    }
+
+    .recurringBanner h2 {
+      margin: 0 0 8px;
+      font-size: clamp(22px, 3.2vw, 34px);
+      line-height: 1.15;
+    }
+
+    .recurringBanner p {
+      margin: 0;
+      color: var(--text);
+    }
+
+    .recurringBanner p + p { margin-top: 8px; }
+
+    .recurringBannerActions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .recurringBanner .ctaBtn { margin-top: 0; }
+
+    .recurringBanner .customQuote {
+      background: transparent;
+      border: 1px solid var(--accent2);
+      color: var(--text);
     }
 
     #deals {
@@ -244,28 +272,23 @@
 
     #deals h2 { margin-top: 0; }
 
-    .savings {
-      color: var(--accent2);
-      font-weight: 900;
-    }
-
     .site-footer {
-      margin-top: 28px;
-      font-size: 13px;
-      color: rgba(234, 240, 255, .6);
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       gap: 10px;
+      margin-top: 28px;
       padding: 18px 2px 0;
       border-top: 1px solid rgba(255, 255, 255, .08);
+      color: rgba(234, 240, 255, .6);
+      font-size: 13px;
     }
 
     .footer-contact {
       display: flex;
-      gap: 10px;
       align-items: center;
       flex-wrap: wrap;
+      gap: 10px;
     }
 
     .footer-link {
@@ -301,14 +324,14 @@
         <span>Turnover ATL Cleaning</span>
       </a>
 
-      <div class="navlinks">
+      <nav class="navlinks" aria-label="Main navigation">
         <a href="services.html">Services</a>
-        <a href="pricing.html">Pricing</a>
+        <a href="pricing.html" aria-current="page">Pricing</a>
         <a href="#deals">Deals</a>
         <a href="about.html">About</a>
         <a href="apply.html">Careers</a>
         <a class="cta" href="book.html">Book a Cleaning</a>
-      </div>
+      </nav>
     </div>
   </header>
 
@@ -317,6 +340,27 @@
     <h1>Short-Term Rental Turnover Pricing</h1>
     <p>Every turnover follows a standardized checklist with photo confirmation. We confirm your price before scheduling.</p>
 
+    <section class="recurringBanner" aria-labelledby="recurring-banner-title">
+      <div>
+        <h2 id="recurring-banner-title">Save 10% on Monthly Cleaning</h2>
+        <p>
+          Pay <strong>$180 per visit</strong> instead of $200 when you prepay for
+          3, 6, 9, or 12 monthly visits. Available for qualifying homes.
+        </p>
+        <p>
+          Prefer weekly, biweekly, or a different schedule? Tell us what you need
+          and we’ll put together a custom quote.
+        </p>
+      </div>
+
+      <div class="recurringBannerActions">
+        <a class="ctaBtn" href="#deals">Compare Plans &amp; Savings</a>
+        <a class="ctaBtn customQuote" href="sms:+14702902837?body=Hi%20Turnover%20ATL%21%20I%27d%20like%20a%20custom%20recurring%20cleaning%20quote.%20My%20ZIP%20code%20is%20___%20and%20my%20preferred%20cleaning%20schedule%20is%20___.">
+          Ask for a Custom Recurring Quote
+        </a>
+      </div>
+    </section>
+
     <div class="grid">
       <div class="card">
         <div class="titleRow">
@@ -324,9 +368,7 @@
           <span class="badge">Most Popular</span>
         </div>
 
-        <p style="margin: 0 0 10px; color: rgba(234, 240, 255, .70);">
-          Everything needed to reset your unit between guests.
-        </p>
+        <p>Everything needed to reset your unit between guests.</p>
 
         <ul>
           <li>Full turnover clean (kitchen, bathrooms, floors, high-touch areas)</li>
@@ -344,22 +386,10 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1BR</th>
-              <td class="price">$120</td>
-            </tr>
-            <tr>
-              <th scope="row">2BR</th>
-              <td class="price">$160</td>
-            </tr>
-            <tr>
-              <th scope="row">3BR</th>
-              <td class="price">$200</td>
-            </tr>
-            <tr>
-              <th scope="row">4BR+</th>
-              <td class="price">$240+ (custom quote)</td>
-            </tr>
+            <tr><th scope="row">1BR</th><td class="price">$120</td></tr>
+            <tr><th scope="row">2BR</th><td class="price">$160</td></tr>
+            <tr><th scope="row">3BR</th><td class="price">$200</td></tr>
+            <tr><th scope="row">4BR+</th><td class="price">$240+ (custom quote)</td></tr>
           </tbody>
         </table>
 
@@ -370,7 +400,7 @@
       </div>
 
       <div class="card">
-        <h3 style="margin: 0 0 12px;">Turnover Add-Ons</h3>
+        <h3 style="margin-bottom: 12px;">Turnover Add-Ons</h3>
 
         <div class="addon">
           <strong>Same-Day Turnover (+$25)</strong>
@@ -410,11 +440,11 @@
     </div>
 
     <section id="deals" class="card" aria-labelledby="deals-title">
-      <!-- Add the savings graphic here, above the heading. -->
-      <h2 id="deals-title">Save 10% on Monthly Cleaning</h2>
+      <!-- Add the savings graphic here. -->
+      <h2 id="deals-title">Compare Monthly Cleaning Plans</h2>
       <p>
-        For qualifying homes with a $200 standard cleaning rate, prepay for 3, 6, 9, or 12 monthly
-        visits and pay <strong class="price">$180 per visit</strong>.
+        For qualifying homes with a $200 standard cleaning rate, prepay for 3, 6, 9,
+        or 12 monthly visits and pay <strong class="price">$180 per visit</strong>.
       </p>
 
       <table aria-labelledby="deals-title">
@@ -455,8 +485,8 @@
       </table>
 
       <p class="fineprint">
-        One standard home cleaning per month. We confirm eligibility, scope, and scheduling before
-        you pay. If your home needs an initial deep clean, we’ll quote it separately.
+        One standard home cleaning per month. We confirm eligibility, scope, and scheduling
+        before you pay. If your home needs an initial deep clean, we’ll quote it separately.
       </p>
 
       <a class="ctaBtn" href="sms:+14702902837?body=Hi%20Turnover%20ATL%21%20Can%20you%20tell%20me%20if%20my%20home%20qualifies%20for%20a%20monthly%20cleaning%20pass%3F">
