@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pricing | Turnover ATL Cleaning</title>
-  <meta name="description" content="Transparent pricing for STR turnovers in Metro Atlanta. Predictable flat-rate turnovers with completion photos. Residential and move-in/move-out quoted after review.">
+  <meta name="description" content="Metro Atlanta short-term rental turnover starting rates, optional add-ons, and prepaid monthly cleaning plans.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,13 +14,12 @@
     :root {
       --bg: #070b18;
       --bg2: #0b1022;
-      --card: rgba(255,255,255,.06);
-      --stroke: rgba(255,255,255,.12);
+      --card: rgba(255, 255, 255, .06);
+      --stroke: rgba(255, 255, 255, .12);
       --text: #eaf0ff;
-      --muted: rgba(234,240,255,.65);
+      --muted: rgba(234, 240, 255, .65);
       --accent: #6aa8ff;
       --accent2: #6ecbff;
-      --radius: 18px;
       --max: 1280px;
     }
 
@@ -31,7 +30,7 @@
       font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(1100px 520px at 20% 0%, rgba(106,168,255,.18), transparent 60%),
+        radial-gradient(1100px 520px at 20% 0%, rgba(106, 168, 255, .18), transparent 60%),
         linear-gradient(180deg, var(--bg2), var(--bg));
     }
 
@@ -44,8 +43,8 @@
       z-index: 50;
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      background: rgba(7,11,24,.72);
-      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: rgba(7, 11, 24, .72);
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
     }
 
     .nav {
@@ -67,7 +66,11 @@
       white-space: nowrap;
     }
 
-    .brand img { width: 28px; height: 28px; opacity: .95; }
+    .brand img {
+      width: 28px;
+      height: 28px;
+      opacity: .95;
+    }
 
     .navlinks {
       display: flex;
@@ -76,7 +79,7 @@
       flex-wrap: wrap;
       justify-content: flex-end;
       font-size: 14px;
-      color: rgba(234,240,255,.82);
+      color: rgba(234, 240, 255, .82);
     }
 
     .navlinks a { opacity: .9; }
@@ -87,7 +90,7 @@
       font-weight: 900;
       padding: 10px 14px;
       border-radius: 999px;
-      background: linear-gradient(135deg, rgba(106,168,255,.95), rgba(110,203,255,.85));
+      background: linear-gradient(135deg, rgba(106, 168, 255, .95), rgba(110, 203, 255, .85));
       color: #081225;
       white-space: nowrap;
     }
@@ -102,7 +105,7 @@
       text-transform: uppercase;
       letter-spacing: .10em;
       font-size: 12px;
-      color: rgba(106,168,255,.95);
+      color: rgba(106, 168, 255, .95);
       margin-bottom: 10px;
     }
 
@@ -111,6 +114,11 @@
       font-size: clamp(32px, 4.8vw, 56px);
       line-height: 1.05;
       letter-spacing: -.02em;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 16px;
     }
 
     p {
@@ -127,16 +135,12 @@
       margin-top: 18px;
     }
 
-    @media (max-width: 980px) {
-      .grid { grid-template-columns: 1fr; }
-    }
-
     .card {
       background: var(--card);
       border: 1px solid var(--stroke);
       border-radius: 18px;
       padding: 22px;
-      box-shadow: 0 30px 90px rgba(0,0,0,.35);
+      box-shadow: 0 30px 90px rgba(0, 0, 0, .35);
     }
 
     .titleRow {
@@ -147,22 +151,28 @@
       margin-bottom: 10px;
     }
 
-    h3 { margin: 0; font-size: 16px; }
-
     .badge {
       display: inline-block;
       padding: 6px 10px;
       border-radius: 999px;
       font-size: 12px;
       font-weight: 900;
-      background: rgba(106,168,255,.18);
-      border: 1px solid rgba(106,168,255,.38);
-      color: rgba(234,240,255,.92);
+      background: rgba(106, 168, 255, .18);
+      border: 1px solid rgba(106, 168, 255, .38);
+      color: rgba(234, 240, 255, .92);
       white-space: nowrap;
     }
 
-    ul { padding-left: 18px; margin: 14px 0; }
-    li { margin-bottom: 10px; color: rgba(234,240,255,.85); line-height: 1.5; }
+    ul {
+      padding-left: 18px;
+      margin: 14px 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+      color: rgba(234, 240, 255, .85);
+      line-height: 1.5;
+    }
 
     table {
       width: 100%;
@@ -172,16 +182,32 @@
 
     th, td {
       padding: 14px 10px;
-      border-bottom: 1px solid rgba(255,255,255,.10);
+      border-bottom: 1px solid rgba(255, 255, 255, .10);
       text-align: left;
     }
 
-    th { color: rgba(234,240,255,.9); font-weight: 900; }
-    .price { font-weight: 900; color: var(--text); }
+    th {
+      color: rgba(234, 240, 255, .9);
+      font-weight: 900;
+    }
+
+    .price {
+      font-weight: 900;
+      color: var(--text);
+    }
 
     .addon { margin-bottom: 16px; }
-    .addon strong { display: block; font-weight: 900; color: rgba(234,240,255,.92); }
-    .addon p { margin: 6px 0 0; color: rgba(234,240,255,.65); }
+
+    .addon strong {
+      display: block;
+      font-weight: 900;
+      color: rgba(234, 240, 255, .92);
+    }
+
+    .addon p {
+      margin: 6px 0 0;
+      color: var(--muted);
+    }
 
     .ctaBtn {
       margin-top: 18px;
@@ -189,38 +215,50 @@
       padding: 14px 18px;
       border-radius: 14px;
       font-weight: 900;
-      background: linear-gradient(135deg, rgba(106,168,255,.95), rgba(110,203,255,.85));
+      background: linear-gradient(135deg, rgba(106, 168, 255, .95), rgba(110, 203, 255, .85));
       color: #081225;
     }
 
     .noteBox {
       margin-top: 18px;
-      background: rgba(106,168,255,.12);
-      border: 1px solid rgba(106,168,255,.28);
+      background: rgba(106, 168, 255, .12);
+      border: 1px solid rgba(106, 168, 255, .28);
       padding: 14px;
       border-radius: 12px;
       font-size: 14px;
-      color: rgba(234,240,255,.85);
+      color: rgba(234, 240, 255, .85);
       line-height: 1.55;
     }
 
     .fineprint {
       margin-top: 18px;
       font-size: 12px;
-      color: rgba(234,240,255,.55);
+      color: rgba(234, 240, 255, .55);
       line-height: 1.6;
+    }
+
+    #deals {
+      margin-top: 24px;
+      scroll-margin-top: 145px;
+    }
+
+    #deals h2 { margin-top: 0; }
+
+    .savings {
+      color: var(--accent2);
+      font-weight: 900;
     }
 
     .site-footer {
       margin-top: 28px;
       font-size: 13px;
-      color: rgba(234,240,255,.6);
+      color: rgba(234, 240, 255, .6);
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       gap: 10px;
       padding: 18px 2px 0;
-      border-top: 1px solid rgba(255,255,255,.08);
+      border-top: 1px solid rgba(255, 255, 255, .08);
     }
 
     .footer-contact {
@@ -231,190 +269,209 @@
     }
 
     .footer-link {
-      color: rgba(234,240,255,.95);
-      border-bottom: 1px solid rgba(255,255,255,.18);
+      color: rgba(234, 240, 255, .95);
+      border-bottom: 1px solid rgba(255, 255, 255, .18);
       padding-bottom: 2px;
     }
 
-    .footer-link:hover { border-bottom-color: rgba(255,255,255,.45); }
-    .footer-dot { color: rgba(234,240,255,.45); }
+    .footer-link:hover { border-bottom-color: rgba(255, 255, 255, .45); }
+    .footer-dot { color: rgba(234, 240, 255, .45); }
 
-    #deals { margin-top: 24px; scroll-margin-top: 145px; }
-    #deals h2 { margin-top: 0; }
-    .savings { color: var(--accent2); font-weight: 900; }
+    @media (max-width: 980px) {
+      .grid { grid-template-columns: 1fr; }
+    }
 
     @media (max-width: 640px) {
       .nav { flex-wrap: wrap; }
       .navlinks { justify-content: flex-start; }
-      #deals th, #deals td { padding: 10px 5px; font-size: 13px; }
+
+      #deals th, #deals td {
+        padding: 10px 5px;
+        font-size: 13px;
+      }
     }
   </style>
 </head>
 
 <body>
-<header>
-  <div class="nav">
-    <a class="brand" href="index.html">
-      <img src="assets/t-logo.png" alt="Turnover ATL logo">
-      <span>Turnover ATL Cleaning</span>
-    </a>
+  <header>
+    <div class="nav">
+      <a class="brand" href="index.html">
+        <img src="assets/t-logo.png" alt="Turnover ATL logo">
+        <span>Turnover ATL Cleaning</span>
+      </a>
 
-    <div class="navlinks">
-      <a href="services.html">Services</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="#deals">Deals</a>
-      <a href="about.html">About</a>
-      <a href="apply.html">Careers</a>
-      <a class="cta" href="book.html">Book a Cleaning</a>
+      <div class="navlinks">
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="#deals">Deals</a>
+        <a href="about.html">About</a>
+        <a href="apply.html">Careers</a>
+        <a class="cta" href="book.html">Book a Cleaning</a>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<main>
-  <div class="kicker">Transparent pricing</div>
-  <h1>Predictable, Flat-Rate STR Turnovers</h1>
-  <p>No hourly guessing. No surprise fees. Every turnover follows a standardized checklist with photo confirmation.</p>
+  <main>
+    <div class="kicker">Transparent pricing</div>
+    <h1>Short-Term Rental Turnover Pricing</h1>
+    <p>Every turnover follows a standardized checklist with photo confirmation. We confirm your price before scheduling.</p>
 
-  <div class="grid">
-    <div class="card">
-      <div class="titleRow">
-        <h3>Standard Turnover</h3>
-        <span class="badge">Most Popular</span>
+    <div class="grid">
+      <div class="card">
+        <div class="titleRow">
+          <h3>Standard Turnover</h3>
+          <span class="badge">Most Popular</span>
+        </div>
+
+        <p style="margin: 0 0 10px; color: rgba(234, 240, 255, .70);">
+          Everything needed to reset your unit between guests.
+        </p>
+
+        <ul>
+          <li>Full turnover clean (kitchen, bathrooms, floors, high-touch areas)</li>
+          <li>Linen reset using host-supplied inventory (when applicable)</li>
+          <li>Trash removal + light staging reset</li>
+          <li><strong>Photo confirmation after every turnover</strong></li>
+          <li>Reliable scheduling with local support</li>
+        </ul>
+
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Unit Size</th>
+              <th scope="col">Starting Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1BR</th>
+              <td class="price">$120</td>
+            </tr>
+            <tr>
+              <th scope="row">2BR</th>
+              <td class="price">$160</td>
+            </tr>
+            <tr>
+              <th scope="row">3BR</th>
+              <td class="price">$200</td>
+            </tr>
+            <tr>
+              <th scope="row">4BR+</th>
+              <td class="price">$240+ (custom quote)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p style="margin-top: 14px;">
+          For larger layouts or additional bathrooms, we confirm what’s included before scheduling.
+        </p>
+        <p>Have more than one room or unit ready for cleaning? Send us your list and we’ll quote the jobs together.</p>
       </div>
 
-      <p style="margin:0 0 10px;color:rgba(234,240,255,.70);">
-        Everything needed to reset your unit between guests.
+      <div class="card">
+        <h3 style="margin: 0 0 12px;">Turnover Add-Ons</h3>
+
+        <div class="addon">
+          <strong>Same-Day Turnover (+$25)</strong>
+          <p>Have a tight window between checkout and check-in? Ask about same-day service. We’ll confirm availability before booking.</p>
+        </div>
+
+        <div class="addon">
+          <strong>Deep Cleaning Add-On</strong>
+          <p>For buildup or areas that need extra detail. We’ll confirm what’s included and quote the work before we start.</p>
+        </div>
+
+        <div class="addon">
+          <strong>Supply Check (By Request)</strong>
+          <p>We’ll flag low or missing guest supplies so you know what to replenish before the next stay.</p>
+        </div>
+
+        <div class="addon">
+          <strong>On-Site Laundry Add-On ($25)</strong>
+          <p>Laundry is done on-site using the property’s washer and dryer.</p>
+        </div>
+
+        <div class="addon">
+          <strong>Dishes Add-On ($20)</strong>
+        </div>
+
+        <div class="noteBox">
+          <strong>Our commitment:</strong> If something is missed, notify us within 24 hours and we’ll resolve it promptly.
+        </div>
+
+        <a class="ctaBtn" href="book.html">Get My Quote</a>
+        <a class="ctaBtn" href="sms:+14702902837">Text Photos for an Estimate</a>
+
+        <div class="fineprint">
+          Service area: Atlanta and select surrounding communities based on availability.
+        </div>
+      </div>
+    </div>
+
+    <section id="deals" class="card" aria-labelledby="deals-title">
+      <!-- Add the savings graphic here, above the heading. -->
+      <h2 id="deals-title">Save 10% on Monthly Cleaning</h2>
+      <p>
+        For qualifying homes with a $200 standard cleaning rate, prepay for 3, 6, 9, or 12 monthly
+        visits and pay <strong class="price">$180 per visit</strong>.
       </p>
 
-      <ul>
-        <li>Full turnover clean (kitchen, bathrooms, floors, high-touch areas)</li>
-        <li>Linen reset using host-supplied inventory (when applicable)</li>
-        <li>Trash removal + light staging reset</li>
-        <li><strong>Photo confirmation after every turnover</strong></li>
-        <li>Reliable scheduling with local support</li>
-      </ul>
-
-      <table>
+      <table aria-labelledby="deals-title">
         <thead>
           <tr>
-            <th scope="col">Unit Size</th>
-            <th scope="col">Flat Rate</th>
+            <th scope="col">Plan</th>
+            <th scope="col">Regular total</th>
+            <th scope="col">Prepaid total</th>
+            <th scope="col">You save</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>1BR</td><td class="price">$135</td></tr>
-          <tr><td>2BR</td><td class="price">$175</td></tr>
-          <tr><td>3BR</td><td class="price">$235</td></tr>
-          <tr><td>4BR+</td><td class="price">From $290 (custom quote)</td></tr>
+          <tr>
+            <th scope="row">3 visits</th>
+            <td>$600</td>
+            <td class="price">$540</td>
+            <td class="savings">$60</td>
+          </tr>
+          <tr>
+            <th scope="row">6 visits</th>
+            <td>$1,200</td>
+            <td class="price">$1,080</td>
+            <td class="savings">$120</td>
+          </tr>
+          <tr>
+            <th scope="row">9 visits</th>
+            <td>$1,800</td>
+            <td class="price">$1,620</td>
+            <td class="savings">$180</td>
+          </tr>
+          <tr>
+            <th scope="row">12 visits</th>
+            <td>$2,400</td>
+            <td class="price">$2,160</td>
+            <td class="savings">$240</td>
+          </tr>
         </tbody>
       </table>
 
-      <p style="margin-top:14px;">
-        For larger layouts or additional bathrooms, we confirm what’s included before scheduling.
-      </p>
-      <p>Have more than one room or unit ready for cleaning? Send us your list and we’ll quote the jobs together.</p>
-    </div>
-
-    <div class="card">
-      <h3 style="margin:0 0 12px;">Turnover Add-Ons</h3>
-
-      <div class="addon">
-        <strong>Same-Day Turnover (+$25)</strong>
-        <p>Have a tight window between checkout and check-in? Ask about same-day service. We’ll confirm availability before booking.</p>
-      </div>
-
-      <div class="addon">
-        <strong>Deep Cleaning Add-On</strong>
-        <p>For buildup or areas that need extra detail. We’ll confirm what’s included and quote the work before we start.</p>
-      </div>
-
-      <div class="addon">
-        <strong>Supply Check (By Request)</strong>
-        <p>We’ll flag low or missing guest supplies so you know what to replenish before the next stay.</p>
-      </div>
-
-      <h3 style="margin:18px 0 8px;">Residential &amp; Move-In/Move-Out</h3>
-      <p style="margin:0;color:rgba(234,240,255,.70);line-height:1.6;">
-        <strong>Standard Home Cleaning</strong><br>
-        Starting at <strong>$120 (1BR), $160 (2BR), $200 (3BR), and $240+ (4BR)</strong>.
-        Need just the kitchen, bathrooms, or a few rooms cleaned? Tell us what needs attention and we’ll quote just those spaces. For whole-home cleaning, we confirm your price based on size, condition, and what you want included.
-        <br><br>
-        <strong>Move-In &amp; Move-Out Cleaning</strong><br>
-        Get a detailed clean before you move in or hand over the keys. We’ll quote it based on the home’s size, condition, and the work needed.
+      <p class="fineprint">
+        One standard home cleaning per month. We confirm eligibility, scope, and scheduling before
+        you pay. If your home needs an initial deep clean, we’ll quote it separately.
       </p>
 
-      <div class="noteBox">
-        <strong>Our commitment:</strong> If something is missed, notify us within 24 hours and we’ll resolve it promptly.
+      <a class="ctaBtn" href="sms:+14702902837?body=Hi%20Turnover%20ATL%21%20Can%20you%20tell%20me%20if%20my%20home%20qualifies%20for%20a%20monthly%20cleaning%20pass%3F">
+        Ask About a Cleaning Pass
+      </a>
+    </section>
+
+    <footer class="site-footer">
+      <div>© 2026 Turnover ATL Cleaning</div>
+      <div class="footer-contact">
+        <a class="footer-link" href="mailto:ayinde@turnoveratl.com">Ayinde@TurnoverAtl.com</a>
+        <span class="footer-dot">•</span>
+        <a class="footer-link" href="tel:+14702902837">(470) 290-2837</a>
       </div>
-
-      <a class="ctaBtn" href="book.html">Get My Quote</a>
-      <a class="ctaBtn" href="sms:+14702902837">Text Photos for an Estimate</a>
-
-      <div class="fineprint">
-        Service area: Atlanta and select surrounding communities based on availability.
-      </div>
-    </div>
-  </div>
-
-  <section id="deals" class="card" aria-labelledby="deals-title">
-    <!-- Add the savings graphic here. -->
-    <h2 id="deals-title">Save 10% on Monthly Cleaning</h2>
-    <p>For qualifying homes with a $200 standard cleaning rate, prepay for 3, 6, 9, or 12 monthly visits and pay <strong class="price">$180 per visit</strong>.</p>
-
-    <table aria-labelledby="deals-title">
-      <thead>
-        <tr>
-          <th scope="col">Plan</th>
-          <th scope="col">Regular total</th>
-          <th scope="col">Prepaid total</th>
-          <th scope="col">You save</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">3 visits</th>
-          <td>$600</td>
-          <td class="price">$540</td>
-          <td class="savings">$60</td>
-        </tr>
-        <tr>
-          <th scope="row">6 visits</th>
-          <td>$1,200</td>
-          <td class="price">$1,080</td>
-          <td class="savings">$120</td>
-        </tr>
-        <tr>
-          <th scope="row">9 visits</th>
-          <td>$1,800</td>
-          <td class="price">$1,620</td>
-          <td class="savings">$180</td>
-        </tr>
-        <tr>
-          <th scope="row">12 visits</th>
-          <td>$2,400</td>
-          <td class="price">$2,160</td>
-          <td class="savings">$240</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <p class="fineprint">
-      One standard home cleaning per month. We confirm eligibility, scope, and scheduling before you pay.
-      If your home needs an initial deep clean, we’ll quote it separately.
-    </p>
-
-    <a class="ctaBtn" href="sms:+14702902837?body=Hi%20Turnover%20ATL%21%20Can%20you%20tell%20me%20if%20my%20home%20qualifies%20for%20a%20monthly%20cleaning%20pass%3F">Ask About a Cleaning Pass</a>
-  </section>
-
-  <footer class="site-footer">
-    <div>© 2026 Turnover ATL Cleaning</div>
-
-    <div class="footer-contact">
-      <a class="footer-link" href="mailto:ayinde@turnoveratl.com">Ayinde@TurnoverAtl.com</a>
-      <span class="footer-dot">•</span>
-      <a class="footer-link" href="tel:+14702902837">(470) 290-2837</a>
-    </div>
-  </footer>
-</main>
+    </footer>
+  </main>
 </body>
 </html>
